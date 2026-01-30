@@ -1,0 +1,3742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>Tera</title>
+	<meta content="" name="description">
+	<meta content="" name="keywords"><!-- Favicons -->
+	<link href="assets/img/favicon.jpg" rel="icon" />
+	<link href="assets/img/apple-touch-icon.jpg" rel="apple-touch-icon" /><!-- Google Fonts -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+		rel="stylesheet" /><!-- Vendor CSS Files -->
+	<link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+	<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+	<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+	<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" /><!-- Template Main CSS File -->
+	<link href="assets/css/style.css" rel="stylesheet" />
+	<link href="assets/css/icon-font/lineicons.css" rel="stylesheet" />
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.cells.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.rings.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js"></script>
+	
+	<script language="javascript">
+		document.onmousedown = disableclick;
+		status = "Right Click Disabled";
+		function disableclick(event) {
+			if (event.button == 2) {
+				alert(status);
+				return false;
+			}
+			document.onkeydown = function (event) {
+
+				// disable F12 key
+				if (event.keyCode == 123) {
+					return false;
+				}
+
+				// disable I key
+				if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+					return false;
+				}
+
+				// disable J key
+				if (event.ctrlKey && event.shiftKey && event.keyCode == 74) {
+					return false;
+				}
+
+				// disable U key
+				if (event.ctrlKey && event.keyCode == 85) {
+					return false;
+				}
+			}
+
+		}
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- GSAP and ScrollTrigger -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+</head>
+
+<body oncontextmenu="return false" class="scroll-container">
+	<header class="d-flex align-items-center" id="header">
+		<div class="container d-flex align-items-center justify-content-between">
+			<h1 class="logo"><a href="index.html">Tera</a></h1>
+
+			<nav class="navbar" id="navbar">
+				<ul>
+					<li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+					<li><a class="nav-link scrollto" href="#services-section">Services</a></li>
+					<li><a class="nav-link scrollto" href="#about-section">About</a></li>
+					<li><a class="nav-link scrollto" href="#process-section">Process</a></li>
+					<li><a class="nav-link scrollto" href="#tech-stack-section">Technology</a></li>
+					<li><a class="nav-link scrollto" href="#hero1">Contact</a></li>
+				</ul>
+			</nav>
+			<!-- .navbar -->
+
+			<div style="float:right;"><a class="btn1 btn-border1 scrollto" href="#hero1"
+					style="padding: 5px 30px;">Contact Us</a></div>
+			<!-- ======= Hero Section ======= -->
+		</div>
+	</header>
+	<!-- End Header -->
+
+	<section class="d-flex align-items-center heroClass" id="hero">
+		<div class="container" data-aos="zoom-out" data-aos-delay="100">
+			<video autoplay="" id="bgvideo" loop="" muted="">
+				<source src="./assets/img/new_images/tera-ny-home2_nocaption.mp4" type="video/mp4" />
+			</video>
+
+			<div class="videoClass">
+				<h1><span>TERA</span></h1>
+
+				<h2 style="color:white;">In a Digital Transformation ERA - we help increase the strength of
+					organizations by helping them to adapt to the contemporary reality of an ever faster changing world.
+					Make change happen at speed.</h2>
+
+				<h2 style="color:white; text-align: center;">Fast-track to upgrade...we&rsquo;re here to help.</h2>
+			</div>
+		</div>
+	</section>
+	<!-- End Hero -->
+
+	<main id="main">
+		<!-- ======= Middle Section ======= -->
+		<section id="middle-section">
+			<video muted playsinline class="middle-bg-video" id="middleVideo">
+				<source src="./assets/Laptop_Website_Video_Generation (1).mp4" type="video/mp4" />
+			</video>
+			<canvas id="scroll-hero"></canvas>
+
+			<!-- Particle System -->
+			<div class="particle-container" id="particles"></div>
+
+			<div class="middle-content-overlay">
+				<!-- Cinematic 3D Typography -->
+				<div class="cinematic-title">
+					<div class="title-row title-main">
+						<span class="letter-3d" data-char="F">F</span>
+						<span class="letter-3d" data-char="A">A</span>
+						<span class="letter-3d" data-char="S">S</span>
+						<span class="letter-3d" data-char="T">T</span>
+						<span class="letter-space"></span>
+						<span class="letter-3d" data-char="T">T</span>
+						<span class="letter-3d" data-char="R">R</span>
+						<span class="letter-3d" data-char="A">A</span>
+						<span class="letter-3d" data-char="C">C</span>
+						<span class="letter-3d" data-char="K">K</span>
+					</div>
+					<div class="title-row title-sub">
+						<span class="letter-3d sub" data-char="T">T</span>
+						<span class="letter-3d sub" data-char="O">O</span>
+						<span class="letter-space small"></span>
+						<span class="letter-3d sub" data-char="U">U</span>
+						<span class="letter-3d sub" data-char="P">P</span>
+						<span class="letter-3d sub" data-char="G">G</span>
+						<span class="letter-3d sub" data-char="R">R</span>
+						<span class="letter-3d sub" data-char="A">A</span>
+						<span class="letter-3d sub" data-char="D">D</span>
+						<span class="letter-3d sub" data-char="E">E</span>
+					</div>
+					<div class="title-tagline">
+						<p class="tagline-sub">Enterprise transformation at the speed of innovation</p>
+					</div>
+				</div>
+
+				<!-- Floating Glass Orbs -->
+				<div class="glass-orb orb-1">
+					<div class="orb-content">
+						<span class="orb-number">10x</span>
+						<span class="orb-label">Faster</span>
+					</div>
+					<div class="orb-glow"></div>
+				</div>
+
+				<div class="glass-orb orb-2">
+					<div class="orb-content">
+						<span class="orb-number">99.9%</span>
+						<span class="orb-label">Uptime</span>
+					</div>
+					<div class="orb-glow"></div>
+				</div>
+
+				<div class="glass-orb orb-3">
+					<div class="orb-content">
+						<span class="orb-number">24/7</span>
+						<span class="orb-label">Support</span>
+					</div>
+					<div class="orb-glow"></div>
+				</div>
+
+				<div class="glass-orb orb-4">
+					<div class="orb-content">
+						<span class="orb-number">500+</span>
+						<span class="orb-label">Clients</span>
+					</div>
+					<div class="orb-glow"></div>
+				</div>
+
+				<!-- Glass Ribbon Arc -->
+				<div class="glass-ribbon">
+					<div class="ribbon-track">
+						<span class="ribbon-word">Cloud</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">Security</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">Innovation</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">Scale</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">Transform</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">Cloud</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">Security</span>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Middle Section -->
+
+		<!-- ======= Services Section ======= -->
+		<section id="services-section">
+			<div id="vanta-services" class="vanta-bg"></div>
+			<div class="services-bg-shapes">
+				<div class="shape shape-1"></div>
+				<div class="shape shape-2"></div>
+				<div class="shape shape-3"></div>
+			</div>
+			
+			<div class="services-container">
+				<div class="services-header" data-aos="fade-up">
+					<h2 class="services-title">Our <span class="highlight-green">Solutions</span></h2>
+					<p class="services-subtitle">Transforming businesses through innovative technology solutions</p>
+				</div>
+
+				<div class="services-grid">
+					<div class="service-card" data-service="digital">
+						<div class="card-glow"></div>
+						<div class="card-content">
+							<svg class="service-icon" viewBox="0 0 100 100">
+								<path class="icon-path" d="M50,10 L90,30 L90,70 L50,90 L10,70 L10,30 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+								<circle class="icon-dot" cx="50" cy="50" r="8" fill="currentColor"/>
+							</svg>
+							<h3 class="service-title">Digital Transformation</h3>
+							<p class="service-description">Modernize your business operations with cutting-edge digital solutions that drive efficiency and innovation.</p>
+						</div>
+					</div>
+
+					<div class="service-card" data-service="cloud">
+						<div class="card-glow"></div>
+						<div class="card-content">
+							<svg class="service-icon" viewBox="0 0 100 100">
+								<path class="icon-path" d="M30,50 Q30,35 45,35 Q45,25 55,25 Q65,25 65,35 Q80,35 80,50 Q80,65 65,65 L35,65 Q20,65 20,50 Q20,35 30,35" fill="none" stroke="currentColor" stroke-width="2"/>
+								<line class="icon-line" x1="50" y1="45" x2="50" y2="70" stroke="currentColor" stroke-width="2"/>
+								<polyline class="icon-arrow" points="45,65 50,70 55,65" fill="none" stroke="currentColor" stroke-width="2"/>
+							</svg>
+							<h3 class="service-title">Cloud Services</h3>
+							<p class="service-description">Seamlessly migrate and optimize your infrastructure with scalable cloud solutions tailored to your needs.</p>
+						</div>
+					</div>
+
+					<div class="service-card" data-service="microsoft">
+						<div class="card-glow"></div>
+						<div class="card-content">
+							<svg class="service-icon" viewBox="0 0 100 100">
+								<rect class="icon-rect" x="20" y="20" width="28" height="28" fill="currentColor"/>
+								<rect class="icon-rect" x="52" y="20" width="28" height="28" fill="currentColor"/>
+								<rect class="icon-rect" x="20" y="52" width="28" height="28" fill="currentColor"/>
+								<rect class="icon-rect" x="52" y="52" width="28" height="28" fill="currentColor"/>
+							</svg>
+							<h3 class="service-title">Microsoft Services</h3>
+							<p class="service-description">Leverage Microsoft 365, Dynamics, and Azure to empower your workforce and streamline operations.</p>
+						</div>
+					</div>
+
+					<div class="service-card" data-service="ai">
+						<div class="card-glow"></div>
+						<div class="card-content">
+							<svg class="service-icon" viewBox="0 0 100 100">
+								<circle class="icon-circle" cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="2"/>
+								<circle class="icon-dot" cx="35" cy="45" r="3" fill="currentColor"/>
+								<circle class="icon-dot" cx="65" cy="45" r="3" fill="currentColor"/>
+								<path class="icon-path" d="M35,65 Q50,75 65,65" fill="none" stroke="currentColor" stroke-width="2"/>
+								<path class="icon-brain" d="M30,30 Q20,50 30,60 M70,30 Q80,50 70,60" fill="none" stroke="currentColor" stroke-width="2"/>
+							</svg>
+							<h3 class="service-title">AI/ML Consulting</h3>
+							<p class="service-description">Harness the power of artificial intelligence and machine learning to unlock new possibilities.</p>
+						</div>
+					</div>
+
+					<div class="service-card" data-service="security">
+						<div class="card-glow"></div>
+						<div class="card-content">
+							<svg class="service-icon" viewBox="0 0 100 100">
+								<path class="icon-path" d="M50,10 L20,25 L20,50 Q20,75 50,90 Q80,75 80,50 L80,25 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+								<path class="icon-check" d="M35,50 L45,60 L65,40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+							</svg>
+							<h3 class="service-title">Cybersecurity</h3>
+							<p class="service-description">Protect your digital assets with comprehensive security solutions and proactive threat management.</p>
+						</div>
+					</div>
+
+					<div class="service-card" data-service="enterprise">
+						<div class="card-glow"></div>
+						<div class="card-content">
+							<svg class="service-icon" viewBox="0 0 100 100">
+								<rect class="icon-rect" x="15" y="30" width="70" height="50" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+								<line class="icon-line" x1="30" y1="45" x2="70" y2="45" stroke="currentColor" stroke-width="2"/>
+								<line class="icon-line" x1="30" y1="55" x2="70" y2="55" stroke="currentColor" stroke-width="2"/>
+								<line class="icon-line" x1="30" y1="65" x2="55" y2="65" stroke="currentColor" stroke-width="2"/>
+								<rect class="icon-tab" x="25" y="20" width="50" height="10" rx="3" fill="currentColor"/>
+							</svg>
+							<h3 class="service-title">Enterprise Solutions</h3>
+							<p class="service-description">End-to-end enterprise software solutions that integrate seamlessly with your business processes.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Services Section -->
+
+		<style>
+			.vanta-bg {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 0;
+			}
+
+			#services-section {
+				min-height: 100vh;
+				background: #ffffff;
+				position: relative;
+				overflow: hidden;
+				padding: 100px 0;
+				display: flex;
+				align-items: center;
+			}
+
+			.services-bg-shapes {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 1;
+				pointer-events: none;
+			}
+
+			.shape {
+				position: absolute;
+				border-radius: 50%;
+				opacity: 0.05;
+				filter: blur(60px);
+			}
+
+			.shape-1 {
+				width: 400px;
+				height: 400px;
+				background: radial-gradient(circle, #3bb143 0%, transparent 70%);
+				top: 10%;
+				left: 10%;
+				animation: float-shape 20s infinite ease-in-out;
+			}
+
+			.shape-2 {
+				width: 300px;
+				height: 300px;
+				background: radial-gradient(circle, #3bb143 0%, transparent 70%);
+				bottom: 20%;
+				right: 15%;
+				animation: float-shape 15s infinite ease-in-out reverse;
+			}
+
+			.shape-3 {
+				width: 250px;
+				height: 250px;
+				background: radial-gradient(circle, #3bb143 0%, transparent 70%);
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				animation: float-shape 18s infinite ease-in-out;
+			}
+
+			@keyframes float-shape {
+				0%, 100% { transform: translate(0, 0) scale(1); }
+				33% { transform: translate(30px, -30px) scale(1.1); }
+				66% { transform: translate(-30px, 30px) scale(0.9); }
+			}
+
+			.services-container {
+				max-width: 1400px;
+				margin: 0 auto;
+				padding: 0 40px;
+				position: relative;
+				z-index: 2;
+			}
+
+			.services-header {
+				text-align: center;
+				margin-bottom: 80px;
+			}
+
+			.services-title {
+				font-size: clamp(2.5rem, 5vw, 4rem);
+				font-weight: 800;
+				color: #1a1a1a;
+				margin-bottom: 20px;
+				line-height: 1.2;
+			}
+
+			.highlight-green {
+				color: #3bb143;
+				position: relative;
+				display: inline-block;
+			}
+
+			.highlight-green::after {
+				content: '';
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				width: 100%;
+				height: 3px;
+				background: linear-gradient(90deg, transparent, #3bb143, transparent);
+				animation: pulse-line 2s infinite;
+			}
+
+			@keyframes pulse-line {
+				0%, 100% { opacity: 0.5; }
+				50% { opacity: 1; }
+			}
+
+			.services-subtitle {
+				font-size: clamp(1rem, 1.5vw, 1.2rem);
+				color: #666666;
+				letter-spacing: 0.05em;
+			}
+
+			.services-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+				gap: 40px;
+				perspective: 1000px;
+			}
+
+			.service-card {
+				position: relative;
+				padding: 40px;
+				background: #ffffff;
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
+				border: 1px solid #e0e0e0;
+				border-radius: 20px;
+				cursor: pointer;
+				transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+				transform-style: preserve-3d;
+				opacity: 0;
+				transform: translateY(50px);
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+			}
+
+			.service-card.visible {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			.card-glow {
+				position: absolute;
+				top: -2px;
+				left: -2px;
+				right: -2px;
+				bottom: -2px;
+				background: conic-gradient(
+					from 0deg,
+					#3bb143,
+					transparent,
+					#3bb143
+				);
+				border-radius: 20px;
+				opacity: 0;
+				z-index: -1;
+				transition: opacity 0.4s ease;
+				animation: rotate-glow 4s linear infinite;
+			}
+
+			@keyframes rotate-glow {
+				100% { transform: rotate(360deg); }
+			}
+
+			.service-card:hover {
+				transform: translateY(-8px);
+				border-color: #3bb143;
+				box-shadow: 0 20px 60px rgba(59, 177, 67, 0.25);
+				background: linear-gradient(135deg, rgba(59, 177, 67, 0.02) 0%, #ffffff 100%);
+			}
+
+			.service-card:hover .card-glow {
+				opacity: 0;
+			}
+
+			.card-content {
+				position: relative;
+				z-index: 1;
+			}
+
+			.service-icon {
+				width: 80px;
+				height: 80px;
+				color: #3bb143;
+				margin-bottom: 25px;
+				transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+			}
+
+			.service-card:hover .service-icon {
+				transform: translateY(-5px);
+				filter: drop-shadow(0 5px 15px rgba(59, 177, 67, 0.3));
+			}
+
+			.icon-path, .icon-line, .icon-arrow, .icon-check, .icon-brain {
+				stroke-dasharray: 200;
+				stroke-dashoffset: 200;
+				transition: stroke-dashoffset 1s ease;
+			}
+
+			.service-card.visible .icon-path,
+			.service-card.visible .icon-line,
+			.service-card.visible .icon-arrow,
+			.service-card.visible .icon-check,
+			.service-card.visible .icon-brain {
+				stroke-dashoffset: 0;
+			}
+
+			.icon-rect, .icon-dot, .icon-circle {
+				opacity: 0;
+				animation: fade-in 0.6s ease forwards;
+			}
+
+			@keyframes fade-in {
+				to { opacity: 1; }
+			}
+
+			.service-title {
+				font-size: clamp(1.3rem, 2vw, 1.5rem);
+				font-weight: 700;
+				color: #1a1a1a;
+				margin-bottom: 15px;
+			}
+
+			.service-description {
+				font-size: clamp(0.9rem, 1.1vw, 1rem);
+				color: #666666;
+				line-height: 1.6;
+			}
+
+			@media (max-width: 1200px) {
+				.services-grid {
+					grid-template-columns: repeat(2, 1fr);
+					gap: 30px;
+				}
+			}
+
+			@media (max-width: 768px) {
+				#services-section {
+					padding: 60px 0;
+				}
+
+				.services-container {
+					padding: 0 20px;
+				}
+
+				.services-header {
+					margin-bottom: 50px;
+				}
+
+				.services-grid {
+					grid-template-columns: 1fr;
+					gap: 25px;
+				}
+
+				.service-card {
+					padding: 30px;
+				}
+
+				.shape {
+					filter: blur(40px);
+				}
+
+				.shape-1 { width: 250px; height: 250px; }
+				.shape-2 { width: 200px; height: 200px; }
+				.shape-3 { width: 150px; height: 150px; }
+			}
+
+			@media (max-width: 480px) {
+				.service-icon {
+					width: 60px;
+					height: 60px;
+				}
+
+				.services-grid {
+					grid-template-columns: 1fr;
+					gap: 20px;
+				}
+			}
+		</style>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const serviceCards = document.querySelectorAll('.service-card');
+				const bgShapes = document.querySelectorAll('.shape');
+
+				gsap.registerPlugin(ScrollTrigger);
+
+				serviceCards.forEach((card, index) => {
+					gsap.to(card, {
+						scrollTrigger: {
+							trigger: card,
+							start: 'top 85%',
+							end: 'top 60%',
+							toggleActions: 'play none none reverse',
+							onEnter: () => card.classList.add('visible'),
+							onLeaveBack: () => card.classList.remove('visible')
+						},
+						opacity: 1,
+						y: 0,
+						duration: 0.8,
+						delay: index * 0.1,
+						ease: 'power3.out'
+					});
+				});
+
+				bgShapes.forEach((shape, index) => {
+					gsap.to(shape, {
+						scrollTrigger: {
+							trigger: '#services-section',
+							start: 'top bottom',
+							end: 'bottom top',
+							scrub: 1
+						},
+						y: index % 2 === 0 ? 100 : -100,
+						ease: 'none'
+					});
+				});
+
+			});
+		</script>
+
+		<!-- ======= About/Why Choose Us Section ======= -->
+		<section id="about-section">
+			<div id="vanta-about" class="vanta-bg"></div>
+			<div class="about-progress-bar">
+				<div class="progress-fill"></div>
+			</div>
+
+			<div class="about-container">
+				<div class="about-left">
+					<div class="about-content">
+						<h2 class="about-title">Why <span class="highlight-green">Choose</span> Tera?</h2>
+						<p class="about-description">
+							We combine deep technical expertise with a commitment to your success. 
+							Our proven track record speaks for itself through the transformations we've delivered 
+							and the lasting partnerships we've built.
+						</p>
+						<div class="about-features">
+							<div class="feature-item">
+								<div class="feature-icon">✓</div>
+								<span>Industry-Leading Expertise</span>
+							</div>
+							<div class="feature-item">
+								<div class="feature-icon">✓</div>
+								<span>Proven Track Record</span>
+							</div>
+							<div class="feature-item">
+								<div class="feature-icon">✓</div>
+								<span>24/7 Dedicated Support</span>
+							</div>
+							<div class="feature-item">
+								<div class="feature-icon">✓</div>
+								<span>Agile Methodology</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="about-right">
+					<div class="stats-container">
+						<div class="stat-bubble" data-stat="years">
+							<div class="bubble-glow"></div>
+							<div class="stat-content">
+								<div class="stat-number" data-target="15">0</div>
+								<div class="stat-label">Years Experience</div>
+							</div>
+						</div>
+
+						<div class="stat-bubble" data-stat="projects">
+							<div class="bubble-glow"></div>
+							<div class="stat-content">
+								<div class="stat-number" data-target="500">0</div>
+								<div class="stat-label">Successful Projects</div>
+							</div>
+						</div>
+
+						<div class="stat-bubble" data-stat="satisfaction">
+							<div class="bubble-glow"></div>
+							<div class="stat-content">
+								<div class="stat-number" data-target="99">0</div>
+								<div class="stat-suffix">%</div>
+								<div class="stat-label">Client Satisfaction</div>
+							</div>
+						</div>
+
+						<div class="stat-bubble" data-stat="countries">
+							<div class="bubble-glow"></div>
+							<div class="stat-content">
+								<div class="stat-number" data-target="25">0</div>
+								<div class="stat-label">Countries Served</div>
+							</div>
+						</div>
+
+						<div class="stat-bubble" data-stat="technologies">
+							<div class="bubble-glow"></div>
+							<div class="stat-content">
+								<div class="stat-number" data-target="50">0</div>
+								<div class="stat-suffix">+</div>
+								<div class="stat-label">Technologies Mastered</div>
+							</div>
+						</div>
+
+						<svg class="timeline-connector" viewBox="0 0 600 800">
+							<path class="connector-path" d="M50,100 Q150,200 100,300 T150,500 Q200,600 150,700" 
+								fill="none" stroke="url(#lineGradient)" stroke-width="2"/>
+							<defs>
+								<linearGradient id="lineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+									<stop offset="0%" style="stop-color:#3bb143;stop-opacity:0.3" />
+									<stop offset="50%" style="stop-color:#3bb143;stop-opacity:1" />
+									<stop offset="100%" style="stop-color:#3bb143;stop-opacity:0.3" />
+								</linearGradient>
+							</defs>
+						</svg>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End About Section -->
+
+		<!-- ======= Process/Methodology Section ======= -->
+		<section id="process-section">
+			<div id="vanta-process" class="vanta-bg"></div>
+			<div class="process-container">
+				<div class="process-header">
+					<h2 class="process-title">Our <span class="highlight-green">Process</span></h2>
+					<p class="process-subtitle">A proven methodology that delivers results</p>
+				</div>
+
+				<div class="timeline-wrapper">
+					<svg class="timeline-svg" viewBox="0 0 4 100" preserveAspectRatio="none">
+						<line class="timeline-line" x1="2" y1="0" x2="2" y2="100" stroke="#3bb143" stroke-width="2"/>
+					</svg>
+
+					<div class="process-steps">
+						<div class="process-step" data-step="1">
+							<div class="step-connector"></div>
+							<div class="step-icon">
+								<svg viewBox="0 0 100 100" class="icon-svg">
+									<circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" stroke-width="2"/>
+									<path class="morph-path" d="M50,30 L50,70 M35,50 L65,50" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+								</svg>
+								<div class="step-number">01</div>
+							</div>
+							<div class="step-content">
+								<h3 class="step-title">Discovery & Analysis</h3>
+								<p class="step-description">
+									We begin by deeply understanding your business challenges, goals, and current technology landscape. 
+									Through comprehensive analysis and stakeholder interviews, we identify opportunities and create a strategic roadmap.
+								</p>
+								<ul class="step-details">
+									<li>Stakeholder Interviews</li>
+									<li>Current State Assessment</li>
+									<li>Gap Analysis</li>
+									<li>Requirements Gathering</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="process-step" data-step="2">
+							<div class="step-connector"></div>
+							<div class="step-icon">
+								<svg viewBox="0 0 100 100" class="icon-svg">
+									<rect x="25" y="25" width="50" height="50" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+									<path class="morph-path" d="M35,45 L45,55 L65,35" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
+								</svg>
+								<div class="step-number">02</div>
+							</div>
+							<div class="step-content">
+								<h3 class="step-title">Strategy Development</h3>
+								<p class="step-description">
+									We craft a tailored strategy that aligns technology solutions with your business objectives. 
+									Our experts design the architecture, select the right technologies, and create a detailed implementation plan.
+								</p>
+								<ul class="step-details">
+									<li>Solution Architecture</li>
+									<li>Technology Selection</li>
+									<li>Risk Assessment</li>
+									<li>Project Planning</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="process-step" data-step="3">
+							<div class="step-connector"></div>
+							<div class="step-icon">
+								<svg viewBox="0 0 100 100" class="icon-svg">
+									<polygon points="50,20 80,40 80,70 50,90 20,70 20,40" fill="none" stroke="currentColor" stroke-width="2"/>
+									<path class="morph-path" d="M40,50 L48,58 L60,46" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
+								</svg>
+								<div class="step-number">03</div>
+							</div>
+							<div class="step-content">
+								<h3 class="step-title">Implementation</h3>
+								<p class="step-description">
+									Our expert team executes the plan with precision, following agile methodologies to ensure flexibility and continuous improvement. 
+									We maintain transparent communication throughout the development process.
+								</p>
+								<ul class="step-details">
+									<li>Agile Development</li>
+									<li>Continuous Integration</li>
+									<li>Progress Tracking</li>
+									<li>Stakeholder Updates</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="process-step" data-step="4">
+							<div class="step-connector"></div>
+							<div class="step-icon">
+								<svg viewBox="0 0 100 100" class="icon-svg">
+									<circle cx="30" cy="50" r="8" fill="currentColor"/>
+									<circle cx="50" cy="50" r="8" fill="currentColor"/>
+									<circle cx="70" cy="50" r="8" fill="currentColor"/>
+									<path class="morph-path" d="M30,35 L30,25 L70,25 L70,35" stroke="currentColor" stroke-width="2" fill="none"/>
+								</svg>
+								<div class="step-number">04</div>
+							</div>
+							<div class="step-content">
+								<h3 class="step-title">Testing & Quality Assurance</h3>
+								<p class="step-description">
+									Rigorous testing ensures your solution meets the highest standards of quality, performance, and security. 
+									We validate every aspect before deployment to guarantee a smooth launch.
+								</p>
+								<ul class="step-details">
+									<li>Functional Testing</li>
+									<li>Performance Testing</li>
+									<li>Security Audits</li>
+									<li>User Acceptance Testing</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="process-step" data-step="5">
+							<div class="step-connector"></div>
+							<div class="step-icon">
+								<svg viewBox="0 0 100 100" class="icon-svg">
+									<path d="M50,20 L80,50 L50,80 L20,50 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+									<circle class="morph-path" cx="50" cy="50" r="12" fill="currentColor"/>
+								</svg>
+								<div class="step-number">05</div>
+							</div>
+							<div class="step-content">
+								<h3 class="step-title">Launch & Support</h3>
+								<p class="step-description">
+									We ensure a seamless deployment and provide comprehensive training to your team. 
+									Our ongoing support and maintenance keep your solution running optimally and evolving with your business needs.
+								</p>
+								<ul class="step-details">
+									<li>Deployment Strategy</li>
+									<li>Team Training</li>
+									<li>24/7 Support</li>
+									<li>Continuous Improvement</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Process Section -->
+
+		<!-- ======= Technology Stack Section ======= -->
+		<section id="tech-stack-section">
+			<canvas id="tech-canvas"></canvas>
+			
+			<div class="tech-container">
+				<div class="tech-header">
+					<h2 class="tech-title">Technology <span class="highlight-green">Expertise</span></h2>
+					<p class="tech-subtitle">Powering innovation with cutting-edge technologies</p>
+				</div>
+
+			<div class="tech-filter">
+				<button class="filter-btn active" data-category="cloud">Cloud</button>
+				<button class="filter-btn" data-category="ai">AI/ML</button>
+				<button class="filter-btn" data-category="devops">DevOps</button>
+				<button class="filter-btn" data-category="security">Security</button>
+			</div>
+
+				<div class="carousel-wrapper">
+					<button class="carousel-nav carousel-prev" aria-label="Previous">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<polyline points="15 18 9 12 15 6"></polyline>
+						</svg>
+					</button>
+
+					<div class="carousel-container">
+						<div class="tech-carousel" id="techCarousel">
+					<div class="tech-item carousel-card" data-category="cloud" data-tech="aws">
+						<div class="tech-icon">
+							<svg viewBox="0 0 100 100">
+								<text x="50" y="55" text-anchor="middle" font-size="16" fill="currentColor" font-weight="bold">AWS</text>
+							</svg>
+						</div>
+						<div class="tech-name">Amazon Web Services</div>
+						<div class="tech-description">Leading cloud platform with comprehensive infrastructure and services</div>
+					</div>
+
+					<div class="tech-item carousel-card" data-category="cloud" data-tech="azure">
+						<div class="tech-icon">
+							<svg viewBox="0 0 100 100">
+								<text x="50" y="55" text-anchor="middle" font-size="14" fill="currentColor" font-weight="bold">Azure</text>
+							</svg>
+						</div>
+						<div class="tech-name">Microsoft Azure</div>
+						<div class="tech-description">Enterprise cloud computing platform with hybrid capabilities</div>
+					</div>
+
+					<div class="tech-item carousel-card" data-category="cloud" data-tech="gcp">
+						<div class="tech-icon">
+							<svg viewBox="0 0 100 100">
+								<text x="50" y="55" text-anchor="middle" font-size="16" fill="currentColor" font-weight="bold">GCP</text>
+							</svg>
+						</div>
+						<div class="tech-name">Google Cloud</div>
+						<div class="tech-description">Scalable cloud infrastructure with advanced AI and data analytics</div>
+					</div>
+
+					<div class="tech-item carousel-card" data-category="cloud" data-tech="office365">
+						<div class="tech-icon">
+							<svg viewBox="0 0 100 100">
+								<text x="50" y="55" text-anchor="middle" font-size="12" fill="currentColor" font-weight="bold">Office 365</text>
+							</svg>
+						</div>
+						<div class="tech-name">Microsoft 365</div>
+						<div class="tech-description">Cloud-based productivity and collaboration suite</div>
+					</div>
+
+					<div class="tech-item carousel-card" data-category="cloud" data-tech="dynamics">
+						<div class="tech-icon">
+							<svg viewBox="0 0 100 100">
+								<text x="50" y="55" text-anchor="middle" font-size="11" fill="currentColor" font-weight="bold">Dynamics</text>
+							</svg>
+						</div>
+						<div class="tech-name">Dynamics 365</div>
+						<div class="tech-description">Intelligent business applications for ERP and CRM</div>
+					</div>
+
+					<div class="tech-item carousel-card" data-category="ai" data-tech="tensorflow">
+						<div class="tech-icon">
+							<svg viewBox="0 0 100 100">
+								<text x="50" y="55" text-anchor="middle" font-size="12" fill="currentColor" font-weight="bold">TensorFlow</text>
+							</svg>
+						</div>
+						<div class="tech-name">TensorFlow</div>
+						<div class="tech-description">Open-source machine learning framework by Google</div>
+					</div>
+
+					<div class="tech-item carousel-card" data-category="ai" data-tech="pytorch">
+						<div class="tech-icon">
+							<svg viewBox="0 0 100 100">
+								<text x="50" y="55" text-anchor="middle" font-size="13" fill="currentColor" font-weight="bold">PyTorch</text>
+							</svg>
+						</div>
+						<div class="tech-name">PyTorch</div>
+						<div class="tech-description">Deep learning platform for research and production</div>
+					</div>
+
+					<div class="tech-item carousel-card" data-category="ai" data-tech="openai">
+						<div class="tech-icon">
+							<svg viewBox="0 0 100 100">
+								<text x="50" y="55" text-anchor="middle" font-size="13" fill="currentColor" font-weight="bold">OpenAI</text>
+							</svg>
+						</div>
+						<div class="tech-name">OpenAI</div>
+						<div class="tech-description">Advanced AI models including GPT and DALL-E</div>
+					</div>
+
+					<div class="tech-item carousel-card" data-category="devops" data-tech="docker">
+						<div class="tech-icon">
+							<svg viewBox="0 0 100 100">
+								<text x="50" y="55" text-anchor="middle" font-size="13" fill="currentColor" font-weight="bold">Docker</text>
+							</svg>
+						</div>
+						<div class="tech-name">Docker</div>
+						<div class="tech-description">Containerization platform for application deployment</div>
+					</div>
+
+					<div class="tech-item carousel-card" data-category="devops" data-tech="kubernetes">
+						<div class="tech-icon">
+							<svg viewBox="0 0 100 100">
+								<text x="50" y="55" text-anchor="middle" font-size="11" fill="currentColor" font-weight="bold">Kubernetes</text>
+							</svg>
+						</div>
+						<div class="tech-name">Kubernetes</div>
+						<div class="tech-description">Container orchestration for automated deployment and scaling</div>
+					</div>
+
+					<div class="tech-item carousel-card" data-category="devops" data-tech="jenkins">
+						<div class="tech-icon">
+							<svg viewBox="0 0 100 100">
+								<text x="50" y="55" text-anchor="middle" font-size="13" fill="currentColor" font-weight="bold">Jenkins</text>
+							</svg>
+						</div>
+						<div class="tech-name">Jenkins</div>
+						<div class="tech-description">Continuous integration and delivery automation server</div>
+					</div>
+
+					<div class="tech-item carousel-card" data-category="devops" data-tech="terraform">
+						<div class="tech-icon">
+							<svg viewBox="0 0 100 100">
+								<text x="50" y="55" text-anchor="middle" font-size="12" fill="currentColor" font-weight="bold">Terraform</text>
+							</svg>
+						</div>
+						<div class="tech-name">Terraform</div>
+						<div class="tech-description">Infrastructure as code for cloud provisioning</div>
+					</div>
+
+					<div class="tech-item carousel-card" data-category="devops" data-tech="github">
+						<div class="tech-icon">
+							<svg viewBox="0 0 100 100">
+								<text x="50" y="55" text-anchor="middle" font-size="13" fill="currentColor" font-weight="bold">GitHub</text>
+							</svg>
+						</div>
+						<div class="tech-name">GitHub</div>
+						<div class="tech-description">Version control and collaboration platform for developers</div>
+					</div>
+
+					<div class="tech-item carousel-card" data-category="security" data-tech="cloudflare">
+						<div class="tech-icon">
+							<svg viewBox="0 0 100 100">
+								<path d="M30,50 L50,30 L70,50 L50,70 Z" fill="none" stroke="currentColor" stroke-width="3"/>
+							</svg>
+						</div>
+						<div class="tech-name">Cloudflare</div>
+						<div class="tech-description">Web security and performance optimization platform</div>
+					</div>
+
+					<div class="tech-item carousel-card" data-category="security" data-tech="sentinel">
+						<div class="tech-icon">
+							<svg viewBox="0 0 100 100">
+								<circle cx="50" cy="50" r="25" fill="none" stroke="currentColor" stroke-width="3"/>
+								<circle cx="50" cy="50" r="5" fill="currentColor"/>
+							</svg>
+						</div>
+						<div class="tech-name">Azure Sentinel</div>
+						<div class="tech-description">Cloud-native SIEM and security analytics platform</div>
+					</div>
+
+					<div class="tech-item carousel-card" data-category="ai" data-tech="databricks">
+						<div class="tech-icon">
+							<svg viewBox="0 0 100 100">
+								<text x="50" y="55" text-anchor="middle" font-size="10" fill="currentColor" font-weight="bold">Databricks</text>
+							</svg>
+						</div>
+						<div class="tech-name">Databricks</div>
+						<div class="tech-description">Unified analytics platform for big data and machine learning</div>
+					</div>
+						</div>
+					</div>
+
+					<button class="carousel-nav carousel-next" aria-label="Next">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<polyline points="9 18 15 12 9 6"></polyline>
+						</svg>
+					</button>
+				</div>
+
+				<div class="carousel-indicators" id="carouselIndicators"></div>
+			</div>
+		</section>
+		<!-- End Tech Stack Section -->
+
+		<style>
+			#tech-stack-section {
+				min-height: 100vh;
+				background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+				position: relative;
+				overflow: hidden;
+				padding: 100px 0;
+				display: flex;
+				align-items: center;
+			}
+
+			#tech-canvas {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 1;
+			}
+
+			.tech-container {
+				max-width: 1400px;
+				margin: 0 auto;
+				padding: 0 40px;
+				width: 100%;
+				position: relative;
+				z-index: 2;
+			}
+
+			.tech-header {
+				text-align: center;
+				margin-bottom: 60px;
+			}
+
+			.tech-title {
+				font-size: clamp(2.5rem, 5vw, 4rem);
+				font-weight: 800;
+				color: #1a1a1a;
+				margin-bottom: 20px;
+				line-height: 1.2;
+			}
+
+			.tech-subtitle {
+				font-size: clamp(1rem, 1.5vw, 1.2rem);
+				color: #666666;
+				letter-spacing: 0.05em;
+			}
+
+			.tech-filter {
+				display: flex;
+				justify-content: center;
+				gap: 15px;
+				margin-bottom: 60px;
+				flex-wrap: wrap;
+			}
+
+			.filter-btn {
+				padding: 12px 30px;
+				background: #ffffff;
+				border: 1px solid #e0e0e0;
+				border-radius: 25px;
+				color: #666666;
+				font-size: 0.95rem;
+				font-weight: 600;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+			}
+
+			.filter-btn:hover {
+				background: rgba(59, 177, 67, 0.1);
+				border-color: #3bb143;
+				color: #3bb143;
+				transform: translateY(-2px);
+				box-shadow: 0 8px 20px rgba(59, 177, 67, 0.2);
+			}
+
+		.filter-btn.active {
+			background: linear-gradient(135deg, #3bb143, #2d8f35);
+			border-color: #3bb143;
+			color: #ffffff;
+			box-shadow: 0 5px 20px rgba(59, 177, 67, 0.3);
+		}
+
+		.carousel-wrapper {
+			position: relative;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 40px;
+			padding: 80px 0;
+		}
+
+		.carousel-container {
+			perspective: 1500px;
+			width: 100%;
+			max-width: 900px;
+			height: 500px;
+			position: relative;
+			overflow: visible;
+		}
+
+		.tech-carousel {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			transform-style: preserve-3d;
+		}
+
+		.carousel-card {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 400px;
+			height: 450px;
+			transform-origin: center;
+			backface-visibility: hidden;
+			transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+		}
+
+		.tech-item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 20px;
+			padding: 50px 40px;
+			background: rgba(255, 255, 255, 0.9);
+			backdrop-filter: blur(20px);
+			-webkit-backdrop-filter: blur(20px);
+			border: 2px solid rgba(59, 177, 67, 0.2);
+			border-radius: 30px;
+			cursor: pointer;
+			width: 100%;
+			height: 100%;
+			box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+		}
+
+		.tech-item.hidden {
+			display: none;
+		}
+
+		.carousel-card.active {
+			border-color: #3bb143;
+			background: linear-gradient(135deg, rgba(59, 177, 67, 0.1) 0%, rgba(255, 255, 255, 0.95) 100%);
+			box-shadow: 0 30px 80px rgba(59, 177, 67, 0.3);
+		}
+
+		.carousel-card:not(.active) {
+			opacity: 0.6;
+		}
+
+		.carousel-card:not(.active):hover {
+			opacity: 0.8;
+			box-shadow: 0 25px 70px rgba(59, 177, 67, 0.2);
+			border-color: rgba(59, 177, 67, 0.4);
+		}
+
+		.tech-icon {
+			width: 120px;
+			height: 120px;
+			border-radius: 50%;
+			background: linear-gradient(
+				135deg,
+				rgba(59, 177, 67, 0.2) 0%,
+				rgba(59, 177, 67, 0.05) 100%
+			);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+			position: relative;
+			overflow: hidden;
+		}
+
+		.carousel-card.active .tech-icon {
+			background: linear-gradient(
+				135deg,
+				rgba(59, 177, 67, 0.3) 0%,
+				rgba(59, 177, 67, 0.1) 100%
+			);
+		}
+
+		.tech-icon::before {
+			content: '';
+			position: absolute;
+			top: -50%;
+			left: -50%;
+			width: 200%;
+			height: 200%;
+			background: radial-gradient(circle, rgba(59, 177, 67, 0.3) 0%, transparent 60%);
+			animation: rotate-icon 4s linear infinite;
+			opacity: 0;
+			transition: opacity 0.4s ease;
+		}
+
+		.carousel-card.active .tech-icon::before {
+			opacity: 1;
+		}
+
+		@keyframes rotate-icon {
+			100% { transform: rotate(360deg); }
+		}
+
+		.tech-icon svg {
+			width: 70px;
+			height: 70px;
+			color: #3bb143;
+			transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+			position: relative;
+			z-index: 1;
+		}
+
+		.carousel-card.active .tech-icon svg {
+			transform: scale(1.1);
+			filter: drop-shadow(0 5px 15px rgba(59, 177, 67, 0.4));
+		}
+
+		.tech-name {
+			font-size: 1.5rem;
+			color: #1a1a1a;
+			font-weight: 700;
+			text-align: center;
+			letter-spacing: 0.02em;
+			line-height: 1.3;
+		}
+
+		.tech-description {
+			font-size: 1rem;
+			color: #666666;
+			text-align: center;
+			line-height: 1.6;
+			max-width: 300px;
+			opacity: 0;
+			transition: opacity 0.4s ease;
+		}
+
+		.carousel-card.active .tech-description {
+			opacity: 1;
+		}
+
+		.carousel-nav {
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			background: rgba(255, 255, 255, 0.9);
+			backdrop-filter: blur(10px);
+			border: 2px solid rgba(59, 177, 67, 0.3);
+			color: #3bb143;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+			z-index: 10;
+		}
+
+		.carousel-nav:hover {
+			background: #3bb143;
+			color: #ffffff;
+			transform: scale(1.1);
+			box-shadow: 0 10px 30px rgba(59, 177, 67, 0.3);
+		}
+
+		.carousel-nav svg {
+			width: 24px;
+			height: 24px;
+		}
+
+		.carousel-indicators {
+			display: flex;
+			justify-content: center;
+			gap: 12px;
+			margin-top: 30px;
+		}
+
+		.carousel-indicator {
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			background: rgba(59, 177, 67, 0.2);
+			border: 2px solid transparent;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+
+		.carousel-indicator.active {
+			background: #3bb143;
+			border-color: #3bb143;
+			transform: scale(1.2);
+		}
+
+		.carousel-indicator:hover {
+			background: rgba(59, 177, 67, 0.5);
+			transform: scale(1.1);
+		}
+
+		@media (max-width: 1200px) {
+			.carousel-container {
+				max-width: 700px;
+				height: 450px;
+			}
+
+			.carousel-card {
+				width: 350px;
+				height: 400px;
+			}
+
+			.tech-item {
+				padding: 40px 30px;
+			}
+
+			.tech-icon {
+				width: 100px;
+				height: 100px;
+			}
+
+			.tech-icon svg {
+				width: 60px;
+				height: 60px;
+			}
+
+			.tech-name {
+				font-size: 1.3rem;
+			}
+		}
+
+		@media (max-width: 1024px) {
+			.carousel-wrapper {
+				padding: 60px 0;
+			}
+
+			.carousel-nav {
+				width: 50px;
+				height: 50px;
+			}
+
+			.carousel-nav svg {
+				width: 20px;
+				height: 20px;
+			}
+		}
+
+		@media (max-width: 768px) {
+			#tech-stack-section {
+				padding: 60px 0;
+			}
+
+			.tech-container {
+				padding: 0 20px;
+			}
+
+			.tech-header {
+				margin-bottom: 40px;
+			}
+
+			.tech-filter {
+				margin-bottom: 40px;
+				gap: 10px;
+			}
+
+			.filter-btn {
+				padding: 10px 20px;
+				font-size: 0.85rem;
+			}
+
+			.carousel-wrapper {
+				padding: 40px 0;
+				gap: 20px;
+			}
+
+			.carousel-container {
+				max-width: 90%;
+				height: 400px;
+			}
+
+			.carousel-card {
+				width: 300px;
+				height: 380px;
+			}
+
+			.tech-item {
+				padding: 35px 25px;
+				gap: 15px;
+			}
+
+			.tech-icon {
+				width: 90px;
+				height: 90px;
+			}
+
+			.tech-icon svg {
+				width: 55px;
+				height: 55px;
+			}
+
+			.tech-name {
+				font-size: 1.2rem;
+			}
+
+			.tech-description {
+				font-size: 0.9rem;
+			}
+
+			.carousel-nav {
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+
+			.carousel-prev {
+				left: 10px;
+			}
+
+			.carousel-next {
+				right: 10px;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.carousel-container {
+				height: 350px;
+			}
+
+			.carousel-card {
+				width: 280px;
+				height: 350px;
+			}
+
+			.tech-item {
+				padding: 30px 20px;
+			}
+
+			.tech-icon {
+				width: 80px;
+				height: 80px;
+			}
+
+			.tech-icon svg {
+				width: 50px;
+				height: 50px;
+			}
+
+			.tech-name {
+				font-size: 1.1rem;
+			}
+
+			.tech-description {
+				font-size: 0.85rem;
+			}
+
+			.carousel-nav {
+				width: 45px;
+				height: 45px;
+			}
+
+			.carousel-nav svg {
+				width: 18px;
+				height: 18px;
+			}
+		}
+		</style>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const canvas = document.getElementById('tech-canvas');
+			const ctx = canvas.getContext('2d');
+			const carousel = document.getElementById('techCarousel');
+			const allCards = document.querySelectorAll('.carousel-card');
+			const filterBtns = document.querySelectorAll('.filter-btn');
+			const prevBtn = document.querySelector('.carousel-prev');
+			const nextBtn = document.querySelector('.carousel-next');
+			const indicatorsContainer = document.getElementById('carouselIndicators');
+			const carouselWrapper = document.querySelector('.carousel-wrapper');
+
+			gsap.set(allCards, { xPercent: -50, yPercent: -50 });
+
+			canvas.width = window.innerWidth;
+			canvas.height = document.getElementById('tech-stack-section').offsetHeight;
+
+			gsap.registerPlugin(ScrollTrigger);
+
+			let particles = [];
+			const particleCount = 80;
+
+			class Particle {
+				constructor() {
+					this.x = Math.random() * canvas.width;
+					this.y = Math.random() * canvas.height;
+					this.vx = (Math.random() - 0.5) * 0.5;
+					this.vy = (Math.random() - 0.5) * 0.5;
+					this.radius = Math.random() * 2 + 1;
+				}
+
+				update() {
+					this.x += this.vx;
+					this.y += this.vy;
+
+					if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+					if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+				}
+
+				draw() {
+					ctx.beginPath();
+					ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+					ctx.fillStyle = 'rgba(59, 177, 67, 0.5)';
+					ctx.fill();
+				}
+			}
+
+			for (let i = 0; i < particleCount; i++) {
+				particles.push(new Particle());
+			}
+
+			function connectParticles() {
+				for (let i = 0; i < particles.length; i++) {
+					for (let j = i + 1; j < particles.length; j++) {
+						const dx = particles[i].x - particles[j].x;
+						const dy = particles[i].y - particles[j].y;
+						const distance = Math.sqrt(dx * dx + dy * dy);
+
+						if (distance < 150) {
+							ctx.beginPath();
+							ctx.moveTo(particles[i].x, particles[i].y);
+							ctx.lineTo(particles[j].x, particles[j].y);
+							ctx.strokeStyle = `rgba(59, 177, 67, ${0.2 * (1 - distance / 150)})`;
+							ctx.lineWidth = 1;
+							ctx.stroke();
+						}
+					}
+				}
+			}
+
+			function animate() {
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+				particles.forEach(particle => {
+					particle.update();
+					particle.draw();
+				});
+
+				connectParticles();
+				requestAnimationFrame(animate);
+			}
+
+			animate();
+
+			window.addEventListener('resize', () => {
+				canvas.width = window.innerWidth;
+				canvas.height = document.getElementById('tech-stack-section').offsetHeight;
+			});
+
+			let currentCategory = 'cloud';
+			let currentIndex = 0;
+			let visibleCards = [];
+
+			function getVisibleCards() {
+				visibleCards = Array.from(allCards).filter(card => 
+					card.getAttribute('data-category') === currentCategory
+				);
+				return visibleCards;
+			}
+
+			function createIndicators() {
+				indicatorsContainer.innerHTML = '';
+				getVisibleCards().forEach((_, index) => {
+					const indicator = document.createElement('div');
+					indicator.classList.add('carousel-indicator');
+					if (index === currentIndex) indicator.classList.add('active');
+					indicator.addEventListener('click', () => goToSlide(index));
+					indicatorsContainer.appendChild(indicator);
+				});
+			}
+
+			function updateCarousel() {
+				const cards = getVisibleCards();
+				const totalCards = cards.length;
+
+				if (totalCards === 0) return;
+
+				allCards.forEach(card => card.classList.remove('active'));
+
+				cards.forEach((card, index) => {
+					const offset = index - currentIndex;
+					const absOffset = Math.abs(offset);
+
+					let translateX, translateZ, rotateY, scale, zIndex;
+
+					if (offset === 0) {
+						translateX = 0;
+						translateZ = 0;
+						rotateY = 0;
+						scale = 1;
+						zIndex = 10;
+						card.classList.add('active');
+					} else if (absOffset === 1) {
+						translateX = offset * 380;
+						translateZ = -200;
+						rotateY = offset * -25;
+						scale = 0.8;
+						zIndex = 5;
+					} else if (absOffset === 2) {
+						translateX = offset * 550;
+						translateZ = -350;
+						rotateY = offset * -35;
+						scale = 0.6;
+						zIndex = 3;
+					} else {
+						translateX = offset * 700;
+						translateZ = -500;
+						rotateY = offset * -45;
+						scale = 0.4;
+						zIndex = 1;
+					}
+
+					gsap.to(card, {
+						x: translateX,
+						z: translateZ,
+						rotateY: rotateY,
+						scale: scale,
+						zIndex: zIndex,
+						duration: 0.6,
+						ease: 'power2.out'
+					});
+				});
+
+				const indicators = indicatorsContainer.querySelectorAll('.carousel-indicator');
+				indicators.forEach((indicator, index) => {
+					indicator.classList.toggle('active', index === currentIndex);
+				});
+			}
+
+			function goToSlide(index) {
+				const cards = getVisibleCards();
+				currentIndex = Math.max(0, Math.min(index, cards.length - 1));
+				updateCarousel();
+			}
+
+			function nextSlide() {
+				const cards = getVisibleCards();
+				if (currentIndex < cards.length - 1) {
+					currentIndex++;
+					updateCarousel();
+				}
+			}
+
+			function prevSlide() {
+				if (currentIndex > 0) {
+					currentIndex--;
+					updateCarousel();
+				}
+			}
+
+			prevBtn.addEventListener('click', prevSlide);
+			nextBtn.addEventListener('click', nextSlide);
+
+			filterBtns.forEach(btn => {
+				btn.addEventListener('click', () => {
+					filterBtns.forEach(b => b.classList.remove('active'));
+					btn.classList.add('active');
+
+					currentCategory = btn.getAttribute('data-category');
+					currentIndex = 0;
+
+					allCards.forEach(card => {
+						const itemCategory = card.getAttribute('data-category');
+						if (itemCategory === currentCategory) {
+							card.classList.remove('hidden');
+						} else {
+							card.classList.add('hidden');
+						}
+					});
+
+					createIndicators();
+					updateCarousel();
+					startAutoRotate();
+				});
+			});
+
+			allCards.forEach(card => {
+				const itemCategory = card.getAttribute('data-category');
+				if (itemCategory !== 'cloud') {
+					card.classList.add('hidden');
+				}
+			});
+
+			createIndicators();
+			updateCarousel();
+
+			let autoRotateInterval;
+
+			function startAutoRotate() {
+				stopAutoRotate();
+				autoRotateInterval = setInterval(() => {
+					const cards = getVisibleCards();
+					if (cards.length <= 1) return;
+					if (currentIndex < cards.length - 1) {
+						nextSlide();
+					} else {
+						currentIndex = 0;
+						updateCarousel();
+					}
+				}, 5000);
+			}
+
+			function stopAutoRotate() {
+				if (autoRotateInterval) {
+					clearInterval(autoRotateInterval);
+				}
+			}
+
+			startAutoRotate();
+
+			if (carouselWrapper) {
+				carouselWrapper.addEventListener('mouseenter', stopAutoRotate);
+				carouselWrapper.addEventListener('mouseleave', startAutoRotate);
+			}
+
+			document.addEventListener('visibilitychange', () => {
+				if (document.hidden) {
+					stopAutoRotate();
+				} else {
+					startAutoRotate();
+				}
+			});
+		});
+	</script>
+
+	<style>
+		#process-section {
+				min-height: 100vh;
+				background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+				position: relative;
+				overflow: hidden;
+				padding: 100px 0;
+			}
+
+			.process-container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 40px;
+				position: relative;
+				z-index: 2;
+			}
+
+			.process-header {
+				text-align: center;
+				margin-bottom: 100px;
+			}
+
+			.process-title {
+				font-size: clamp(2.5rem, 5vw, 4rem);
+				font-weight: 800;
+				color: #1a1a1a;
+				margin-bottom: 20px;
+				line-height: 1.2;
+			}
+
+			.process-subtitle {
+				font-size: clamp(1rem, 1.5vw, 1.2rem);
+				color: #666666;
+				letter-spacing: 0.05em;
+			}
+
+			.timeline-wrapper {
+				position: relative;
+				padding: 40px 0;
+			}
+
+			.timeline-svg {
+				position: absolute;
+				left: 50%;
+				top: 40px;
+				bottom: 80px;
+				width: 4px;
+				height: calc(100% - 120px);
+				transform: translateX(-50%);
+				z-index: 1;
+				pointer-events: none;
+				overflow: visible;
+			}
+
+			.timeline-line {
+				stroke-dasharray: 200;
+				stroke-dashoffset: 200;
+				transition: stroke-dashoffset 2s ease;
+			}
+
+			.timeline-line.visible {
+				stroke-dashoffset: 0;
+			}
+
+			.process-steps {
+				position: relative;
+				z-index: 2;
+			}
+
+			.process-step {
+				display: grid;
+				grid-template-columns: 1fr 100px 1fr;
+				gap: 0 40px;
+				margin-bottom: 80px;
+				align-items: center;
+				position: relative;
+				opacity: 0;
+				transform: translateY(50px);
+				transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+			}
+
+			.process-step.visible {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			.process-step .step-icon {
+				grid-column: 2;
+				grid-row: 1;
+			}
+
+			.process-step:nth-child(odd) .step-content {
+				grid-column: 3;
+				grid-row: 1;
+				text-align: left;
+				justify-self: start;
+			}
+
+			.process-step:nth-child(even) .step-content {
+				grid-column: 1;
+				grid-row: 1;
+				text-align: right;
+				justify-self: end;
+			}
+
+			.step-connector {
+				display: none;
+			}
+
+			.step-icon {
+				position: relative;
+				width: 100px;
+				height: 100px;
+				justify-self: center;
+				background: #ffffff;
+				border: 2px solid rgba(59, 177, 67, 0.5);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: all 0.4s ease;
+				cursor: pointer;
+				box-shadow: 0 10px 40px rgba(59, 177, 67, 0.2);
+				z-index: 3;
+			}
+
+			.step-icon:hover {
+				transform: translateY(-5px) rotate(5deg);
+				border-color: #3bb143;
+				box-shadow: 0 20px 60px rgba(59, 177, 67, 0.4);
+				background: linear-gradient(135deg, rgba(59, 177, 67, 0.08) 0%, #ffffff 100%);
+			}
+
+			.icon-svg {
+				width: 50px;
+				height: 50px;
+				color: #3bb143;
+				position: absolute;
+			}
+
+			.step-number {
+				position: absolute;
+				font-size: 0.8rem;
+				font-weight: 700;
+				color: #999999;
+				bottom: -25px;
+				left: 50%;
+				transform: translateX(-50%);
+				letter-spacing: 0.1em;
+			}
+
+			.morph-path {
+				transition: all 0.4s ease;
+			}
+
+			.step-icon:hover .morph-path {
+				stroke: #2d8f35;
+				transform: scale(1.1);
+			}
+
+			.step-content {
+				max-width: 450px;
+			}
+
+			.step-title {
+				font-size: clamp(1.5rem, 2.5vw, 2rem);
+				font-weight: 700;
+				color: #1a1a1a;
+				margin-bottom: 15px;
+				position: relative;
+				display: inline-block;
+			}
+
+			.process-step:nth-child(odd) .step-title::after {
+				content: '';
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				width: 60px;
+				height: 3px;
+				background: linear-gradient(90deg, #3bb143, transparent);
+			}
+
+			.process-step:nth-child(even) .step-title::after {
+				content: '';
+				position: absolute;
+				bottom: -5px;
+				right: 0;
+				width: 60px;
+				height: 3px;
+				background: linear-gradient(90deg, transparent, #3bb143);
+			}
+
+			.step-description {
+				font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+				color: #666666;
+				line-height: 1.7;
+				margin-bottom: 20px;
+			}
+
+			.step-details {
+				list-style: none;
+				padding: 0;
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 10px;
+			}
+
+			.process-step:nth-child(even) .step-details {
+				justify-content: end;
+			}
+
+			.step-details li {
+				font-size: clamp(0.85rem, 1vw, 0.95rem);
+				color: #666666;
+				padding-left: 20px;
+				position: relative;
+			}
+
+			.process-step:nth-child(even) .step-details li {
+				padding-left: 0;
+				padding-right: 20px;
+			}
+
+			.step-details li::before {
+				content: '▸';
+				position: absolute;
+				left: 0;
+				color: #3bb143;
+			}
+
+			.process-step:nth-child(even) .step-details li::before {
+				left: auto;
+				right: 0;
+				content: '◂';
+			}
+
+			@media (max-width: 1024px) {
+				.process-step {
+					grid-template-columns: 1fr;
+					gap: 25px;
+				}
+
+				.process-step .step-icon {
+					grid-column: 1;
+					grid-row: 1;
+					margin: 0 auto;
+				}
+
+				.process-step:nth-child(even) .step-content,
+				.process-step:nth-child(odd) .step-content {
+					grid-column: 1;
+					grid-row: 2;
+					text-align: center;
+					justify-self: center;
+					margin: 0 auto;
+				}
+
+				.timeline-svg {
+					display: none;
+				}
+
+				.process-step:nth-child(odd) .step-title::after,
+				.process-step:nth-child(even) .step-title::after {
+					left: 50%;
+					right: auto;
+					transform: translateX(-50%);
+					background: linear-gradient(90deg, transparent, #3bb143, transparent);
+				}
+
+				.step-details,
+				.process-step:nth-child(even) .step-details {
+					justify-content: center;
+				}
+
+				.process-step:nth-child(even) .step-details li {
+					padding-left: 20px;
+					padding-right: 0;
+				}
+
+				.process-step:nth-child(even) .step-details li::before {
+					left: 0;
+					right: auto;
+					content: '▸';
+				}
+			}
+
+			@media (max-width: 768px) {
+				#process-section {
+					padding: 60px 0;
+				}
+
+				.process-container {
+					padding: 0 20px;
+				}
+
+				.process-header {
+					margin-bottom: 60px;
+				}
+
+				.process-step {
+					margin-bottom: 60px;
+					gap: 20px;
+				}
+
+				.step-icon {
+					width: 80px;
+					height: 80px;
+				}
+
+				.icon-svg {
+					width: 40px;
+					height: 40px;
+				}
+
+				.step-details {
+					grid-template-columns: 1fr;
+					gap: 8px;
+				}
+
+				.step-details li,
+				.process-step:nth-child(even) .step-details li {
+					text-align: left;
+					padding-left: 20px;
+					padding-right: 0;
+				}
+			}
+
+			@media (max-width: 480px) {
+				.process-step {
+					margin-bottom: 50px;
+				}
+
+				.step-details {
+					font-size: 0.85rem;
+				}
+			}
+		</style>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const processSteps = document.querySelectorAll('.process-step');
+				const timelineLine = document.querySelector('.timeline-line');
+
+				gsap.registerPlugin(ScrollTrigger);
+
+				gsap.to(timelineLine, {
+					scrollTrigger: {
+						trigger: '#process-section',
+						start: 'top 85%',
+						toggleActions: 'play none none reverse',
+						onEnter: () => timelineLine.classList.add('visible')
+					}
+				});
+
+				processSteps.forEach((step, index) => {
+					gsap.to(step, {
+						scrollTrigger: {
+							trigger: step,
+							start: 'top 85%',
+							toggleActions: 'play none none reverse',
+							onEnter: () => step.classList.add('visible')
+						},
+						opacity: 1,
+						y: 0,
+						duration: 0.8,
+						delay: index * 0.1,
+						ease: 'power3.out'
+					});
+
+					const icon = step.querySelector('.step-icon');
+					gsap.fromTo(icon,
+						{ scale: 0, rotation: -180 },
+						{
+							scrollTrigger: {
+								trigger: step,
+								start: 'top 85%',
+								toggleActions: 'play none none reverse'
+							},
+							scale: 1,
+							rotation: 0,
+							duration: 0.8,
+							delay: index * 0.1 + 0.2,
+							ease: 'back.out(1.4)'
+						}
+					);
+				});
+			});
+		</script>
+
+		<style>
+			#about-section {
+				min-height: 100vh;
+				background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+				position: relative;
+				overflow: hidden;
+				padding: 100px 0;
+				display: flex;
+				align-items: center;
+			}
+
+			.about-progress-bar {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 4px;
+				background: #e0e0e0;
+				z-index: 10;
+			}
+
+			.progress-fill {
+				height: 100%;
+				width: 0%;
+				background: linear-gradient(90deg, #3bb143, #2d8f35);
+				transition: width 0.3s ease;
+				box-shadow: 0 0 20px rgba(59, 177, 67, 0.6);
+			}
+
+			.about-container {
+				max-width: 1400px;
+				margin: 0 auto;
+				padding: 0 40px;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 80px;
+				align-items: center;
+				position: relative;
+				z-index: 2;
+			}
+
+			.about-left {
+				position: sticky;
+				top: 100px;
+				align-self: start;
+			}
+
+			.about-content {
+				max-width: 600px;
+			}
+
+			.about-title {
+				font-size: clamp(2.5rem, 5vw, 4rem);
+				font-weight: 800;
+				color: #1a1a1a;
+				margin-bottom: 30px;
+				line-height: 1.2;
+			}
+
+			.about-description {
+				font-size: clamp(1rem, 1.3vw, 1.1rem);
+				color: #666666;
+				line-height: 1.8;
+				margin-bottom: 40px;
+			}
+
+			.about-features {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+			}
+
+			.feature-item {
+				display: flex;
+				align-items: center;
+				gap: 15px;
+				font-size: clamp(1rem, 1.2vw, 1.1rem);
+				color: #1a1a1a;
+				opacity: 0;
+				transform: translateX(-30px);
+				transition: all 0.4s ease;
+			}
+
+			.feature-item.visible {
+				opacity: 1;
+				transform: translateX(0);
+			}
+
+			.feature-icon {
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				background: linear-gradient(135deg, #3bb143, #2d8f35);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: white;
+				font-weight: bold;
+				font-size: 1.1rem;
+				flex-shrink: 0;
+			}
+
+			.about-right {
+				position: relative;
+				height: 100%;
+				min-height: 800px;
+			}
+
+			.stats-container {
+				position: relative;
+				width: 100%;
+				height: 100%;
+			}
+
+			.timeline-connector {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 100%;
+				height: 100%;
+				z-index: 1;
+				pointer-events: none;
+			}
+
+			.connector-path {
+				stroke-dasharray: 1000;
+				stroke-dashoffset: 1000;
+				transition: stroke-dashoffset 2s ease;
+			}
+
+			.connector-path.visible {
+				stroke-dashoffset: 0;
+			}
+
+			.stat-bubble {
+				position: absolute;
+				width: clamp(140px, 15vw, 180px);
+				height: clamp(140px, 15vw, 180px);
+				z-index: 2;
+				opacity: 0;
+				transform: scale(0.5);
+				transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+			}
+
+			.stat-bubble.visible {
+				opacity: 1;
+				transform: scale(1);
+			}
+
+			.stat-bubble[data-stat="years"] {
+				top: 5%;
+				left: 10%;
+				animation: float-bubble 6s infinite ease-in-out;
+			}
+
+			.stat-bubble[data-stat="projects"] {
+				top: 15%;
+				right: 15%;
+				animation: float-bubble 7s infinite ease-in-out 0.5s;
+			}
+
+			.stat-bubble[data-stat="satisfaction"] {
+				top: 40%;
+				left: 5%;
+				animation: float-bubble 8s infinite ease-in-out 1s;
+			}
+
+			.stat-bubble[data-stat="countries"] {
+				top: 55%;
+				right: 10%;
+				animation: float-bubble 7.5s infinite ease-in-out 1.5s;
+			}
+
+			.stat-bubble[data-stat="technologies"] {
+				bottom: 10%;
+				left: 20%;
+				animation: float-bubble 6.5s infinite ease-in-out 2s;
+			}
+
+			@keyframes float-bubble {
+				0%, 100% { transform: translate(0, 0); }
+				33% { transform: translate(10px, -15px); }
+				66% { transform: translate(-10px, 10px); }
+			}
+
+			.bubble-glow {
+				position: absolute;
+				top: -2px;
+				left: -2px;
+				right: -2px;
+				bottom: -2px;
+				background: radial-gradient(circle, rgba(59, 177, 67, 0.4) 0%, transparent 70%);
+				border-radius: 50%;
+				z-index: -1;
+				filter: blur(20px);
+				opacity: 0;
+				transition: opacity 0.4s ease;
+			}
+
+			.stat-bubble:hover .bubble-glow {
+				opacity: 0.8;
+			}
+
+			.stat-content {
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				background: #ffffff;
+				backdrop-filter: blur(20px);
+				-webkit-backdrop-filter: blur(20px);
+				border: 2px solid #e0e0e0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				padding: 20px;
+				cursor: default;
+				transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+				position: relative;
+				box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+			}
+
+			.stat-bubble:hover .stat-content {
+				border-color: #3bb143;
+				transform: translateY(-10px);
+				box-shadow: 0 20px 60px rgba(59, 177, 67, 0.3);
+				background: linear-gradient(135deg, rgba(59, 177, 67, 0.05) 0%, #ffffff 100%);
+			}
+
+			.stat-number {
+				font-size: clamp(2rem, 3vw, 2.5rem);
+				font-weight: 800;
+				background: linear-gradient(135deg, #3bb143, #2d8f35);
+				-webkit-background-clip: text;
+				background-clip: text;
+				color: transparent;
+				line-height: 1;
+				display: inline-block;
+			}
+
+			.stat-suffix {
+				font-size: clamp(1.5rem, 2vw, 2rem);
+				font-weight: 700;
+				color: #3bb143;
+				display: inline;
+				margin-left: 5px;
+			}
+
+			.stat-label {
+				font-size: clamp(0.7rem, 0.9vw, 0.85rem);
+				color: #666666;
+				text-align: center;
+				margin-top: 8px;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+			}
+
+			@media (max-width: 1200px) {
+				.about-container {
+					gap: 60px;
+				}
+
+				.about-right {
+					min-height: 700px;
+				}
+			}
+
+			@media (max-width: 1024px) {
+				.about-container {
+					grid-template-columns: 1fr;
+					gap: 60px;
+				}
+
+				.about-left {
+					position: relative;
+					top: 0;
+				}
+
+				.about-right {
+					min-height: 600px;
+				}
+			}
+
+			@media (max-width: 768px) {
+				#about-section {
+					padding: 60px 0;
+				}
+
+				.about-container {
+					padding: 0 20px;
+					gap: 50px;
+				}
+
+				.about-right {
+					min-height: 500px;
+				}
+
+				.stat-bubble {
+					width: 120px;
+					height: 120px;
+				}
+
+				.stat-number {
+					font-size: 1.8rem;
+				}
+
+				.stat-label {
+					font-size: 0.65rem;
+				}
+			}
+
+			@media (max-width: 480px) {
+				.about-right {
+					min-height: 450px;
+				}
+
+				.stat-bubble {
+					width: 100px;
+					height: 100px;
+				}
+
+				.stat-number {
+					font-size: 1.5rem;
+				}
+
+				.stat-label {
+					font-size: 0.6rem;
+				}
+			}
+		</style>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const aboutSection = document.getElementById('about-section');
+				const progressFill = document.querySelector('.progress-fill');
+				const statBubbles = document.querySelectorAll('.stat-bubble');
+				const connectorPath = document.querySelector('.connector-path');
+				const featureItems = document.querySelectorAll('.feature-item');
+
+				gsap.registerPlugin(ScrollTrigger);
+
+				ScrollTrigger.create({
+					trigger: aboutSection,
+					start: 'top top',
+					end: 'bottom bottom',
+					onUpdate: (self) => {
+						progressFill.style.width = `${self.progress * 100}%`;
+					}
+				});
+
+				featureItems.forEach((item, index) => {
+					gsap.to(item, {
+						scrollTrigger: {
+							trigger: item,
+							start: 'top 85%',
+							toggleActions: 'play none none reverse',
+							onEnter: () => item.classList.add('visible')
+						},
+						opacity: 1,
+						x: 0,
+						duration: 0.6,
+						delay: index * 0.1
+					});
+				});
+
+				gsap.to(connectorPath, {
+					scrollTrigger: {
+						trigger: '.about-right',
+						start: 'top 70%',
+						toggleActions: 'play none none reverse',
+						onEnter: () => connectorPath.classList.add('visible')
+					}
+				});
+
+				statBubbles.forEach((bubble, index) => {
+					gsap.to(bubble, {
+						scrollTrigger: {
+							trigger: bubble,
+							start: 'top 80%',
+							toggleActions: 'play none none reverse',
+							onEnter: () => {
+								bubble.classList.add('visible');
+								animateCounter(bubble);
+							}
+						},
+						opacity: 1,
+						scale: 1,
+						duration: 0.8,
+						delay: index * 0.15,
+						ease: 'back.out(1.4)'
+					});
+				});
+
+				function animateCounter(bubble) {
+					const numberElement = bubble.querySelector('.stat-number');
+					const target = parseInt(numberElement.getAttribute('data-target'));
+					const duration = 2000;
+					const step = Math.ceil(target / (duration / 16));
+					let current = 0;
+
+					const timer = setInterval(() => {
+						current += step;
+						if (current >= target) {
+							current = target;
+							clearInterval(timer);
+						}
+						numberElement.textContent = current;
+					}, 16);
+				}
+			});
+		</script>
+
+		<style>
+			/* ===== Scroll Snap Container ===== */
+			html, body.scroll-container {
+				scroll-snap-type: y proximity;
+				overflow-y: scroll;
+				scroll-behavior: smooth;
+			}
+
+
+			#hero, #services-section, #middle-section, #about-section, #process-section, #tech-stack-section, #hero1 {
+				scroll-snap-align: start;
+			}
+
+			#hero {
+				height: 100vh;
+			}
+
+			/* ===== Base Section ===== */
+			#middle-section {
+				height: 100vh;
+				position: relative;
+				background-color: #0a0a0a;
+				overflow: hidden;
+			}
+
+			.middle-bg-video {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				min-width: 100%;
+				min-height: 100%;
+				width: auto;
+				height: auto;
+				transform: translate(-50%, -50%);
+				z-index: 1;
+				object-fit: cover;
+			}
+
+			#middle-section canvas {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				display: none;
+			}
+
+			.middle-content-overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 10;
+				pointer-events: none;
+			}
+
+			/* ===== Particle System ===== */
+			.particle-container {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 5;
+				pointer-events: none;
+				overflow: hidden;
+			}
+
+			.particle {
+				position: absolute;
+				width: 4px;
+				height: 4px;
+				background: radial-gradient(circle, rgba(59, 177, 67, 0.6) 0%, transparent 70%);
+				border-radius: 50%;
+				animation: float-particle 15s infinite ease-in-out;
+			}
+
+			@keyframes float-particle {
+				0%, 100% {
+					transform: translateY(100vh) scale(0);
+					opacity: 0;
+				}
+				10% {
+					opacity: 1;
+					transform: translateY(80vh) scale(1);
+				}
+				90% {
+					opacity: 0.5;
+					transform: translateY(10vh) scale(0.5);
+				}
+			}
+
+			/* ===== Cinematic 3D Typography ===== */
+			.cinematic-title {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				text-align: center;
+				z-index: 20;
+			}
+
+			.title-row {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 0;
+			}
+
+			.title-main {
+				margin-bottom: 0.25rem;
+			}
+
+			.title-sub {
+				margin-bottom: 1rem;
+			}
+
+			.letter-space {
+				width: clamp(0.5rem, 1.5vw, 1rem);
+			}
+
+			.letter-space.small {
+				width: clamp(0.3rem, 1vw, 0.7rem);
+			}
+
+			.letter-3d {
+				font-size: clamp(2.5rem, 8vw, 5.5rem);
+				font-weight: 800;
+				color: #ffffff;
+				letter-spacing: 0.02em;
+				opacity: 0;
+				transform: translateY(80px) rotateX(40deg);
+				transform-origin: center bottom;
+				display: inline-block;
+				position: relative;
+				text-shadow:
+					0 1px 0 #ccc,
+					0 2px 0 #c9c9c9,
+					0 3px 0 #bbb,
+					0 4px 0 #b9b9b9,
+					0 5px 0 #aaa,
+					0 6px 1px rgba(0,0,0,.1),
+					0 0 5px rgba(0,0,0,.1),
+					0 1px 3px rgba(0,0,0,.3),
+					0 3px 5px rgba(0,0,0,.2),
+					0 5px 10px rgba(0,0,0,.25),
+					0 10px 10px rgba(0,0,0,.2),
+					0 20px 20px rgba(0,0,0,.15);
+			}
+
+			.letter-3d.sub {
+				font-size: clamp(1.8rem, 5vw, 3.5rem);
+				font-weight: 700;
+				text-shadow:
+					0 1px 0 #ccc,
+					0 2px 0 #c9c9c9,
+					0 3px 0 #bbb,
+					0 4px 1px rgba(0,0,0,.1),
+					0 0 5px rgba(0,0,0,.1),
+					0 1px 3px rgba(0,0,0,.3),
+					0 3px 5px rgba(0,0,0,.2),
+					0 5px 10px rgba(0,0,0,.25),
+					0 10px 10px rgba(0,0,0,.2);
+			}
+
+			/* Glow effect behind 3D letters */
+			.letter-3d::before {
+				content: attr(data-char);
+				position: absolute;
+				top: 0;
+				left: 0;
+				color: rgba(59, 177, 67, 0.6);
+				filter: blur(15px);
+				opacity: 0;
+				transition: opacity 0.5s ease;
+				z-index: -1;
+			}
+
+			.letter-3d.active::before {
+				opacity: 0.8;
+			}
+
+			/* Secondary green glow */
+			.letter-3d::after {
+				content: attr(data-char);
+				position: absolute;
+				top: 0;
+				left: 0;
+				color: rgba(59, 177, 67, 0.4);
+				filter: blur(25px);
+				opacity: 0;
+				transition: opacity 0.5s ease;
+				z-index: -2;
+			}
+
+			.letter-3d.active::after {
+				opacity: 0.6;
+			}
+
+			.title-tagline {
+				margin-top: 0.5rem;
+			}
+
+			.tagline-sub {
+				font-size: clamp(0.65rem, 1.1vw, 0.9rem);
+				color: rgba(255, 255, 255, 0.75);
+				letter-spacing: 0.2em;
+				text-transform: uppercase;
+				opacity: 0;
+				transform: translateY(20px);
+				font-weight: 400;
+				text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+			}
+
+			/* ===== Floating Glass Orbs ===== */
+			.glass-orb {
+				position: absolute;
+				pointer-events: auto;
+				opacity: 0;
+				transform: scale(0.5);
+			}
+
+			.orb-content {
+				width: clamp(80px, 10vw, 120px);
+				height: clamp(80px, 10vw, 120px);
+				border-radius: 50%;
+				background: linear-gradient(
+					135deg,
+					rgba(255, 255, 255, 0.4) 0%,
+					rgba(255, 255, 255, 0.1) 50%,
+					rgba(255, 255, 255, 0.05) 100%
+				);
+				backdrop-filter: blur(20px);
+				-webkit-backdrop-filter: blur(20px);
+				border: 1px solid rgba(255, 255, 255, 0.5);
+				box-shadow:
+					0 8px 32px rgba(59, 177, 67, 0.15),
+					inset 0 2px 4px rgba(255, 255, 255, 0.6),
+					inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				position: relative;
+				overflow: hidden;
+				transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+				cursor: default;
+			}
+
+			/* Liquid shine effect */
+			.orb-content::before {
+				content: '';
+				position: absolute;
+				top: -50%;
+				left: -50%;
+				width: 200%;
+				height: 200%;
+				background: radial-gradient(
+					circle at 30% 30%,
+					rgba(255, 255, 255, 0.8) 0%,
+					transparent 50%
+				);
+				opacity: 0.4;
+				pointer-events: none;
+			}
+
+			/* Soft highlight ring */
+			.orb-content::after {
+				content: '';
+				position: absolute;
+				top: -2px;
+				left: -2px;
+				right: -2px;
+				bottom: -2px;
+				border-radius: 50%;
+				z-index: -1;
+				opacity: 0;
+				background:
+					radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.6), transparent 55%),
+					radial-gradient(circle at 70% 70%, rgba(59, 177, 67, 0.25), transparent 60%);
+				transition: opacity 0.4s ease;
+			}
+
+			.glass-orb:hover .orb-content::after {
+				opacity: 0.35;
+			}
+
+			.glass-orb:hover .orb-content {
+				transform: translateY(-6px) scale(1.02);
+				box-shadow:
+					0 18px 55px rgba(59, 177, 67, 0.18),
+					inset 0 2px 4px rgba(255, 255, 255, 0.8),
+					inset 0 -2px 4px rgba(0, 0, 0, 0.06);
+			}
+
+			.glass-orb:hover .orb-number {
+				filter: drop-shadow(0 8px 20px rgba(59, 177, 67, 0.4));
+			}
+
+			.glass-orb:hover .orb-label {
+				color: rgba(255, 255, 255, 0.9);
+			}
+
+			.orb-glow {
+				position: absolute;
+				width: 150%;
+				height: 150%;
+				background: radial-gradient(circle, rgba(59, 177, 67, 0.2) 0%, transparent 60%);
+				z-index: -2;
+				animation: pulse-glow 3s ease-in-out infinite;
+			}
+
+			@keyframes pulse-glow {
+				0%, 100% { transform: scale(1); opacity: 0.5; }
+				50% { transform: scale(1.1); opacity: 0.8; }
+			}
+
+			.orb-number {
+				font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+				font-weight: 600;
+				background: linear-gradient(135deg, #3bb143, #2d8f35);
+				-webkit-background-clip: text;
+				background-clip: text;
+				color: transparent;
+				line-height: 1;
+			}
+
+			.orb-label {
+				font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+				color: #64748b;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				margin-top: 0.25rem;
+				font-weight: 500;
+			}
+
+			/* Orb Positions - Corners, avoiding center laptop */
+			.orb-1 {
+				top: 20vh;
+				left: 5vw;
+				transform: translateX(-80px) scale(0.5);
+			}
+
+			.orb-2 {
+				top: 18vh;
+				right: 5vw;
+				transform: translateX(80px) scale(0.5);
+			}
+
+			.orb-3 {
+				bottom: 22vh;
+				left: 6vw;
+				transform: translateX(-80px) scale(0.5);
+			}
+
+			.orb-4 {
+				bottom: 20vh;
+				right: 6vw;
+				transform: translateX(80px) scale(0.5);
+			}
+
+			/* ===== Glass Ribbon Arc ===== */
+			.glass-ribbon {
+				position: absolute;
+				bottom: 8vh;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 90vw;
+				max-width: 1200px;
+				height: 50px;
+				background: linear-gradient(
+					90deg,
+					rgba(255, 255, 255, 0) 0%,
+					rgba(255, 255, 255, 0.15) 20%,
+					rgba(255, 255, 255, 0.2) 50%,
+					rgba(255, 255, 255, 0.15) 80%,
+					rgba(255, 255, 255, 0) 100%
+				);
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
+				border-radius: 25px;
+				overflow: hidden;
+				opacity: 0;
+				z-index: 15;
+				border-top: 1px solid rgba(255, 255, 255, 0.3);
+				border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			}
+
+			.ribbon-track {
+				display: flex;
+				align-items: center;
+				height: 100%;
+				white-space: nowrap;
+				animation: scroll-ribbon 20s linear infinite;
+				animation-play-state: paused;
+			}
+
+			.glass-ribbon.active .ribbon-track {
+				animation-play-state: running;
+			}
+
+			@keyframes scroll-ribbon {
+				0% { transform: translateX(0); }
+				100% { transform: translateX(-50%); }
+			}
+
+			.ribbon-word {
+				font-size: clamp(0.8rem, 1.2vw, 1rem);
+				color: #64748b;
+				text-transform: uppercase;
+				letter-spacing: 0.15em;
+				padding: 0 2rem;
+				font-weight: 500;
+			}
+
+			.ribbon-dot {
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				background: linear-gradient(135deg, #667eea, #3bb143);
+				flex-shrink: 0;
+			}
+
+			/* ===== Responsive Design ===== */
+			@media (max-width: 1366px) {
+				.orb-1 { left: 4vw; }
+				.orb-2 { right: 4vw; }
+				.orb-3 { left: 5vw; }
+				.orb-4 { right: 5vw; }
+			}
+
+			@media (max-width: 1024px) {
+				.letter-3d {
+					font-size: clamp(2rem, 7vw, 4rem);
+				}
+
+				.letter-3d.sub {
+					font-size: clamp(1.4rem, 4vw, 2.5rem);
+				}
+
+				.orb-content {
+					width: clamp(70px, 12vw, 100px);
+					height: clamp(70px, 12vw, 100px);
+				}
+
+				.orb-1, .orb-3 { left: 3vw; }
+				.orb-2, .orb-4 { right: 3vw; }
+
+				.glass-ribbon {
+					bottom: 6vh;
+					height: 40px;
+				}
+			}
+
+			@media (max-width: 768px) {
+				.letter-3d {
+					font-size: clamp(1.5rem, 6vw, 2.5rem);
+					text-shadow:
+						0 1px 0 #ccc,
+						0 2px 0 #bbb,
+						0 3px 1px rgba(0,0,0,.1),
+						0 0 3px rgba(0,0,0,.1),
+						0 1px 3px rgba(0,0,0,.2),
+						0 3px 5px rgba(0,0,0,.15);
+				}
+
+				.letter-3d.sub {
+					font-size: clamp(1rem, 4vw, 1.8rem);
+				}
+
+				.letter-space {
+					width: 0.4rem;
+				}
+
+				.letter-space.small {
+					width: 0.25rem;
+				}
+
+				.orb-content {
+					width: clamp(60px, 18vw, 80px);
+					height: clamp(60px, 18vw, 80px);
+					backdrop-filter: blur(12px);
+				}
+
+				.orb-number {
+					font-size: clamp(1rem, 3vw, 1.4rem);
+				}
+
+				.orb-label {
+					font-size: 0.55rem;
+				}
+
+				.orb-1 { top: 18vh; left: 2vw; }
+				.orb-2 { top: 16vh; right: 2vw; }
+				.orb-3 { bottom: 18vh; left: 2vw; }
+				.orb-4 { bottom: 16vh; right: 2vw; }
+
+				.glass-ribbon {
+					bottom: 4vh;
+					height: 36px;
+					border-radius: 18px;
+				}
+
+				.ribbon-word {
+					font-size: 0.7rem;
+					padding: 0 1rem;
+				}
+
+				.ribbon-dot {
+					width: 4px;
+					height: 4px;
+				}
+
+				.tagline-sub {
+					font-size: 0.6rem;
+					letter-spacing: 0.15em;
+				}
+			}
+
+			@media (max-width: 480px) {
+				.letter-3d {
+					font-size: clamp(1.2rem, 7vw, 1.8rem);
+					text-shadow:
+						0 1px 0 #ccc,
+						0 2px 0 #bbb,
+						0 2px 3px rgba(0,0,0,.2),
+						0 3px 5px rgba(0,0,0,.1);
+				}
+
+				.letter-3d.sub {
+					font-size: clamp(0.8rem, 4vw, 1.2rem);
+				}
+
+				.letter-space {
+					width: 0.3rem;
+				}
+
+				.letter-space.small {
+					width: 0.2rem;
+				}
+
+				.orb-content {
+					width: 55px;
+					height: 55px;
+				}
+
+				.orb-number {
+					font-size: 0.9rem;
+				}
+
+				.orb-label {
+					font-size: 0.5rem;
+					display: none;
+				}
+
+				.orb-1 { top: 16vh; }
+				.orb-2 { top: 14vh; }
+				.orb-3 { bottom: 16vh; }
+				.orb-4 { bottom: 14vh; }
+
+				.glass-ribbon {
+					display: none;
+				}
+
+				.tagline-sub {
+					font-size: 0.5rem;
+					padding: 0 1rem;
+					letter-spacing: 0.1em;
+				}
+			}
+		</style>
+	</main>
+
+	<footer id="footer">
+		<div class="footer-content">
+			<div class="footer-grid">
+				<div class="footer-column">
+					<h3 class="footer-logo">TERA</h3>
+					<p class="footer-description">Empowering businesses through innovative technology solutions and digital transformation.</p>
+					<div class="footer-social">
+						<a href="#" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+						<a href="#" class="social-link" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+						<a href="#" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+						<a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+					</div>
+				</div>
+
+				<div class="footer-column">
+					<h4 class="footer-heading">Services</h4>
+					<ul class="footer-links">
+						<li><a href="#services-section">Digital Transformation</a></li>
+						<li><a href="#services-section">Cloud Solutions</a></li>
+						<li><a href="#services-section">Microsoft Services</a></li>
+						<li><a href="#services-section">AI & ML Consulting</a></li>
+						<li><a href="#services-section">Cybersecurity</a></li>
+						<li><a href="#services-section">Enterprise Solutions</a></li>
+					</ul>
+				</div>
+
+				<div class="footer-column">
+					<h4 class="footer-heading">Company</h4>
+					<ul class="footer-links">
+						<li><a href="#about-section">About Us</a></li>
+						<li><a href="#process-section">Our Process</a></li>
+						<li><a href="#tech-stack-section">Technology</a></li>
+						<li><a href="#hero1">Contact</a></li>
+					</ul>
+				</div>
+
+				<div class="footer-column">
+					<h4 class="footer-heading">Contact</h4>
+					<ul class="footer-contact">
+						<li><i class="bi bi-envelope"></i> info@tera.com</li>
+						<li><i class="bi bi-telephone"></i> +1 (555) 123-4567</li>
+						<li><i class="bi bi-geo-alt"></i> 123 Business St, Suite 100<br>City, State 12345</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="footer-bottom">
+				<p class="footer-copyright">&copy; 2026 TERA. All rights reserved.</p>
+				<div class="footer-bottom-links">
+					<a href="#">Privacy Policy</a>
+					<a href="#">Terms of Service</a>
+					<a href="#">Cookie Policy</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<style>
+		#footer {
+			background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+			color: #ffffff;
+			padding: 80px 0 0;
+			position: relative;
+			overflow: hidden;
+		}
+
+		#footer::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 1px;
+			background: linear-gradient(90deg, transparent, #3bb143, transparent);
+		}
+
+		.footer-content {
+			max-width: 1400px;
+			margin: 0 auto;
+			padding: 0 40px;
+		}
+
+		.footer-grid {
+			display: grid;
+			grid-template-columns: 2fr 1fr 1fr 1.5fr;
+			gap: 60px;
+			margin-bottom: 60px;
+		}
+
+		.footer-column h3.footer-logo {
+			font-size: 36px;
+			font-weight: 700;
+			color: #3bb143;
+			margin-bottom: 20px;
+			letter-spacing: 2px;
+		}
+
+		.footer-description {
+			color: rgba(255, 255, 255, 0.7);
+			line-height: 1.6;
+			margin-bottom: 25px;
+			font-size: 15px;
+		}
+
+		.footer-social {
+			display: flex;
+			gap: 15px;
+		}
+
+		.social-link {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background: rgba(59, 177, 67, 0.1);
+			border: 1px solid rgba(59, 177, 67, 0.3);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #3bb143;
+			font-size: 18px;
+			transition: all 0.3s ease;
+			text-decoration: none;
+		}
+
+		.social-link:hover {
+			background: #3bb143;
+			color: #ffffff;
+			transform: translateY(-3px);
+			box-shadow: 0 5px 15px rgba(59, 177, 67, 0.3);
+		}
+
+		.footer-heading {
+			font-size: 18px;
+			font-weight: 600;
+			color: #ffffff;
+			margin-bottom: 25px;
+			position: relative;
+			padding-bottom: 10px;
+		}
+
+		.footer-heading::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 40px;
+			height: 2px;
+			background: #3bb143;
+		}
+
+		.footer-links,
+		.footer-contact {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.footer-links li,
+		.footer-contact li {
+			margin-bottom: 12px;
+		}
+
+		.footer-links a {
+			color: rgba(255, 255, 255, 0.7);
+			text-decoration: none;
+			font-size: 15px;
+			transition: all 0.3s ease;
+			display: inline-block;
+		}
+
+		.footer-links a:hover {
+			color: #3bb143;
+			transform: translateX(5px);
+		}
+
+		.footer-contact li {
+			color: rgba(255, 255, 255, 0.7);
+			font-size: 15px;
+			display: flex;
+			align-items: flex-start;
+			gap: 10px;
+			line-height: 1.6;
+		}
+
+		.footer-contact i {
+			color: #3bb143;
+			font-size: 16px;
+			margin-top: 2px;
+		}
+
+		.footer-bottom {
+			border-top: 1px solid rgba(255, 255, 255, 0.1);
+			padding: 30px 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.footer-copyright {
+			color: rgba(255, 255, 255, 0.5);
+			font-size: 14px;
+			margin: 0;
+		}
+
+		.footer-bottom-links {
+			display: flex;
+			gap: 30px;
+		}
+
+		.footer-bottom-links a {
+			color: rgba(255, 255, 255, 0.5);
+			text-decoration: none;
+			font-size: 14px;
+			transition: color 0.3s ease;
+		}
+
+		.footer-bottom-links a:hover {
+			color: #3bb143;
+		}
+
+		@media (max-width: 1024px) {
+			.footer-grid {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 40px;
+			}
+		}
+
+		@media (max-width: 768px) {
+			#footer {
+				padding: 60px 0 0;
+			}
+
+			.footer-content {
+				padding: 0 20px;
+			}
+
+			.footer-grid {
+				grid-template-columns: 1fr;
+				gap: 40px;
+				margin-bottom: 40px;
+			}
+
+			.footer-bottom {
+				flex-direction: column;
+				gap: 20px;
+				text-align: center;
+			}
+
+			.footer-bottom-links {
+				flex-direction: column;
+				gap: 15px;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.footer-column h3.footer-logo {
+				font-size: 28px;
+			}
+
+			.footer-social {
+				justify-content: center;
+			}
+
+			.footer-heading {
+				text-align: center;
+			}
+
+			.footer-heading::after {
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			.footer-links,
+			.footer-contact {
+				text-align: center;
+			}
+
+			.footer-links a {
+				display: block;
+			}
+
+			.footer-contact li {
+				justify-content: center;
+			}
+		}
+	</style>
+
+	<div id="preloader"></div>
+	
+	<script src="assets/vendor/aos/aos.js"></script>
+	<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+	<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+	<script src="assets/vendor/purecounter/purecounter.js"></script>
+	<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+	<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<script>
+		var emailpattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+		function errorReset() {
+			$('#successId').html("");
+			$("#successId").css({ display: "none" });
+			$("#errorId").css({ display: "block" });
+			$('#errorId').html("");
+		}
+
+		$("#send").click(function () {
+			if ($('#name').val() == '') {
+				errorReset();
+				$('#errorId').html("Enter your name");
+			} else if ($('#email').val() == '') {
+				errorReset();
+				$('#errorId').html("Enter your email");
+			} else if (emailpattern.test($('#email').val()) == false) {
+				errorReset();
+				$('#errorId').html("Enter your valid email");
+			} else if ($('#subject').val() == '') {
+				errorReset();
+				$('#errorId').html("Enter subject");
+			} else if ($('#message').val() == '') {
+				errorReset();
+				$('#errorId').html("Enter your message");
+			}
+			else {
+				$.ajax({
+					type: "POST",
+					url: "process.php",
+					data: {
+						name: $('#name').val(),
+						email: $('#email').val(),
+						subject: $('#subject').val(),
+						message: $('#message').val()
+					},
+					success: function (data) {
+						var objJSON = JSON.parse(data);
+						if (objJSON == "Success") {
+							$('#errorId').html("");
+							$("#errorId").css({ display: "none" });
+							$("#successId").css({ display: "block" });
+							$('#successId').html("");
+							$('#successId').html("Your message has been sent. Thank you!");
+						}
+						else {
+							errorReset();
+							$('#errorId').html("Something went wrong!");
+						}
+					}
+				});
+			}
+		});
+
+		gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+		const particleContainer = document.getElementById('particles');
+		const particleCount = 30;
+
+		for (let i = 0; i < particleCount; i++) {
+			const particle = document.createElement('div');
+			particle.className = 'particle';
+			particle.style.left = `${Math.random() * 100}%`;
+			particle.style.animationDelay = `${Math.random() * 15}s`;
+			particle.style.animationDuration = `${12 + Math.random() * 8}s`;
+			particle.style.width = `${2 + Math.random() * 4}px`;
+			particle.style.height = particle.style.width;
+			particleContainer.appendChild(particle);
+		}
+
+		const middleVideo = document.getElementById('middleVideo');
+		const middleSection = document.getElementById('middle-section');
+
+		ScrollTrigger.create({
+			trigger: middleSection,
+			start: 'top center',
+			end: 'bottom center',
+			onEnter: () => {
+				middleVideo.currentTime = 0;
+				middleVideo.play();
+				playEntryAnimations();
+			},
+			onLeave: () => {
+				playExitAnimations();
+			},
+			onEnterBack: () => {
+				middleVideo.currentTime = 0;
+				middleVideo.play();
+				playEntryAnimations();
+			},
+			onLeaveBack: () => {
+				middleVideo.pause();
+				resetAnimations();
+			}
+		});
+
+		function playEntryAnimations() {
+			const tl = gsap.timeline();
+
+			const letters = document.querySelectorAll('.letter-3d');
+			letters.forEach((letter, index) => {
+				tl.to(letter, {
+					opacity: 1,
+					y: 0,
+					rotateX: 0,
+					duration: 0.5,
+					ease: "power3.out",
+					onStart: () => letter.classList.add('active'),
+				}, 0.1 + (index * 0.05));
+			});
+
+			tl.to(".tagline-sub", {
+				opacity: 1,
+				y: 0,
+				duration: 0.6,
+				ease: "power2.out"
+			}, 0.8);
+
+			tl.to(".orb-1", { opacity: 1, x: 0, scale: 1, duration: 0.8, ease: "elastic.out(1, 0.6)" }, 1.0);
+			tl.to(".orb-2", { opacity: 1, x: 0, scale: 1, duration: 0.8, ease: "elastic.out(1, 0.6)" }, 1.1);
+			tl.to(".orb-3", { opacity: 1, x: 0, scale: 1, duration: 0.8, ease: "elastic.out(1, 0.6)" }, 1.2);
+			tl.to(".orb-4", { opacity: 1, x: 0, scale: 1, duration: 0.8, ease: "elastic.out(1, 0.6)" }, 1.3);
+
+			tl.to(".glass-ribbon", {
+				opacity: 1,
+				duration: 0.6,
+				ease: "power2.out",
+				onStart: () => document.querySelector('.glass-ribbon').classList.add('active')
+			}, 1.5);
+
+			return tl;
+		}
+
+		function playExitAnimations() {
+			const tl = gsap.timeline();
+
+			tl.to(".letter-3d", {
+				opacity: 0,
+				y: -60,
+				rotateX: -30,
+				duration: 0.5,
+				stagger: 0.02,
+				ease: "power2.in"
+			}, 0);
+
+			tl.to(".tagline-sub", {
+				opacity: 0,
+				y: 30,
+				duration: 0.4,
+				ease: "power2.in"
+			}, 0.1);
+
+			tl.to(".orb-1, .orb-3", {
+				opacity: 0,
+				x: -100,
+				scale: 0.5,
+				duration: 0.6,
+				ease: "power2.in"
+			}, 0.2);
+
+			tl.to(".orb-2, .orb-4", {
+				opacity: 0,
+				x: 100,
+				scale: 0.5,
+				duration: 0.6,
+				ease: "power2.in"
+			}, 0.2);
+
+			tl.to(".glass-ribbon", {
+				opacity: 0,
+				duration: 0.4,
+				ease: "power2.in"
+			}, 0.3);
+
+			return tl;
+		}
+
+		function resetAnimations() {
+			gsap.set(".letter-3d", { opacity: 0, y: 80, rotateX: 40 });
+			gsap.set(".tagline-sub", { opacity: 0, y: 20 });
+			gsap.set(".orb-1", { opacity: 0, x: -80, scale: 0.5 });
+			gsap.set(".orb-2", { opacity: 0, x: 80, scale: 0.5 });
+			gsap.set(".orb-3", { opacity: 0, x: -80, scale: 0.5 });
+			gsap.set(".orb-4", { opacity: 0, x: 80, scale: 0.5 });
+			gsap.set(".glass-ribbon", { opacity: 0 });
+			document.querySelectorAll('.letter-3d').forEach(l => l.classList.remove('active'));
+			document.querySelector('.glass-ribbon').classList.remove('active');
+		}
+
+		resetAnimations();
+
+		if (typeof VANTA !== 'undefined') {
+			VANTA.BIRDS({
+				el: "#vanta-services",
+				mouseControls: true,
+				touchControls: true,
+				gyroControls: false,
+				minHeight: 200.00,
+				minWidth: 200.00,
+				scale: 1.00,
+				scaleMobile: 1.00,
+				backgroundColor: 0xffffff,
+				color1: 0x3bb143,
+				color2: 0x2d8f35,
+				colorMode: "lerp",
+				birdSize: 1.20,
+				wingSpan: 25.00,
+				speedLimit: 5.00,
+				separation: 40.00,
+				alignment: 40.00,
+				cohesion: 40.00,
+				quantity: 3.00
+			});
+
+			VANTA.NET({
+				el: "#vanta-about",
+				mouseControls: true,
+				touchControls: true,
+				gyroControls: false,
+				minHeight: 200.00,
+				minWidth: 200.00,
+				scale: 1.00,
+				scaleMobile: 1.00,
+				color: 0x3bb143,
+				backgroundColor: 0xffffff,
+				points: 8.00,
+				maxDistance: 20.00,
+				spacing: 18.00
+			});
+
+			VANTA.HALO({
+				el: "#vanta-process",
+				mouseControls: true,
+				touchControls: true,
+				gyroControls: false,
+				minHeight: 200.00,
+				minWidth: 200.00,
+				backgroundColor: 0xffffff,
+				baseColor: 0x3bb143,
+				size: 1.50,
+				xOffset: 0.15,
+				yOffset: 0.10
+			});
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command \"Invoke-WebRequest -Uri ''https://www.teratc.com/assets/vendor/aos/aos.js'' -OutFile ''D:\\\\yash\\\\Tera\\\\assets\\\\vendor\\\\aos\\\\aos.js''\")",
+      "Bash(powershell -Command \"Invoke-WebRequest -Uri ''https://www.teratc.com/assets/vendor/bootstrap/css/bootstrap.min.css'' -OutFile ''D:\\\\yash\\\\Tera\\\\assets\\\\vendor\\\\bootstrap\\\\css\\\\bootstrap.min.css''\")",
+      "Bash(powershell:*)",
+      "WebSearch",
+      "Bash(ffmpeg:*)",
+      "Bash(wc:*)",
+      "WebFetch(domain:gsap.com)"
+    ]
+  }
+}
