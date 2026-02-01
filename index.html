@@ -192,24 +192,48 @@
 					<div class="orb-glow"></div>
 				</div>
 
-				<!-- Glass Ribbon Arc -->
-				<div class="glass-ribbon">
-					<div class="ribbon-track">
-						<span class="ribbon-word">Cloud</span>
-						<span class="ribbon-dot"></span>
-						<span class="ribbon-word">Security</span>
-						<span class="ribbon-dot"></span>
-						<span class="ribbon-word">Innovation</span>
-						<span class="ribbon-dot"></span>
-						<span class="ribbon-word">Scale</span>
-						<span class="ribbon-dot"></span>
-						<span class="ribbon-word">Transform</span>
-						<span class="ribbon-dot"></span>
-						<span class="ribbon-word">Cloud</span>
-						<span class="ribbon-dot"></span>
-						<span class="ribbon-word">Security</span>
-					</div>
+			<!-- Glass Ribbon Arc -->
+			<div class="glass-ribbon">
+				<div class="ribbon-track">
+					<span class="ribbon-word">Cloud</span>
+					<span class="ribbon-dot"></span>
+					<span class="ribbon-word">Security</span>
+					<span class="ribbon-dot"></span>
+					<span class="ribbon-word">AI/ML</span>
+					<span class="ribbon-dot"></span>
+					<span class="ribbon-word">Data Analytics</span>
+					<span class="ribbon-dot"></span>
+					<span class="ribbon-word">UI/UX Development</span>
+					<span class="ribbon-dot"></span>
+					<span class="ribbon-word">Web/App Development</span>
+					<span class="ribbon-dot"></span>
+					<span class="ribbon-word">Innovation</span>
+					<span class="ribbon-dot"></span>
+					<span class="ribbon-word">Scale</span>
+					<span class="ribbon-dot"></span>
+					<span class="ribbon-word">Transform</span>
+					<span class="ribbon-dot"></span>
+					<!-- Duplicate for infinite scroll -->
+					<span class="ribbon-word">Cloud</span>
+					<span class="ribbon-dot"></span>
+					<span class="ribbon-word">Security</span>
+					<span class="ribbon-dot"></span>
+					<span class="ribbon-word">AI/ML</span>
+					<span class="ribbon-dot"></span>
+					<span class="ribbon-word">Data Analytics</span>
+					<span class="ribbon-dot"></span>
+					<span class="ribbon-word">UI/UX Development</span>
+					<span class="ribbon-dot"></span>
+					<span class="ribbon-word">Web/App Development</span>
+					<span class="ribbon-dot"></span>
+					<span class="ribbon-word">Innovation</span>
+					<span class="ribbon-dot"></span>
+					<span class="ribbon-word">Scale</span>
+					<span class="ribbon-dot"></span>
+					<span class="ribbon-word">Transform</span>
+					<span class="ribbon-dot"></span>
 				</div>
+			</div>
 			</div>
 		</section>
 		<!-- End Middle Section -->
@@ -2707,30 +2731,55 @@
 				scroll-snap-align: start;
 			}
 
-			#hero {
-				height: 100vh;
-			}
+		#hero {
+			height: 100vh;
+		}
 
-			/* ===== Base Section ===== */
-			#middle-section {
-				height: 100vh;
-				position: relative;
-				background-color: #0a0a0a;
-				overflow: hidden;
-			}
+	/* ===== Base Section ===== */
+	#middle-section {
+		height: 100vh;
+		position: relative;
+		background: url('assets/img/Banding - Copy@1-1526x728.jpg') center center / cover no-repeat;
+		overflow: hidden;
+	}
 
-			.middle-bg-video {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				min-width: 100%;
-				min-height: 100%;
-				width: auto;
-				height: auto;
-				transform: translate(-50%, -50%);
-				z-index: 1;
-				object-fit: cover;
-			}
+	#middle-section::before {
+		content: '';
+		position: absolute;
+		top: -5px;
+		left: 0;
+		right: 0;
+		height: 5px;
+		background: linear-gradient(90deg, #3bb143, #2d8f35, #3bb143);
+		z-index: 100;
+		box-shadow: 0 2px 10px rgba(59, 177, 67, 0.5);
+	}
+
+		#middle-section::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 150px;
+			background: linear-gradient(to top, #ffffff, transparent);
+			z-index: 2;
+		}
+
+		.middle-bg-video {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			min-width: 100%;
+			min-height: 100%;
+			width: auto;
+			height: auto;
+			transform: translate(-50%, -50%);
+			z-index: 1;
+			object-fit: cover;
+			opacity: 0;
+			display: none;
+		}
 
 			#middle-section canvas {
 				position: absolute;
@@ -2751,17 +2800,18 @@
 				pointer-events: none;
 			}
 
-			/* ===== Particle System ===== */
-			.particle-container {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				z-index: 5;
-				pointer-events: none;
-				overflow: hidden;
-			}
+		/* ===== Particle System ===== */
+		.particle-container {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 5;
+			pointer-events: none;
+			overflow: hidden;
+			opacity: 0.3;
+		}
 
 			.particle {
 				position: absolute;
@@ -2990,13 +3040,9 @@
 					inset 0 -2px 4px rgba(0, 0, 0, 0.06);
 			}
 
-			.glass-orb:hover .orb-number {
-				filter: drop-shadow(0 8px 20px rgba(59, 177, 67, 0.4));
-			}
-
-			.glass-orb:hover .orb-label {
-				color: rgba(255, 255, 255, 0.9);
-			}
+		.glass-orb:hover .orb-number {
+			filter: drop-shadow(0 8px 20px rgba(59, 177, 67, 0.4));
+		}
 
 			.orb-glow {
 				position: absolute;
@@ -3031,30 +3077,89 @@
 				font-weight: 500;
 			}
 
-			/* Orb Positions - Corners, avoiding center laptop */
-			.orb-1 {
-				top: 20vh;
-				left: 5vw;
-				transform: translateX(-80px) scale(0.5);
-			}
+		/* Orb Positions - Corners, avoiding center laptop */
+		.orb-1 {
+			top: 20vh;
+			left: 5vw;
+			transform: translateX(-80px) scale(0.5);
+		}
 
-			.orb-2 {
-				top: 18vh;
-				right: 5vw;
-				transform: translateX(80px) scale(0.5);
-			}
+		.orb-1 .orb-content {
+			border: 2px solid #3bb143;
+			box-shadow:
+				0 8px 32px rgba(59, 177, 67, 0.25),
+				inset 0 2px 4px rgba(255, 255, 255, 0.6),
+				inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+		}
 
-			.orb-3 {
-				bottom: 22vh;
-				left: 6vw;
-				transform: translateX(-80px) scale(0.5);
-			}
+		.orb-2 {
+			top: 18vh;
+			right: 5vw;
+			transform: translateX(80px) scale(0.5);
+		}
 
-			.orb-4 {
-				bottom: 20vh;
-				right: 6vw;
-				transform: translateX(80px) scale(0.5);
-			}
+		.orb-2 .orb-content {
+			border: 2px solid rgba(255, 255, 255, 0.8);
+			box-shadow:
+				0 8px 32px rgba(255, 255, 255, 0.15),
+				inset 0 2px 4px rgba(255, 255, 255, 0.6),
+				inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+		}
+
+	.orb-2 .orb-number,
+	.orb-2 .orb-label {
+		color: #ffffff;
+		background: none;
+		background-clip: unset;
+		-webkit-background-clip: unset;
+		-webkit-text-fill-color: unset;
+	}
+
+		.orb-3 {
+			bottom: 22vh;
+			left: 6vw;
+			transform: translateX(-80px) scale(0.5);
+		}
+
+		.orb-3 .orb-content {
+			border: 2px solid rgba(255, 255, 255, 0.8);
+			box-shadow:
+				0 8px 32px rgba(255, 255, 255, 0.15),
+				inset 0 2px 4px rgba(255, 255, 255, 0.6),
+				inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+		}
+
+	.orb-3 .orb-number,
+	.orb-3 .orb-label {
+		color: #ffffff;
+		background: none;
+		background-clip: unset;
+		-webkit-background-clip: unset;
+		-webkit-text-fill-color: unset;
+	}
+
+		.orb-4 {
+			bottom: 20vh;
+			right: 6vw;
+			transform: translateX(80px) scale(0.5);
+		}
+
+		.orb-4 .orb-content {
+			border: 2px solid rgba(255, 255, 255, 0.8);
+			box-shadow:
+				0 8px 32px rgba(255, 255, 255, 0.15),
+				inset 0 2px 4px rgba(255, 255, 255, 0.6),
+				inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+		}
+
+	.orb-4 .orb-number,
+	.orb-4 .orb-label {
+		color: #ffffff;
+		background: none;
+		background-clip: unset;
+		-webkit-background-clip: unset;
+		-webkit-text-fill-color: unset;
+	}
 
 			/* ===== Glass Ribbon Arc ===== */
 			.glass-ribbon {
@@ -3083,40 +3188,39 @@
 				border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 			}
 
-			.ribbon-track {
-				display: flex;
-				align-items: center;
-				height: 100%;
-				white-space: nowrap;
-				animation: scroll-ribbon 20s linear infinite;
-				animation-play-state: paused;
-			}
+		.ribbon-track {
+			display: flex;
+			align-items: center;
+			height: 100%;
+			white-space: nowrap;
+			animation: scroll-ribbon 40s linear infinite;
+		}
 
-			.glass-ribbon.active .ribbon-track {
-				animation-play-state: running;
-			}
+		.glass-ribbon.active .ribbon-track {
+			animation-play-state: running;
+		}
 
-			@keyframes scroll-ribbon {
-				0% { transform: translateX(0); }
-				100% { transform: translateX(-50%); }
-			}
+		@keyframes scroll-ribbon {
+			0% { transform: translateX(0); }
+			100% { transform: translateX(-50%); }
+		}
 
-			.ribbon-word {
-				font-size: clamp(0.8rem, 1.2vw, 1rem);
-				color: #64748b;
-				text-transform: uppercase;
-				letter-spacing: 0.15em;
-				padding: 0 2rem;
-				font-weight: 500;
-			}
+		.ribbon-word {
+			font-size: clamp(0.8rem, 1.2vw, 1rem);
+			color: #ffffff;
+			text-transform: uppercase;
+			letter-spacing: 0.15em;
+			padding: 0 2rem;
+			font-weight: 500;
+		}
 
-			.ribbon-dot {
-				width: 6px;
-				height: 6px;
-				border-radius: 50%;
-				background: linear-gradient(135deg, #667eea, #3bb143);
-				flex-shrink: 0;
-			}
+		.ribbon-dot {
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background: #ffffff;
+			flex-shrink: 0;
+		}
 
 			/* ===== Responsive Design ===== */
 			@media (max-width: 1366px) {
