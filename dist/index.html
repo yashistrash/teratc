@@ -2739,7 +2739,7 @@
 	#middle-section {
 		height: 100vh;
 		position: relative;
-		background: url('assets/img/Banding - Copy@1-1526x728.jpg') center center / cover no-repeat;
+		background: url('assets/img/background.png') center center / cover no-repeat;
 		overflow: hidden;
 	}
 
@@ -2948,16 +2948,20 @@
 				margin-top: 0.5rem;
 			}
 
-			.tagline-sub {
-				font-size: clamp(0.65rem, 1.1vw, 0.9rem);
-				color: rgba(255, 255, 255, 0.75);
-				letter-spacing: 0.2em;
-				text-transform: uppercase;
-				opacity: 0;
-				transform: translateY(20px);
-				font-weight: 400;
-				text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-			}
+		.tagline-sub {
+			font-size: clamp(0.65rem, 1.1vw, 0.9rem);
+			color: #ffffff;
+			letter-spacing: 0.2em;
+			text-transform: uppercase;
+			opacity: 0;
+			transform: translateY(20px);
+			font-weight: 400;
+			text-shadow: 
+				0 2px 8px rgba(0,0,0,0.6),
+				0 4px 16px rgba(0,0,0,0.4),
+				0 8px 24px rgba(0,0,0,0.3),
+				0 0 40px rgba(59, 177, 67, 0.3);
+		}
 
 			/* ===== Floating Glass Orbs ===== */
 			.glass-orb {
@@ -3068,98 +3072,71 @@
 				line-height: 1;
 			}
 
-			.orb-label {
-				font-size: clamp(0.6rem, 0.9vw, 0.75rem);
-				color: #64748b;
-				text-transform: uppercase;
-				letter-spacing: 0.1em;
-				margin-top: 0.25rem;
-				font-weight: 500;
-			}
-
-		/* Orb Positions - Corners, avoiding center laptop */
-		.orb-1 {
-			top: 20vh;
-			left: 5vw;
-			transform: translateX(-80px) scale(0.5);
+		.orb-label {
+			font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+			color: #3bb143;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+			margin-top: 0.25rem;
+			font-weight: 500;
 		}
 
-		.orb-1 .orb-content {
-			border: 2px solid #3bb143;
-			box-shadow:
-				0 8px 32px rgba(59, 177, 67, 0.25),
-				inset 0 2px 4px rgba(255, 255, 255, 0.6),
-				inset 0 -2px 4px rgba(0, 0, 0, 0.05);
-		}
-
-		.orb-2 {
-			top: 18vh;
-			right: 5vw;
-			transform: translateX(80px) scale(0.5);
-		}
-
-		.orb-2 .orb-content {
-			border: 2px solid rgba(255, 255, 255, 0.8);
-			box-shadow:
-				0 8px 32px rgba(255, 255, 255, 0.15),
-				inset 0 2px 4px rgba(255, 255, 255, 0.6),
-				inset 0 -2px 4px rgba(0, 0, 0, 0.05);
-		}
-
-	.orb-2 .orb-number,
-	.orb-2 .orb-label {
-		color: #ffffff;
-		background: none;
-		background-clip: unset;
-		-webkit-background-clip: unset;
-		-webkit-text-fill-color: unset;
+	/* Orb Positions - Closer to center */
+	.orb-1 {
+		top: 20vh;
+		left: 12vw;
+		transform: translateX(-80px) scale(0.5);
 	}
 
-		.orb-3 {
-			bottom: 22vh;
-			left: 6vw;
-			transform: translateX(-80px) scale(0.5);
-		}
-
-		.orb-3 .orb-content {
-			border: 2px solid rgba(255, 255, 255, 0.8);
-			box-shadow:
-				0 8px 32px rgba(255, 255, 255, 0.15),
-				inset 0 2px 4px rgba(255, 255, 255, 0.6),
-				inset 0 -2px 4px rgba(0, 0, 0, 0.05);
-		}
-
-	.orb-3 .orb-number,
-	.orb-3 .orb-label {
-		color: #ffffff;
-		background: none;
-		background-clip: unset;
-		-webkit-background-clip: unset;
-		-webkit-text-fill-color: unset;
+	.orb-1 .orb-content {
+		border: 2px solid #3bb143;
+		box-shadow:
+			0 8px 32px rgba(59, 177, 67, 0.25),
+			inset 0 2px 4px rgba(255, 255, 255, 0.6),
+			inset 0 -2px 4px rgba(0, 0, 0, 0.05);
 	}
 
-		.orb-4 {
-			bottom: 20vh;
-			right: 6vw;
-			transform: translateX(80px) scale(0.5);
-		}
+.orb-2 {
+	top: 18vh;
+	right: 12vw;
+	transform: translateX(80px) scale(0.5);
+}
 
-		.orb-4 .orb-content {
-			border: 2px solid rgba(255, 255, 255, 0.8);
-			box-shadow:
-				0 8px 32px rgba(255, 255, 255, 0.15),
-				inset 0 2px 4px rgba(255, 255, 255, 0.6),
-				inset 0 -2px 4px rgba(0, 0, 0, 0.05);
-		}
+.orb-2 .orb-content {
+	border: 2px solid #3bb143;
+	box-shadow:
+		0 8px 32px rgba(59, 177, 67, 0.25),
+		inset 0 2px 4px rgba(255, 255, 255, 0.6),
+		inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+}
 
-	.orb-4 .orb-number,
-	.orb-4 .orb-label {
-		color: #ffffff;
-		background: none;
-		background-clip: unset;
-		-webkit-background-clip: unset;
-		-webkit-text-fill-color: unset;
-	}
+.orb-3 {
+	bottom: 22vh;
+	left: 13vw;
+	transform: translateX(-80px) scale(0.5);
+}
+
+.orb-3 .orb-content {
+	border: 2px solid #3bb143;
+	box-shadow:
+		0 8px 32px rgba(59, 177, 67, 0.25),
+		inset 0 2px 4px rgba(255, 255, 255, 0.6),
+		inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.orb-4 {
+	bottom: 20vh;
+	right: 13vw;
+	transform: translateX(80px) scale(0.5);
+}
+
+.orb-4 .orb-content {
+	border: 2px solid #3bb143;
+	box-shadow:
+		0 8px 32px rgba(59, 177, 67, 0.25),
+		inset 0 2px 4px rgba(255, 255, 255, 0.6),
+		inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+}
 
 			/* ===== Glass Ribbon Arc ===== */
 			.glass-ribbon {
@@ -3170,22 +3147,22 @@
 				width: 90vw;
 				max-width: 1200px;
 				height: 50px;
-				background: linear-gradient(
-					90deg,
-					rgba(255, 255, 255, 0) 0%,
-					rgba(255, 255, 255, 0.15) 20%,
-					rgba(255, 255, 255, 0.2) 50%,
-					rgba(255, 255, 255, 0.15) 80%,
-					rgba(255, 255, 255, 0) 100%
-				);
-				backdrop-filter: blur(10px);
-				-webkit-backdrop-filter: blur(10px);
-				border-radius: 25px;
-				overflow: hidden;
-				opacity: 0;
-				z-index: 15;
-				border-top: 1px solid rgba(255, 255, 255, 0.3);
-				border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			background: linear-gradient(
+				90deg,
+				rgba(255, 255, 255, 0) 0%,
+				rgba(255, 255, 255, 0.15) 20%,
+				rgba(255, 255, 255, 0.2) 50%,
+				rgba(255, 255, 255, 0.15) 80%,
+				rgba(255, 255, 255, 0) 100%
+			);
+			backdrop-filter: blur(10px);
+			-webkit-backdrop-filter: blur(10px);
+			border-radius: 25px;
+			overflow: hidden;
+			opacity: 0;
+			z-index: 15;
+			border: 2px solid #3bb143;
+			box-shadow: 0 4px 15px rgba(59, 177, 67, 0.2);
 			}
 
 		.ribbon-track {
@@ -3205,22 +3182,22 @@
 			100% { transform: translateX(-50%); }
 		}
 
-		.ribbon-word {
-			font-size: clamp(0.8rem, 1.2vw, 1rem);
-			color: #ffffff;
-			text-transform: uppercase;
-			letter-spacing: 0.15em;
-			padding: 0 2rem;
-			font-weight: 500;
-		}
+	.ribbon-word {
+		font-size: clamp(0.8rem, 1.2vw, 1rem);
+		color: #3bb143;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		padding: 0 2rem;
+		font-weight: 500;
+	}
 
-		.ribbon-dot {
-			width: 6px;
-			height: 6px;
-			border-radius: 50%;
-			background: #ffffff;
-			flex-shrink: 0;
-		}
+	.ribbon-dot {
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background: #3bb143;
+		flex-shrink: 0;
+	}
 
 			/* ===== Responsive Design ===== */
 			@media (max-width: 1366px) {
