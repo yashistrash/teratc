@@ -963,10 +963,13 @@
 				</div>
 
 			<div class="tech-filter">
-				<button class="filter-btn active" data-category="cloud">Cloud</button>
-				<button class="filter-btn" data-category="ai">AI/ML</button>
+				<button class="filter-btn active" data-category="ai">AI/ML</button>
+				<button class="filter-btn" data-category="data">Data Analytics</button>
+				<button class="filter-btn" data-category="cloud">Cloud</button>
+				<button class="filter-btn" data-category="webapp">Web/App Development</button>
+				<button class="filter-btn" data-category="uiux">UI/UX Development</button>
 				<button class="filter-btn" data-category="devops">DevOps</button>
-				<button class="filter-btn" data-category="security">Security</button>
+				<button class="filter-btn" data-category="security">Cybersecurity</button>
 			</div>
 
 				<div class="carousel-wrapper">
@@ -978,139 +981,89 @@
 
 					<div class="carousel-container">
 						<div class="tech-carousel" id="techCarousel">
-					<div class="tech-item carousel-card" data-category="cloud" data-tech="aws">
-						<div class="tech-icon">
-							<img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg" alt="AWS" class="tech-logo" />
+					<!-- AI/ML -->
+					<div class="tech-item carousel-card" data-category="ai">
+						<div class="tech-logos-row">
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="TensorFlow" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/pytorch/EE4C2C" alt="PyTorch" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/openai.svg" alt="OpenAI" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/databricks/FF3621" alt="Databricks" class="tech-logo" /></div>
 						</div>
-						<div class="tech-name">Amazon Web Services</div>
-						<div class="tech-description">Leading cloud platform with comprehensive infrastructure and services</div>
+						<div class="tech-name">AI/ML</div>
+						<div class="tech-description">We build intelligent solutions with <strong>machine learning</strong>, <strong>deep learning</strong>, and <strong>LLMs</strong>—using <strong>TensorFlow</strong>, <strong>PyTorch</strong>, <strong>OpenAI</strong>, and <strong>Databricks</strong>—for predictive analytics, automation, and data-driven decisions.</div>
 					</div>
 
-					<div class="tech-item carousel-card" data-category="cloud" data-tech="azure">
-						<div class="tech-icon">
-							<img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftazure.svg" alt="Azure" class="tech-logo" />
+					<!-- Data Analytics -->
+					<div class="tech-item carousel-card" data-category="data">
+						<div class="tech-logos-row">
+							<div class="tech-logo-wrap"><img src="https://cdn.svgrepo.com/show/354427/tableau.svg" alt="Tableau" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/looker/4285F4" alt="Looker" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/snowflake/29B5E8" alt="Snowflake" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/googleanalytics/E37400" alt="Google Analytics" class="tech-logo" /></div>
 						</div>
-						<div class="tech-name">Microsoft Azure</div>
-						<div class="tech-description">Enterprise cloud computing platform with hybrid capabilities</div>
+						<div class="tech-name">Data Analytics</div>
+						<div class="tech-description">We turn data into decisions with <strong>BI</strong>, <strong>dashboards</strong>, <strong>ETL</strong>, and <strong>data warehousing</strong>—using <strong>Tableau</strong>, <strong>Power BI</strong>, <strong>Looker</strong>, <strong>Snowflake</strong>, and <strong>Google Analytics</strong>—for reporting, visualization, and actionable insights.</div>
 					</div>
 
-					<div class="tech-item carousel-card" data-category="cloud" data-tech="gcp">
-						<div class="tech-icon">
-							<img src="https://cdn.simpleicons.org/googlecloud/4285F4" alt="Google Cloud" class="tech-logo" />
+					<!-- Cloud -->
+					<div class="tech-item carousel-card" data-category="cloud">
+						<div class="tech-logos-row">
+							<div class="tech-logo-wrap"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg" alt="AWS" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftazure.svg" alt="Azure" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/googlecloud/4285F4" alt="Google Cloud" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><svg class="tech-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Microsoft 365"><path fill="#F25022" d="M1 1h10v10H1z"/><path fill="#00A4EF" d="M1 13h10v10H1z"/><path fill="#7FBA00" d="M13 1h10v10H13z"/><path fill="#FFB900" d="M13 13h10v10H13z"/></svg></div>
 						</div>
-						<div class="tech-name">Google Cloud</div>
-						<div class="tech-description">Scalable cloud infrastructure with advanced AI and data analytics</div>
+						<div class="tech-name">Cloud</div>
+						<div class="tech-description">We deliver scalable cloud solutions on <strong>AWS</strong>, <strong>Azure</strong>, and <strong>Google Cloud</strong>—including migration, hybrid cloud, serverless, and <strong>Microsoft 365</strong>—so you get resilient infrastructure, cost optimization, and global reach.</div>
 					</div>
 
-					<div class="tech-item carousel-card" data-category="cloud" data-tech="office365">
-						<div class="tech-icon">
-							<svg class="tech-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Microsoft 365">
-								<path fill="#F25022" d="M1 1h10v10H1z"/>
-								<path fill="#00A4EF" d="M1 13h10v10H1z"/>
-								<path fill="#7FBA00" d="M13 1h10v10H13z"/>
-								<path fill="#FFB900" d="M13 13h10v10H13z"/>
-							</svg>
+					<!-- Web/App Development -->
+					<div class="tech-item carousel-card" data-category="webapp">
+						<div class="tech-logos-row">
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="React" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/vuedotjs/4FC08D" alt="Vue.js" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/nextdotjs/000000" alt="Next.js" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript" class="tech-logo" /></div>
 						</div>
-						<div class="tech-name">Microsoft 365</div>
-						<div class="tech-description">Cloud-based productivity and collaboration suite</div>
+						<div class="tech-name">Web/App Development</div>
+						<div class="tech-description">We build responsive <strong>web</strong> and <strong>mobile applications</strong> with <strong>React</strong>, <strong>Vue</strong>, <strong>Node.js</strong>, <strong>Next.js</strong>, and <strong>TypeScript</strong>—for scalable frontends, APIs, and full-stack solutions.</div>
 					</div>
 
-					<div class="tech-item carousel-card" data-category="cloud" data-tech="dynamics">
-						<div class="tech-icon">
-							<img src="https://cdn.simpleicons.org/dynamics365/002050" alt="Dynamics 365" class="tech-logo" />
+					<!-- UI/UX Development -->
+					<div class="tech-item carousel-card" data-category="uiux">
+						<div class="tech-logos-row">
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/adobexd/FF61F6" alt="Adobe XD" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/sketch/F7B500" alt="Sketch" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/invision/E435FF" alt="InVision" class="tech-logo" /></div>
 						</div>
-						<div class="tech-name">Dynamics 365</div>
-						<div class="tech-description">Intelligent business applications for ERP and CRM</div>
+						<div class="tech-name">UI/UX Development</div>
+						<div class="tech-description">We design intuitive <strong>user experiences</strong> and <strong>interfaces</strong> with <strong>Figma</strong>, <strong>Adobe XD</strong>, <strong>Sketch</strong>, and <strong>InVision</strong>—for wireframes, prototypes, and design systems.</div>
 					</div>
 
-					<div class="tech-item carousel-card" data-category="ai" data-tech="tensorflow">
-						<div class="tech-icon">
-							<img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="TensorFlow" class="tech-logo" />
+					<!-- DevOps -->
+					<div class="tech-item carousel-card" data-category="devops">
+						<div class="tech-logos-row">
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/jenkins/D24939" alt="Jenkins" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/hashicorp/000000" alt="Terraform" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" class="tech-logo" /></div>
 						</div>
-						<div class="tech-name">TensorFlow</div>
-						<div class="tech-description">Open-source machine learning framework by Google</div>
+						<div class="tech-name">DevOps</div>
+						<div class="tech-description">We enable <strong>CI/CD</strong>, <strong>containers</strong>, and <strong>infrastructure as code</strong> with <strong>Docker</strong>, <strong>Kubernetes</strong>, <strong>Jenkins</strong>, <strong>Terraform</strong>, and <strong>GitHub</strong>—for faster releases, automation, and reliable deployments.</div>
 					</div>
 
-					<div class="tech-item carousel-card" data-category="ai" data-tech="pytorch">
-						<div class="tech-icon">
-							<img src="https://cdn.simpleicons.org/pytorch/EE4C2C" alt="PyTorch" class="tech-logo" />
+					<!-- Cybersecurity -->
+					<div class="tech-item carousel-card" data-category="security">
+						<div class="tech-logos-row">
+							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/cloudflare/F38020" alt="Cloudflare" class="tech-logo" /></div>
+							<div class="tech-logo-wrap"><svg class="tech-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Microsoft Sentinel"><path fill="#0078D4" d="M12 2L4 6v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V6l-8-4zm0 2.18l5.9 2.95V11c0 4.52-2.98 8.69-5.9 9.93-2.92-1.24-5.9-5.41-5.9-9.93V7.13L12 4.18z"/></svg></div>
 						</div>
-						<div class="tech-name">PyTorch</div>
-						<div class="tech-description">Deep learning platform for research and production</div>
-					</div>
-
-					<div class="tech-item carousel-card" data-category="ai" data-tech="openai">
-						<div class="tech-icon">
-							<img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/openai.svg" alt="OpenAI" class="tech-logo" />
-						</div>
-						<div class="tech-name">OpenAI</div>
-						<div class="tech-description">Advanced AI models including GPT and DALL-E</div>
-					</div>
-
-					<div class="tech-item carousel-card" data-category="devops" data-tech="docker">
-						<div class="tech-icon">
-							<img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker" class="tech-logo" />
-						</div>
-						<div class="tech-name">Docker</div>
-						<div class="tech-description">Containerization platform for application deployment</div>
-					</div>
-
-					<div class="tech-item carousel-card" data-category="devops" data-tech="kubernetes">
-						<div class="tech-icon">
-							<img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes" class="tech-logo" />
-						</div>
-						<div class="tech-name">Kubernetes</div>
-						<div class="tech-description">Container orchestration for automated deployment and scaling</div>
-					</div>
-
-					<div class="tech-item carousel-card" data-category="devops" data-tech="jenkins">
-						<div class="tech-icon">
-							<img src="https://cdn.simpleicons.org/jenkins/D24939" alt="Jenkins" class="tech-logo" />
-						</div>
-						<div class="tech-name">Jenkins</div>
-						<div class="tech-description">Continuous integration and delivery automation server</div>
-					</div>
-
-					<div class="tech-item carousel-card" data-category="devops" data-tech="terraform">
-						<div class="tech-icon">
-							<img src="https://cdn.simpleicons.org/hashicorp/000000" alt="Terraform" class="tech-logo" />
-						</div>
-						<div class="tech-name">Terraform</div>
-						<div class="tech-description">Infrastructure as code for cloud provisioning</div>
-					</div>
-
-					<div class="tech-item carousel-card" data-category="devops" data-tech="github">
-						<div class="tech-icon">
-							<img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" class="tech-logo" />
-						</div>
-						<div class="tech-name">GitHub</div>
-						<div class="tech-description">Version control and collaboration platform for developers</div>
-					</div>
-
-					<div class="tech-item carousel-card" data-category="security" data-tech="cloudflare">
-						<div class="tech-icon">
-							<img src="https://cdn.simpleicons.org/cloudflare/F38020" alt="Cloudflare" class="tech-logo" />
-						</div>
-						<div class="tech-name">Cloudflare</div>
-						<div class="tech-description">Web security and performance optimization platform</div>
-					</div>
-
-					<div class="tech-item carousel-card" data-category="security" data-tech="sentinel">
-						<div class="tech-icon">
-							<svg class="tech-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Microsoft Sentinel">
-								<path fill="#0078D4" d="M12 2L4 6v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V6l-8-4zm0 2.18l5.9 2.95V11c0 4.52-2.98 8.69-5.9 9.93-2.92-1.24-5.9-5.41-5.9-9.93V7.13L12 4.18z"/>
-							</svg>
-						</div>
-						<div class="tech-name">Azure Sentinel</div>
-						<div class="tech-description">Cloud-native SIEM and security analytics platform</div>
-					</div>
-
-					<div class="tech-item carousel-card" data-category="ai" data-tech="databricks">
-						<div class="tech-icon">
-							<img src="https://cdn.simpleicons.org/databricks/FF3621" alt="Databricks" class="tech-logo" />
-						</div>
-						<div class="tech-name">Databricks</div>
-						<div class="tech-description">Unified analytics platform for big data and machine learning</div>
+						<div class="tech-name">Cybersecurity</div>
+						<div class="tech-description">We strengthen your posture with <strong>WAF</strong>, <strong>DDoS protection</strong>, <strong>SIEM</strong>, and <strong>threat detection</strong>—using <strong>Cloudflare</strong> and <strong>Microsoft Sentinel</strong>—for secure apps, compliance, and 24/7 monitoring.</div>
 					</div>
 						</div>
 					</div>
@@ -1242,8 +1195,8 @@
 			position: absolute;
 			left: 50%;
 			top: 50%;
-			width: 400px;
-			height: 450px;
+			width: 440px;
+			height: 480px;
 			transform-origin: center;
 			backface-visibility: hidden;
 			transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1254,7 +1207,7 @@
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			gap: 20px;
+			gap: 24px;
 			padding: 50px 40px;
 			background: rgba(255, 255, 255, 0.9);
 			backdrop-filter: blur(20px);
@@ -1287,75 +1240,51 @@
 			border-color: rgba(59, 177, 67, 0.4);
 		}
 
-		.tech-icon {
-			width: 120px;
-			height: 120px;
-			border-radius: 50%;
-			background: linear-gradient(
-				135deg,
-				rgba(59, 177, 67, 0.2) 0%,
-				rgba(59, 177, 67, 0.05) 100%
-			);
+		.tech-logos-row {
 			display: flex;
+			flex-wrap: wrap;
 			align-items: center;
 			justify-content: center;
-			transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-			position: relative;
-			overflow: hidden;
-		}
-
-		.carousel-card.active .tech-icon {
-			background: linear-gradient(
-				135deg,
-				rgba(59, 177, 67, 0.3) 0%,
-				rgba(59, 177, 67, 0.1) 100%
-			);
-		}
-
-		.tech-icon::before {
-			content: '';
-			position: absolute;
-			top: -50%;
-			left: -50%;
-			width: 200%;
-			height: 200%;
-			background: radial-gradient(circle, rgba(59, 177, 67, 0.3) 0%, transparent 60%);
-			animation: rotate-icon 4s linear infinite;
-			opacity: 0;
-			transition: opacity 0.4s ease;
-		}
-
-		.carousel-card.active .tech-icon::before {
-			opacity: 1;
-		}
-
-		@keyframes rotate-icon {
-			100% { transform: rotate(360deg); }
-		}
-
-		.tech-icon svg,
-		.tech-icon .tech-logo {
-			width: 70px;
-			height: 70px;
-			color: #3bb143;
-			transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+			gap: 20px;
 			position: relative;
 			z-index: 1;
 		}
 
-		.tech-icon .tech-logo {
+		.tech-logo-wrap {
+			width: 64px;
+			height: 64px;
+			border-radius: 50%;
+			background: linear-gradient(135deg, rgba(59, 177, 67, 0.15) 0%, rgba(59, 177, 67, 0.05) 100%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: all 0.4s ease;
+			flex-shrink: 0;
+		}
+
+		.carousel-card.active .tech-logo-wrap {
+			background: linear-gradient(135deg, rgba(59, 177, 67, 0.25) 0%, rgba(59, 177, 67, 0.08) 100%);
+		}
+
+		.tech-logo-wrap .tech-logo,
+		.tech-logos-row .tech-logo {
+			width: 40px;
+			height: 40px;
 			object-fit: contain;
 			display: block;
 		}
 
-		.carousel-card.active .tech-icon svg,
-		.carousel-card.active .tech-icon .tech-logo {
-			transform: scale(1.1);
-			filter: drop-shadow(0 5px 15px rgba(59, 177, 67, 0.4));
+		.tech-logos-row .tech-logo-wrap svg.tech-logo {
+			width: 40px;
+			height: 40px;
+		}
+
+		.carousel-card.active .tech-logo-wrap .tech-logo {
+			filter: drop-shadow(0 4px 12px rgba(59, 177, 67, 0.3));
 		}
 
 		.tech-name {
-			font-size: 1.5rem;
+			font-size: 1.75rem;
 			color: #1a1a1a;
 			font-weight: 700;
 			text-align: center;
@@ -1365,10 +1294,10 @@
 
 		.tech-description {
 			font-size: 1rem;
-			color: #666666;
+			color: #555;
 			text-align: center;
-			line-height: 1.6;
-			max-width: 300px;
+			line-height: 1.65;
+			max-width: 420px;
 			opacity: 0;
 			transition: opacity 0.4s ease;
 		}
@@ -1449,15 +1378,15 @@
 				padding: 40px 30px;
 			}
 
-			.tech-icon {
-				width: 100px;
-				height: 100px;
+			.tech-logo-wrap {
+				width: 56px;
+				height: 56px;
 			}
 
-			.tech-icon svg,
-			.tech-icon .tech-logo {
-				width: 60px;
-				height: 60px;
+			.tech-logo-wrap .tech-logo,
+			.tech-logos-row .tech-logo-wrap svg.tech-logo {
+				width: 36px;
+				height: 36px;
 			}
 
 			.tech-name {
@@ -1524,15 +1453,19 @@
 				gap: 15px;
 			}
 
-			.tech-icon {
-				width: 90px;
-				height: 90px;
+			.tech-logos-row {
+				gap: 14px;
 			}
 
-			.tech-icon svg,
-			.tech-icon .tech-logo {
-				width: 55px;
-				height: 55px;
+			.tech-logo-wrap {
+				width: 52px;
+				height: 52px;
+			}
+
+			.tech-logo-wrap .tech-logo,
+			.tech-logos-row .tech-logo-wrap svg.tech-logo {
+				width: 32px;
+				height: 32px;
 			}
 
 			.tech-name {
@@ -1574,15 +1507,19 @@
 				padding: 30px 20px;
 			}
 
-			.tech-icon {
-				width: 80px;
-				height: 80px;
+			.tech-logos-row {
+				gap: 12px;
 			}
 
-			.tech-icon svg,
-			.tech-icon .tech-logo {
-				width: 50px;
-				height: 50px;
+			.tech-logo-wrap {
+				width: 48px;
+				height: 48px;
+			}
+
+			.tech-logo-wrap .tech-logo,
+			.tech-logos-row .tech-logo-wrap svg.tech-logo {
+				width: 28px;
+				height: 28px;
 			}
 
 			.tech-name {
@@ -1694,20 +1631,13 @@
 				canvas.height = document.getElementById('tech-stack-section').offsetHeight;
 			});
 
-			let currentCategory = 'cloud';
+			const categories = ['ai', 'data', 'cloud', 'webapp', 'uiux', 'devops', 'security'];
+			let currentCategory = 'ai';
 			let currentIndex = 0;
-			let visibleCards = [];
-
-			function getVisibleCards() {
-				visibleCards = Array.from(allCards).filter(card => 
-					card.getAttribute('data-category') === currentCategory
-				);
-				return visibleCards;
-			}
 
 			function createIndicators() {
 				indicatorsContainer.innerHTML = '';
-				getVisibleCards().forEach((_, index) => {
+				categories.forEach((_, index) => {
 					const indicator = document.createElement('div');
 					indicator.classList.add('carousel-indicator');
 					if (index === currentIndex) indicator.classList.add('active');
@@ -1717,55 +1647,17 @@
 			}
 
 			function updateCarousel() {
-				const cards = getVisibleCards();
-				const totalCards = cards.length;
-
-				if (totalCards === 0) return;
-
-				allCards.forEach(card => card.classList.remove('active'));
-
-				cards.forEach((card, index) => {
-					const offset = index - currentIndex;
-					const absOffset = Math.abs(offset);
-
-					let translateX, translateZ, rotateY, scale, zIndex;
-
-					if (offset === 0) {
-						translateX = 0;
-						translateZ = 0;
-						rotateY = 0;
-						scale = 1;
-						zIndex = 10;
+				allCards.forEach(card => {
+					const cat = card.getAttribute('data-category');
+					if (cat === currentCategory) {
+						card.classList.remove('hidden');
 						card.classList.add('active');
-					} else if (absOffset === 1) {
-						translateX = offset * 380;
-						translateZ = -200;
-						rotateY = offset * -25;
-						scale = 0.8;
-						zIndex = 5;
-					} else if (absOffset === 2) {
-						translateX = offset * 550;
-						translateZ = -350;
-						rotateY = offset * -35;
-						scale = 0.6;
-						zIndex = 3;
+						gsap.to(card, { x: 0, z: 0, rotateY: 0, scale: 1, zIndex: 10, duration: 0.6, ease: 'power2.out' });
 					} else {
-						translateX = offset * 700;
-						translateZ = -500;
-						rotateY = offset * -45;
-						scale = 0.4;
-						zIndex = 1;
+						card.classList.add('hidden');
+						card.classList.remove('active');
+						gsap.to(card, { x: 0, z: 0, rotateY: 0, scale: 0.5, zIndex: 1, duration: 0.6, ease: 'power2.out' });
 					}
-
-					gsap.to(card, {
-						x: translateX,
-						z: translateZ,
-						rotateY: rotateY,
-						scale: scale,
-						zIndex: zIndex,
-						duration: 0.6,
-						ease: 'power2.out'
-					});
 				});
 
 				const indicators = indicatorsContainer.querySelectorAll('.carousel-indicator');
@@ -1775,24 +1667,27 @@
 			}
 
 			function goToSlide(index) {
-				const cards = getVisibleCards();
-				currentIndex = Math.max(0, Math.min(index, cards.length - 1));
+				currentIndex = Math.max(0, Math.min(index, categories.length - 1));
+				currentCategory = categories[currentIndex];
+				filterBtns.forEach((b) => b.classList.toggle('active', b.getAttribute('data-category') === currentCategory));
 				updateCarousel();
+				createIndicators();
 			}
 
 			function nextSlide() {
-				const cards = getVisibleCards();
-				if (currentIndex < cards.length - 1) {
-					currentIndex++;
-					updateCarousel();
-				}
+				currentIndex = (currentIndex + 1) % categories.length;
+				currentCategory = categories[currentIndex];
+				filterBtns.forEach((b) => b.classList.toggle('active', b.getAttribute('data-category') === currentCategory));
+				updateCarousel();
+				createIndicators();
 			}
 
 			function prevSlide() {
-				if (currentIndex > 0) {
-					currentIndex--;
-					updateCarousel();
-				}
+				currentIndex = (currentIndex - 1 + categories.length) % categories.length;
+				currentCategory = categories[currentIndex];
+				filterBtns.forEach((b) => b.classList.toggle('active', b.getAttribute('data-category') === currentCategory));
+				updateCarousel();
+				createIndicators();
 			}
 
 			prevBtn.addEventListener('click', prevSlide);
@@ -1800,30 +1695,19 @@
 
 			filterBtns.forEach(btn => {
 				btn.addEventListener('click', () => {
-					filterBtns.forEach(b => b.classList.remove('active'));
-					btn.classList.add('active');
-
 					currentCategory = btn.getAttribute('data-category');
-					currentIndex = 0;
-
-					allCards.forEach(card => {
-						const itemCategory = card.getAttribute('data-category');
-						if (itemCategory === currentCategory) {
-							card.classList.remove('hidden');
-						} else {
-							card.classList.add('hidden');
-						}
-					});
-
-					createIndicators();
+					currentIndex = categories.indexOf(currentCategory);
+					if (currentIndex === -1) currentIndex = 0;
+					filterBtns.forEach((b) => b.classList.toggle('active', b.getAttribute('data-category') === currentCategory));
 					updateCarousel();
+					createIndicators();
 					startAutoRotate();
 				});
 			});
 
 			allCards.forEach(card => {
 				const itemCategory = card.getAttribute('data-category');
-				if (itemCategory !== 'cloud') {
+				if (itemCategory !== 'ai') {
 					card.classList.add('hidden');
 				}
 			});
@@ -1836,14 +1720,7 @@
 			function startAutoRotate() {
 				stopAutoRotate();
 				autoRotateInterval = setInterval(() => {
-					const cards = getVisibleCards();
-					if (cards.length <= 1) return;
-					if (currentIndex < cards.length - 1) {
-						nextSlide();
-					} else {
-						currentIndex = 0;
-						updateCarousel();
-					}
+					nextSlide();
 				}, 5000);
 			}
 
