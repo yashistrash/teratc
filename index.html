@@ -20,6 +20,35 @@
 	<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" /><!-- Template Main CSS File -->
 	<link href="assets/css/style.css" rel="stylesheet" />
 	<link href="assets/css/icon-font/lineicons.css" rel="stylesheet" />
+	<style>
+		/* Logo Styles */
+		.logo-img {
+			height: 40px;
+			width: auto;
+			object-fit: contain;
+		}
+		.hero-logo {
+			height: 80px;
+			width: auto;
+			object-fit: contain;
+		}
+		.footer-logo-img {
+			height: 45px;
+			width: auto;
+			object-fit: contain;
+		}
+		@media (max-width: 768px) {
+			.logo-img {
+				height: 32px;
+			}
+			.hero-logo {
+				height: 60px;
+			}
+			.footer-logo-img {
+				height: 36px;
+			}
+		}
+	</style>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
@@ -76,15 +105,16 @@
 <body oncontextmenu="return false" class="scroll-container">
 	<header class="d-flex align-items-center" id="header">
 		<div class="container d-flex align-items-center justify-content-between">
-			<h1 class="logo"><a href="index.html">Tera</a></h1>
+			<h1 class="logo"><a href="index.html"><img src="./assets/img/teralogo.png" alt="Tera" class="logo-img"></a></h1>
 
 			<nav class="navbar" id="navbar">
 				<ul>
 					<li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+					<li><a class="nav-link scrollto" href="#middle-section">Transform</a></li>
 					<li><a class="nav-link scrollto" href="#services-section">Services</a></li>
-					<li><a class="nav-link scrollto" href="#about-section">About</a></li>
 					<li><a class="nav-link scrollto" href="#process-section">Process</a></li>
 					<li><a class="nav-link scrollto" href="#tech-stack-section">Technology</a></li>
+					<li><a class="nav-link scrollto" href="#about-section">About</a></li>
 				</ul>
 			</nav>
 			<!-- .navbar -->
@@ -103,7 +133,7 @@
 			</video>
 
 			<div class="videoClass">
-				<h1><span>TERA</span></h1>
+				<h1><img src="./assets/img/teralogo.png" alt="TERA" class="hero-logo"></h1>
 
 				<h2 style="color:white;">In a Digital Transformation ERA - we help increase the strength of
 					organizations by helping them to adapt to the contemporary reality of an ever faster changing world.
@@ -4026,7 +4056,7 @@
 		<div class="footer-content">
 			<div class="footer-grid">
 				<div class="footer-column">
-					<h3 class="footer-logo">TERA</h3>
+					<div class="footer-logo"><img src="./assets/img/teralogo.png" alt="TERA" class="footer-logo-img"></div>
 					<p class="footer-description">Empowering businesses through innovative technology solutions and digital transformation.</p>
 					<div class="footer-social">
 						<a href="#" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
