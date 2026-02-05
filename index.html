@@ -742,10 +742,21 @@
 		}
 	</style>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js"></script>
+	<script>
+		// Only load Three.js and Vanta on desktop to prevent mobile GPU crashes
+		if (window.innerWidth >= 768) {
+			['https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js',
+			 'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js',
+			 'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js',
+			 'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js'
+			].forEach(src => {
+				const s = document.createElement('script');
+				s.src = src;
+				s.async = false;
+				document.head.appendChild(s);
+			});
+		}
+	</script>
 
 	<!-- 
 	<script language="javascript">
@@ -2559,7 +2570,7 @@
 
 				let particles = [];
 				const isMobile = window.innerWidth < 768;
-				const particleCount = isMobile ? 30 : 50;
+				const particleCount = isMobile ? 15 : 50;
 				const connectDist = 150;
 				const connectDistSq = connectDist * connectDist;
 				let animFrameId = null;
@@ -3645,6 +3656,8 @@
 				});
 
 				function animateCounter(bubble) {
+					if (bubble._counterAnimating) return;
+					bubble._counterAnimating = true;
 					const numberElement = bubble.querySelector('.stat-number');
 					const target = parseInt(numberElement.getAttribute('data-target'));
 					const duration = 2000;
@@ -3654,7 +3667,11 @@
 						if (!start) start = timestamp;
 						const progress = Math.min((timestamp - start) / duration, 1);
 						numberElement.textContent = Math.floor(progress * target);
-						if (progress < 1) requestAnimationFrame(tick);
+						if (progress < 1) {
+							requestAnimationFrame(tick);
+						} else {
+							bubble._counterAnimating = false;
+						}
 					}
 					requestAnimationFrame(tick);
 				}
@@ -3665,20 +3682,26 @@
 			/* ===== Scroll Snap Container ===== */
 			html,
 			body.scroll-container {
-				scroll-snap-type: y proximity;
 				overflow-y: scroll;
-				scroll-behavior: smooth;
+				overscroll-behavior: none;
 			}
 
+			@media (min-width: 769px) {
+				html,
+				body.scroll-container {
+					scroll-snap-type: y proximity;
+					scroll-behavior: smooth;
+				}
 
-			#hero,
-			#services-section,
-			#middle-section,
-			#about-section,
-			#process-section,
-			#tech-stack-section,
-			#hero1 {
-				scroll-snap-align: start;
+				#hero,
+				#services-section,
+				#middle-section,
+				#about-section,
+				#process-section,
+				#tech-stack-section,
+				#hero1 {
+					scroll-snap-align: start;
+				}
 			}
 
 			#hero {
@@ -4502,8 +4525,13 @@
 				padding: 60px 0 70px;
 				position: relative;
 				overflow: hidden;
-				scroll-snap-align: start;
 				isolation: isolate;
+			}
+
+			@media (min-width: 769px) {
+				.contact-section {
+					scroll-snap-align: start;
+				}
 			}
 
 			/* Background shapes */
@@ -5718,6 +5746,23 @@
 
 		gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+		// Pause hero video when not visible to save GPU/battery on mobile
+		(function() {
+			const heroVideo = document.getElementById('bgvideo');
+			if (heroVideo) {
+				const videoObserver = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							heroVideo.play();
+						} else {
+							heroVideo.pause();
+						}
+					});
+				}, { threshold: 0 });
+				videoObserver.observe(heroVideo);
+			}
+		})();
+
 		/*
 		const particleContainer = document.getElementById('particles');
 		const particleCount = 30;
@@ -5855,38 +5900,29 @@
 		resetAnimations();
 		*/
 
-		if (typeof VANTA !== 'undefined') {
-			/*
-			VANTA.WAVES({
-				el: "#vanta-middle",
-				mouseControls: true,
-				touchControls: true,
-				gyroControls: false,
-				minHeight: 200.00,
-				minWidth: 200.00,
-				scale: 1.00,
-				scaleMobile: 1.00,
-				color: 0x1a6b1a,
-				shininess: 0.00,
-				waveHeight: 15.00,
-				waveSpeed: 0.75,
-				zoom: 1.01
-			});
-			*/
-
-			const isMobileDevice = window.innerWidth < 768;
+		if (typeof VANTA !== 'undefined' && window.innerWidth >= 768) {
 			const vantaInstances = {};
+			const vantaTimers = {};
 
 			function initVanta(id, factory) {
 				const el = document.querySelector(id);
 				if (!el) return;
 				const observer = new IntersectionObserver((entries) => {
 					entries.forEach(entry => {
+						clearTimeout(vantaTimers[id]);
 						if (entry.isIntersecting && !vantaInstances[id]) {
-							vantaInstances[id] = factory();
+							vantaTimers[id] = setTimeout(() => {
+								if (!vantaInstances[id]) {
+									vantaInstances[id] = factory();
+								}
+							}, 300);
 						} else if (!entry.isIntersecting && vantaInstances[id]) {
-							vantaInstances[id].destroy();
-							vantaInstances[id] = null;
+							vantaTimers[id] = setTimeout(() => {
+								if (vantaInstances[id]) {
+									vantaInstances[id].destroy();
+									vantaInstances[id] = null;
+								}
+							}, 300);
 						}
 					});
 				}, { threshold: 0 });
@@ -5895,7 +5931,7 @@
 
 			initVanta("#vanta-services", () => VANTA.BIRDS({
 				el: "#vanta-services",
-				mouseControls: !isMobileDevice,
+				mouseControls: true,
 				touchControls: false,
 				gyroControls: false,
 				minHeight: 200.00,
@@ -5912,12 +5948,12 @@
 				separation: 40.00,
 				alignment: 40.00,
 				cohesion: 40.00,
-				quantity: isMobileDevice ? 2.00 : 3.00
+				quantity: 3.00
 			}));
 
 			initVanta("#vanta-about", () => VANTA.DOTS({
 				el: "#vanta-about",
-				mouseControls: !isMobileDevice,
+				mouseControls: true,
 				touchControls: false,
 				gyroControls: false,
 				minHeight: 200.00,
@@ -5933,7 +5969,7 @@
 
 			initVanta("#vanta-process", () => VANTA.HALO({
 				el: "#vanta-process",
-				mouseControls: !isMobileDevice,
+				mouseControls: true,
 				touchControls: false,
 				gyroControls: false,
 				minHeight: 200.00,
