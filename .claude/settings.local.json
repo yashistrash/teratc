@@ -8,7 +8,9 @@
       "Bash(ffmpeg:*)",
       "Bash(wc:*)",
       "WebFetch(domain:gsap.com)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(grep:*)",
+      "Bash(copy \"D:\\\\yash\\\\Tera\\\\index.html\" \"D:\\\\yash\\\\Tera\\\\dist\\\\index.html\")"
     ]
   }
 }

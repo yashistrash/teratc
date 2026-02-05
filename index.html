@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport">
 	<title>Tera</title>
 	<meta content="" name="description">
 	<meta content="" name="keywords"><!-- Favicons -->
@@ -27,29 +27,645 @@
 			width: auto;
 			object-fit: contain;
 		}
+
 		.hero-logo {
 			height: 80px;
 			width: auto;
 			object-fit: contain;
 		}
+
 		.footer-logo-img {
 			height: 45px;
 			width: auto;
 			object-fit: contain;
 		}
-		@media (max-width: 768px) {
+
+		/* ====== MOBILE HAMBURGER MENU ====== */
+		.mobile-nav-toggle {
+			color: #222222;
+			font-size: 28px;
+			cursor: pointer;
+			display: none;
+			line-height: 0;
+			transition: 0.5s;
+			background: none;
+			border: none;
+			padding: 10px;
+			z-index: 9999;
+		}
+
+		@media (max-width: 991px) {
+			.mobile-nav-toggle {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			#header .navbar {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: rgba(255, 255, 255, 0.98);
+				z-index: 9998;
+				transform: translateX(100%);
+				transition: transform 0.3s ease;
+				padding-top: 80px;
+			}
+
+			#header .navbar.navbar-mobile {
+				transform: translateX(0);
+			}
+
+			#header .navbar ul {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 20px;
+				padding: 40px 20px;
+			}
+
+			#header .navbar>ul>li {
+				padding: 0;
+			}
+
+			#header .navbar a {
+				font-size: 18px !important;
+				padding: 12px 30px !important;
+			}
+
+			#header>.container>div[style*="float:right"] {
+				display: none;
+			}
+
+			.mobile-nav-toggle.bi-x {
+				position: fixed;
+				top: 20px;
+				right: 20px;
+				color: #222;
+				z-index: 9999;
+			}
+		}
+
+		/* ====== RESPONSIVE HEADER ====== */
+		@media (max-width: 991px) {
+			#header {
+				height: 70px;
+				padding: 0 15px;
+			}
+
+			#header>.container {
+				padding: 0 10px;
+			}
+
 			.logo-img {
 				height: 32px;
 			}
-			.hero-logo {
-				height: 60px;
+		}
+
+		/* ====== RESPONSIVE HERO SECTION ====== */
+		@media (max-width: 768px) {
+			#hero {
+				height: auto;
+				min-height: 100vh;
+				padding: 100px 0 60px;
 			}
-			.footer-logo-img {
-				height: 36px;
+
+			#hero .videoClass {
+				padding: 0 20px;
+				text-align: center;
+			}
+
+			#hero .videoClass h2 {
+				font-size: 16px !important;
+				line-height: 1.5 !important;
+				margin: 15px 0 !important;
+			}
+
+			.hero-logo {
+				height: 50px;
+			}
+
+			#bgvideo {
+				object-fit: cover;
+			}
+		}
+
+		/* ====== RESPONSIVE MIDDLE SECTION ====== */
+		@media (max-width: 768px) {
+			#middle-section {
+				height: auto;
+				min-height: 100vh;
+				padding: 60px 0;
+			}
+
+			.cinematic-title {
+				width: 95%;
+				padding: 0 10px;
+			}
+
+			.letter-3d {
+				font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
+			}
+
+			.letter-3d.sub {
+				font-size: clamp(1.2rem, 4vw, 2rem) !important;
+			}
+
+			.glass-orb {
+				display: none;
+			}
+
+			.glass-ribbon {
+				height: 40px;
+				bottom: 5vh;
+			}
+
+			.ribbon-word {
+				font-size: 12px !important;
+				padding: 0 15px !important;
+			}
+		}
+
+		/* ====== RESPONSIVE CONTACT SECTION ====== */
+		@media (max-width: 768px) {
+			#hero1 {
+				height: auto;
+				min-height: 100vh;
+				padding: 80px 0 60px;
+			}
+
+			.contact-grid {
+				grid-template-columns: 1fr !important;
+				gap: 30px;
+			}
+
+			.contact-form-container {
+				order: 2;
+			}
+
+			.contact-info-side {
+				order: 1;
+			}
+
+			.contact-container {
+				padding: 0 20px;
+			}
+
+			.contact-form {
+				padding: 30px 20px !important;
+			}
+
+			.form-row {
+				grid-template-columns: 1fr !important;
+			}
+		}
+
+		/* ====== GENERAL MOBILE TYPOGRAPHY ====== */
+		@media (max-width: 768px) {
+			body {
+				font-size: 14px;
+				overflow-x: hidden;
+			}
+
+			h1 {
+				font-size: 24px !important;
+			}
+
+			h2 {
+				font-size: 20px !important;
+			}
+
+			h3 {
+				font-size: 18px !important;
+			}
+
+			p {
+				font-size: 14px !important;
+				line-height: 1.6 !important;
+			}
+
+			.btn1 {
+				padding: 10px 20px !important;
+				font-size: 14px !important;
+			}
+		}
+
+		/* ====== COMPREHENSIVE MOBILE ALIGNMENT FIXES ====== */
+		@media (max-width: 768px) {
+
+			/* Prevent horizontal overflow */
+			html,
+			body {
+				overflow-x: hidden;
+				width: 100%;
+				max-width: 100vw;
+			}
+
+			/* Container fixes */
+			.container {
+				padding-left: 15px !important;
+				padding-right: 15px !important;
+				max-width: 100% !important;
+				overflow-x: hidden;
+			}
+
+			/* Services Section Fixes */
+			#services-section {
+				padding: 40px 0;
+			}
+
+			.services-container {
+				padding: 0 15px;
+			}
+
+			.services-header {
+				margin-bottom: 30px;
+			}
+
+			.services-title {
+				font-size: 1.8rem !important;
+				line-height: 1.3;
+			}
+
+			.services-grid {
+				grid-template-columns: 1fr !important;
+				gap: 20px !important;
+			}
+
+			.service-card {
+				padding: 25px 20px;
+				margin: 0;
+			}
+
+			.service-icon {
+				width: 60px;
+				height: 60px;
+				margin-bottom: 15px;
+			}
+
+			/* Process Section Fixes */
+			#process-section {
+				padding: 40px 0;
+			}
+
+			.process-container {
+				padding: 0 15px;
+			}
+
+			.process-header {
+				margin-bottom: 40px;
+			}
+
+			.process-title {
+				font-size: 1.8rem !important;
+			}
+
+			.process-step {
+				display: flex !important;
+				flex-direction: column !important;
+				align-items: center !important;
+				text-align: center;
+				margin-bottom: 40px;
+				gap: 15px;
+			}
+
+			.step-image,
+			.step-image-right {
+				max-width: 100% !important;
+				width: 100% !important;
+				order: 0;
+				margin-bottom: 10px;
+			}
+
+			.step-icon {
+				order: 1;
+				width: 70px;
+				height: 70px;
+			}
+
+			.step-content {
+				order: 2;
+				max-width: 100%;
+				text-align: center;
+			}
+
+			.step-details {
+				display: flex !important;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 8px;
+			}
+
+			.step-details li {
+				text-align: left;
+			}
+
+			/* Technology Section Fixes */
+			#tech-stack-section {
+				height: auto !important;
+				min-height: auto !important;
+				max-height: none !important;
+				padding: 40px 0 !important;
+			}
+
+			.tech-container {
+				padding: 0 15px !important;
+				height: auto !important;
+				min-height: auto !important;
+			}
+
+			.tech-header {
+				margin-bottom: 15px;
+			}
+
+			.tech-title {
+				font-size: 1.6rem !important;
+			}
+
+			.carousel-wrapper {
+				flex-direction: column;
+				gap: 20px;
+				padding: 10px 0;
+			}
+
+			.carousel-container {
+				max-width: 100% !important;
+				width: 100%;
+				height: auto !important;
+				min-height: 320px;
+			}
+
+			.carousel-card {
+				width: 90% !important;
+				max-width: 300px;
+				height: auto !important;
+				min-height: 280px;
+				position: relative !important;
+				left: auto !important;
+				top: auto !important;
+				transform: none !important;
+				margin: 0 auto;
+			}
+
+			.carousel-card.hidden {
+				display: none !important;
+			}
+
+			.carousel-card.active {
+				display: flex !important;
+			}
+
+			.tech-item {
+				padding: 20px 15px;
+				height: auto !important;
+				min-height: auto;
+			}
+
+			.tech-logos-row {
+				gap: 10px;
+			}
+
+			.tech-logo-wrap {
+				width: 45px;
+				height: 45px;
+			}
+
+			.tech-name {
+				font-size: 1.2rem !important;
+			}
+
+			.tech-description {
+				font-size: 0.85rem !important;
+				opacity: 1 !important;
+				padding: 0 10px;
+			}
+
+			.carousel-nav {
+				display: none !important;
+			}
+
+			.carousel-indicators {
+				margin-top: 15px;
+			}
+
+			/* About Section Fixes */
+			#about-section {
+				height: auto !important;
+				min-height: auto !important;
+				max-height: none !important;
+				padding: 40px 0;
+			}
+
+			.about-container {
+				grid-template-columns: 1fr !important;
+				gap: 30px;
+				padding: 0 15px;
+				height: auto !important;
+			}
+
+			.about-left {
+				order: 1;
+			}
+
+			.about-right {
+				order: 2;
+				min-height: 350px !important;
+				height: 350px !important;
+			}
+
+			.about-title {
+				font-size: 1.6rem !important;
+				text-align: center;
+			}
+
+			.about-description {
+				text-align: center;
+			}
+
+			.about-features {
+				align-items: center;
+			}
+
+			.stat-bubble {
+				width: 90px !important;
+				height: 90px !important;
+			}
+
+			.stat-number {
+				font-size: 1.2rem !important;
+			}
+
+			.stat-label {
+				font-size: 0.55rem !important;
+			}
+
+			/* Middle Section Fixes */
+			#middle-section {
+				height: auto !important;
+				min-height: 100vh;
+			}
+
+			.middle-content-overlay {
+				position: relative;
+				padding: 60px 15px;
+			}
+
+			.cinematic-title {
+				position: relative !important;
+				top: auto !important;
+				left: auto !important;
+				transform: none !important;
+				width: 100%;
+				padding: 0;
+			}
+
+			.title-row {
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+
+			/* Contact Section Fixes */
+			#hero1 {
+				height: auto !important;
+				min-height: auto;
+				padding: 60px 0 40px;
+			}
+
+			.contact-container {
+				padding: 0 15px !important;
+			}
+
+			.contact-grid {
+				grid-template-columns: 1fr !important;
+			}
+
+			.contact-header {
+				text-align: center;
+				margin-bottom: 30px;
+			}
+
+			.contact-title {
+				font-size: 1.6rem !important;
+			}
+
+			.contact-form {
+				padding: 25px 15px !important;
+			}
+
+			.form-row {
+				grid-template-columns: 1fr !important;
+				gap: 15px !important;
+			}
+
+			.info-cards {
+				flex-direction: column;
+				gap: 15px;
+			}
+
+			.info-card {
+				width: 100%;
+			}
+
+			/* Footer Fixes */
+			#footer {
+				padding: 40px 0 0;
+			}
+
+			.footer-content {
+				padding: 0 15px;
+			}
+
+			.footer-grid {
+				grid-template-columns: 1fr !important;
+				gap: 30px;
+				text-align: center;
+			}
+
+			.footer-column {
+				text-align: center;
+			}
+
+			.footer-social {
+				justify-content: center;
+			}
+
+			.footer-heading::after {
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			/* Z-index fixes to prevent overlapping */
+			#header {
+				z-index: 1000;
+			}
+
+			.mobile-nav-toggle {
+				z-index: 1001;
+			}
+
+			#navbar.navbar-mobile {
+				z-index: 999;
+			}
+
+			/* Cookie banner mobile fix */
+			.cookie-banner {
+				padding: 15px;
+			}
+
+			.cookie-content {
+				flex-direction: column;
+				gap: 15px;
+				text-align: center;
+			}
+
+			.cookie-buttons {
+				flex-direction: row;
+				justify-content: center;
+			}
+		}
+
+		/* Extra small devices */
+		@media (max-width: 480px) {
+
+			.services-title,
+			.process-title,
+			.tech-title,
+			.about-title,
+			.contact-title {
+				font-size: 1.5rem !important;
+			}
+
+			.service-card {
+				padding: 20px 15px;
+			}
+
+			.carousel-card {
+				width: 95% !important;
+				min-height: 260px;
+			}
+
+			.stat-bubble {
+				width: 80px !important;
+				height: 80px !important;
+			}
+
+			.stat-number {
+				font-size: 1rem !important;
+			}
+
+			.stat-label {
+				font-size: 0.5rem !important;
+			}
+
+			.about-right {
+				min-height: 300px !important;
+				height: 300px !important;
 			}
 		}
 	</style>
-	
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
@@ -60,7 +676,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js"></script>
-	
+
 	<script language="javascript">
 		document.onmousedown = disableclick;
 		status = "Right Click Disabled";
@@ -100,1044 +716,61 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 
-	<!-- Mobile Responsive Optimizations -->
+	<!-- Desktop-Like View on Mobile - Scales down instead of rearranging -->
 	<style>
-		/* ====== GLOBAL MOBILE OPTIMIZATIONS ====== */
+		/* ====== DESKTOP VIEW PRESERVED ON MOBILE ====== */
+		/* The viewport meta tag is set to width=1200, which scales the desktop
+		   layout to fit mobile screens while maintaining the desktop appearance */
 
-		/* Disable complex animations on mobile for better performance */
-		@media (max-width: 768px) {
-			.particle-container,
-			.contact-shape,
-			.shape {
-				display: none !important;
-			}
-
-			/* Reduce animation intensity */
-			* {
-				animation-duration: 0.5s !important;
-			}
-
-			/* Ensure touch targets are at least 44px */
-			a, button, .nav-link, .filter-btn, .carousel-nav, .social-link {
-				min-height: 44px;
-				min-width: 44px;
-			}
+		/* Better text rendering */
+		body {
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			text-rendering: optimizeLegibility;
 		}
 
-		/* ====== 1. HEADER/NAVIGATION MOBILE ====== */
-		@media (max-width: 991px) {
-			#header {
-				height: 70px;
-				padding: 10px 0;
-			}
-
-			#header .container {
-				padding: 0 15px;
-			}
-
-			.logo-img {
-				height: 28px !important;
-			}
-
-			/* Contact Us button in header */
-			#header .btn1.btn-border1 {
-				padding: 8px 16px !important;
-				font-size: 0.8rem;
-				white-space: nowrap;
-			}
-		}
-
-		@media (max-width: 576px) {
-			#header {
-				height: 60px;
-			}
-
-			.logo-img {
-				height: 24px !important;
-			}
-
-			#header .btn1.btn-border1 {
-				padding: 6px 12px !important;
-				font-size: 0.75rem;
-			}
-		}
-
-		/* ====== 2. HERO SECTION MOBILE ====== */
-		@media (max-width: 768px) {
-			#hero {
-				height: auto;
-				min-height: 100vh;
-				padding: 80px 0 40px;
-			}
-
-			#hero .container {
-				padding: 0 20px;
-			}
-
-			.hero-logo {
-				height: 50px !important;
-				margin-bottom: 15px;
-			}
-
-			.videoClass {
-				position: relative !important;
-				top: auto !important;
-				padding: 20px 15px;
-				text-align: center;
-			}
-
-			.videoClass h2 {
-				font-size: 1rem !important;
-				line-height: 1.5 !important;
-				margin-bottom: 15px !important;
-			}
-
-			#bgvideo {
-				object-fit: cover;
-				object-position: center;
-			}
-		}
-
-		@media (max-width: 480px) {
-			.hero-logo {
-				height: 40px !important;
-			}
-
-			.videoClass h2 {
-				font-size: 0.9rem !important;
-				line-height: 1.4 !important;
-				padding: 0 10px;
-			}
-		}
-
-		/* ====== 3. MIDDLE/TRANSFORM SECTION MOBILE ====== */
-		@media (max-width: 768px) {
-			#middle-section {
-				height: auto;
-				min-height: 100vh;
-				padding: 60px 0;
-			}
-
-			.cinematic-title {
-				width: 95%;
-				padding: 0 10px;
-			}
-
-			.title-row {
-				flex-wrap: wrap;
-				justify-content: center;
-				gap: 2px;
-			}
-
-			/* Glass orbs - reposition for mobile */
-			.glass-orb {
-				position: relative !important;
-				top: auto !important;
-				bottom: auto !important;
-				left: auto !important;
-				right: auto !important;
-				transform: none !important;
-				margin: 10px;
-				display: inline-block;
-			}
-
-			.middle-content-overlay {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-				padding: 20px 15px;
-			}
-
-			/* Create a flex container for orbs on mobile */
-			.glass-orb-container-mobile {
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
-				gap: 15px;
-				margin-top: 30px;
-			}
-		}
-
-		@media (max-width: 480px) {
-			#middle-section {
-				padding: 40px 0;
-			}
-
-			.orb-content {
-				width: 65px !important;
-				height: 65px !important;
-			}
-
-			.orb-number {
-				font-size: 0.85rem !important;
-			}
-
-			/* Hide glass ribbon on very small screens */
-			.glass-ribbon {
-				display: none !important;
-			}
-		}
-
-		/* ====== 4. SERVICES SECTION MOBILE ====== */
-		@media (max-width: 768px) {
-			#services-section {
-				padding: 50px 0;
-				min-height: auto;
-			}
-
-			.services-container {
-				padding: 0 15px;
-			}
-
-			.services-header {
-				margin-bottom: 40px;
-			}
-
-			.services-title {
-				font-size: 1.8rem;
-			}
-
-			.services-subtitle {
-				font-size: 0.9rem;
-				padding: 0 10px;
-			}
-
-			.services-grid {
-				grid-template-columns: 1fr;
-				gap: 20px;
-			}
-
-			.service-card {
-				padding: 25px 20px;
-			}
-
-			.service-icon {
-				width: 60px;
-				height: 60px;
-				margin-bottom: 20px;
-			}
-
-			.service-title {
-				font-size: 1.2rem;
-			}
-
-			.service-description {
-				font-size: 0.9rem;
-				line-height: 1.5;
-			}
-		}
-
-		@media (max-width: 480px) {
-			#services-section {
-				padding: 40px 0;
-			}
-
-			.services-title {
-				font-size: 1.5rem;
-			}
-
-			.service-card {
-				padding: 20px 15px;
-			}
-
-			.service-icon {
-				width: 50px;
-				height: 50px;
-			}
-
-			.service-title {
-				font-size: 1.1rem;
-			}
-
-			.service-description {
-				font-size: 0.85rem;
-			}
-		}
-
-		/* ====== 5. PROCESS SECTION MOBILE ====== */
-		@media (max-width: 768px) {
-			#process-section {
-				padding: 50px 0;
-				min-height: auto;
-			}
-
-			.process-container {
-				padding: 0 15px;
-			}
-
-			.process-header {
-				margin-bottom: 50px;
-			}
-
-			.process-title {
-				font-size: 1.8rem;
-			}
-
-			.process-subtitle {
-				font-size: 0.9rem;
-			}
-
-			.process-step {
-				margin-bottom: 50px;
-				gap: 15px;
-			}
-
-			.step-image,
-			.step-image-right {
-				max-width: 100% !important;
-				width: 100%;
-				margin-bottom: 15px;
-			}
-
-			.step-icon {
-				width: 70px;
-				height: 70px;
-			}
-
-			.icon-svg {
-				width: 35px;
-				height: 35px;
-			}
-
-			.step-number {
-				font-size: 0.7rem;
-				bottom: -20px;
-			}
-
-			.step-content {
-				max-width: 100%;
-				padding: 0 10px;
-			}
-
-			.step-title {
-				font-size: 1.3rem;
-			}
-
-			.step-description {
-				font-size: 0.9rem;
-				line-height: 1.6;
-			}
-
-			.step-details {
-				grid-template-columns: 1fr;
-				gap: 8px;
-			}
-
-			.step-details li {
-				font-size: 0.85rem;
-			}
-		}
-
-		@media (max-width: 480px) {
-			#process-section {
-				padding: 40px 0;
-			}
-
-			.process-title {
-				font-size: 1.5rem;
-			}
-
-			.process-step {
-				margin-bottom: 40px;
-			}
-
-			.step-icon {
-				width: 60px;
-				height: 60px;
-			}
-
-			.step-title {
-				font-size: 1.15rem;
-			}
-
-			.step-description {
-				font-size: 0.85rem;
-			}
-		}
-
-		/* ====== 6. TECHNOLOGY SECTION MOBILE ====== */
-		@media (max-width: 768px) {
-			#tech-stack-section {
-				height: auto;
-				min-height: auto;
-				max-height: none;
-				padding: 50px 0;
-			}
-
-			.tech-container {
-				padding: 0 15px;
-				padding-top: 10px;
-			}
-
-			.tech-title {
-				font-size: 1.8rem;
-			}
-
-			.tech-subtitle {
-				font-size: 0.85rem;
-			}
-
-			.tech-filter {
-				flex-wrap: wrap;
-				justify-content: center;
-				gap: 8px;
-				padding: 0 10px 10px;
-				overflow-x: visible;
-			}
-
-			.filter-btn {
-				padding: 8px 14px;
-				font-size: 0.65rem;
-				flex-shrink: 0;
-			}
-
-			.carousel-wrapper {
-				flex-direction: column;
-				gap: 15px;
-				padding: 10px 0;
-			}
-
-			.carousel-container {
-				max-width: 100%;
-				height: auto;
-				min-height: 350px;
-			}
-
-			.carousel-card {
-				position: relative;
-				left: auto;
-				top: auto;
-				transform: none !important;
-				width: 100%;
-				max-width: 320px;
-				height: auto;
-				min-height: 320px;
-				margin: 0 auto;
-			}
-
-			.tech-item {
-				padding: 25px 20px;
-				gap: 12px;
-			}
-
-			.tech-logos-row {
-				gap: 12px;
-			}
-
-			.tech-logo-wrap {
-				width: 45px;
-				height: 45px;
-			}
-
-			.tech-logo-wrap .tech-logo {
-				width: 25px;
-				height: 25px;
-			}
-
-			.tech-name {
-				font-size: 1.2rem;
-			}
-
-			.tech-description {
-				font-size: 0.85rem;
-				opacity: 1 !important;
-			}
-
-			/* Navigation buttons on mobile */
-			.carousel-nav {
-				position: static;
-				width: 50px;
-				height: 50px;
-				transform: none;
-			}
-
-			.carousel-indicators {
-				margin-top: 15px;
-			}
-
-			/* Show nav buttons in a row below carousel */
-			.carousel-wrapper {
-				position: relative;
-			}
-
-			.carousel-prev,
-			.carousel-next {
-				position: absolute;
-				top: 50%;
-				transform: translateY(-50%);
-				z-index: 10;
-			}
-
-			.carousel-prev {
-				left: 5px;
-			}
-
-			.carousel-next {
-				right: 5px;
-			}
-		}
-
-		@media (max-width: 480px) {
-			#tech-stack-section {
-				padding: 40px 0;
-			}
-
-			.tech-title {
-				font-size: 1.5rem;
-			}
-
-			.filter-btn {
-				padding: 6px 10px;
-				font-size: 0.6rem;
-			}
-
-			.carousel-card {
-				max-width: 280px;
-				min-height: 300px;
-			}
-
-			.tech-item {
-				padding: 20px 15px;
-			}
-
-			.tech-logo-wrap {
-				width: 40px;
-				height: 40px;
-			}
-
-			.tech-logo-wrap .tech-logo {
-				width: 22px;
-				height: 22px;
-			}
-
-			.tech-name {
-				font-size: 1.1rem;
-			}
-
-			.tech-description {
-				font-size: 0.8rem;
-			}
-
-			.carousel-nav {
-				width: 40px;
-				height: 40px;
-			}
-
-			.carousel-nav svg {
-				width: 16px;
-				height: 16px;
-			}
-		}
-
-		/* ====== 7. ABOUT SECTION MOBILE ====== */
-		@media (max-width: 768px) {
-			#about-section {
-				height: auto;
-				max-height: none;
-				padding: 50px 0;
-			}
-
-			.about-container {
-				grid-template-columns: 1fr;
-				gap: 40px;
-				padding: 0 15px;
-			}
-
-			.about-left {
-				text-align: center;
-			}
-
-			.about-content {
-				max-width: 100%;
-			}
-
-			.about-title {
-				font-size: 1.8rem;
-			}
-
-			.about-description {
-				font-size: 0.9rem;
-			}
-
-			.about-features {
-				align-items: center;
-			}
-
-			.feature-item {
-				justify-content: center;
-			}
-
-			.about-right {
-				min-height: 400px;
-				max-height: none;
-			}
-
-			/* Stat bubbles repositioning for mobile */
-			.stats-container {
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
-				gap: 20px;
-				padding: 20px 0;
-			}
-
-			.stat-bubble {
-				position: relative !important;
-				top: auto !important;
-				bottom: auto !important;
-				left: auto !important;
-				right: auto !important;
-				transform: none !important;
-				width: 110px !important;
-				height: 110px !important;
-				animation: none !important;
-			}
-
-			.stat-bubble.visible {
-				transform: none !important;
-			}
-
-			.stat-content {
-				padding: 10px;
-			}
-
-			.stat-number {
-				font-size: 1.6rem;
-			}
-
-			.stat-label {
-				font-size: 0.6rem;
-			}
-
-			.timeline-connector {
-				display: none;
-			}
-		}
-
-		@media (max-width: 480px) {
-			#about-section {
-				padding: 40px 0;
-			}
-
-			.about-title {
-				font-size: 1.5rem;
-			}
-
-			.about-right {
-				min-height: 350px;
-			}
-
-			.stat-bubble {
-				width: 95px !important;
-				height: 95px !important;
-			}
-
-			.stat-number {
-				font-size: 1.4rem;
-			}
-
-			.stat-label {
-				font-size: 0.55rem;
-			}
-		}
-
-		/* ====== 8. CONTACT SECTION MOBILE ====== */
-		@media (max-width: 768px) {
-			.contact-section {
-				padding: 50px 0 60px;
-			}
-
-			.contact-container {
-				grid-template-columns: 1fr;
-				gap: 30px;
-				padding: 0 15px;
-			}
-
-			.contact-info-panel {
-				padding-right: 0;
-				text-align: center;
-			}
-
-			.contact-badge {
-				font-size: 0.7rem;
-				padding: 5px 12px 5px 8px;
-			}
-
-			.contact-title {
-				font-size: 1.6rem;
-			}
-
-			.contact-subtitle {
-				font-size: 0.9rem;
-				max-width: 100%;
-			}
-
-			.contact-info-cards {
-				max-width: 100%;
-			}
-
-			.info-card {
-				padding: 12px;
-			}
-
-			.info-card-icon {
-				width: 36px;
-				height: 36px;
-			}
-
-			.info-value {
-				font-size: 0.85rem;
-			}
-
-			/* Form adjustments */
-			.contact-form {
-				border-radius: 16px;
-			}
-
-			.form-header {
-				padding: 18px 16px 14px;
-			}
-
-			.form-title {
-				font-size: 1.15rem;
-			}
-
-			.form-desc {
-				font-size: 0.75rem;
-			}
-
-			.form-body {
-				padding: 16px;
-			}
-
-			.contact-form .form-row {
-				grid-template-columns: 1fr;
-				gap: 0;
-			}
-
-			.contact-form .form-group {
-				margin-bottom: 12px;
-			}
-
-			.label-text {
-				font-size: 0.75rem;
-			}
-
-			.contact-form input,
-			.contact-form textarea {
-				padding: 10px 12px 10px 38px;
-				font-size: 0.85rem;
-			}
-
-			.input-icon {
-				left: 12px;
-				font-size: 0.85rem;
-			}
-
-			.contact-submit {
-				padding: 12px 20px;
-				font-size: 0.85rem;
-			}
-
-			.form-footer {
-				padding: 10px 16px;
-				font-size: 0.65rem;
-			}
-		}
-
-		@media (max-width: 480px) {
-			.contact-section {
-				padding: 40px 0 50px;
-			}
-
-			.contact-title {
-				font-size: 1.4rem;
-			}
-
-			.contact-subtitle {
-				font-size: 0.85rem;
-			}
-
-			.info-card {
-				padding: 10px;
-			}
-
-			.info-card-icon {
-				width: 32px;
-				height: 32px;
-			}
-
-			.info-value {
-				font-size: 0.8rem;
-			}
-
-			.contact-form input,
-			.contact-form textarea {
-				font-size: 16px; /* Prevents iOS zoom on focus */
-			}
-		}
-
-		/* ====== 9. FOOTER MOBILE ====== */
-		@media (max-width: 768px) {
-			#footer {
-				padding: 50px 0 0;
-			}
-
-			.footer-content {
-				padding: 0 15px;
-			}
-
-			.footer-grid {
-				grid-template-columns: 1fr;
-				gap: 35px;
-				margin-bottom: 35px;
-				text-align: center;
-			}
-
-			.footer-logo-img {
-				height: 32px !important;
-			}
-
-			.footer-description {
-				font-size: 0.9rem;
-				max-width: 300px;
-				margin: 0 auto 20px;
-			}
-
-			.footer-social {
-				justify-content: center;
-			}
-
-			.social-link {
-				width: 44px;
-				height: 44px;
-			}
-
-			.footer-heading {
-				font-size: 1rem;
-				margin-bottom: 18px;
-			}
-
-			.footer-heading::after {
-				left: 50%;
-				transform: translateX(-50%);
-			}
-
-			.footer-links li,
-			.footer-contact li {
-				margin-bottom: 10px;
-			}
-
-			.footer-links a,
-			.footer-contact li {
-				font-size: 0.9rem;
-			}
-
-			.footer-contact li {
-				justify-content: center;
-			}
-
-			.footer-bottom {
-				flex-direction: column;
-				gap: 15px;
-				padding: 25px 0;
-				text-align: center;
-			}
-
-			.footer-copyright {
-				font-size: 0.8rem;
-			}
-
-			.footer-bottom-links {
-				flex-direction: row;
-				gap: 20px;
-			}
-
-			.footer-bottom-links a {
-				font-size: 0.8rem;
-			}
-		}
-
-		@media (max-width: 480px) {
-			#footer {
-				padding: 40px 0 0;
-			}
-
-			.footer-grid {
-				gap: 30px;
-			}
-
-			.footer-logo-img {
-				height: 28px !important;
-			}
-
-			.footer-description {
-				font-size: 0.85rem;
-			}
-
-			.footer-links a,
-			.footer-contact li {
-				font-size: 0.85rem;
-			}
-		}
-
-		/* ====== 10. COOKIE CONSENT MOBILE ====== */
-		@media (max-width: 768px) {
-			.cookie-banner {
-				padding: 16px 15px;
-			}
-
-			.cookie-content {
-				flex-direction: column;
-				gap: 15px;
-				text-align: center;
-			}
-
-			.cookie-text h4 {
-				font-size: 1rem;
-				margin-bottom: 6px;
-			}
-
-			.cookie-text p {
-				font-size: 0.8rem;
-				line-height: 1.4;
-			}
-
-			.cookie-buttons {
-				width: 100%;
-				justify-content: center;
-				gap: 10px;
-			}
-
-			.cookie-btn {
-				padding: 12px 24px;
-				font-size: 0.85rem;
-				flex: 1;
-				max-width: 150px;
-				min-height: 44px;
-			}
-
-			/* Cookie Modal */
-			.cookie-modal {
-				padding: 15px;
-			}
-
-			.cookie-modal-content {
-				padding: 25px 15px;
-				border-radius: 16px;
-				max-height: 85vh;
-			}
-
-			.cookie-modal-close {
-				top: 10px;
-				right: 15px;
-				font-size: 1.8rem;
-			}
-
-			.cookie-modal-content h2 {
-				font-size: 1.4rem;
-				padding-right: 30px;
-			}
-
-			.cookie-policy-text h3 {
-				font-size: 1.1rem;
-				margin: 20px 0 8px;
-			}
-
-			.cookie-policy-text p {
-				font-size: 0.9rem;
-				line-height: 1.6;
-			}
-
-			.cookie-policy-text ul {
-				padding-left: 15px;
-			}
-
-			.cookie-policy-text li {
-				font-size: 0.9rem;
-				line-height: 1.5;
-			}
-		}
-
-		@media (max-width: 480px) {
-			.cookie-banner {
-				padding: 14px 12px;
-			}
-
-			.cookie-text h4 {
-				font-size: 0.95rem;
-			}
-
-			.cookie-text p {
-				font-size: 0.75rem;
-			}
-
-			.cookie-btn {
-				padding: 10px 18px;
-				font-size: 0.8rem;
-			}
-
-			.cookie-modal-content h2 {
-				font-size: 1.25rem;
-			}
-		}
-
-		/* ====== LANDSCAPE ORIENTATION FIX ====== */
-		@media (max-height: 500px) and (orientation: landscape) {
-			#hero,
-			#middle-section,
-			#about-section,
-			#tech-stack-section {
-				height: auto;
-				min-height: 100vh;
-			}
-
-			.stat-bubble {
-				width: 80px !important;
-				height: 80px !important;
-			}
-
-			.stat-number {
-				font-size: 1.2rem;
-			}
-
-			.stat-label {
-				font-size: 0.5rem;
-			}
-		}
-
-		/* ====== SMOOTH SCROLLING FOR TOUCH ====== */
-		@media (hover: none) and (pointer: coarse) {
-			html, body.scroll-container {
-				scroll-snap-type: none;
-				-webkit-overflow-scrolling: touch;
-			}
-
-			/* Disable hover effects on touch devices */
-			.service-card:hover,
-			.stat-bubble:hover .stat-content,
-			.info-card:hover {
-				transform: none;
-			}
+		/* Better tap highlight for touch devices */
+		* {
+			-webkit-tap-highlight-color: rgba(59, 177, 67, 0.2);
 		}
 
 		/* ====== iOS SPECIFIC FIXES ====== */
 		@supports (-webkit-touch-callout: none) {
-			/* Fix for iOS input zoom */
+
+			/* Fix for iOS input zoom - keep at 16px */
 			input[type="text"],
 			input[type="email"],
+			input[type="tel"],
 			textarea,
 			select {
 				font-size: 16px !important;
 			}
+		}
 
-			/* Fix for iOS 100vh issue */
-			@media (max-width: 768px) {
-				#hero,
-				#middle-section {
-					min-height: -webkit-fill-available;
-				}
+		/* ====== SAFE AREA INSETS (notch/home indicator) ====== */
+		@supports (padding-bottom: env(safe-area-inset-bottom)) {
+			.cookie-banner {
+				padding-bottom: calc(20px + env(safe-area-inset-bottom));
+			}
+
+			#footer .footer-bottom {
+				padding-bottom: calc(25px + env(safe-area-inset-bottom));
+			}
+		}
+
+		/* ====== REDUCED MOTION PREFERENCE ====== */
+		@media (prefers-reduced-motion: reduce) {
+
+			*,
+			*::before,
+			*::after {
+				animation-duration: 0.01ms !important;
+				animation-iteration-count: 1 !important;
+				transition-duration: 0.01ms !important;
+			}
+
+			.cookie-banner {
+				transition: none;
 			}
 		}
 	</style>
@@ -1147,12 +780,13 @@
 <body oncontextmenu="return false" class="scroll-container">
 	<header class="d-flex align-items-center" id="header">
 		<div class="container d-flex align-items-center justify-content-between">
-			<h1 class="logo"><a href="index.html"><img src="./assets/img/teralogo.png" alt="Tera" class="logo-img"></a></h1>
+			<h1 class="logo"><a href="index.html"><img src="./assets/img/teralogo.png" alt="Tera" class="logo-img"></a>
+			</h1>
 
 			<nav class="navbar" id="navbar">
 				<ul>
 					<li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-					<li><a class="nav-link scrollto" href="#middle-section">Transform</a></li>
+					<!-- <li><a class="nav-link scrollto" href="#middle-section">Transform</a></li> -->
 					<li><a class="nav-link scrollto" href="#services-section">Services</a></li>
 					<li><a class="nav-link scrollto" href="#process-section">Process</a></li>
 					<li><a class="nav-link scrollto" href="#tech-stack-section">Technology</a></li>
@@ -1160,6 +794,10 @@
 				</ul>
 			</nav>
 			<!-- .navbar -->
+
+			<button type="button" class="mobile-nav-toggle d-lg-none" aria-label="Toggle navigation">
+				<i class="bi bi-list"></i>
+			</button>
 
 			<div style="float:right;"><a class="btn1 btn-border1 scrollto" href="#hero1"
 					style="padding: 5px 30px;">Contact Us</a></div>
@@ -1189,6 +827,7 @@
 
 	<main id="main">
 		<!-- ======= Middle Section ======= -->
+		<!-- 
 		<section id="middle-section">
 			<div id="vanta-middle" class="vanta-bg"></div>
 			<video muted playsinline class="middle-bg-video" id="middleVideo">
@@ -1196,11 +835,11 @@
 			</video>
 			<canvas id="scroll-hero"></canvas>
 
-			<!-- Particle System -->
+			<!-- Particle System --~>
 			<div class="particle-container" id="particles"></div>
 
 			<div class="middle-content-overlay">
-				<!-- Cinematic 3D Typography -->
+				<!-- Cinematic 3D Typography --~>
 				<div class="cinematic-title">
 					<div class="title-row title-main">
 						<span class="letter-3d" data-char="F">F</span>
@@ -1231,7 +870,7 @@
 					</div>
 				</div>
 
-				<!-- Floating Glass Orbs -->
+				<!-- Floating Glass Orbs --~>
 				<div class="glass-orb orb-1">
 					<div class="orb-content">
 						<span class="orb-number">10x</span>
@@ -1264,50 +903,51 @@
 					<div class="orb-glow"></div>
 				</div>
 
-			<!-- Glass Ribbon Arc -->
-			<div class="glass-ribbon">
-				<div class="ribbon-track">
-					<span class="ribbon-word">Cloud</span>
-					<span class="ribbon-dot"></span>
-					<span class="ribbon-word">Security</span>
-					<span class="ribbon-dot"></span>
-					<span class="ribbon-word">AI/ML</span>
-					<span class="ribbon-dot"></span>
-					<span class="ribbon-word">Data Analytics</span>
-					<span class="ribbon-dot"></span>
-					<span class="ribbon-word">UI/UX Development</span>
-					<span class="ribbon-dot"></span>
-					<span class="ribbon-word">Web/App Development</span>
-					<span class="ribbon-dot"></span>
-					<span class="ribbon-word">Innovation</span>
-					<span class="ribbon-dot"></span>
-					<span class="ribbon-word">Scale</span>
-					<span class="ribbon-dot"></span>
-					<span class="ribbon-word">Transform</span>
-					<span class="ribbon-dot"></span>
-					<!-- Duplicate for infinite scroll -->
-					<span class="ribbon-word">Cloud</span>
-					<span class="ribbon-dot"></span>
-					<span class="ribbon-word">Security</span>
-					<span class="ribbon-dot"></span>
-					<span class="ribbon-word">AI/ML</span>
-					<span class="ribbon-dot"></span>
-					<span class="ribbon-word">Data Analytics</span>
-					<span class="ribbon-dot"></span>
-					<span class="ribbon-word">UI/UX Development</span>
-					<span class="ribbon-dot"></span>
-					<span class="ribbon-word">Web/App Development</span>
-					<span class="ribbon-dot"></span>
-					<span class="ribbon-word">Innovation</span>
-					<span class="ribbon-dot"></span>
-					<span class="ribbon-word">Scale</span>
-					<span class="ribbon-dot"></span>
-					<span class="ribbon-word">Transform</span>
-					<span class="ribbon-dot"></span>
+				<!-- Glass Ribbon Arc --~>
+				<div class="glass-ribbon">
+					<div class="ribbon-track">
+						<span class="ribbon-word">Cloud</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">Security</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">AI/ML</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">Data Analytics</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">UI/UX Development</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">Web/App Development</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">Innovation</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">Scale</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">Transform</span>
+						<span class="ribbon-dot"></span>
+						<!-- Duplicate for infinite scroll --~>
+						<span class="ribbon-word">Cloud</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">Security</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">AI/ML</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">Data Analytics</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">UI/UX Development</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">Web/App Development</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">Innovation</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">Scale</span>
+						<span class="ribbon-dot"></span>
+						<span class="ribbon-word">Transform</span>
+						<span class="ribbon-dot"></span>
+					</div>
 				</div>
 			</div>
-			</div>
 		</section>
+		 -->
 		<!-- End Middle Section -->
 
 		<!-- ======= Services Section ======= -->
@@ -1318,7 +958,7 @@
 				<div class="shape shape-2"></div>
 				<div class="shape shape-3"></div>
 			</div>
-			
+
 			<div class="services-container">
 				<div class="services-header" data-aos="fade-up">
 					<h2 class="services-title">Our <span class="highlight-green">Solutions</span></h2>
@@ -1330,11 +970,13 @@
 						<div class="card-glow"></div>
 						<div class="card-content">
 							<svg class="service-icon" viewBox="0 0 100 100">
-								<path class="icon-path" d="M50,10 L90,30 L90,70 L50,90 L10,70 L10,30 Z" fill="none" stroke="currentColor" stroke-width="2"/>
-								<circle class="icon-dot" cx="50" cy="50" r="8" fill="currentColor"/>
+								<path class="icon-path" d="M50,10 L90,30 L90,70 L50,90 L10,70 L10,30 Z" fill="none"
+									stroke="currentColor" stroke-width="2" />
+								<circle class="icon-dot" cx="50" cy="50" r="8" fill="currentColor" />
 							</svg>
 							<h3 class="service-title">Digital Transformation</h3>
-							<p class="service-description">Modernize your business operations with cutting-edge digital solutions that drive efficiency and innovation.</p>
+							<p class="service-description">Modernize your business operations with cutting-edge digital
+								solutions that drive efficiency and innovation.</p>
 						</div>
 					</div>
 
@@ -1342,12 +984,17 @@
 						<div class="card-glow"></div>
 						<div class="card-content">
 							<svg class="service-icon" viewBox="0 0 100 100">
-								<path class="icon-path" d="M30,50 Q30,35 45,35 Q45,25 55,25 Q65,25 65,35 Q80,35 80,50 Q80,65 65,65 L35,65 Q20,65 20,50 Q20,35 30,35" fill="none" stroke="currentColor" stroke-width="2"/>
-								<line class="icon-line" x1="50" y1="45" x2="50" y2="70" stroke="currentColor" stroke-width="2"/>
-								<polyline class="icon-arrow" points="45,65 50,70 55,65" fill="none" stroke="currentColor" stroke-width="2"/>
+								<path class="icon-path"
+									d="M30,50 Q30,35 45,35 Q45,25 55,25 Q65,25 65,35 Q80,35 80,50 Q80,65 65,65 L35,65 Q20,65 20,50 Q20,35 30,35"
+									fill="none" stroke="currentColor" stroke-width="2" />
+								<line class="icon-line" x1="50" y1="45" x2="50" y2="70" stroke="currentColor"
+									stroke-width="2" />
+								<polyline class="icon-arrow" points="45,65 50,70 55,65" fill="none"
+									stroke="currentColor" stroke-width="2" />
 							</svg>
 							<h3 class="service-title">Cloud Services</h3>
-							<p class="service-description">Seamlessly migrate and optimize your infrastructure with scalable cloud solutions tailored to your needs.</p>
+							<p class="service-description">Seamlessly migrate and optimize your infrastructure with
+								scalable cloud solutions tailored to your needs.</p>
 						</div>
 					</div>
 
@@ -1355,12 +1002,15 @@
 						<div class="card-glow"></div>
 						<div class="card-content">
 							<svg class="service-icon" viewBox="0 0 100 100">
-								<path class="icon-path" d="M50,15 L85,35 L85,65 L50,85 L15,65 L15,35 Z" fill="none" stroke="currentColor" stroke-width="2"/>
-								<path class="icon-path" d="M50,35 L50,55 M42,45 L58,45 M42,55 L58,55" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-								<circle class="icon-dot" cx="50" cy="70" r="4" fill="currentColor"/>
+								<path class="icon-path" d="M50,15 L85,35 L85,65 L50,85 L15,65 L15,35 Z" fill="none"
+									stroke="currentColor" stroke-width="2" />
+								<path class="icon-path" d="M50,35 L50,55 M42,45 L58,45 M42,55 L58,55"
+									stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+								<circle class="icon-dot" cx="50" cy="70" r="4" fill="currentColor" />
 							</svg>
 							<h3 class="service-title">Software Maintenance</h3>
-							<p class="service-description">Ongoing support, updates, and optimization to keep your software secure, performant, and aligned with your evolving needs.</p>
+							<p class="service-description">Ongoing support, updates, and optimization to keep your
+								software secure, performant, and aligned with your evolving needs.</p>
 						</div>
 					</div>
 
@@ -1368,15 +1018,19 @@
 						<div class="card-glow"></div>
 						<div class="card-content">
 							<svg class="service-icon" viewBox="0 0 100 100">
-								<rect class="icon-rect" x="20" y="25" width="60" height="45" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
-								<line class="icon-line" x1="20" y1="40" x2="80" y2="40" stroke="currentColor" stroke-width="2"/>
-								<circle class="icon-dot" cx="35" cy="32" r="3" fill="currentColor"/>
-								<circle class="icon-dot" cx="45" cy="32" r="3" fill="currentColor"/>
-								<circle class="icon-dot" cx="55" cy="32" r="3" fill="currentColor"/>
-								<path class="icon-path" d="M30,55 L45,65 L70,45" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								<rect class="icon-rect" x="20" y="25" width="60" height="45" rx="5" fill="none"
+									stroke="currentColor" stroke-width="2" />
+								<line class="icon-line" x1="20" y1="40" x2="80" y2="40" stroke="currentColor"
+									stroke-width="2" />
+								<circle class="icon-dot" cx="35" cy="32" r="3" fill="currentColor" />
+								<circle class="icon-dot" cx="45" cy="32" r="3" fill="currentColor" />
+								<circle class="icon-dot" cx="55" cy="32" r="3" fill="currentColor" />
+								<path class="icon-path" d="M30,55 L45,65 L70,45" fill="none" stroke="currentColor"
+									stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 							</svg>
 							<h3 class="service-title">UI/UX Development</h3>
-							<p class="service-description">User-centered design and development that delivers intuitive, accessible, and engaging digital experiences.</p>
+							<p class="service-description">User-centered design and development that delivers intuitive,
+								accessible, and engaging digital experiences.</p>
 						</div>
 					</div>
 
@@ -1384,14 +1038,20 @@
 						<div class="card-glow"></div>
 						<div class="card-content">
 							<svg class="service-icon" viewBox="0 0 100 100">
-								<rect class="icon-rect" x="15" y="25" width="70" height="50" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
-								<line class="icon-line" x1="15" y1="40" x2="85" y2="40" stroke="currentColor" stroke-width="2"/>
-								<rect class="icon-rect" x="25" y="48" width="20" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
-								<rect class="icon-rect" x="55" y="48" width="20" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
-								<path class="icon-path" d="M50,15 L65,25 L65,35 L50,25 L35,35 L35,25 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+								<rect class="icon-rect" x="15" y="25" width="70" height="50" rx="5" fill="none"
+									stroke="currentColor" stroke-width="2" />
+								<line class="icon-line" x1="15" y1="40" x2="85" y2="40" stroke="currentColor"
+									stroke-width="2" />
+								<rect class="icon-rect" x="25" y="48" width="20" height="12" rx="2" fill="none"
+									stroke="currentColor" stroke-width="2" />
+								<rect class="icon-rect" x="55" y="48" width="20" height="12" rx="2" fill="none"
+									stroke="currentColor" stroke-width="2" />
+								<path class="icon-path" d="M50,15 L65,25 L65,35 L50,25 L35,35 L35,25 Z" fill="none"
+									stroke="currentColor" stroke-width="2" />
 							</svg>
 							<h3 class="service-title">Web & App Development</h3>
-							<p class="service-description">Custom web and mobile applications built with modern frameworks for scalability, performance, and user satisfaction.</p>
+							<p class="service-description">Custom web and mobile applications built with modern
+								frameworks for scalability, performance, and user satisfaction.</p>
 						</div>
 					</div>
 
@@ -1399,14 +1059,18 @@
 						<div class="card-glow"></div>
 						<div class="card-content">
 							<svg class="service-icon" viewBox="0 0 100 100">
-								<circle class="icon-circle" cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="2"/>
-								<circle class="icon-dot" cx="35" cy="45" r="3" fill="currentColor"/>
-								<circle class="icon-dot" cx="65" cy="45" r="3" fill="currentColor"/>
-								<path class="icon-path" d="M35,65 Q50,75 65,65" fill="none" stroke="currentColor" stroke-width="2"/>
-								<path class="icon-brain" d="M30,30 Q20,50 30,60 M70,30 Q80,50 70,60" fill="none" stroke="currentColor" stroke-width="2"/>
+								<circle class="icon-circle" cx="50" cy="50" r="30" fill="none" stroke="currentColor"
+									stroke-width="2" />
+								<circle class="icon-dot" cx="35" cy="45" r="3" fill="currentColor" />
+								<circle class="icon-dot" cx="65" cy="45" r="3" fill="currentColor" />
+								<path class="icon-path" d="M35,65 Q50,75 65,65" fill="none" stroke="currentColor"
+									stroke-width="2" />
+								<path class="icon-brain" d="M30,30 Q20,50 30,60 M70,30 Q80,50 70,60" fill="none"
+									stroke="currentColor" stroke-width="2" />
 							</svg>
 							<h3 class="service-title">AI/ML Consulting</h3>
-							<p class="service-description">Harness the power of artificial intelligence and machine learning to unlock new possibilities.</p>
+							<p class="service-description">Harness the power of artificial intelligence and machine
+								learning to unlock new possibilities.</p>
 						</div>
 					</div>
 
@@ -1414,11 +1078,14 @@
 						<div class="card-glow"></div>
 						<div class="card-content">
 							<svg class="service-icon" viewBox="0 0 100 100">
-								<path class="icon-path" d="M50,10 L20,25 L20,50 Q20,75 50,90 Q80,75 80,50 L80,25 Z" fill="none" stroke="currentColor" stroke-width="2"/>
-								<path class="icon-check" d="M35,50 L45,60 L65,40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+								<path class="icon-path" d="M50,10 L20,25 L20,50 Q20,75 50,90 Q80,75 80,50 L80,25 Z"
+									fill="none" stroke="currentColor" stroke-width="2" />
+								<path class="icon-check" d="M35,50 L45,60 L65,40" fill="none" stroke="currentColor"
+									stroke-width="3" stroke-linecap="round" />
 							</svg>
 							<h3 class="service-title">Cybersecurity</h3>
-							<p class="service-description">Protect your digital assets with comprehensive security solutions and proactive threat management.</p>
+							<p class="service-description">Protect your digital assets with comprehensive security
+								solutions and proactive threat management.</p>
 						</div>
 					</div>
 
@@ -1426,14 +1093,20 @@
 						<div class="card-glow"></div>
 						<div class="card-content">
 							<svg class="service-icon" viewBox="0 0 100 100">
-								<rect class="icon-rect" x="15" y="30" width="70" height="50" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
-								<line class="icon-line" x1="30" y1="45" x2="70" y2="45" stroke="currentColor" stroke-width="2"/>
-								<line class="icon-line" x1="30" y1="55" x2="70" y2="55" stroke="currentColor" stroke-width="2"/>
-								<line class="icon-line" x1="30" y1="65" x2="55" y2="65" stroke="currentColor" stroke-width="2"/>
-								<rect class="icon-tab" x="25" y="20" width="50" height="10" rx="3" fill="currentColor"/>
+								<rect class="icon-rect" x="15" y="30" width="70" height="50" rx="5" fill="none"
+									stroke="currentColor" stroke-width="2" />
+								<line class="icon-line" x1="30" y1="45" x2="70" y2="45" stroke="currentColor"
+									stroke-width="2" />
+								<line class="icon-line" x1="30" y1="55" x2="70" y2="55" stroke="currentColor"
+									stroke-width="2" />
+								<line class="icon-line" x1="30" y1="65" x2="55" y2="65" stroke="currentColor"
+									stroke-width="2" />
+								<rect class="icon-tab" x="25" y="20" width="50" height="10" rx="3"
+									fill="currentColor" />
 							</svg>
 							<h3 class="service-title">Enterprise Solutions</h3>
-							<p class="service-description">End-to-end enterprise software solutions that integrate seamlessly with your business processes.</p>
+							<p class="service-description">End-to-end enterprise software solutions that integrate
+								seamlessly with your business processes.</p>
 						</div>
 					</div>
 				</div>
@@ -1507,9 +1180,19 @@
 			}
 
 			@keyframes float-shape {
-				0%, 100% { transform: translate(0, 0) scale(1); }
-				33% { transform: translate(30px, -30px) scale(1.1); }
-				66% { transform: translate(-30px, 30px) scale(0.9); }
+
+				0%,
+				100% {
+					transform: translate(0, 0) scale(1);
+				}
+
+				33% {
+					transform: translate(30px, -30px) scale(1.1);
+				}
+
+				66% {
+					transform: translate(-30px, 30px) scale(0.9);
+				}
 			}
 
 			.services-container {
@@ -1551,8 +1234,15 @@
 			}
 
 			@keyframes pulse-line {
-				0%, 100% { opacity: 0.5; }
-				50% { opacity: 1; }
+
+				0%,
+				100% {
+					opacity: 0.5;
+				}
+
+				50% {
+					opacity: 1;
+				}
 			}
 
 			.services-subtitle {
@@ -1563,8 +1253,8 @@
 
 			.services-grid {
 				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-				gap: 40px;
+				grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+				gap: 30px;
 				perspective: 1000px;
 			}
 
@@ -1577,7 +1267,7 @@
 				border: 1px solid #e0e0e0;
 				border-radius: 20px;
 				cursor: pointer;
-				transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+				transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 				transform-style: preserve-3d;
 				opacity: 0;
 				transform: translateY(50px);
@@ -1595,12 +1285,10 @@
 				left: -2px;
 				right: -2px;
 				bottom: -2px;
-				background: conic-gradient(
-					from 0deg,
-					#3bb143,
-					transparent,
-					#3bb143
-				);
+				background: conic-gradient(from 0deg,
+						#3bb143,
+						transparent,
+						#3bb143);
 				border-radius: 20px;
 				opacity: 0;
 				z-index: -1;
@@ -1609,7 +1297,9 @@
 			}
 
 			@keyframes rotate-glow {
-				100% { transform: rotate(360deg); }
+				100% {
+					transform: rotate(360deg);
+				}
 			}
 
 			.service-card:hover {
@@ -1641,10 +1331,14 @@
 				filter: drop-shadow(0 5px 15px rgba(59, 177, 67, 0.3));
 			}
 
-			.icon-path, .icon-line, .icon-arrow, .icon-check, .icon-brain {
+			.icon-path,
+			.icon-line,
+			.icon-arrow,
+			.icon-check,
+			.icon-brain {
 				stroke-dasharray: 200;
 				stroke-dashoffset: 200;
-				transition: stroke-dashoffset 1s ease;
+				transition: stroke-dashoffset 0.5s ease;
 			}
 
 			.service-card.visible .icon-path,
@@ -1655,13 +1349,17 @@
 				stroke-dashoffset: 0;
 			}
 
-			.icon-rect, .icon-dot, .icon-circle {
+			.icon-rect,
+			.icon-dot,
+			.icon-circle {
 				opacity: 0;
 				animation: fade-in 0.6s ease forwards;
 			}
 
 			@keyframes fade-in {
-				to { opacity: 1; }
+				to {
+					opacity: 1;
+				}
 			}
 
 			.service-title {
@@ -1710,9 +1408,20 @@
 					filter: blur(40px);
 				}
 
-				.shape-1 { width: 250px; height: 250px; }
-				.shape-2 { width: 200px; height: 200px; }
-				.shape-3 { width: 150px; height: 150px; }
+				.shape-1 {
+					width: 250px;
+					height: 250px;
+				}
+
+				.shape-2 {
+					width: 200px;
+					height: 200px;
+				}
+
+				.shape-3 {
+					width: 150px;
+					height: 150px;
+				}
 			}
 
 			@media (max-width: 480px) {
@@ -1739,16 +1448,16 @@
 					gsap.to(card, {
 						scrollTrigger: {
 							trigger: card,
-							start: 'top 85%',
-							end: 'top 60%',
+							start: 'top 92%',
+							end: 'top 75%',
 							toggleActions: 'play none none reverse',
 							onEnter: () => card.classList.add('visible'),
 							onLeaveBack: () => card.classList.remove('visible')
 						},
 						opacity: 1,
 						y: 0,
-						duration: 0.8,
-						delay: index * 0.1,
+						duration: 0.4,
+						delay: index * 0.05,
 						ease: 'power3.out'
 					});
 				});
@@ -1780,7 +1489,7 @@
 
 				<div class="timeline-wrapper">
 					<svg class="timeline-svg" viewBox="0 0 4 100" preserveAspectRatio="none">
-						<line class="timeline-line" x1="2" y1="0" x2="2" y2="100" stroke="#3bb143" stroke-width="2"/>
+						<line class="timeline-line" x1="2" y1="0" x2="2" y2="100" stroke="#3bb143" stroke-width="2" />
 					</svg>
 
 					<div class="process-steps">
@@ -1791,16 +1500,19 @@
 							<div class="step-connector"></div>
 							<div class="step-icon">
 								<svg viewBox="0 0 100 100" class="icon-svg">
-									<circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" stroke-width="2"/>
-									<path class="morph-path" d="M50,30 L50,70 M35,50 L65,50" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+									<circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" stroke-width="2" />
+									<path class="morph-path" d="M50,30 L50,70 M35,50 L65,50" stroke="currentColor"
+										stroke-width="3" stroke-linecap="round" />
 								</svg>
 								<div class="step-number">01</div>
 							</div>
 							<div class="step-content">
 								<h3 class="step-title">Discovery & Analysis</h3>
 								<p class="step-description">
-									We begin by deeply understanding your business challenges, goals, and current technology landscape. 
-									Through comprehensive analysis and stakeholder interviews, we identify opportunities and create a strategic roadmap.
+									We begin by deeply understanding your business challenges, goals, and current
+									technology landscape.
+									Through comprehensive analysis and stakeholder interviews, we identify opportunities
+									and create a strategic roadmap.
 								</p>
 								<ul class="step-details">
 									<li>Stakeholder Interviews</li>
@@ -1811,115 +1523,126 @@
 							</div>
 						</div>
 
-					<div class="process-step" data-step="2">
-						<div class="step-connector"></div>
-						<div class="step-icon">
-							<svg viewBox="0 0 100 100" class="icon-svg">
-								<rect x="25" y="25" width="50" height="50" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
-								<path class="morph-path" d="M35,45 L45,55 L65,35" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
-							</svg>
-							<div class="step-number">02</div>
+						<div class="process-step" data-step="2">
+							<div class="step-connector"></div>
+							<div class="step-icon">
+								<svg viewBox="0 0 100 100" class="icon-svg">
+									<rect x="25" y="25" width="50" height="50" rx="5" fill="none" stroke="currentColor"
+										stroke-width="2" />
+									<path class="morph-path" d="M35,45 L45,55 L65,35" stroke="currentColor"
+										stroke-width="3" stroke-linecap="round" fill="none" />
+								</svg>
+								<div class="step-number">02</div>
+							</div>
+							<div class="step-content">
+								<h3 class="step-title">Strategy Development</h3>
+								<p class="step-description">
+									We craft a tailored strategy that aligns technology solutions with your business
+									objectives.
+									Our experts design the architecture, select the right technologies, and create a
+									detailed implementation plan.
+								</p>
+								<ul class="step-details">
+									<li>Solution Architecture</li>
+									<li>Technology Selection</li>
+									<li>Risk Assessment</li>
+									<li>Project Planning</li>
+								</ul>
+							</div>
+							<div class="step-image step-image-right">
+								<img src="assets/img/STRATERGY.png" alt="Strategy Development" />
+							</div>
 						</div>
-						<div class="step-content">
-							<h3 class="step-title">Strategy Development</h3>
-							<p class="step-description">
-								We craft a tailored strategy that aligns technology solutions with your business objectives. 
-								Our experts design the architecture, select the right technologies, and create a detailed implementation plan.
-							</p>
-							<ul class="step-details">
-								<li>Solution Architecture</li>
-								<li>Technology Selection</li>
-								<li>Risk Assessment</li>
-								<li>Project Planning</li>
-							</ul>
-						</div>
-						<div class="step-image step-image-right">
-							<img src="assets/img/STRATERGY.png" alt="Strategy Development" />
-						</div>
-					</div>
 
-					<div class="process-step" data-step="3">
-						<div class="step-image">
-							<img src="assets/img/implementation.png" alt="Implementation" />
+						<div class="process-step" data-step="3">
+							<div class="step-image">
+								<img src="assets/img/implementation.png" alt="Implementation" />
+							</div>
+							<div class="step-connector"></div>
+							<div class="step-icon">
+								<svg viewBox="0 0 100 100" class="icon-svg">
+									<polygon points="50,20 80,40 80,70 50,90 20,70 20,40" fill="none"
+										stroke="currentColor" stroke-width="2" />
+									<path class="morph-path" d="M40,50 L48,58 L60,46" stroke="currentColor"
+										stroke-width="3" stroke-linecap="round" fill="none" />
+								</svg>
+								<div class="step-number">03</div>
+							</div>
+							<div class="step-content">
+								<h3 class="step-title">Implementation</h3>
+								<p class="step-description">
+									Our expert team executes the plan with precision, following agile methodologies to
+									ensure flexibility and continuous improvement.
+									We maintain transparent communication throughout the development process.
+								</p>
+								<ul class="step-details">
+									<li>Agile Development</li>
+									<li>Continuous Integration</li>
+									<li>Progress Tracking</li>
+									<li>Stakeholder Updates</li>
+								</ul>
+							</div>
 						</div>
-						<div class="step-connector"></div>
-						<div class="step-icon">
-							<svg viewBox="0 0 100 100" class="icon-svg">
-								<polygon points="50,20 80,40 80,70 50,90 20,70 20,40" fill="none" stroke="currentColor" stroke-width="2"/>
-								<path class="morph-path" d="M40,50 L48,58 L60,46" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
-							</svg>
-							<div class="step-number">03</div>
-						</div>
-						<div class="step-content">
-							<h3 class="step-title">Implementation</h3>
-							<p class="step-description">
-								Our expert team executes the plan with precision, following agile methodologies to ensure flexibility and continuous improvement. 
-								We maintain transparent communication throughout the development process.
-							</p>
-							<ul class="step-details">
-								<li>Agile Development</li>
-								<li>Continuous Integration</li>
-								<li>Progress Tracking</li>
-								<li>Stakeholder Updates</li>
-							</ul>
-						</div>
-					</div>
 
-					<div class="process-step" data-step="4">
-						<div class="step-connector"></div>
-						<div class="step-icon">
-							<svg viewBox="0 0 100 100" class="icon-svg">
-								<circle cx="30" cy="50" r="8" fill="currentColor"/>
-								<circle cx="50" cy="50" r="8" fill="currentColor"/>
-								<circle cx="70" cy="50" r="8" fill="currentColor"/>
-								<path class="morph-path" d="M30,35 L30,25 L70,25 L70,35" stroke="currentColor" stroke-width="2" fill="none"/>
-							</svg>
-							<div class="step-number">04</div>
+						<div class="process-step" data-step="4">
+							<div class="step-connector"></div>
+							<div class="step-icon">
+								<svg viewBox="0 0 100 100" class="icon-svg">
+									<circle cx="30" cy="50" r="8" fill="currentColor" />
+									<circle cx="50" cy="50" r="8" fill="currentColor" />
+									<circle cx="70" cy="50" r="8" fill="currentColor" />
+									<path class="morph-path" d="M30,35 L30,25 L70,25 L70,35" stroke="currentColor"
+										stroke-width="2" fill="none" />
+								</svg>
+								<div class="step-number">04</div>
+							</div>
+							<div class="step-content">
+								<h3 class="step-title">Testing & Quality Assurance</h3>
+								<p class="step-description">
+									Rigorous testing ensures your solution meets the highest standards of quality,
+									performance, and security.
+									We validate every aspect before deployment to guarantee a smooth launch.
+								</p>
+								<ul class="step-details">
+									<li>Functional Testing</li>
+									<li>Performance Testing</li>
+									<li>Security Audits</li>
+									<li>User Acceptance Testing</li>
+								</ul>
+							</div>
+							<div class="step-image step-image-right">
+								<img src="assets/img/TESTING%20%26%20QUA.png" alt="Testing & Quality Assurance" />
+							</div>
 						</div>
-						<div class="step-content">
-							<h3 class="step-title">Testing & Quality Assurance</h3>
-							<p class="step-description">
-								Rigorous testing ensures your solution meets the highest standards of quality, performance, and security. 
-								We validate every aspect before deployment to guarantee a smooth launch.
-							</p>
-							<ul class="step-details">
-								<li>Functional Testing</li>
-								<li>Performance Testing</li>
-								<li>Security Audits</li>
-								<li>User Acceptance Testing</li>
-							</ul>
-						</div>
-						<div class="step-image step-image-right">
-							<img src="assets/img/TESTING%20%26%20QUA.png" alt="Testing & Quality Assurance" />
-						</div>
-					</div>
 
-					<div class="process-step" data-step="5">
-						<div class="step-image">
-							<img src="assets/img/SUPPORT%20final.png" alt="Launch & Support" />
+						<div class="process-step" data-step="5">
+							<div class="step-image">
+								<img src="assets/img/SUPPORT%20final.png" alt="Launch & Support" />
+							</div>
+							<div class="step-connector"></div>
+							<div class="step-icon">
+								<svg viewBox="0 0 100 100" class="icon-svg">
+									<path d="M50,20 L80,50 L50,80 L20,50 Z" fill="none" stroke="currentColor"
+										stroke-width="2" />
+									<circle class="morph-path" cx="50" cy="50" r="12" fill="currentColor" />
+								</svg>
+								<div class="step-number">05</div>
+							</div>
+							<div class="step-content">
+								<h3 class="step-title">Launch & Support</h3>
+								<p class="step-description">
+									We ensure a seamless deployment and provide comprehensive training to your team.
+									Our ongoing support and maintenance keep your solution running optimally and
+									evolving with your business needs.
+								</p>
+								<ul class="step-details">
+									<li>Deployment Strategy</li>
+									<li>Team Training</li>
+									<li>24/7 Support</li>
+									<li>Continuous Improvement</li>
+								</ul>
+							</div>
 						</div>
-						<div class="step-connector"></div>
-						<div class="step-icon">
-							<svg viewBox="0 0 100 100" class="icon-svg">
-								<path d="M50,20 L80,50 L50,80 L20,50 Z" fill="none" stroke="currentColor" stroke-width="2"/>
-								<circle class="morph-path" cx="50" cy="50" r="12" fill="currentColor"/>
-							</svg>
-							<div class="step-number">05</div>
-						</div>
-						<div class="step-content">
-							<h3 class="step-title">Launch & Support</h3>
-							<p class="step-description">
-								We ensure a seamless deployment and provide comprehensive training to your team. 
-								Our ongoing support and maintenance keep your solution running optimally and evolving with your business needs.
-							</p>
-							<ul class="step-details">
-								<li>Deployment Strategy</li>
-								<li>Team Training</li>
-								<li>24/7 Support</li>
-								<li>Continuous Improvement</li>
-							</ul>
-						</div>
-					</div>
 					</div>
 				</div>
 			</div>
@@ -1929,22 +1652,22 @@
 		<!-- ======= Technology Stack Section ======= -->
 		<section id="tech-stack-section">
 			<canvas id="tech-canvas"></canvas>
-			
+
 			<div class="tech-container">
 				<div class="tech-header">
 					<h2 class="tech-title">Technology <span class="highlight-green">Expertise</span></h2>
 					<p class="tech-subtitle">Powering innovation with cutting-edge technologies</p>
 				</div>
 
-			<div class="tech-filter">
-				<button class="filter-btn active" data-category="ai">AI/ML</button>
-				<button class="filter-btn" data-category="data">Data Analytics</button>
-				<button class="filter-btn" data-category="cloud">Cloud</button>
-				<button class="filter-btn" data-category="webapp">Web/App Development</button>
-				<button class="filter-btn" data-category="uiux">UI/UX Development</button>
-				<button class="filter-btn" data-category="devops">DevOps</button>
-				<button class="filter-btn" data-category="security">Cybersecurity</button>
-			</div>
+				<div class="tech-filter">
+					<button class="filter-btn active" data-category="ai">AI/ML</button>
+					<button class="filter-btn" data-category="data">Data Analytics</button>
+					<button class="filter-btn" data-category="cloud">Cloud</button>
+					<button class="filter-btn" data-category="webapp">Web/App Development</button>
+					<button class="filter-btn" data-category="uiux">UI/UX Development</button>
+					<button class="filter-btn" data-category="devops">DevOps</button>
+					<button class="filter-btn" data-category="security">Cybersecurity</button>
+				</div>
 
 				<div class="carousel-wrapper">
 					<button class="carousel-nav carousel-prev" aria-label="Previous">
@@ -1955,90 +1678,167 @@
 
 					<div class="carousel-container">
 						<div class="tech-carousel" id="techCarousel">
-					<!-- AI/ML -->
-					<div class="tech-item carousel-card" data-category="ai">
-						<div class="tech-logos-row">
-							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="TensorFlow" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/pytorch/EE4C2C" alt="PyTorch" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/openai.svg" alt="OpenAI" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/databricks/FF3621" alt="Databricks" class="tech-logo" /></div>
-						</div>
-						<div class="tech-name">AI/ML</div>
-						<div class="tech-description">We build intelligent solutions with <strong>machine learning</strong>, <strong>deep learning</strong>, and <strong>LLMs</strong>, using <strong>TensorFlow</strong>, <strong>PyTorch</strong>, <strong>OpenAI</strong>, and <strong>Databricks</strong>, for predictive analytics, automation, and data-driven decisions.</div>
-					</div>
+							<!-- AI/ML -->
+							<div class="tech-item carousel-card" data-category="ai">
+								<div class="tech-logos-row">
+									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/tensorflow/FF6F00"
+											alt="TensorFlow" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/pytorch/EE4C2C"
+											alt="PyTorch" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img
+											src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/openai.svg"
+											alt="OpenAI" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/databricks/FF3621"
+											alt="Databricks" class="tech-logo" /></div>
+								</div>
+								<div class="tech-name">AI/ML</div>
+								<div class="tech-description">We build intelligent solutions with <strong>machine
+										learning</strong>, <strong>deep learning</strong>, and <strong>LLMs</strong>,
+									using <strong>TensorFlow</strong>, <strong>PyTorch</strong>,
+									<strong>OpenAI</strong>, and <strong>Databricks</strong>, for predictive analytics,
+									automation, and data-driven decisions.
+								</div>
+							</div>
 
-					<!-- Data Analytics -->
-					<div class="tech-item carousel-card" data-category="data">
-						<div class="tech-logos-row">
-							<div class="tech-logo-wrap"><img src="https://cdn.svgrepo.com/show/354427/tableau.svg" alt="Tableau" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/looker/4285F4" alt="Looker" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/snowflake/29B5E8" alt="Snowflake" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/googleanalytics/E37400" alt="Google Analytics" class="tech-logo" /></div>
-						</div>
-						<div class="tech-name">Data Analytics</div>
-						<div class="tech-description">We turn data into decisions with <strong>BI</strong>, <strong>dashboards</strong>, <strong>ETL</strong>, and <strong>data warehousing</strong>, using <strong>Tableau</strong>, <strong>Power BI</strong>, <strong>Looker</strong>, <strong>Snowflake</strong>, and <strong>Google Analytics</strong>, for reporting, visualization, and actionable insights.</div>
-					</div>
+							<!-- Data Analytics -->
+							<div class="tech-item carousel-card" data-category="data">
+								<div class="tech-logos-row">
+									<div class="tech-logo-wrap"><img
+											src="https://cdn.svgrepo.com/show/354427/tableau.svg" alt="Tableau"
+											class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img
+											src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+											alt="Power BI" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/looker/4285F4"
+											alt="Looker" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/snowflake/29B5E8"
+											alt="Snowflake" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img
+											src="https://cdn.simpleicons.org/googleanalytics/E37400"
+											alt="Google Analytics" class="tech-logo" /></div>
+								</div>
+								<div class="tech-name">Data Analytics</div>
+								<div class="tech-description">We turn data into decisions with <strong>BI</strong>,
+									<strong>dashboards</strong>, <strong>ETL</strong>, and <strong>data
+										warehousing</strong>, using <strong>Tableau</strong>, <strong>Power BI</strong>,
+									<strong>Looker</strong>, <strong>Snowflake</strong>, and <strong>Google
+										Analytics</strong>, for reporting, visualization, and actionable insights.
+								</div>
+							</div>
 
-					<!-- Cloud -->
-					<div class="tech-item carousel-card" data-category="cloud">
-						<div class="tech-logos-row">
-							<div class="tech-logo-wrap"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg" alt="AWS" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftazure.svg" alt="Azure" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/googlecloud/4285F4" alt="Google Cloud" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><svg class="tech-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Microsoft 365"><path fill="#F25022" d="M1 1h10v10H1z"/><path fill="#00A4EF" d="M1 13h10v10H1z"/><path fill="#7FBA00" d="M13 1h10v10H13z"/><path fill="#FFB900" d="M13 13h10v10H13z"/></svg></div>
-						</div>
-						<div class="tech-name">Cloud</div>
-						<div class="tech-description">We deliver scalable cloud solutions on <strong>AWS</strong>, <strong>Azure</strong>, and <strong>Google Cloud</strong>, including migration, hybrid cloud, serverless, and <strong>Microsoft 365</strong>, so you get resilient infrastructure, cost optimization, and global reach.</div>
-					</div>
+							<!-- Cloud -->
+							<div class="tech-item carousel-card" data-category="cloud">
+								<div class="tech-logos-row">
+									<div class="tech-logo-wrap"><img
+											src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg"
+											alt="AWS" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img
+											src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftazure.svg"
+											alt="Azure" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img
+											src="https://cdn.simpleicons.org/googlecloud/4285F4" alt="Google Cloud"
+											class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><svg class="tech-logo" viewBox="0 0 24 24"
+											xmlns="http://www.w3.org/2000/svg" aria-label="Microsoft 365">
+											<path fill="#F25022" d="M1 1h10v10H1z" />
+											<path fill="#00A4EF" d="M1 13h10v10H1z" />
+											<path fill="#7FBA00" d="M13 1h10v10H13z" />
+											<path fill="#FFB900" d="M13 13h10v10H13z" />
+										</svg></div>
+								</div>
+								<div class="tech-name">Cloud</div>
+								<div class="tech-description">We deliver scalable cloud solutions on
+									<strong>AWS</strong>, <strong>Azure</strong>, and <strong>Google Cloud</strong>,
+									including migration, hybrid cloud, serverless, and <strong>Microsoft 365</strong>,
+									so you get resilient infrastructure, cost optimization, and global reach.
+								</div>
+							</div>
 
-					<!-- Web/App Development -->
-					<div class="tech-item carousel-card" data-category="webapp">
-						<div class="tech-logos-row">
-							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="React" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/vuedotjs/4FC08D" alt="Vue.js" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/nextdotjs/000000" alt="Next.js" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript" class="tech-logo" /></div>
-						</div>
-						<div class="tech-name">Web/App Development</div>
-						<div class="tech-description">We build responsive <strong>web</strong> and <strong>mobile applications</strong> with <strong>React</strong>, <strong>Vue</strong>, <strong>Node.js</strong>, <strong>Next.js</strong>, and <strong>TypeScript</strong>, for scalable frontends, APIs, and full-stack solutions.</div>
-					</div>
+							<!-- Web/App Development -->
+							<div class="tech-item carousel-card" data-category="webapp">
+								<div class="tech-logos-row">
+									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/react/61DAFB"
+											alt="React" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/nodedotjs/339933"
+											alt="Node.js" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/vuedotjs/4FC08D"
+											alt="Vue.js" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/nextdotjs/000000"
+											alt="Next.js" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/typescript/3178C6"
+											alt="TypeScript" class="tech-logo" /></div>
+								</div>
+								<div class="tech-name">Web/App Development</div>
+								<div class="tech-description">We build responsive <strong>web</strong> and
+									<strong>mobile applications</strong> with <strong>React</strong>,
+									<strong>Vue</strong>, <strong>Node.js</strong>, <strong>Next.js</strong>, and
+									<strong>TypeScript</strong>, for scalable frontends, APIs, and full-stack solutions.
+								</div>
+							</div>
 
-					<!-- UI/UX Development -->
-					<div class="tech-item carousel-card" data-category="uiux">
-						<div class="tech-logos-row">
-							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><img src="https://cdn.svgrepo.com/show/303109/adobe-xd-logo.svg" alt="Adobe XD" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/sketch/F7B500" alt="Sketch" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><img src="https://cdn.svgrepo.com/show/330714/invision.svg" alt="InVision" class="tech-logo" /></div>
-						</div>
-						<div class="tech-name">UI/UX Development</div>
-						<div class="tech-description">We design intuitive <strong>user experiences</strong> and <strong>interfaces</strong> with <strong>Figma</strong>, <strong>Adobe XD</strong>, <strong>Sketch</strong>, and <strong>InVision</strong>, for wireframes, prototypes, and design systems.</div>
-					</div>
+							<!-- UI/UX Development -->
+							<div class="tech-item carousel-card" data-category="uiux">
+								<div class="tech-logos-row">
+									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/figma/F24E1E"
+											alt="Figma" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img
+											src="https://cdn.svgrepo.com/show/303109/adobe-xd-logo.svg" alt="Adobe XD"
+											class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/sketch/F7B500"
+											alt="Sketch" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img
+											src="https://cdn.svgrepo.com/show/330714/invision.svg" alt="InVision"
+											class="tech-logo" /></div>
+								</div>
+								<div class="tech-name">UI/UX Development</div>
+								<div class="tech-description">We design intuitive <strong>user experiences</strong> and
+									<strong>interfaces</strong> with <strong>Figma</strong>, <strong>Adobe XD</strong>,
+									<strong>Sketch</strong>, and <strong>InVision</strong>, for wireframes, prototypes,
+									and design systems.
+								</div>
+							</div>
 
-					<!-- DevOps -->
-					<div class="tech-item carousel-card" data-category="devops">
-						<div class="tech-logos-row">
-							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/kubernetes/326CE5" alt="Kubernetes" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/jenkins/D24939" alt="Jenkins" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/hashicorp/000000" alt="Terraform" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" class="tech-logo" /></div>
-						</div>
-						<div class="tech-name">DevOps</div>
-						<div class="tech-description">We enable <strong>CI/CD</strong>, <strong>containers</strong>, and <strong>infrastructure as code</strong> with <strong>Docker</strong>, <strong>Kubernetes</strong>, <strong>Jenkins</strong>, <strong>Terraform</strong>, and <strong>GitHub</strong>, for faster releases, automation, and reliable deployments.</div>
-					</div>
+							<!-- DevOps -->
+							<div class="tech-item carousel-card" data-category="devops">
+								<div class="tech-logos-row">
+									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/docker/2496ED"
+											alt="Docker" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/kubernetes/326CE5"
+											alt="Kubernetes" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/jenkins/D24939"
+											alt="Jenkins" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/hashicorp/000000"
+											alt="Terraform" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/github/181717"
+											alt="GitHub" class="tech-logo" /></div>
+								</div>
+								<div class="tech-name">DevOps</div>
+								<div class="tech-description">We enable <strong>CI/CD</strong>,
+									<strong>containers</strong>, and <strong>infrastructure as code</strong> with
+									<strong>Docker</strong>, <strong>Kubernetes</strong>, <strong>Jenkins</strong>,
+									<strong>Terraform</strong>, and <strong>GitHub</strong>, for faster releases,
+									automation, and reliable deployments.
+								</div>
+							</div>
 
-					<!-- Cybersecurity -->
-					<div class="tech-item carousel-card" data-category="security">
-						<div class="tech-logos-row">
-							<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/cloudflare/F38020" alt="Cloudflare" class="tech-logo" /></div>
-							<div class="tech-logo-wrap"><svg class="tech-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Microsoft Sentinel"><path fill="#0078D4" d="M12 2L4 6v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V6l-8-4zm0 2.18l5.9 2.95V11c0 4.52-2.98 8.69-5.9 9.93-2.92-1.24-5.9-5.41-5.9-9.93V7.13L12 4.18z"/></svg></div>
-						</div>
-						<div class="tech-name">Cybersecurity</div>
-						<div class="tech-description">We strengthen your posture with <strong>WAF</strong>, <strong>DDoS protection</strong>, <strong>SIEM</strong>, and <strong>threat detection</strong>, using <strong>Cloudflare</strong> and <strong>Microsoft Sentinel</strong>, for secure apps, compliance, and 24/7 monitoring.</div>
-					</div>
+							<!-- Cybersecurity -->
+							<div class="tech-item carousel-card" data-category="security">
+								<div class="tech-logos-row">
+									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/cloudflare/F38020"
+											alt="Cloudflare" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><svg class="tech-logo" viewBox="0 0 24 24"
+											xmlns="http://www.w3.org/2000/svg" aria-label="Microsoft Sentinel">
+											<path fill="#0078D4"
+												d="M12 2L4 6v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V6l-8-4zm0 2.18l5.9 2.95V11c0 4.52-2.98 8.69-5.9 9.93-2.92-1.24-5.9-5.41-5.9-9.93V7.13L12 4.18z" />
+										</svg></div>
+								</div>
+								<div class="tech-name">Cybersecurity</div>
+								<div class="tech-description">We strengthen your posture with <strong>WAF</strong>,
+									<strong>DDoS protection</strong>, <strong>SIEM</strong>, and <strong>threat
+										detection</strong>, using <strong>Cloudflare</strong> and <strong>Microsoft
+										Sentinel</strong>, for secure apps, compliance, and 24/7 monitoring.
+								</div>
+							</div>
 						</div>
 					</div>
 
@@ -2137,7 +1937,7 @@
 
 						<svg class="timeline-connector" viewBox="0 0 600 800">
 							<path class="connector-path" d="M50,100 Q150,200 100,300 T150,500 Q200,600 150,700"
-								fill="none" stroke="url(#lineGradient)" stroke-width="2"/>
+								fill="none" stroke="url(#lineGradient)" stroke-width="2" />
 							<defs>
 								<linearGradient id="lineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
 									<stop offset="0%" style="stop-color:#3bb143;stop-opacity:0.3" />
@@ -2160,11 +1960,11 @@
 				background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
 				position: relative;
 				overflow: hidden;
-				padding: 16px 0;
+				padding: 60px 0 60px;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				justify-content: center;
+				justify-content: flex-start;
 				box-sizing: border-box;
 			}
 
@@ -2196,7 +1996,7 @@
 
 			.tech-header {
 				text-align: center;
-				margin-bottom: 10px;
+				margin-bottom: 8px;
 				flex-shrink: 0;
 			}
 
@@ -2219,7 +2019,7 @@
 				justify-content: center;
 				align-items: center;
 				gap: 8px;
-				margin-bottom: 0;
+				margin-bottom: 30px;
 				flex-wrap: nowrap;
 				flex-shrink: 0;
 			}
@@ -2248,611 +2048,632 @@
 				box-shadow: 0 8px 20px rgba(59, 177, 67, 0.2);
 			}
 
-		.filter-btn.active {
-			background: linear-gradient(135deg, #3bb143, #2d8f35);
-			border-color: #3bb143;
-			color: #ffffff;
-			box-shadow: 0 5px 20px rgba(59, 177, 67, 0.3);
-		}
-
-		.carousel-wrapper {
-			position: relative;
-			width: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			gap: 24px;
-			padding: 0;
-			margin-top: 10px;
-		}
-
-		.carousel-container {
-			perspective: 1500px;
-			width: 100%;
-			max-width: 900px;
-			height: min(420px, 52vh);
-			max-height: 420px;
-			position: relative;
-			overflow: visible;
-		}
-
-		.tech-carousel {
-			position: relative;
-			width: 100%;
-			height: 100%;
-			transform-style: preserve-3d;
-		}
-
-		.carousel-card {
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			width: 380px;
-			height: 400px;
-			max-height: min(400px, 50vh);
-			transform-origin: center;
-			backface-visibility: hidden;
-			transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-		}
-
-		.tech-item {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			gap: 12px;
-			padding: 24px 28px;
-			background: rgba(255, 255, 255, 0.9);
-			backdrop-filter: blur(20px);
-			-webkit-backdrop-filter: blur(20px);
-			border: 2px solid rgba(59, 177, 67, 0.2);
-			border-radius: 24px;
-			cursor: pointer;
-			width: 100%;
-			height: 100%;
-			box-sizing: border-box;
-			box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-		}
-
-		.tech-item.hidden {
-			display: none;
-		}
-
-		.carousel-card.active {
-			border-color: #3bb143;
-			background: linear-gradient(135deg, rgba(59, 177, 67, 0.1) 0%, rgba(255, 255, 255, 0.95) 100%);
-			box-shadow: 0 30px 80px rgba(59, 177, 67, 0.3);
-		}
-
-		.carousel-card:not(.active) {
-			opacity: 0.6;
-		}
-
-		.carousel-card:not(.active):hover {
-			opacity: 0.8;
-			box-shadow: 0 25px 70px rgba(59, 177, 67, 0.2);
-			border-color: rgba(59, 177, 67, 0.4);
-		}
-
-		.tech-logos-row {
-			display: flex;
-			flex-wrap: wrap;
-			align-items: center;
-			justify-content: center;
-			gap: 16px;
-			position: relative;
-			z-index: 1;
-		}
-
-		.tech-logo-wrap {
-			width: 64px;
-			height: 64px;
-			border-radius: 50%;
-			background: linear-gradient(135deg, rgba(59, 177, 67, 0.15) 0%, rgba(59, 177, 67, 0.05) 100%);
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			transition: all 0.4s ease;
-			flex-shrink: 0;
-		}
-
-		.carousel-card.active .tech-logo-wrap {
-			background: linear-gradient(135deg, rgba(59, 177, 67, 0.25) 0%, rgba(59, 177, 67, 0.08) 100%);
-		}
-
-		.tech-logo-wrap .tech-logo,
-		.tech-logos-row .tech-logo {
-			width: 38px;
-			height: 38px;
-			object-fit: contain;
-			display: block;
-		}
-
-		.tech-logos-row .tech-logo-wrap svg.tech-logo {
-			width: 38px;
-			height: 38px;
-		}
-
-		.carousel-card.active .tech-logo-wrap .tech-logo {
-			filter: drop-shadow(0 4px 12px rgba(59, 177, 67, 0.3));
-		}
-
-		.tech-name {
-			font-size: 1.75rem;
-			color: #1a1a1a;
-			font-weight: 700;
-			text-align: center;
-			letter-spacing: 0.02em;
-			line-height: 1.2;
-		}
-
-		.tech-description {
-			font-size: 1.05rem;
-			color: #555;
-			text-align: center;
-			line-height: 1.6;
-			max-width: 420px;
-			opacity: 0;
-			transition: opacity 0.4s ease;
-		}
-
-		.carousel-card.active .tech-description {
-			opacity: 1;
-		}
-
-		.carousel-nav {
-			width: 60px;
-			height: 60px;
-			border-radius: 50%;
-			background: rgba(255, 255, 255, 0.9);
-			backdrop-filter: blur(10px);
-			border: 2px solid rgba(59, 177, 67, 0.3);
-			color: #3bb143;
-			cursor: pointer;
-			transition: all 0.3s ease;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			flex-shrink: 0;
-			z-index: 10;
-		}
-
-		.carousel-nav:hover {
-			background: #3bb143;
-			color: #ffffff;
-			transform: scale(1.1);
-			box-shadow: 0 10px 30px rgba(59, 177, 67, 0.3);
-		}
-
-		.carousel-nav svg {
-			width: 24px;
-			height: 24px;
-		}
-
-		.carousel-indicators {
-			display: flex;
-			justify-content: center;
-			gap: 10px;
-			margin-top: 10px;
-			flex-shrink: 0;
-			position: relative;
-			z-index: 5;
-		}
-
-		.carousel-indicator {
-			width: 12px;
-			height: 12px;
-			border-radius: 50%;
-			background: rgba(59, 177, 67, 0.2);
-			border: 2px solid transparent;
-			cursor: pointer;
-			transition: all 0.3s ease;
-		}
-
-		.carousel-indicator.active {
-			background: #3bb143;
-			border-color: #3bb143;
-			transform: scale(1.2);
-		}
-
-		.carousel-indicator:hover {
-			background: rgba(59, 177, 67, 0.5);
-			transform: scale(1.1);
-		}
-
-		@media (max-width: 1200px) {
-			.carousel-container {
-				max-width: 700px;
-				height: min(380px, 50vh);
-			}
-
-			.carousel-card {
-				width: 320px;
-				height: 360px;
-			}
-
-			.tech-item {
-				padding: 20px 24px;
-				gap: 10px;
-			}
-
-			.tech-logo-wrap {
-				width: 44px;
-				height: 44px;
-			}
-
-			.tech-logo-wrap .tech-logo,
-			.tech-logos-row .tech-logo-wrap svg.tech-logo {
-				width: 26px;
-				height: 26px;
-			}
-
-			.tech-name {
-				font-size: 1.3rem;
-			}
-		}
-
-		@media (max-width: 1024px) {
-			.carousel-wrapper {
-				padding: 8px 0;
-			}
-
-			.carousel-nav {
-				width: 50px;
-				height: 50px;
-			}
-
-			.carousel-nav svg {
-				width: 20px;
-				height: 20px;
-			}
-		}
-
-		@media (max-width: 768px) {
-			#tech-stack-section {
-				padding: 12px 0;
-			}
-
-			.tech-container {
-				padding: 0 20px;
-			}
-
-			.tech-header {
-				margin-bottom: 8px;
-			}
-
-			.tech-filter {
-				margin-bottom: 8px;
-				gap: 6px;
-				flex-wrap: nowrap;
-				overflow-x: auto;
-				justify-content: flex-start;
-				padding-bottom: 6px;
-				-webkit-overflow-scrolling: touch;
-			}
-
-			.filter-btn {
-				padding: 6px 12px;
-				font-size: 0.7rem;
+			.filter-btn.active {
+				background: linear-gradient(135deg, #3bb143, #2d8f35);
+				border-color: #3bb143;
+				color: #ffffff;
+				box-shadow: 0 5px 20px rgba(59, 177, 67, 0.3);
 			}
 
 			.carousel-wrapper {
-				padding: 6px 0;
-				gap: 16px;
+				position: relative;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 24px;
+				padding: 0;
+				margin-top: 10px;
 			}
 
 			.carousel-container {
-				max-width: 90%;
-				height: min(340px, 48vh);
+				perspective: 1500px;
+				width: 100%;
+				max-width: 900px;
+				height: min(420px, 52vh);
+				max-height: 420px;
+				position: relative;
+				overflow: visible;
+			}
+
+			.tech-carousel {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				transform-style: preserve-3d;
 			}
 
 			.carousel-card {
-				width: 280px;
-				height: 320px;
-			}
-
-			.tech-item {
-				padding: 18px 20px;
-				gap: 8px;
-			}
-
-			.tech-logos-row {
-				gap: 10px;
-			}
-
-			.tech-logo-wrap {
-				width: 40px;
-				height: 40px;
-			}
-
-			.tech-logo-wrap .tech-logo,
-			.tech-logos-row .tech-logo-wrap svg.tech-logo {
-				width: 22px;
-				height: 22px;
-			}
-
-			.tech-name {
-				font-size: 1.1rem;
-			}
-
-			.tech-description {
-				font-size: 0.78rem;
-			}
-
-			.carousel-nav {
-				width: 50px;
-				height: 50px;
 				position: absolute;
+				left: 50%;
 				top: 50%;
-				transform: translateY(-50%);
-			}
-
-			.carousel-prev {
-				left: 10px;
-			}
-
-			.carousel-next {
-				right: 10px;
-			}
-		}
-
-		@media (max-width: 480px) {
-			.carousel-container {
-				height: min(300px, 45vh);
-			}
-
-			.carousel-card {
-				width: 260px;
-				height: 280px;
+				width: 380px;
+				height: 400px;
+				max-height: min(400px, 50vh);
+				transform-origin: center;
+				backface-visibility: hidden;
+				transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 			}
 
 			.tech-item {
-				padding: 14px 16px;
-				gap: 6px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 12px;
+				padding: 24px 28px;
+				background: rgba(255, 255, 255, 0.9);
+				backdrop-filter: blur(20px);
+				-webkit-backdrop-filter: blur(20px);
+				border: 2px solid rgba(59, 177, 67, 0.2);
+				border-radius: 24px;
+				cursor: pointer;
+				width: 100%;
+				height: 100%;
+				box-sizing: border-box;
+				box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+			}
+
+			.tech-item.hidden {
+				display: none;
+			}
+
+			.carousel-card.active {
+				border-color: #3bb143;
+				background: linear-gradient(135deg, rgba(59, 177, 67, 0.1) 0%, rgba(255, 255, 255, 0.95) 100%);
+				box-shadow: 0 30px 80px rgba(59, 177, 67, 0.3);
+			}
+
+			.carousel-card:not(.active) {
+				opacity: 0.6;
+			}
+
+			.carousel-card:not(.active):hover {
+				opacity: 0.8;
+				box-shadow: 0 25px 70px rgba(59, 177, 67, 0.2);
+				border-color: rgba(59, 177, 67, 0.4);
 			}
 
 			.tech-logos-row {
-				gap: 8px;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: center;
+				gap: 16px;
+				position: relative;
+				z-index: 1;
 			}
 
 			.tech-logo-wrap {
-				width: 36px;
-				height: 36px;
+				width: 64px;
+				height: 64px;
+				border-radius: 50%;
+				background: linear-gradient(135deg, rgba(59, 177, 67, 0.15) 0%, rgba(59, 177, 67, 0.05) 100%);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: all 0.4s ease;
+				flex-shrink: 0;
+			}
+
+			.carousel-card.active .tech-logo-wrap {
+				background: linear-gradient(135deg, rgba(59, 177, 67, 0.25) 0%, rgba(59, 177, 67, 0.08) 100%);
 			}
 
 			.tech-logo-wrap .tech-logo,
+			.tech-logos-row .tech-logo {
+				width: 38px;
+				height: 38px;
+				object-fit: contain;
+				display: block;
+			}
+
 			.tech-logos-row .tech-logo-wrap svg.tech-logo {
-				width: 20px;
-				height: 20px;
+				width: 38px;
+				height: 38px;
+			}
+
+			.carousel-card.active .tech-logo-wrap .tech-logo {
+				filter: drop-shadow(0 4px 12px rgba(59, 177, 67, 0.3));
 			}
 
 			.tech-name {
-				font-size: 1rem;
+				font-size: 1.75rem;
+				color: #1a1a1a;
+				font-weight: 700;
+				text-align: center;
+				letter-spacing: 0.02em;
+				line-height: 1.2;
 			}
 
 			.tech-description {
-				font-size: 0.72rem;
+				font-size: 1.05rem;
+				color: #555;
+				text-align: center;
+				line-height: 1.6;
+				max-width: 420px;
+				opacity: 0;
+				transition: opacity 0.4s ease;
+			}
+
+			.carousel-card.active .tech-description {
+				opacity: 1;
 			}
 
 			.carousel-nav {
-				width: 45px;
-				height: 45px;
+				width: 60px;
+				height: 60px;
+				border-radius: 50%;
+				background: rgba(255, 255, 255, 0.9);
+				backdrop-filter: blur(10px);
+				border: 2px solid rgba(59, 177, 67, 0.3);
+				color: #3bb143;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-shrink: 0;
+				z-index: 10;
+			}
+
+			.carousel-nav:hover {
+				background: #3bb143;
+				color: #ffffff;
+				transform: scale(1.1);
+				box-shadow: 0 10px 30px rgba(59, 177, 67, 0.3);
 			}
 
 			.carousel-nav svg {
-				width: 18px;
-				height: 18px;
+				width: 24px;
+				height: 24px;
 			}
-		}
+
+			.carousel-indicators {
+				display: flex;
+				justify-content: center;
+				gap: 10px;
+				margin-top: 10px;
+				flex-shrink: 0;
+				position: relative;
+				z-index: 5;
+			}
+
+			.carousel-indicator {
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				background: rgba(59, 177, 67, 0.2);
+				border: 2px solid transparent;
+				cursor: pointer;
+				transition: all 0.3s ease;
+			}
+
+			.carousel-indicator.active {
+				background: #3bb143;
+				border-color: #3bb143;
+				transform: scale(1.2);
+			}
+
+			.carousel-indicator:hover {
+				background: rgba(59, 177, 67, 0.5);
+				transform: scale(1.1);
+			}
+
+			@media (max-width: 1200px) {
+				.carousel-container {
+					max-width: 700px;
+					height: min(380px, 50vh);
+				}
+
+				.carousel-card {
+					width: 320px;
+					height: 360px;
+				}
+
+				.tech-item {
+					padding: 20px 24px;
+					gap: 10px;
+				}
+
+				.tech-logo-wrap {
+					width: 44px;
+					height: 44px;
+				}
+
+				.tech-logo-wrap .tech-logo,
+				.tech-logos-row .tech-logo-wrap svg.tech-logo {
+					width: 26px;
+					height: 26px;
+				}
+
+				.tech-name {
+					font-size: 1.3rem;
+				}
+			}
+
+			@media (max-width: 1024px) {
+				.carousel-wrapper {
+					padding: 8px 0;
+				}
+
+				.carousel-nav {
+					width: 50px;
+					height: 50px;
+				}
+
+				.carousel-nav svg {
+					width: 20px;
+					height: 20px;
+				}
+			}
+
+			@media (max-width: 768px) {
+				#tech-stack-section {
+					padding: 12px 0;
+				}
+
+				.tech-container {
+					padding: 0 20px;
+				}
+
+				.tech-header {
+					margin-bottom: 8px;
+				}
+
+				.tech-filter {
+					margin-bottom: 8px;
+					gap: 6px;
+					flex-wrap: nowrap;
+					overflow-x: auto;
+					overflow-y: hidden;
+					justify-content: flex-start;
+					padding: 8px 15px 12px;
+					-webkit-overflow-scrolling: touch;
+					width: 100%;
+					max-width: 100vw;
+					box-sizing: border-box;
+					scrollbar-width: thin;
+					scrollbar-color: #3bb143 #e0e0e0;
+				}
+
+				.tech-filter::-webkit-scrollbar {
+					height: 4px;
+				}
+
+				.tech-filter::-webkit-scrollbar-track {
+					background: #e0e0e0;
+					border-radius: 4px;
+				}
+
+				.tech-filter::-webkit-scrollbar-thumb {
+					background: #3bb143;
+					border-radius: 4px;
+				}
+
+				.filter-btn {
+					padding: 8px 14px;
+					font-size: 0.75rem;
+					flex-shrink: 0;
+				}
+
+				.carousel-wrapper {
+					padding: 6px 0;
+					gap: 16px;
+				}
+
+				.carousel-container {
+					max-width: 90%;
+					height: min(340px, 48vh);
+				}
+
+				.carousel-card {
+					width: 280px;
+					height: 320px;
+				}
+
+				.tech-item {
+					padding: 18px 20px;
+					gap: 8px;
+				}
+
+				.tech-logos-row {
+					gap: 10px;
+				}
+
+				.tech-logo-wrap {
+					width: 40px;
+					height: 40px;
+				}
+
+				.tech-logo-wrap .tech-logo,
+				.tech-logos-row .tech-logo-wrap svg.tech-logo {
+					width: 22px;
+					height: 22px;
+				}
+
+				.tech-name {
+					font-size: 1.1rem;
+				}
+
+				.tech-description {
+					font-size: 0.78rem;
+				}
+
+				.carousel-nav {
+					width: 50px;
+					height: 50px;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+
+				.carousel-prev {
+					left: 10px;
+				}
+
+				.carousel-next {
+					right: 10px;
+				}
+			}
+
+			@media (max-width: 480px) {
+				.carousel-container {
+					height: min(300px, 45vh);
+				}
+
+				.carousel-card {
+					width: 260px;
+					height: 280px;
+				}
+
+				.tech-item {
+					padding: 14px 16px;
+					gap: 6px;
+				}
+
+				.tech-logos-row {
+					gap: 8px;
+				}
+
+				.tech-logo-wrap {
+					width: 36px;
+					height: 36px;
+				}
+
+				.tech-logo-wrap .tech-logo,
+				.tech-logos-row .tech-logo-wrap svg.tech-logo {
+					width: 20px;
+					height: 20px;
+				}
+
+				.tech-name {
+					font-size: 1rem;
+				}
+
+				.tech-description {
+					font-size: 0.72rem;
+				}
+
+				.carousel-nav {
+					width: 45px;
+					height: 45px;
+				}
+
+				.carousel-nav svg {
+					width: 18px;
+					height: 18px;
+				}
+			}
 		</style>
 
-	<script>
-		document.addEventListener('DOMContentLoaded', () => {
-			const canvas = document.getElementById('tech-canvas');
-			const ctx = canvas.getContext('2d');
-			const carousel = document.getElementById('techCarousel');
-			const allCards = document.querySelectorAll('.carousel-card');
-			const filterBtns = document.querySelectorAll('.filter-btn');
-			const prevBtn = document.querySelector('.carousel-prev');
-			const nextBtn = document.querySelector('.carousel-next');
-			const indicatorsContainer = document.getElementById('carouselIndicators');
-			const carouselWrapper = document.querySelector('.carousel-wrapper');
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const canvas = document.getElementById('tech-canvas');
+				const ctx = canvas.getContext('2d');
+				const carousel = document.getElementById('techCarousel');
+				const allCards = document.querySelectorAll('.carousel-card');
+				const filterBtns = document.querySelectorAll('.filter-btn');
+				const prevBtn = document.querySelector('.carousel-prev');
+				const nextBtn = document.querySelector('.carousel-next');
+				const indicatorsContainer = document.getElementById('carouselIndicators');
+				const carouselWrapper = document.querySelector('.carousel-wrapper');
 
-			gsap.set(allCards, { xPercent: -50, yPercent: -50 });
+				gsap.set(allCards, { xPercent: -50, yPercent: -50 });
 
-			canvas.width = window.innerWidth;
-			canvas.height = document.getElementById('tech-stack-section').offsetHeight;
+				canvas.width = window.innerWidth;
+				canvas.height = document.getElementById('tech-stack-section').offsetHeight;
 
-			gsap.registerPlugin(ScrollTrigger);
+				gsap.registerPlugin(ScrollTrigger);
 
-			let particles = [];
-			const particleCount = 80;
+				let particles = [];
+				const particleCount = 80;
 
-			class Particle {
-				constructor() {
-					this.x = Math.random() * canvas.width;
-					this.y = Math.random() * canvas.height;
-					this.vx = (Math.random() - 0.5) * 0.5;
-					this.vy = (Math.random() - 0.5) * 0.5;
-					this.radius = Math.random() * 2 + 1;
+				class Particle {
+					constructor() {
+						this.x = Math.random() * canvas.width;
+						this.y = Math.random() * canvas.height;
+						this.vx = (Math.random() - 0.5) * 0.5;
+						this.vy = (Math.random() - 0.5) * 0.5;
+						this.radius = Math.random() * 2 + 1;
+					}
+
+					update() {
+						this.x += this.vx;
+						this.y += this.vy;
+
+						if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+						if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+					}
+
+					draw() {
+						ctx.beginPath();
+						ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+						ctx.fillStyle = 'rgba(59, 177, 67, 0.5)';
+						ctx.fill();
+					}
 				}
 
-				update() {
-					this.x += this.vx;
-					this.y += this.vy;
-
-					if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-					if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+				for (let i = 0; i < particleCount; i++) {
+					particles.push(new Particle());
 				}
 
-				draw() {
-					ctx.beginPath();
-					ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-					ctx.fillStyle = 'rgba(59, 177, 67, 0.5)';
-					ctx.fill();
-				}
-			}
+				function connectParticles() {
+					for (let i = 0; i < particles.length; i++) {
+						for (let j = i + 1; j < particles.length; j++) {
+							const dx = particles[i].x - particles[j].x;
+							const dy = particles[i].y - particles[j].y;
+							const distance = Math.sqrt(dx * dx + dy * dy);
 
-			for (let i = 0; i < particleCount; i++) {
-				particles.push(new Particle());
-			}
-
-			function connectParticles() {
-				for (let i = 0; i < particles.length; i++) {
-					for (let j = i + 1; j < particles.length; j++) {
-						const dx = particles[i].x - particles[j].x;
-						const dy = particles[i].y - particles[j].y;
-						const distance = Math.sqrt(dx * dx + dy * dy);
-
-						if (distance < 150) {
-							ctx.beginPath();
-							ctx.moveTo(particles[i].x, particles[i].y);
-							ctx.lineTo(particles[j].x, particles[j].y);
-							ctx.strokeStyle = `rgba(59, 177, 67, ${0.2 * (1 - distance / 150)})`;
-							ctx.lineWidth = 1;
-							ctx.stroke();
+							if (distance < 150) {
+								ctx.beginPath();
+								ctx.moveTo(particles[i].x, particles[i].y);
+								ctx.lineTo(particles[j].x, particles[j].y);
+								ctx.strokeStyle = `rgba(59, 177, 67, ${0.2 * (1 - distance / 150)})`;
+								ctx.lineWidth = 1;
+								ctx.stroke();
+							}
 						}
 					}
 				}
-			}
 
-			function animate() {
-				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				function animate() {
+					ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-				particles.forEach(particle => {
-					particle.update();
-					particle.draw();
+					particles.forEach(particle => {
+						particle.update();
+						particle.draw();
+					});
+
+					connectParticles();
+					requestAnimationFrame(animate);
+				}
+
+				animate();
+
+				window.addEventListener('resize', () => {
+					canvas.width = window.innerWidth;
+					canvas.height = document.getElementById('tech-stack-section').offsetHeight;
 				});
 
-				connectParticles();
-				requestAnimationFrame(animate);
-			}
+				const categories = ['ai', 'data', 'cloud', 'webapp', 'uiux', 'devops', 'security'];
+				let currentCategory = 'ai';
+				let currentIndex = 0;
 
-			animate();
+				function createIndicators() {
+					indicatorsContainer.innerHTML = '';
+					categories.forEach((_, index) => {
+						const indicator = document.createElement('div');
+						indicator.classList.add('carousel-indicator');
+						if (index === currentIndex) indicator.classList.add('active');
+						indicator.addEventListener('click', () => goToSlide(index));
+						indicatorsContainer.appendChild(indicator);
+					});
+				}
 
-			window.addEventListener('resize', () => {
-				canvas.width = window.innerWidth;
-				canvas.height = document.getElementById('tech-stack-section').offsetHeight;
-			});
+				function updateCarousel() {
+					allCards.forEach(card => {
+						const cat = card.getAttribute('data-category');
+						if (cat === currentCategory) {
+							card.classList.remove('hidden');
+							card.classList.add('active');
+							gsap.to(card, { x: 0, z: 0, rotateY: 0, scale: 1, zIndex: 10, duration: 0.6, ease: 'power2.out' });
+						} else {
+							card.classList.add('hidden');
+							card.classList.remove('active');
+							gsap.to(card, { x: 0, z: 0, rotateY: 0, scale: 0.5, zIndex: 1, duration: 0.6, ease: 'power2.out' });
+						}
+					});
 
-			const categories = ['ai', 'data', 'cloud', 'webapp', 'uiux', 'devops', 'security'];
-			let currentCategory = 'ai';
-			let currentIndex = 0;
+					const indicators = indicatorsContainer.querySelectorAll('.carousel-indicator');
+					indicators.forEach((indicator, index) => {
+						indicator.classList.toggle('active', index === currentIndex);
+					});
+				}
 
-			function createIndicators() {
-				indicatorsContainer.innerHTML = '';
-				categories.forEach((_, index) => {
-					const indicator = document.createElement('div');
-					indicator.classList.add('carousel-indicator');
-					if (index === currentIndex) indicator.classList.add('active');
-					indicator.addEventListener('click', () => goToSlide(index));
-					indicatorsContainer.appendChild(indicator);
-				});
-			}
-
-			function updateCarousel() {
-				allCards.forEach(card => {
-					const cat = card.getAttribute('data-category');
-					if (cat === currentCategory) {
-						card.classList.remove('hidden');
-						card.classList.add('active');
-						gsap.to(card, { x: 0, z: 0, rotateY: 0, scale: 1, zIndex: 10, duration: 0.6, ease: 'power2.out' });
-					} else {
-						card.classList.add('hidden');
-						card.classList.remove('active');
-						gsap.to(card, { x: 0, z: 0, rotateY: 0, scale: 0.5, zIndex: 1, duration: 0.6, ease: 'power2.out' });
-					}
-				});
-
-				const indicators = indicatorsContainer.querySelectorAll('.carousel-indicator');
-				indicators.forEach((indicator, index) => {
-					indicator.classList.toggle('active', index === currentIndex);
-				});
-			}
-
-			function goToSlide(index) {
-				currentIndex = Math.max(0, Math.min(index, categories.length - 1));
-				currentCategory = categories[currentIndex];
-				filterBtns.forEach((b) => b.classList.toggle('active', b.getAttribute('data-category') === currentCategory));
-				updateCarousel();
-				createIndicators();
-			}
-
-			function nextSlide() {
-				currentIndex = (currentIndex + 1) % categories.length;
-				currentCategory = categories[currentIndex];
-				filterBtns.forEach((b) => b.classList.toggle('active', b.getAttribute('data-category') === currentCategory));
-				updateCarousel();
-				createIndicators();
-			}
-
-			function prevSlide() {
-				currentIndex = (currentIndex - 1 + categories.length) % categories.length;
-				currentCategory = categories[currentIndex];
-				filterBtns.forEach((b) => b.classList.toggle('active', b.getAttribute('data-category') === currentCategory));
-				updateCarousel();
-				createIndicators();
-			}
-
-			prevBtn.addEventListener('click', prevSlide);
-			nextBtn.addEventListener('click', nextSlide);
-
-			filterBtns.forEach(btn => {
-				btn.addEventListener('click', () => {
-					currentCategory = btn.getAttribute('data-category');
-					currentIndex = categories.indexOf(currentCategory);
-					if (currentIndex === -1) currentIndex = 0;
+				function goToSlide(index) {
+					currentIndex = Math.max(0, Math.min(index, categories.length - 1));
+					currentCategory = categories[currentIndex];
 					filterBtns.forEach((b) => b.classList.toggle('active', b.getAttribute('data-category') === currentCategory));
 					updateCarousel();
 					createIndicators();
-					startAutoRotate();
+				}
+
+				function nextSlide() {
+					currentIndex = (currentIndex + 1) % categories.length;
+					currentCategory = categories[currentIndex];
+					filterBtns.forEach((b) => b.classList.toggle('active', b.getAttribute('data-category') === currentCategory));
+					updateCarousel();
+					createIndicators();
+				}
+
+				function prevSlide() {
+					currentIndex = (currentIndex - 1 + categories.length) % categories.length;
+					currentCategory = categories[currentIndex];
+					filterBtns.forEach((b) => b.classList.toggle('active', b.getAttribute('data-category') === currentCategory));
+					updateCarousel();
+					createIndicators();
+				}
+
+				prevBtn.addEventListener('click', prevSlide);
+				nextBtn.addEventListener('click', nextSlide);
+
+				filterBtns.forEach(btn => {
+					btn.addEventListener('click', () => {
+						currentCategory = btn.getAttribute('data-category');
+						currentIndex = categories.indexOf(currentCategory);
+						if (currentIndex === -1) currentIndex = 0;
+						filterBtns.forEach((b) => b.classList.toggle('active', b.getAttribute('data-category') === currentCategory));
+						updateCarousel();
+						createIndicators();
+						startAutoRotate();
+					});
+				});
+
+				allCards.forEach(card => {
+					const itemCategory = card.getAttribute('data-category');
+					if (itemCategory !== 'ai') {
+						card.classList.add('hidden');
+					}
+				});
+
+				createIndicators();
+				updateCarousel();
+
+				let autoRotateInterval;
+
+				function startAutoRotate() {
+					stopAutoRotate();
+					autoRotateInterval = setInterval(() => {
+						nextSlide();
+					}, 5000);
+				}
+
+				function stopAutoRotate() {
+					if (autoRotateInterval) {
+						clearInterval(autoRotateInterval);
+					}
+				}
+
+				startAutoRotate();
+
+				if (carouselWrapper) {
+					carouselWrapper.addEventListener('mouseenter', stopAutoRotate);
+					carouselWrapper.addEventListener('mouseleave', startAutoRotate);
+				}
+
+				document.addEventListener('visibilitychange', () => {
+					if (document.hidden) {
+						stopAutoRotate();
+					} else {
+						startAutoRotate();
+					}
 				});
 			});
+		</script>
 
-			allCards.forEach(card => {
-				const itemCategory = card.getAttribute('data-category');
-				if (itemCategory !== 'ai') {
-					card.classList.add('hidden');
-				}
-			});
-
-			createIndicators();
-			updateCarousel();
-
-			let autoRotateInterval;
-
-			function startAutoRotate() {
-				stopAutoRotate();
-				autoRotateInterval = setInterval(() => {
-					nextSlide();
-				}, 5000);
-			}
-
-			function stopAutoRotate() {
-				if (autoRotateInterval) {
-					clearInterval(autoRotateInterval);
-				}
-			}
-
-			startAutoRotate();
-
-			if (carouselWrapper) {
-				carouselWrapper.addEventListener('mouseenter', stopAutoRotate);
-				carouselWrapper.addEventListener('mouseleave', startAutoRotate);
-			}
-
-			document.addEventListener('visibilitychange', () => {
-				if (document.hidden) {
-					stopAutoRotate();
-				} else {
-					startAutoRotate();
-				}
-			});
-		});
-	</script>
-
-	<style>
-		#process-section {
+		<style>
+			#process-section {
 				min-height: 100vh;
 				background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
 				position: relative;
@@ -2929,7 +2750,7 @@
 				position: relative;
 				opacity: 0;
 				transform: translateY(50px);
-				transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+				transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 			}
 
 			.process-step.visible {
@@ -3289,14 +3110,14 @@
 					gsap.to(step, {
 						scrollTrigger: {
 							trigger: step,
-							start: 'top 85%',
+							start: 'top 92%',
 							toggleActions: 'play none none reverse',
 							onEnter: () => step.classList.add('visible')
 						},
 						opacity: 1,
 						y: 0,
-						duration: 0.8,
-						delay: index * 0.1,
+						duration: 0.4,
+						delay: index * 0.05,
 						ease: 'power3.out'
 					});
 
@@ -3306,13 +3127,13 @@
 						{
 							scrollTrigger: {
 								trigger: step,
-								start: 'top 85%',
+								start: 'top 92%',
 								toggleActions: 'play none none reverse'
 							},
 							scale: 1,
 							rotation: 0,
-							duration: 0.8,
-							delay: index * 0.1 + 0.2,
+							duration: 0.4,
+							delay: index * 0.05 + 0.1,
 							ease: 'back.out(1.4)'
 						}
 					);
@@ -3503,9 +3324,19 @@
 			}
 
 			@keyframes float-bubble {
-				0%, 100% { transform: translate(0, 0); }
-				33% { transform: translate(10px, -15px); }
-				66% { transform: translate(-10px, 10px); }
+
+				0%,
+				100% {
+					transform: translate(0, 0);
+				}
+
+				33% {
+					transform: translate(10px, -15px);
+				}
+
+				66% {
+					transform: translate(-10px, 10px);
+				}
 			}
 
 			.bubble-glow {
@@ -3680,14 +3511,14 @@
 					gsap.to(item, {
 						scrollTrigger: {
 							trigger: item,
-							start: 'top 85%',
+							start: 'top 92%',
 							toggleActions: 'play none none reverse',
 							onEnter: () => item.classList.add('visible')
 						},
 						opacity: 1,
 						x: 0,
-						duration: 0.6,
-						delay: index * 0.1
+						duration: 0.3,
+						delay: index * 0.05
 					});
 				});
 
@@ -3704,7 +3535,7 @@
 					gsap.to(bubble, {
 						scrollTrigger: {
 							trigger: bubble,
-							start: 'top 80%',
+							start: 'top 92%',
 							toggleActions: 'play none none reverse',
 							onEnter: () => {
 								bubble.classList.add('visible');
@@ -3713,8 +3544,8 @@
 						},
 						opacity: 1,
 						scale: 1,
-						duration: 0.8,
-						delay: index * 0.15,
+						duration: 0.4,
+						delay: index * 0.08,
 						ease: 'back.out(1.4)'
 					});
 				});
@@ -3740,66 +3571,73 @@
 
 		<style>
 			/* ===== Scroll Snap Container ===== */
-			html, body.scroll-container {
+			html,
+			body.scroll-container {
 				scroll-snap-type: y proximity;
 				overflow-y: scroll;
 				scroll-behavior: smooth;
 			}
 
 
-			#hero, #services-section, #middle-section, #about-section, #process-section, #tech-stack-section, #hero1 {
+			#hero,
+			#services-section,
+			#middle-section,
+			#about-section,
+			#process-section,
+			#tech-stack-section,
+			#hero1 {
 				scroll-snap-align: start;
 			}
 
-		#hero {
-			height: 100vh;
-		}
+			#hero {
+				height: 100vh;
+			}
 
-	/* ===== Base Section ===== */
-	#middle-section {
-		height: 100vh;
-		position: relative;
-		background: url('assets/img/background.png') center center / cover no-repeat;
-		overflow: hidden;
-	}
+			/* ===== Base Section ===== */
+			#middle-section {
+				height: 100vh;
+				position: relative;
+				background: url('assets/img/background.png') center center / cover no-repeat;
+				overflow: hidden;
+			}
 
-	#middle-section::before {
-		content: '';
-		position: absolute;
-		top: -5px;
-		left: 0;
-		right: 0;
-		height: 5px;
-		background: linear-gradient(90deg, #3bb143, #2d8f35, #3bb143);
-		z-index: 100;
-		box-shadow: 0 2px 10px rgba(59, 177, 67, 0.5);
-	}
+			#middle-section::before {
+				content: '';
+				position: absolute;
+				top: -5px;
+				left: 0;
+				right: 0;
+				height: 5px;
+				background: linear-gradient(90deg, #3bb143, #2d8f35, #3bb143);
+				z-index: 100;
+				box-shadow: 0 2px 10px rgba(59, 177, 67, 0.5);
+			}
 
-		#middle-section::after {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			height: 150px;
-			background: linear-gradient(to top, #ffffff, transparent);
-			z-index: 2;
-		}
+			#middle-section::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 150px;
+				background: linear-gradient(to top, #ffffff, transparent);
+				z-index: 2;
+			}
 
-		.middle-bg-video {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			min-width: 100%;
-			min-height: 100%;
-			width: auto;
-			height: auto;
-			transform: translate(-50%, -50%);
-			z-index: 1;
-			object-fit: cover;
-			opacity: 0;
-			display: none;
-		}
+			.middle-bg-video {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				min-width: 100%;
+				min-height: 100%;
+				width: auto;
+				height: auto;
+				transform: translate(-50%, -50%);
+				z-index: 1;
+				object-fit: cover;
+				opacity: 0;
+				display: none;
+			}
 
 			#middle-section canvas {
 				position: absolute;
@@ -3820,18 +3658,18 @@
 				pointer-events: none;
 			}
 
-		/* ===== Particle System ===== */
-		.particle-container {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: 5;
-			pointer-events: none;
-			overflow: hidden;
-			opacity: 0.3;
-		}
+			/* ===== Particle System ===== */
+			.particle-container {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 5;
+				pointer-events: none;
+				overflow: hidden;
+				opacity: 0.3;
+			}
 
 			.particle {
 				position: absolute;
@@ -3843,14 +3681,18 @@
 			}
 
 			@keyframes float-particle {
-				0%, 100% {
+
+				0%,
+				100% {
 					transform: translateY(100vh) scale(0);
 					opacity: 0;
 				}
+
 				10% {
 					opacity: 1;
 					transform: translateY(80vh) scale(1);
 				}
+
 				90% {
 					opacity: 0.5;
 					transform: translateY(10vh) scale(0.5);
@@ -3906,13 +3748,13 @@
 					0 3px 0 #bbb,
 					0 4px 0 #b9b9b9,
 					0 5px 0 #aaa,
-					0 6px 1px rgba(0,0,0,.1),
-					0 0 5px rgba(0,0,0,.1),
-					0 1px 3px rgba(0,0,0,.3),
-					0 3px 5px rgba(0,0,0,.2),
-					0 5px 10px rgba(0,0,0,.25),
-					0 10px 10px rgba(0,0,0,.2),
-					0 20px 20px rgba(0,0,0,.15);
+					0 6px 1px rgba(0, 0, 0, .1),
+					0 0 5px rgba(0, 0, 0, .1),
+					0 1px 3px rgba(0, 0, 0, .3),
+					0 3px 5px rgba(0, 0, 0, .2),
+					0 5px 10px rgba(0, 0, 0, .25),
+					0 10px 10px rgba(0, 0, 0, .2),
+					0 20px 20px rgba(0, 0, 0, .15);
 			}
 
 			.letter-3d.sub {
@@ -3922,12 +3764,12 @@
 					0 1px 0 #ccc,
 					0 2px 0 #c9c9c9,
 					0 3px 0 #bbb,
-					0 4px 1px rgba(0,0,0,.1),
-					0 0 5px rgba(0,0,0,.1),
-					0 1px 3px rgba(0,0,0,.3),
-					0 3px 5px rgba(0,0,0,.2),
-					0 5px 10px rgba(0,0,0,.25),
-					0 10px 10px rgba(0,0,0,.2);
+					0 4px 1px rgba(0, 0, 0, .1),
+					0 0 5px rgba(0, 0, 0, .1),
+					0 1px 3px rgba(0, 0, 0, .3),
+					0 3px 5px rgba(0, 0, 0, .2),
+					0 5px 10px rgba(0, 0, 0, .25),
+					0 10px 10px rgba(0, 0, 0, .2);
 			}
 
 			/* Glow effect behind 3D letters */
@@ -3968,20 +3810,20 @@
 				margin-top: 0.5rem;
 			}
 
-		.tagline-sub {
-			font-size: clamp(0.65rem, 1.1vw, 0.9rem);
-			color: #ffffff;
-			letter-spacing: 0.2em;
-			text-transform: uppercase;
-			opacity: 0;
-			transform: translateY(20px);
-			font-weight: 400;
-			text-shadow: 
-				0 2px 8px rgba(0,0,0,0.6),
-				0 4px 16px rgba(0,0,0,0.4),
-				0 8px 24px rgba(0,0,0,0.3),
-				0 0 40px rgba(59, 177, 67, 0.3);
-		}
+			.tagline-sub {
+				font-size: clamp(0.65rem, 1.1vw, 0.9rem);
+				color: #ffffff;
+				letter-spacing: 0.2em;
+				text-transform: uppercase;
+				opacity: 0;
+				transform: translateY(20px);
+				font-weight: 400;
+				text-shadow:
+					0 2px 8px rgba(0, 0, 0, 0.6),
+					0 4px 16px rgba(0, 0, 0, 0.4),
+					0 8px 24px rgba(0, 0, 0, 0.3),
+					0 0 40px rgba(59, 177, 67, 0.3);
+			}
 
 			/* ===== Floating Glass Orbs ===== */
 			.glass-orb {
@@ -3995,12 +3837,10 @@
 				width: clamp(80px, 10vw, 120px);
 				height: clamp(80px, 10vw, 120px);
 				border-radius: 50%;
-				background: linear-gradient(
-					135deg,
-					rgba(255, 255, 255, 0.2) 0%,
-					rgba(255, 255, 255, 0.08) 50%,
-					rgba(255, 255, 255, 0.03) 100%
-				);
+				background: linear-gradient(135deg,
+						rgba(255, 255, 255, 0.2) 0%,
+						rgba(255, 255, 255, 0.08) 50%,
+						rgba(255, 255, 255, 0.03) 100%);
 				backdrop-filter: blur(20px);
 				-webkit-backdrop-filter: blur(20px);
 				border: 1px solid rgba(255, 255, 255, 0.4);
@@ -4026,11 +3866,9 @@
 				left: -50%;
 				width: 200%;
 				height: 200%;
-				background: radial-gradient(
-					circle at 30% 30%,
-					rgba(255, 255, 255, 0.8) 0%,
-					transparent 50%
-				);
+				background: radial-gradient(circle at 30% 30%,
+						rgba(255, 255, 255, 0.8) 0%,
+						transparent 50%);
 				opacity: 0.4;
 				pointer-events: none;
 			}
@@ -4064,9 +3902,9 @@
 					inset 0 -2px 4px rgba(0, 0, 0, 0.1);
 			}
 
-		.glass-orb:hover .orb-number {
-			filter: drop-shadow(0 8px 20px rgba(255, 255, 255, 0.3));
-		}
+			.glass-orb:hover .orb-number {
+				filter: drop-shadow(0 8px 20px rgba(255, 255, 255, 0.3));
+			}
 
 			.orb-glow {
 				position: absolute;
@@ -4078,8 +3916,17 @@
 			}
 
 			@keyframes pulse-glow {
-				0%, 100% { transform: scale(1); opacity: 0.5; }
-				50% { transform: scale(1.1); opacity: 0.8; }
+
+				0%,
+				100% {
+					transform: scale(1);
+					opacity: 0.5;
+				}
+
+				50% {
+					transform: scale(1.1);
+					opacity: 0.8;
+				}
 			}
 
 			.orb-number {
@@ -4090,72 +3937,72 @@
 				text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 			}
 
-		.orb-label {
-			font-size: clamp(0.6rem, 0.9vw, 0.75rem);
-			color: #ffffff;
-			text-transform: uppercase;
-			letter-spacing: 0.1em;
-			text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-			margin-top: 0.25rem;
-			font-weight: 500;
-		}
+			.orb-label {
+				font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+				color: #ffffff;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+				margin-top: 0.25rem;
+				font-weight: 500;
+			}
 
-	/* Orb Positions - Closer to center */
-	.orb-1 {
-		top: 20vh;
-		left: 12vw;
-		transform: translateX(-80px) scale(0.5);
-	}
+			/* Orb Positions - Closer to center */
+			.orb-1 {
+				top: 20vh;
+				left: 12vw;
+				transform: translateX(-80px) scale(0.5);
+			}
 
-	.orb-1 .orb-content {
-		border: 2px solid rgba(255, 255, 255, 0.4);
-		box-shadow:
-			0 8px 32px rgba(0, 0, 0, 0.2),
-			inset 0 2px 4px rgba(255, 255, 255, 0.4),
-			inset 0 -2px 4px rgba(0, 0, 0, 0.1);
-	}
+			.orb-1 .orb-content {
+				border: 2px solid rgba(255, 255, 255, 0.4);
+				box-shadow:
+					0 8px 32px rgba(0, 0, 0, 0.2),
+					inset 0 2px 4px rgba(255, 255, 255, 0.4),
+					inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+			}
 
-.orb-2 {
-	top: 18vh;
-	right: 12vw;
-	transform: translateX(80px) scale(0.5);
-}
+			.orb-2 {
+				top: 18vh;
+				right: 12vw;
+				transform: translateX(80px) scale(0.5);
+			}
 
-.orb-2 .orb-content {
-	border: 2px solid rgba(255, 255, 255, 0.4);
-	box-shadow:
-		0 8px 32px rgba(0, 0, 0, 0.2),
-		inset 0 2px 4px rgba(255, 255, 255, 0.4),
-		inset 0 -2px 4px rgba(0, 0, 0, 0.1);
-}
+			.orb-2 .orb-content {
+				border: 2px solid rgba(255, 255, 255, 0.4);
+				box-shadow:
+					0 8px 32px rgba(0, 0, 0, 0.2),
+					inset 0 2px 4px rgba(255, 255, 255, 0.4),
+					inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+			}
 
-.orb-3 {
-	bottom: 22vh;
-	left: 13vw;
-	transform: translateX(-80px) scale(0.5);
-}
+			.orb-3 {
+				bottom: 22vh;
+				left: 13vw;
+				transform: translateX(-80px) scale(0.5);
+			}
 
-.orb-3 .orb-content {
-	border: 2px solid rgba(255, 255, 255, 0.4);
-	box-shadow:
-		0 8px 32px rgba(0, 0, 0, 0.2),
-		inset 0 2px 4px rgba(255, 255, 255, 0.4),
-		inset 0 -2px 4px rgba(0, 0, 0, 0.1);
-}
+			.orb-3 .orb-content {
+				border: 2px solid rgba(255, 255, 255, 0.4);
+				box-shadow:
+					0 8px 32px rgba(0, 0, 0, 0.2),
+					inset 0 2px 4px rgba(255, 255, 255, 0.4),
+					inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+			}
 
-.orb-4 {
-	bottom: 20vh;
-	right: 13vw;
-	transform: translateX(80px) scale(0.5);
-}
+			.orb-4 {
+				bottom: 20vh;
+				right: 13vw;
+				transform: translateX(80px) scale(0.5);
+			}
 
-.orb-4 .orb-content {
-	border: 2px solid rgba(255, 255, 255, 0.4);
-	box-shadow:
-		0 8px 32px rgba(0, 0, 0, 0.2),
-		inset 0 2px 4px rgba(255, 255, 255, 0.4),
-		inset 0 -2px 4px rgba(0, 0, 0, 0.1);
-}
+			.orb-4 .orb-content {
+				border: 2px solid rgba(255, 255, 255, 0.4);
+				box-shadow:
+					0 8px 32px rgba(0, 0, 0, 0.2),
+					inset 0 2px 4px rgba(255, 255, 255, 0.4),
+					inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+			}
 
 			/* ===== Glass Ribbon Arc ===== */
 			.glass-ribbon {
@@ -4166,65 +4013,79 @@
 				width: 90vw;
 				max-width: 1200px;
 				height: 50px;
-			background: linear-gradient(
-				90deg,
-				rgba(255, 255, 255, 0) 0%,
-				rgba(255, 255, 255, 0.15) 20%,
-				rgba(255, 255, 255, 0.2) 50%,
-				rgba(255, 255, 255, 0.15) 80%,
-				rgba(255, 255, 255, 0) 100%
-			);
-			backdrop-filter: blur(10px);
-			-webkit-backdrop-filter: blur(10px);
-			border-radius: 25px;
-			overflow: hidden;
-			opacity: 0;
-			z-index: 15;
-			border: 2px solid rgba(255, 255, 255, 0.5);
-			box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+				background: linear-gradient(90deg,
+						rgba(255, 255, 255, 0) 0%,
+						rgba(255, 255, 255, 0.15) 20%,
+						rgba(255, 255, 255, 0.2) 50%,
+						rgba(255, 255, 255, 0.15) 80%,
+						rgba(255, 255, 255, 0) 100%);
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
+				border-radius: 25px;
+				overflow: hidden;
+				opacity: 0;
+				z-index: 15;
+				border: 2px solid rgba(255, 255, 255, 0.5);
+				box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 			}
 
-		.ribbon-track {
-			display: flex;
-			align-items: center;
-			height: 100%;
-			white-space: nowrap;
-			animation: scroll-ribbon 40s linear infinite;
-		}
+			.ribbon-track {
+				display: flex;
+				align-items: center;
+				height: 100%;
+				white-space: nowrap;
+				animation: scroll-ribbon 40s linear infinite;
+			}
 
-		.glass-ribbon.active .ribbon-track {
-			animation-play-state: running;
-		}
+			.glass-ribbon.active .ribbon-track {
+				animation-play-state: running;
+			}
 
-		@keyframes scroll-ribbon {
-			0% { transform: translateX(0); }
-			100% { transform: translateX(-50%); }
-		}
+			@keyframes scroll-ribbon {
+				0% {
+					transform: translateX(0);
+				}
 
-	.ribbon-word {
-		font-size: clamp(0.8rem, 1.2vw, 1rem);
-		color: #ffffff;
-		text-transform: uppercase;
-		letter-spacing: 0.15em;
-		padding: 0 2rem;
-		font-weight: 500;
-		text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-	}
+				100% {
+					transform: translateX(-50%);
+				}
+			}
 
-	.ribbon-dot {
-		width: 6px;
-		height: 6px;
-		border-radius: 50%;
-		background: #ffffff;
-		flex-shrink: 0;
-	}
+			.ribbon-word {
+				font-size: clamp(0.8rem, 1.2vw, 1rem);
+				color: #ffffff;
+				text-transform: uppercase;
+				letter-spacing: 0.15em;
+				padding: 0 2rem;
+				font-weight: 500;
+				text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+			}
+
+			.ribbon-dot {
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				background: #ffffff;
+				flex-shrink: 0;
+			}
 
 			/* ===== Responsive Design ===== */
 			@media (max-width: 1366px) {
-				.orb-1 { left: 4vw; }
-				.orb-2 { right: 4vw; }
-				.orb-3 { left: 5vw; }
-				.orb-4 { right: 5vw; }
+				.orb-1 {
+					left: 4vw;
+				}
+
+				.orb-2 {
+					right: 4vw;
+				}
+
+				.orb-3 {
+					left: 5vw;
+				}
+
+				.orb-4 {
+					right: 5vw;
+				}
 			}
 
 			@media (max-width: 1024px) {
@@ -4241,8 +4102,15 @@
 					height: clamp(70px, 12vw, 100px);
 				}
 
-				.orb-1, .orb-3 { left: 3vw; }
-				.orb-2, .orb-4 { right: 3vw; }
+				.orb-1,
+				.orb-3 {
+					left: 3vw;
+				}
+
+				.orb-2,
+				.orb-4 {
+					right: 3vw;
+				}
 
 				.glass-ribbon {
 					bottom: 6vh;
@@ -4256,10 +4124,10 @@
 					text-shadow:
 						0 1px 0 #ccc,
 						0 2px 0 #bbb,
-						0 3px 1px rgba(0,0,0,.1),
-						0 0 3px rgba(0,0,0,.1),
-						0 1px 3px rgba(0,0,0,.2),
-						0 3px 5px rgba(0,0,0,.15);
+						0 3px 1px rgba(0, 0, 0, .1),
+						0 0 3px rgba(0, 0, 0, .1),
+						0 1px 3px rgba(0, 0, 0, .2),
+						0 3px 5px rgba(0, 0, 0, .15);
 				}
 
 				.letter-3d.sub {
@@ -4288,10 +4156,25 @@
 					font-size: 0.55rem;
 				}
 
-				.orb-1 { top: 18vh; left: 2vw; }
-				.orb-2 { top: 16vh; right: 2vw; }
-				.orb-3 { bottom: 18vh; left: 2vw; }
-				.orb-4 { bottom: 16vh; right: 2vw; }
+				.orb-1 {
+					top: 18vh;
+					left: 2vw;
+				}
+
+				.orb-2 {
+					top: 16vh;
+					right: 2vw;
+				}
+
+				.orb-3 {
+					bottom: 18vh;
+					left: 2vw;
+				}
+
+				.orb-4 {
+					bottom: 16vh;
+					right: 2vw;
+				}
 
 				.glass-ribbon {
 					bottom: 4vh;
@@ -4321,8 +4204,8 @@
 					text-shadow:
 						0 1px 0 #ccc,
 						0 2px 0 #bbb,
-						0 2px 3px rgba(0,0,0,.2),
-						0 3px 5px rgba(0,0,0,.1);
+						0 2px 3px rgba(0, 0, 0, .2),
+						0 3px 5px rgba(0, 0, 0, .1);
 				}
 
 				.letter-3d.sub {
@@ -4351,10 +4234,21 @@
 					display: none;
 				}
 
-				.orb-1 { top: 16vh; }
-				.orb-2 { top: 14vh; }
-				.orb-3 { bottom: 16vh; }
-				.orb-4 { bottom: 14vh; }
+				.orb-1 {
+					top: 16vh;
+				}
+
+				.orb-2 {
+					top: 14vh;
+				}
+
+				.orb-3 {
+					bottom: 16vh;
+				}
+
+				.orb-4 {
+					bottom: 14vh;
+				}
 
 				.glass-ribbon {
 					display: none;
@@ -4392,7 +4286,8 @@
 						<span class="title-line">together.</span>
 					</h2>
 
-					<p class="contact-subtitle">Transform your vision into reality. Our team of experts is ready to tackle your most ambitious digital challenges.</p>
+					<p class="contact-subtitle">Transform your vision into reality. Our team of experts is ready to
+						tackle your most ambitious digital challenges.</p>
 
 					<div class="contact-info-cards">
 						<a href="mailto:contact@teratc.com" class="info-card">
@@ -4435,7 +4330,7 @@
 						</div>
 					</div>
 
-									</div>
+				</div>
 
 				<!-- Right side - Form card -->
 				<div class="contact-form-wrapper">
@@ -4465,7 +4360,8 @@
 									</label>
 									<div class="input-wrapper">
 										<i class="bi bi-envelope input-icon"></i>
-										<input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+										<input type="email" id="email" name="email" placeholder="example@gmail.com"
+											required>
 										<span class="input-focus-border"></span>
 									</div>
 								</div>
@@ -4489,7 +4385,9 @@
 								</label>
 								<div class="input-wrapper textarea-wrapper">
 									<i class="bi bi-pencil-square input-icon"></i>
-									<textarea id="message" name="message" rows="4" placeholder="Tell us about your project, goals, and timeline..." required></textarea>
+									<textarea id="message" name="message" rows="4"
+										placeholder="Tell us about your project, goals, and timeline..."
+										required></textarea>
 									<span class="input-focus-border"></span>
 								</div>
 							</div>
@@ -4583,18 +4481,41 @@
 			}
 
 			@keyframes contactFloat1 {
-				0%, 100% { transform: translate(0, 0) scale(1); }
-				50% { transform: translate(-30px, 40px) scale(1.1); }
+
+				0%,
+				100% {
+					transform: translate(0, 0) scale(1);
+				}
+
+				50% {
+					transform: translate(-30px, 40px) scale(1.1);
+				}
 			}
 
 			@keyframes contactFloat2 {
-				0%, 100% { transform: translate(0, 0) scale(1); }
-				50% { transform: translate(40px, -30px) scale(1.15); }
+
+				0%,
+				100% {
+					transform: translate(0, 0) scale(1);
+				}
+
+				50% {
+					transform: translate(40px, -30px) scale(1.15);
+				}
 			}
 
 			@keyframes contactFloat3 {
-				0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
-				50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.5; }
+
+				0%,
+				100% {
+					transform: translate(-50%, -50%) scale(1);
+					opacity: 0.3;
+				}
+
+				50% {
+					transform: translate(-50%, -50%) scale(1.2);
+					opacity: 0.5;
+				}
 			}
 
 			.contact-container {
@@ -4639,8 +4560,17 @@
 			}
 
 			@keyframes badgePulse {
-				0%, 100% { opacity: 1; transform: scale(1); }
-				50% { opacity: 0.5; transform: scale(1.2); }
+
+				0%,
+				100% {
+					opacity: 1;
+					transform: scale(1);
+				}
+
+				50% {
+					opacity: 0.5;
+					transform: scale(1.2);
+				}
 			}
 
 			.contact-title {
@@ -4667,8 +4597,15 @@
 			}
 
 			@keyframes gradientShift {
-				0%, 100% { background-position: 0% center; }
-				50% { background-position: 100% center; }
+
+				0%,
+				100% {
+					background-position: 0% center;
+				}
+
+				50% {
+					background-position: 100% center;
+				}
 			}
 
 			.contact-subtitle {
@@ -4892,8 +4829,8 @@
 				box-shadow: 0 0 0 4px rgba(59, 177, 67, 0.1);
 			}
 
-			.contact-form input:focus + .input-focus-border,
-			.contact-form textarea:focus + .input-focus-border {
+			.contact-form input:focus+.input-focus-border,
+			.contact-form textarea:focus+.input-focus-border {
 				opacity: 1;
 			}
 
@@ -5027,6 +4964,7 @@
 					opacity: 0;
 					transform: translateY(30px);
 				}
+
 				to {
 					opacity: 1;
 					transform: translateY(0);
@@ -5109,8 +5047,10 @@
 		<div class="footer-content">
 			<div class="footer-grid">
 				<div class="footer-column">
-					<div class="footer-logo"><img src="./assets/img/teralogo.png" alt="TERA" class="footer-logo-img"></div>
-					<p class="footer-description">Empowering businesses through innovative technology solutions and digital transformation.</p>
+					<div class="footer-logo"><img src="./assets/img/teralogo.png" alt="TERA" class="footer-logo-img">
+					</div>
+					<p class="footer-description">Empowering businesses through innovative technology solutions and
+						digital transformation.</p>
 					<div class="footer-social">
 						<a href="#" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
 						<a href="#" class="social-link" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
@@ -5167,7 +5107,8 @@
 		<div class="cookie-content">
 			<div class="cookie-text">
 				<h4>We use cookies</h4>
-				<p>We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.</p>
+				<p>We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept All",
+					you consent to our use of cookies.</p>
 			</div>
 			<div class="cookie-buttons">
 				<button id="cookie-accept" class="cookie-btn accept">Accept All</button>
@@ -5185,18 +5126,25 @@
 				<p><strong>Last updated:</strong> February 2026</p>
 
 				<h3>What Are Cookies</h3>
-				<p>Cookies are small text files that are stored on your computer or mobile device when you visit our website. They help us make your experience better by remembering your preferences and understanding how you use our site.</p>
+				<p>Cookies are small text files that are stored on your computer or mobile device when you visit our
+					website. They help us make your experience better by remembering your preferences and understanding
+					how you use our site.</p>
 
 				<h3>How We Use Cookies</h3>
 				<p>We use cookies for the following purposes:</p>
 				<ul>
-					<li><strong>Essential Cookies:</strong> These are necessary for the website to function properly and cannot be disabled.</li>
-					<li><strong>Analytics Cookies:</strong> These help us understand how visitors interact with our website by collecting anonymous information.</li>
-					<li><strong>Functional Cookies:</strong> These remember your preferences to provide a more personalized experience.</li>
+					<li><strong>Essential Cookies:</strong> These are necessary for the website to function properly and
+						cannot be disabled.</li>
+					<li><strong>Analytics Cookies:</strong> These help us understand how visitors interact with our
+						website by collecting anonymous information.</li>
+					<li><strong>Functional Cookies:</strong> These remember your preferences to provide a more
+						personalized experience.</li>
 				</ul>
 
 				<h3>Managing Cookies</h3>
-				<p>You can control and manage cookies through your browser settings. Please note that removing or blocking cookies may impact your user experience and some functionality may no longer be available.</p>
+				<p>You can control and manage cookies through your browser settings. Please note that removing or
+					blocking cookies may impact your user experience and some functionality may no longer be available.
+				</p>
 
 				<h3>Contact Us</h3>
 				<p>If you have any questions about our Cookie Policy, please contact us through our website.</p>
@@ -5623,7 +5571,7 @@
 	</style>
 
 	<div id="preloader"></div>
-	
+
 	<script src="assets/vendor/aos/aos.js"></script>
 	<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -5690,6 +5638,7 @@
 
 		gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+		/*
 		const particleContainer = document.getElementById('particles');
 		const particleCount = 30;
 
@@ -5739,30 +5688,30 @@
 					opacity: 1,
 					y: 0,
 					rotateX: 0,
-					duration: 0.5,
+					duration: 0.25,
 					ease: "power3.out",
 					onStart: () => letter.classList.add('active'),
-				}, 0.1 + (index * 0.05));
+				}, 0.05 + (index * 0.02));
 			});
 
 			tl.to(".tagline-sub", {
 				opacity: 1,
 				y: 0,
-				duration: 0.6,
+				duration: 0.3,
 				ease: "power2.out"
-			}, 0.8);
+			}, 0.4);
 
-			tl.to(".orb-1", { opacity: 1, x: 0, scale: 1, duration: 0.8, ease: "elastic.out(1, 0.6)" }, 1.0);
-			tl.to(".orb-2", { opacity: 1, x: 0, scale: 1, duration: 0.8, ease: "elastic.out(1, 0.6)" }, 1.1);
-			tl.to(".orb-3", { opacity: 1, x: 0, scale: 1, duration: 0.8, ease: "elastic.out(1, 0.6)" }, 1.2);
-			tl.to(".orb-4", { opacity: 1, x: 0, scale: 1, duration: 0.8, ease: "elastic.out(1, 0.6)" }, 1.3);
+			tl.to(".orb-1", { opacity: 1, x: 0, scale: 1, duration: 0.4, ease: "elastic.out(1, 0.6)" }, 0.5);
+			tl.to(".orb-2", { opacity: 1, x: 0, scale: 1, duration: 0.4, ease: "elastic.out(1, 0.6)" }, 0.55);
+			tl.to(".orb-3", { opacity: 1, x: 0, scale: 1, duration: 0.4, ease: "elastic.out(1, 0.6)" }, 0.6);
+			tl.to(".orb-4", { opacity: 1, x: 0, scale: 1, duration: 0.4, ease: "elastic.out(1, 0.6)" }, 0.65);
 
 			tl.to(".glass-ribbon", {
 				opacity: 1,
-				duration: 0.6,
+				duration: 0.3,
 				ease: "power2.out",
 				onStart: () => document.querySelector('.glass-ribbon').classList.add('active')
-			}, 1.5);
+			}, 0.7);
 
 			return tl;
 		}
@@ -5824,8 +5773,10 @@
 		}
 
 		resetAnimations();
+		*/
 
 		if (typeof VANTA !== 'undefined') {
+			/*
 			VANTA.WAVES({
 				el: "#vanta-middle",
 				mouseControls: true,
@@ -5841,6 +5792,7 @@
 				waveSpeed: 0.75,
 				zoom: 1.01
 			});
+			*/
 
 			VANTA.BIRDS({
 				el: "#vanta-services",
@@ -5864,7 +5816,7 @@
 				quantity: 3.00
 			});
 
-			VANTA.NET({
+			VANTA.DOTS({
 				el: "#vanta-about",
 				mouseControls: true,
 				touchControls: true,
@@ -5873,11 +5825,11 @@
 				minWidth: 200.00,
 				scale: 1.00,
 				scaleMobile: 1.00,
-				color: 0x3bb143,
+				color: 0xde00,
 				backgroundColor: 0xffffff,
-				points: 8.00,
-				maxDistance: 20.00,
-				spacing: 18.00
+				size: 4.90,
+				spacing: 38.00,
+				showLines: false
 			});
 
 			VANTA.HALO({
@@ -5895,8 +5847,34 @@
 			});
 		}
 
+		// Mobile Navigation Toggle
+		(function () {
+			const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+			const navbar = document.getElementById('navbar');
+
+			if (mobileNavToggle && navbar) {
+				mobileNavToggle.addEventListener('click', function () {
+					navbar.classList.toggle('navbar-mobile');
+					this.classList.toggle('bi-list');
+					this.classList.toggle('bi-x');
+				});
+
+				// Close mobile nav when clicking on nav links
+				const navLinks = navbar.querySelectorAll('.scrollto');
+				navLinks.forEach(link => {
+					link.addEventListener('click', () => {
+						if (navbar.classList.contains('navbar-mobile')) {
+							navbar.classList.remove('navbar-mobile');
+							mobileNavToggle.classList.remove('bi-x');
+							mobileNavToggle.classList.add('bi-list');
+						}
+					});
+				});
+			}
+		})();
+
 		// Cookie Consent Functionality
-		(function() {
+		(function () {
 			const cookieBanner = document.getElementById('cookie-consent');
 			const cookieModal = document.getElementById('cookie-policy-modal');
 			const acceptBtn = document.getElementById('cookie-accept');
@@ -5957,4 +5935,5 @@
 		})();
 	</script>
 </body>
+
 </html>
