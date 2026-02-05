@@ -856,6 +856,13 @@
 				transition: none;
 			}
 		}
+
+		/* ====== PAUSE OFFSCREEN INFINITE ANIMATIONS ====== */
+		section.offscreen *,
+		section.offscreen *::before,
+		section.offscreen *::after {
+			animation-play-state: paused !important;
+		}
 	</style>
 
 </head>
@@ -1231,6 +1238,7 @@
 				border-radius: 50%;
 				opacity: 0.05;
 				filter: blur(30px);
+				will-change: transform;
 			}
 
 			.shape-1 {
@@ -1344,16 +1352,15 @@
 				position: relative;
 				padding: 40px;
 				background: #ffffff;
-				backdrop-filter: blur(10px);
-				-webkit-backdrop-filter: blur(10px);
 				border: 1px solid #e0e0e0;
 				border-radius: 20px;
 				cursor: pointer;
-				transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+				transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 				transform-style: preserve-3d;
 				opacity: 0;
 				transform: translateY(50px);
 				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+				will-change: transform, opacity;
 			}
 
 			.service-card.visible {
@@ -1405,7 +1412,7 @@
 				height: 80px;
 				color: #3bb143;
 				margin-bottom: 25px;
-				transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+				transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 			}
 
 			.service-card:hover .service-icon {
@@ -1550,7 +1557,7 @@
 							trigger: '#services-section',
 							start: 'top bottom',
 							end: 'bottom top',
-							scrub: 1
+							scrub: 3
 						},
 						y: index % 2 === 0 ? 100 : -100,
 						ease: 'none'
@@ -1562,7 +1569,6 @@
 
 		<!-- ======= Process/Methodology Section ======= -->
 		<section id="process-section">
-			<div id="vanta-process" class="vanta-bg"></div>
 			<div class="process-container">
 				<div class="process-header">
 					<h2 class="process-title">Our <span class="highlight-green">Process</span></h2>
@@ -2115,7 +2121,7 @@
 				font-size: 0.75rem;
 				font-weight: 600;
 				cursor: pointer;
-				transition: all 0.3s ease;
+				transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 				text-transform: uppercase;
 				letter-spacing: 0.03em;
 				white-space: nowrap;
@@ -2174,7 +2180,8 @@
 				max-height: min(400px, 50vh);
 				transform-origin: center;
 				backface-visibility: hidden;
-				transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+				transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+				will-change: transform, opacity;
 			}
 
 			.tech-item {
@@ -2234,7 +2241,7 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				transition: all 0.4s ease;
+				transition: transform 0.4s ease, background 0.4s ease;
 				flex-shrink: 0;
 			}
 
@@ -2855,7 +2862,8 @@
 				position: relative;
 				opacity: 0;
 				transform: translateY(50px);
-				transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+				transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+				will-change: transform, opacity;
 			}
 
 			.process-step.visible {
@@ -2897,10 +2905,11 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				transition: all 0.4s ease;
+				transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 				cursor: pointer;
 				box-shadow: 0 10px 40px rgba(59, 177, 67, 0.2);
 				z-index: 3;
+				will-change: transform;
 			}
 
 			.step-icon:hover {
@@ -2919,7 +2928,7 @@
 				max-width: 480px;
 				opacity: 0;
 				transform: translateX(-30px);
-				transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+				transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 				background: rgba(255, 255, 255, 0.95);
 				border-radius: 20px;
 				box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1), 0 4px 20px rgba(59, 177, 67, 0.08);
@@ -2928,6 +2937,7 @@
 				padding: 0;
 				line-height: 0;
 				aspect-ratio: 16 / 10;
+				will-change: transform, opacity;
 			}
 
 			.step-image-right {
@@ -3228,7 +3238,7 @@
 
 					const icon = step.querySelector('.step-icon');
 					gsap.fromTo(icon,
-						{ scale: 0, rotation: -180 },
+						{ scale: 0 },
 						{
 							scrollTrigger: {
 								trigger: step,
@@ -3236,10 +3246,9 @@
 								toggleActions: 'play none none reverse'
 							},
 							scale: 1,
-							rotation: 0,
-							duration: 0.4,
+							duration: 0.35,
 							delay: index * 0.05 + 0.1,
-							ease: 'back.out(1.4)'
+							ease: 'back.out(1.2)'
 						}
 					);
 				});
@@ -3271,10 +3280,12 @@
 
 			.progress-fill {
 				height: 100%;
-				width: 0%;
+				width: 100%;
 				background: linear-gradient(90deg, #3bb143, #2d8f35);
-				transition: width 0.3s ease;
 				box-shadow: 0 0 20px rgba(59, 177, 67, 0.6);
+				transform: scaleX(0);
+				transform-origin: left;
+				will-change: transform;
 			}
 
 			.about-container {
@@ -3327,7 +3338,8 @@
 				color: #1a1a1a;
 				opacity: 0;
 				transform: translateX(-30px);
-				transition: all 0.4s ease;
+				transition: transform 0.4s ease, opacity 0.4s ease;
+				will-change: transform, opacity;
 			}
 
 			.feature-item.visible {
@@ -3390,7 +3402,8 @@
 				z-index: 2;
 				opacity: 0;
 				transform: scale(0.5);
-				transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+				transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+				will-change: transform, opacity;
 			}
 
 			.stat-bubble.visible {
@@ -3467,8 +3480,6 @@
 				height: 100%;
 				border-radius: 50%;
 				background: #ffffff;
-				backdrop-filter: blur(10px);
-				-webkit-backdrop-filter: blur(10px);
 				border: 2px solid #e0e0e0;
 				display: flex;
 				flex-direction: column;
@@ -3476,7 +3487,7 @@
 				justify-content: center;
 				padding: 12px;
 				cursor: default;
-				transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+				transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 				position: relative;
 				box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 				box-sizing: border-box;
@@ -3608,7 +3619,7 @@
 					start: 'top top',
 					end: 'bottom bottom',
 					onUpdate: (self) => {
-						progressFill.style.width = `${self.progress * 100}%`;
+						progressFill.style.transform = `scaleX(${self.progress})`;
 					}
 				});
 
@@ -3957,7 +3968,7 @@
 				justify-content: center;
 				position: relative;
 				overflow: hidden;
-				transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+				transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 				cursor: default;
 			}
 
@@ -4548,6 +4559,7 @@
 				border-radius: 50%;
 				filter: blur(30px);
 				opacity: 0.4;
+				will-change: transform;
 			}
 
 			.contact-shape-1 {
@@ -4745,7 +4757,7 @@
 				border-radius: 12px;
 				padding: 12px 14px;
 				cursor: pointer;
-				transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+				transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 				text-decoration: none;
 				color: inherit;
 			}
@@ -4914,7 +4926,7 @@
 				background: rgba(255, 255, 255, 0.04);
 				border: 1px solid rgba(255, 255, 255, 0.08);
 				border-radius: 10px;
-				transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+				transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 				box-sizing: border-box;
 			}
 
@@ -4990,7 +5002,7 @@
 				border: none;
 				border-radius: 10px;
 				cursor: pointer;
-				transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+				transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-position 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -5904,7 +5916,8 @@
 			const vantaInstances = {};
 			const vantaTimers = {};
 
-			function initVanta(id, factory) {
+			function initVanta(id, factory, delay) {
+				delay = delay || 300;
 				const el = document.querySelector(id);
 				if (!el) return;
 				const observer = new IntersectionObserver((entries) => {
@@ -5915,7 +5928,7 @@
 								if (!vantaInstances[id]) {
 									vantaInstances[id] = factory();
 								}
-							}, 300);
+							}, delay);
 						} else if (!entry.isIntersecting && vantaInstances[id]) {
 							vantaTimers[id] = setTimeout(() => {
 								if (vantaInstances[id]) {
@@ -5967,20 +5980,7 @@
 				showLines: false
 			}));
 
-			initVanta("#vanta-process", () => VANTA.HALO({
-				el: "#vanta-process",
-				mouseControls: true,
-				touchControls: false,
-				gyroControls: false,
-				minHeight: 200.00,
-				minWidth: 200.00,
-				backgroundColor: 0xffffff,
-				baseColor: 0x3bb143,
-				size: 1.50,
-				xOffset: 0.15,
-				yOffset: 0.10
-			}));
-		}
+			}
 
 
 
@@ -6043,6 +6043,27 @@
 					document.body.style.overflow = '';
 				}
 			});
+		})();
+
+		// Pause CSS animations for offscreen sections to reduce GPU/CPU load
+		// Uses 'offscreen' class (opt-in) instead of 'in-view' (opt-out) so
+		// one-shot entry animations like contactFadeInUp run normally on first view.
+		(function() {
+			const sections = document.querySelectorAll('section');
+			const seen = new Set();
+			const obs = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					const el = entry.target;
+					if (entry.isIntersecting) {
+						el.classList.remove('offscreen');
+						seen.add(el);
+					} else if (seen.has(el)) {
+						// Only pause after the section has been seen at least once
+						el.classList.add('offscreen');
+					}
+				});
+			}, { rootMargin: '50px 0px' });
+			sections.forEach(s => obs.observe(s));
 		})();
 	</script>
 </body>
