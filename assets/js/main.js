@@ -34,10 +34,26 @@
   }
 
   /**
-   * Easy on scroll event listener 
+   * Throttle helper — limits function calls to once per frame
+   */
+  const throttle = (fn) => {
+    let ticking = false;
+    return function() {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          fn();
+          ticking = false;
+        });
+      }
+    };
+  };
+
+  /**
+   * Easy on scroll event listener (throttled)
    */
   const onscroll = (el, listener) => {
-    el.addEventListener('scroll', listener)
+    el.addEventListener('scroll', throttle(listener), { passive: true })
   }
 
   /**

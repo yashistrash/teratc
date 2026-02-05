@@ -127,28 +127,104 @@
 		/* ====== RESPONSIVE HERO SECTION ====== */
 		@media (max-width: 768px) {
 			#hero {
-				height: auto;
-				min-height: 100vh;
-				padding: 100px 0 60px;
+				height: 100vh !important;
+				min-height: 100vh !important;
+				max-height: 100vh !important;
+				padding: 0 !important;
+				margin: 0 !important;
+				position: relative !important;
+				overflow: hidden !important;
+				background: #0a0a0a !important;
+				display: flex !important;
+				align-items: center !important;
+				justify-content: center !important;
 			}
 
-			#hero .videoClass {
-				padding: 0 20px;
-				text-align: center;
-			}
-
-			#hero .videoClass h2 {
-				font-size: 16px !important;
-				line-height: 1.5 !important;
-				margin: 15px 0 !important;
-			}
-
-			.hero-logo {
-				height: 50px;
+			#hero .container {
+				position: relative !important;
+				z-index: 10 !important;
+				width: 100% !important;
+				max-width: 100% !important;
+				padding: 20px 15px !important;
+				margin: 0 auto !important;
+				display: flex !important;
+				align-items: center !important;
+				justify-content: center !important;
+				min-height: 0 !important;
 			}
 
 			#bgvideo {
-				object-fit: cover;
+				position: absolute !important;
+				top: 0 !important;
+				left: 0 !important;
+				width: 100% !important;
+				height: 100% !important;
+				object-fit: cover !important;
+				transform: none !important;
+				z-index: 0 !important;
+			}
+
+			.videoClass {
+				position: relative !important;
+				top: 0 !important;
+				left: 0 !important;
+				transform: none !important;
+				padding: 0 !important;
+				text-align: center !important;
+				z-index: 10 !important;
+				width: 100% !important;
+				max-width: 100% !important;
+			}
+
+			.videoClass h1 {
+				margin: 0 0 15px 0 !important;
+				padding: 0 !important;
+			}
+
+			.heroClass {
+				height: 100vh !important;
+				min-height: 100vh !important;
+			}
+
+			#hero .videoClass h2 {
+				font-size: clamp(14px, 4vw, 18px) !important;
+				line-height: 1.6 !important;
+				margin: 12px 0 !important;
+				padding: 0 !important;
+				color: white !important;
+				word-wrap: break-word !important;
+				overflow-wrap: break-word !important;
+				hyphens: auto !important;
+			}
+
+			.hero-logo {
+				max-width: 100% !important;
+				height: auto !important;
+				max-height: 60px !important;
+				width: auto !important;
+				margin-bottom: 20px !important;
+				object-fit: contain !important;
+			}
+		}
+
+		@media (max-width: 480px) {
+			#hero .container {
+				padding: 15px 12px !important;
+			}
+
+			#hero .videoClass h2 {
+				font-size: clamp(13px, 3.5vw, 16px) !important;
+				line-height: 1.5 !important;
+				margin: 10px 0 !important;
+			}
+
+			.hero-logo {
+				max-height: 50px !important;
+				margin-bottom: 15px !important;
+			}
+
+			#bgvideo {
+				transform: none !important;
 			}
 		}
 
@@ -667,16 +743,11 @@
 	</style>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.cells.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.rings.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js"></script>
 
+	<!-- 
 	<script language="javascript">
 		document.onmousedown = disableclick;
 		status = "Right Click Disabled";
@@ -710,6 +781,7 @@
 
 		}
 	</script>
+	-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- GSAP and ScrollTrigger -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -777,7 +849,7 @@
 
 </head>
 
-<body oncontextmenu="return false" class="scroll-container">
+<body class="scroll-container">
 	<header class="d-flex align-items-center" id="header">
 		<div class="container d-flex align-items-center justify-content-between">
 			<h1 class="logo"><a href="index.html"><img src="./assets/img/teralogo.png" alt="Tera" class="logo-img"></a>
@@ -807,11 +879,10 @@
 	<!-- End Header -->
 
 	<section class="d-flex align-items-center heroClass" id="hero">
+		<video autoplay loop muted playsinline id="bgvideo">
+			<source src="./assets/img/new_images/tera-ny-home2_nocaption.mp4" type="video/mp4" />
+		</video>
 		<div class="container" data-aos="zoom-out" data-aos-delay="100">
-			<video autoplay="" id="bgvideo" loop="" muted="">
-				<source src="./assets/img/new_images/tera-ny-home2_nocaption.mp4" type="video/mp4" />
-			</video>
-
 			<div class="videoClass">
 				<h1><img src="./assets/img/teralogo.png" alt="TERA" class="hero-logo"></h1>
 
@@ -1148,7 +1219,7 @@
 				position: absolute;
 				border-radius: 50%;
 				opacity: 0.05;
-				filter: blur(60px);
+				filter: blur(30px);
 			}
 
 			.shape-1 {
@@ -1405,7 +1476,7 @@
 				}
 
 				.shape {
-					filter: blur(40px);
+					filter: blur(20px);
 				}
 
 				.shape-1 {
@@ -2103,8 +2174,8 @@
 				gap: 12px;
 				padding: 24px 28px;
 				background: rgba(255, 255, 255, 0.9);
-				backdrop-filter: blur(20px);
-				-webkit-backdrop-filter: blur(20px);
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
 				border: 2px solid rgba(59, 177, 67, 0.2);
 				border-radius: 24px;
 				cursor: pointer;
@@ -2487,7 +2558,11 @@
 				gsap.registerPlugin(ScrollTrigger);
 
 				let particles = [];
-				const particleCount = 80;
+				const isMobile = window.innerWidth < 768;
+				const particleCount = isMobile ? 30 : 50;
+				const connectDist = 150;
+				const connectDistSq = connectDist * connectDist;
+				let animFrameId = null;
 
 				class Particle {
 					constructor() {
@@ -2523,13 +2598,14 @@
 						for (let j = i + 1; j < particles.length; j++) {
 							const dx = particles[i].x - particles[j].x;
 							const dy = particles[i].y - particles[j].y;
-							const distance = Math.sqrt(dx * dx + dy * dy);
+							const distSq = dx * dx + dy * dy;
 
-							if (distance < 150) {
+							if (distSq < connectDistSq) {
+								const alpha = 0.2 * (1 - Math.sqrt(distSq) / connectDist);
 								ctx.beginPath();
 								ctx.moveTo(particles[i].x, particles[i].y);
 								ctx.lineTo(particles[j].x, particles[j].y);
-								ctx.strokeStyle = `rgba(59, 177, 67, ${0.2 * (1 - distance / 150)})`;
+								ctx.strokeStyle = `rgba(59, 177, 67, ${alpha})`;
 								ctx.lineWidth = 1;
 								ctx.stroke();
 							}
@@ -2546,14 +2622,32 @@
 					});
 
 					connectParticles();
-					requestAnimationFrame(animate);
+					animFrameId = requestAnimationFrame(animate);
 				}
 
-				animate();
+				// Only animate when section is visible
+				const techSection = document.getElementById('tech-stack-section');
+				const particleObserver = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							if (!animFrameId) animate();
+						} else {
+							if (animFrameId) {
+								cancelAnimationFrame(animFrameId);
+								animFrameId = null;
+							}
+						}
+					});
+				}, { threshold: 0 });
+				particleObserver.observe(techSection);
 
+				let resizeTimer;
 				window.addEventListener('resize', () => {
-					canvas.width = window.innerWidth;
-					canvas.height = document.getElementById('tech-stack-section').offsetHeight;
+					clearTimeout(resizeTimer);
+					resizeTimer = setTimeout(() => {
+						canvas.width = window.innerWidth;
+						canvas.height = document.getElementById('tech-stack-section').offsetHeight;
+					}, 200);
 				});
 
 				const categories = ['ai', 'data', 'cloud', 'webapp', 'uiux', 'devops', 'security'];
@@ -3348,7 +3442,7 @@
 				background: radial-gradient(circle, rgba(59, 177, 67, 0.4) 0%, transparent 70%);
 				border-radius: 50%;
 				z-index: -1;
-				filter: blur(20px);
+				filter: blur(12px);
 				opacity: 0;
 				transition: opacity 0.4s ease;
 			}
@@ -3362,8 +3456,8 @@
 				height: 100%;
 				border-radius: 50%;
 				background: #ffffff;
-				backdrop-filter: blur(20px);
-				-webkit-backdrop-filter: blur(20px);
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
 				border: 2px solid #e0e0e0;
 				display: flex;
 				flex-direction: column;
@@ -3554,17 +3648,15 @@
 					const numberElement = bubble.querySelector('.stat-number');
 					const target = parseInt(numberElement.getAttribute('data-target'));
 					const duration = 2000;
-					const step = Math.ceil(target / (duration / 16));
-					let current = 0;
+					let start = null;
 
-					const timer = setInterval(() => {
-						current += step;
-						if (current >= target) {
-							current = target;
-							clearInterval(timer);
-						}
-						numberElement.textContent = current;
-					}, 16);
+					function tick(timestamp) {
+						if (!start) start = timestamp;
+						const progress = Math.min((timestamp - start) / duration, 1);
+						numberElement.textContent = Math.floor(progress * target);
+						if (progress < 1) requestAnimationFrame(tick);
+					}
+					requestAnimationFrame(tick);
 				}
 			});
 		</script>
@@ -3743,33 +3835,21 @@
 				display: inline-block;
 				position: relative;
 				text-shadow:
-					0 1px 0 #ccc,
-					0 2px 0 #c9c9c9,
-					0 3px 0 #bbb,
-					0 4px 0 #b9b9b9,
-					0 5px 0 #aaa,
-					0 6px 1px rgba(0, 0, 0, .1),
-					0 0 5px rgba(0, 0, 0, .1),
+					0 2px 0 #bbb,
+					0 4px 0 #aaa,
 					0 1px 3px rgba(0, 0, 0, .3),
-					0 3px 5px rgba(0, 0, 0, .2),
 					0 5px 10px rgba(0, 0, 0, .25),
-					0 10px 10px rgba(0, 0, 0, .2),
-					0 20px 20px rgba(0, 0, 0, .15);
+					0 12px 15px rgba(0, 0, 0, .15);
 			}
 
 			.letter-3d.sub {
 				font-size: clamp(1.8rem, 5vw, 3.5rem);
 				font-weight: 700;
 				text-shadow:
-					0 1px 0 #ccc,
-					0 2px 0 #c9c9c9,
-					0 3px 0 #bbb,
-					0 4px 1px rgba(0, 0, 0, .1),
-					0 0 5px rgba(0, 0, 0, .1),
+					0 2px 0 #bbb,
 					0 1px 3px rgba(0, 0, 0, .3),
-					0 3px 5px rgba(0, 0, 0, .2),
 					0 5px 10px rgba(0, 0, 0, .25),
-					0 10px 10px rgba(0, 0, 0, .2);
+					0 10px 10px rgba(0, 0, 0, .15);
 			}
 
 			/* Glow effect behind 3D letters */
@@ -3796,7 +3876,7 @@
 				top: 0;
 				left: 0;
 				color: rgba(59, 177, 67, 0.4);
-				filter: blur(25px);
+				filter: blur(12px);
 				opacity: 0;
 				transition: opacity 0.5s ease;
 				z-index: -2;
@@ -3841,8 +3921,8 @@
 						rgba(255, 255, 255, 0.2) 0%,
 						rgba(255, 255, 255, 0.08) 50%,
 						rgba(255, 255, 255, 0.03) 100%);
-				backdrop-filter: blur(20px);
-				-webkit-backdrop-filter: blur(20px);
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
 				border: 1px solid rgba(255, 255, 255, 0.4);
 				box-shadow:
 					0 8px 32px rgba(0, 0, 0, 0.2),
@@ -4438,7 +4518,7 @@
 			.contact-shape {
 				position: absolute;
 				border-radius: 50%;
-				filter: blur(80px);
+				filter: blur(30px);
 				opacity: 0.4;
 			}
 
@@ -4710,8 +4790,8 @@
 
 			.contact-form {
 				background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
-				backdrop-filter: blur(20px);
-				-webkit-backdrop-filter: blur(20px);
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
 				border: 1px solid rgba(255, 255, 255, 0.08);
 				border-radius: 20px;
 				padding: 0;
@@ -5794,10 +5874,29 @@
 			});
 			*/
 
-			VANTA.BIRDS({
+			const isMobileDevice = window.innerWidth < 768;
+			const vantaInstances = {};
+
+			function initVanta(id, factory) {
+				const el = document.querySelector(id);
+				if (!el) return;
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting && !vantaInstances[id]) {
+							vantaInstances[id] = factory();
+						} else if (!entry.isIntersecting && vantaInstances[id]) {
+							vantaInstances[id].destroy();
+							vantaInstances[id] = null;
+						}
+					});
+				}, { threshold: 0 });
+				observer.observe(el);
+			}
+
+			initVanta("#vanta-services", () => VANTA.BIRDS({
 				el: "#vanta-services",
-				mouseControls: true,
-				touchControls: true,
+				mouseControls: !isMobileDevice,
+				touchControls: false,
 				gyroControls: false,
 				minHeight: 200.00,
 				minWidth: 200.00,
@@ -5813,13 +5912,13 @@
 				separation: 40.00,
 				alignment: 40.00,
 				cohesion: 40.00,
-				quantity: 3.00
-			});
+				quantity: isMobileDevice ? 2.00 : 3.00
+			}));
 
-			VANTA.DOTS({
+			initVanta("#vanta-about", () => VANTA.DOTS({
 				el: "#vanta-about",
-				mouseControls: true,
-				touchControls: true,
+				mouseControls: !isMobileDevice,
+				touchControls: false,
 				gyroControls: false,
 				minHeight: 200.00,
 				minWidth: 200.00,
@@ -5830,12 +5929,12 @@
 				size: 4.90,
 				spacing: 38.00,
 				showLines: false
-			});
+			}));
 
-			VANTA.HALO({
+			initVanta("#vanta-process", () => VANTA.HALO({
 				el: "#vanta-process",
-				mouseControls: true,
-				touchControls: true,
+				mouseControls: !isMobileDevice,
+				touchControls: false,
 				gyroControls: false,
 				minHeight: 200.00,
 				minWidth: 200.00,
@@ -5844,34 +5943,10 @@
 				size: 1.50,
 				xOffset: 0.15,
 				yOffset: 0.10
-			});
+			}));
 		}
 
-		// Mobile Navigation Toggle
-		(function () {
-			const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-			const navbar = document.getElementById('navbar');
 
-			if (mobileNavToggle && navbar) {
-				mobileNavToggle.addEventListener('click', function () {
-					navbar.classList.toggle('navbar-mobile');
-					this.classList.toggle('bi-list');
-					this.classList.toggle('bi-x');
-				});
-
-				// Close mobile nav when clicking on nav links
-				const navLinks = navbar.querySelectorAll('.scrollto');
-				navLinks.forEach(link => {
-					link.addEventListener('click', () => {
-						if (navbar.classList.contains('navbar-mobile')) {
-							navbar.classList.remove('navbar-mobile');
-							mobileNavToggle.classList.remove('bi-x');
-							mobileNavToggle.classList.add('bi-list');
-						}
-					});
-				});
-			}
-		})();
 
 		// Cookie Consent Functionality
 		(function () {
