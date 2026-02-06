@@ -48,6 +48,15 @@ h6 {
   z-index: 9999;
   overflow: hidden;
   background: #fff;
+  pointer-events: none; /* Allow scroll even if preloader is visible */
+  animation: preloaderFade 0.5s ease-out 1s forwards; /* Auto-fade after 1s */
+}
+
+@keyframes preloaderFade {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 #preloader:before {
@@ -82,6 +91,33 @@ h6 {
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* Fallback: Force hide preloader with CSS if JS fails */
+@keyframes fadeOutPreloader {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+
+  90% {
+    opacity: 0;
+    visibility: visible;
+    pointer-events: none;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+#preloader {
+  animation: fadeOutPreloader 0.5s ease-in-out 1.5s forwards;
+  pointer-events: none;
+  /* Safety first - JS will re-enable if needed or it just fades out */
 }
 
 /*--------------------------------------------------------------
