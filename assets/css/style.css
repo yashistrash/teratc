@@ -8,7 +8,7 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700");
+/* Montserrat loaded via <link> in HTML for non-blocking performance */
 
 body {
   /* font-family: "Open Sans", sans-serif; */

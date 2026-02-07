@@ -8,18 +8,18 @@
 	<meta content="" name="description">
 	<meta content="" name="keywords"><!-- Favicons -->
 	<link href="assets/img/favicon.jpg" rel="icon" />
-	<link href="assets/img/apple-touch-icon.jpg" rel="apple-touch-icon" /><!-- Google Fonts -->
-	<link
-		href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-		rel="stylesheet" /><!-- Vendor CSS Files -->
+	<link href="assets/img/apple-touch-icon.jpg" rel="apple-touch-icon" /><!-- Preconnect for faster font loading -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><!-- Google Fonts - only load what's actually used -->
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet" /><!-- Vendor CSS Files -->
+	<link rel="preload" as="video" href="assets/img/new_images/tera-ny-home2_nocaption.mp4" type="video/mp4" />
 	<link href="assets/vendor/aos/aos.css" rel="stylesheet" />
 	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-	<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
 	<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
 	<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" /><!-- Template Main CSS File -->
 	<link href="assets/css/style.css" rel="stylesheet" />
-	<link href="assets/css/icon-font/lineicons.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
 	<style>
 		/* Logo Styles */
 		.logo-img {
@@ -1222,52 +1222,31 @@
 				position: absolute;
 				border-radius: 50%;
 				opacity: 0.05;
-				filter: blur(30px);
-				will-change: transform;
 			}
 
 			.shape-1 {
 				width: 400px;
 				height: 400px;
-				background: radial-gradient(circle, #3bb143 0%, transparent 70%);
+				background: radial-gradient(circle, rgba(59, 177, 67, 0.6) 0%, transparent 50%);
 				top: 10%;
 				left: 10%;
-				animation: float-shape 20s infinite ease-in-out;
 			}
 
 			.shape-2 {
 				width: 300px;
 				height: 300px;
-				background: radial-gradient(circle, #3bb143 0%, transparent 70%);
+				background: radial-gradient(circle, rgba(59, 177, 67, 0.6) 0%, transparent 50%);
 				bottom: 20%;
 				right: 15%;
-				animation: float-shape 15s infinite ease-in-out reverse;
 			}
 
 			.shape-3 {
 				width: 250px;
 				height: 250px;
-				background: radial-gradient(circle, #3bb143 0%, transparent 70%);
+				background: radial-gradient(circle, rgba(59, 177, 67, 0.6) 0%, transparent 50%);
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
-				animation: float-shape 18s infinite ease-in-out;
-			}
-
-			@keyframes float-shape {
-
-				0%,
-				100% {
-					transform: translate(0, 0) scale(1);
-				}
-
-				33% {
-					transform: translate(30px, -30px) scale(1.1);
-				}
-
-				66% {
-					transform: translate(-30px, 30px) scale(0.9);
-				}
 			}
 
 			.services-container {
@@ -1305,19 +1284,7 @@
 				width: 100%;
 				height: 3px;
 				background: linear-gradient(90deg, transparent, #3bb143, transparent);
-				animation: pulse-line 2s infinite;
-			}
-
-			@keyframes pulse-line {
-
-				0%,
-				100% {
-					opacity: 0.5;
-				}
-
-				50% {
-					opacity: 1;
-				}
+				opacity: 0.75;
 			}
 
 			.services-subtitle {
@@ -1330,7 +1297,6 @@
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
 				gap: 30px;
-				perspective: 1000px;
 			}
 
 			.service-card {
@@ -1341,11 +1307,9 @@
 				border-radius: 20px;
 				cursor: pointer;
 				transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-				transform-style: preserve-3d;
 				opacity: 0;
 				transform: translateY(50px);
 				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-				will-change: transform, opacity;
 			}
 
 			.service-card.visible {
@@ -1354,26 +1318,7 @@
 			}
 
 			.card-glow {
-				position: absolute;
-				top: -2px;
-				left: -2px;
-				right: -2px;
-				bottom: -2px;
-				background: conic-gradient(from 0deg,
-						#3bb143,
-						transparent,
-						#3bb143);
-				border-radius: 20px;
-				opacity: 0;
-				z-index: -1;
-				transition: opacity 0.4s ease;
-				animation: rotate-glow 4s linear infinite;
-			}
-
-			@keyframes rotate-glow {
-				100% {
-					transform: rotate(360deg);
-				}
+				display: none;
 			}
 
 			.service-card:hover {
@@ -1381,10 +1326,6 @@
 				border-color: #3bb143;
 				box-shadow: 0 20px 60px rgba(59, 177, 67, 0.25);
 				background: linear-gradient(135deg, rgba(59, 177, 67, 0.02) 0%, #ffffff 100%);
-			}
-
-			.service-card:hover .card-glow {
-				opacity: 0;
 			}
 
 			.card-content {
@@ -1479,7 +1420,7 @@
 				}
 
 				.shape {
-					filter: blur(20px);
+					opacity: 0.04;
 				}
 
 				.shape-1 {
@@ -1514,7 +1455,6 @@
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {
 				const serviceCards = document.querySelectorAll('.service-card');
-				const bgShapes = document.querySelectorAll('.shape');
 
 				gsap.registerPlugin(ScrollTrigger);
 
@@ -1536,18 +1476,7 @@
 					});
 				});
 
-				bgShapes.forEach((shape, index) => {
-					gsap.to(shape, {
-						scrollTrigger: {
-							trigger: '#services-section',
-							start: 'top bottom',
-							end: 'bottom top',
-							scrub: 3
-						},
-						y: index % 2 === 0 ? 100 : -100,
-						ease: 'none'
-					});
-				});
+				/* Shape parallax removed - scrub:3 caused per-frame recalcs during scroll */
 
 			});
 		</script>
@@ -1568,7 +1497,7 @@
 					<div class="process-steps">
 						<div class="process-step" data-step="1">
 							<div class="step-image">
-								<img src="assets/img/Discovery%20Analysis.png" alt="Discovery & Analysis" />
+								<img src="assets/img/Discovery%20Analysis.png" alt="Discovery & Analysis" loading="lazy" />
 							</div>
 							<div class="step-connector"></div>
 							<div class="step-icon">
@@ -1623,13 +1552,13 @@
 								</ul>
 							</div>
 							<div class="step-image step-image-right">
-								<img src="assets/img/STRATERGY.png" alt="Strategy Development" />
+								<img src="assets/img/STRATERGY.png" alt="Strategy Development" loading="lazy" />
 							</div>
 						</div>
 
 						<div class="process-step" data-step="3">
 							<div class="step-image">
-								<img src="assets/img/implementation.png" alt="Implementation" />
+								<img src="assets/img/implementation.png" alt="Implementation" loading="lazy" />
 							</div>
 							<div class="step-connector"></div>
 							<div class="step-icon">
@@ -1684,13 +1613,13 @@
 								</ul>
 							</div>
 							<div class="step-image step-image-right">
-								<img src="assets/img/TESTING%20%26%20QUA.png" alt="Testing & Quality Assurance" />
+								<img src="assets/img/TESTING%20%26%20QUA.png" alt="Testing & Quality Assurance" loading="lazy" />
 							</div>
 						</div>
 
 						<div class="process-step" data-step="5">
 							<div class="step-image">
-								<img src="assets/img/SUPPORT%20final.png" alt="Launch & Support" />
+								<img src="assets/img/SUPPORT%20final.png" alt="Launch & Support" loading="lazy" />
 							</div>
 							<div class="step-connector"></div>
 							<div class="step-icon">
@@ -2150,7 +2079,6 @@
 				transform-origin: center;
 				backface-visibility: hidden;
 				transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-				will-change: transform, opacity;
 			}
 
 			.tech-item {
@@ -2160,9 +2088,7 @@
 				justify-content: center;
 				gap: 12px;
 				padding: 24px 28px;
-				background: rgba(255, 255, 255, 0.9);
-				backdrop-filter: blur(10px);
-				-webkit-backdrop-filter: blur(10px);
+				background: rgba(255, 255, 255, 0.95);
 				border: 2px solid rgba(59, 177, 67, 0.2);
 				border-radius: 24px;
 				cursor: pointer;
@@ -2262,8 +2188,7 @@
 				width: 60px;
 				height: 60px;
 				border-radius: 50%;
-				background: rgba(255, 255, 255, 0.9);
-				backdrop-filter: blur(10px);
+				background: rgba(255, 255, 255, 0.95);
 				border: 2px solid rgba(59, 177, 67, 0.3);
 				color: #3bb143;
 				cursor: pointer;
@@ -2546,8 +2471,8 @@
 
 				let particles = [];
 				const isMobile = window.innerWidth < 768;
-				const particleCount = isMobile ? 15 : 50;
-				const connectDist = 150;
+				const particleCount = isMobile ? 10 : 30;
+				const connectDist = 120;
 				const connectDistSq = connectDist * connectDist;
 				let animFrameId = null;
 
@@ -2555,8 +2480,8 @@
 					constructor() {
 						this.x = Math.random() * canvas.width;
 						this.y = Math.random() * canvas.height;
-						this.vx = (Math.random() - 0.5) * 0.5;
-						this.vy = (Math.random() - 0.5) * 0.5;
+						this.vx = (Math.random() - 0.5) * 0.4;
+						this.vy = (Math.random() - 0.5) * 0.4;
 						this.radius = Math.random() * 2 + 1;
 					}
 
@@ -2567,20 +2492,27 @@
 						if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
 						if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
 					}
-
-					draw() {
-						ctx.beginPath();
-						ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-						ctx.fillStyle = 'rgba(59, 177, 67, 0.5)';
-						ctx.fill();
-					}
 				}
 
 				for (let i = 0; i < particleCount; i++) {
 					particles.push(new Particle());
 				}
 
-				function connectParticles() {
+				function animate() {
+					ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+					// Batch all particle dots in one path
+					ctx.beginPath();
+					ctx.fillStyle = 'rgba(59, 177, 67, 0.5)';
+					for (let i = 0; i < particles.length; i++) {
+						particles[i].update();
+						ctx.moveTo(particles[i].x + particles[i].radius, particles[i].y);
+						ctx.arc(particles[i].x, particles[i].y, particles[i].radius, 0, Math.PI * 2);
+					}
+					ctx.fill();
+
+					// Batch connection lines by alpha ranges for fewer state changes
+					ctx.lineWidth = 1;
 					for (let i = 0; i < particles.length; i++) {
 						for (let j = i + 1; j < particles.length; j++) {
 							const dx = particles[i].x - particles[j].x;
@@ -2588,27 +2520,16 @@
 							const distSq = dx * dx + dy * dy;
 
 							if (distSq < connectDistSq) {
-								const alpha = 0.2 * (1 - Math.sqrt(distSq) / connectDist);
+								const alpha = 0.15 * (1 - Math.sqrt(distSq) / connectDist);
 								ctx.beginPath();
+								ctx.strokeStyle = `rgba(59, 177, 67, ${alpha})`;
 								ctx.moveTo(particles[i].x, particles[i].y);
 								ctx.lineTo(particles[j].x, particles[j].y);
-								ctx.strokeStyle = `rgba(59, 177, 67, ${alpha})`;
-								ctx.lineWidth = 1;
 								ctx.stroke();
 							}
 						}
 					}
-				}
 
-				function animate() {
-					ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-					particles.forEach(particle => {
-						particle.update();
-						particle.draw();
-					});
-
-					connectParticles();
 					animFrameId = requestAnimationFrame(animate);
 				}
 
@@ -2832,7 +2753,6 @@
 				opacity: 0;
 				transform: translateY(50px);
 				transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-				will-change: transform, opacity;
 			}
 
 			.process-step.visible {
@@ -2878,7 +2798,6 @@
 				cursor: pointer;
 				box-shadow: 0 10px 40px rgba(59, 177, 67, 0.2);
 				z-index: 3;
-				will-change: transform;
 			}
 
 			.step-icon:hover {
@@ -2906,7 +2825,6 @@
 				padding: 0;
 				line-height: 0;
 				aspect-ratio: 16 / 10;
-				will-change: transform, opacity;
 			}
 
 			.step-image-right {
@@ -3254,7 +3172,6 @@
 				box-shadow: 0 0 20px rgba(59, 177, 67, 0.6);
 				transform: scaleX(0);
 				transform-origin: left;
-				will-change: transform;
 			}
 
 			.about-container {
@@ -3308,7 +3225,6 @@
 				opacity: 0;
 				transform: translateX(-30px);
 				transition: transform 0.4s ease, opacity 0.4s ease;
-				will-change: transform, opacity;
 			}
 
 			.feature-item.visible {
@@ -3359,7 +3275,6 @@
 				width: clamp(130px, 15vw, 170px);
 				height: clamp(130px, 15vw, 170px);
 				z-index: 2;
-				will-change: transform;
 			}
 
 
@@ -3369,52 +3284,17 @@
 				left: auto;
 				right: auto;
 				bottom: auto;
-				animation: float-bubble 6s infinite ease-in-out;
-			}
-
-			/* Add staggering to animations */
-			.stat-bubble:nth-child(2) {
-				animation-delay: 0.5s;
-			}
-
-			.stat-bubble:nth-child(3) {
-				animation-delay: 1s;
-			}
-
-			.stat-bubble:nth-child(4) {
-				animation-delay: 1.5s;
-			}
-
-			.stat-bubble:nth-child(5) {
-				animation-delay: 2s;
-			}
-
-			@keyframes float-bubble {
-
-				0%,
-				100% {
-					transform: translate(0, 0);
-				}
-
-				33% {
-					transform: translate(10px, -15px);
-				}
-
-				66% {
-					transform: translate(-10px, 10px);
-				}
 			}
 
 			.bubble-glow {
 				position: absolute;
-				top: -2px;
-				left: -2px;
-				right: -2px;
-				bottom: -2px;
-				background: radial-gradient(circle, rgba(59, 177, 67, 0.4) 0%, transparent 70%);
+				top: -8px;
+				left: -8px;
+				right: -8px;
+				bottom: -8px;
+				background: radial-gradient(circle, rgba(59, 177, 67, 0.3) 0%, transparent 60%);
 				border-radius: 50%;
 				z-index: -1;
-				filter: blur(12px);
 				opacity: 0;
 				transition: opacity 0.4s ease;
 			}
@@ -3559,7 +3439,6 @@
 				const aboutSection = document.getElementById('about-section');
 				const progressFill = document.querySelector('.progress-fill');
 				const statBubbles = document.querySelectorAll('.stat-bubble');
-				const connectorPath = document.querySelector('.connector-path');
 				const featureItems = document.querySelectorAll('.feature-item');
 
 				gsap.registerPlugin(ScrollTrigger);
@@ -3588,15 +3467,6 @@
 					});
 				});
 
-				gsap.to(connectorPath, {
-					scrollTrigger: {
-						trigger: '.about-right',
-						start: 'top 70%',
-						toggleActions: 'play none none reverse',
-						onEnter: () => connectorPath.classList.add('visible')
-					}
-				});
-
 				statBubbles.forEach((bubble, index) => {
 					gsap.to(bubble, {
 						scrollTrigger: {
@@ -3605,7 +3475,6 @@
 							toggleActions: 'play none none reverse',
 							onEnter: () => {
 								bubble.classList.add('visible');
-								animateCounter(bubble);
 							}
 						},
 						opacity: 1,
@@ -3615,31 +3484,21 @@
 						ease: 'back.out(1.4)'
 					});
 				});
-
-				function animateCounter(bubble) {
-					if (bubble._counterAnimating) return;
-					bubble._counterAnimating = true;
-					const numberElement = bubble.querySelector('.stat-number');
-					const target = parseInt(numberElement.getAttribute('data-target'));
-					const duration = 2000;
-					let start = null;
-
-					function tick(timestamp) {
-						if (!start) start = timestamp;
-						const progress = Math.min((timestamp - start) / duration, 1);
-						numberElement.textContent = Math.floor(progress * target);
-						if (progress < 1) {
-							requestAnimationFrame(tick);
-						} else {
-							bubble._counterAnimating = false;
-						}
-					}
-					requestAnimationFrame(tick);
-				}
 			});
 		</script>
 
 		<style>
+			/* ===== Skip rendering for offscreen sections (huge scroll perf win) ===== */
+			#services-section,
+			#process-section,
+			#tech-stack-section,
+			#about-section,
+			#hero1,
+			#footer {
+				content-visibility: auto;
+				contain-intrinsic-size: auto 100vh;
+			}
+
 			/* ===== Prevent background elements from blocking scroll ===== */
 			canvas,
 			video,
@@ -4493,7 +4352,7 @@
 		<!-- End Contact Section -->
 
 		<style>
-			@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap');
+			/* Outfit/Syne loaded via <link> in HTML head for non-blocking performance */
 
 			.contact-section {
 				background: linear-gradient(135deg, #0a0f0a 0%, #0d1a0f 50%, #0a1209 100%);
@@ -4525,37 +4384,32 @@
 			.contact-shape {
 				position: absolute;
 				border-radius: 50%;
-				filter: blur(30px);
 				opacity: 0.4;
-				will-change: transform;
 			}
 
 			.contact-shape-1 {
 				width: 600px;
 				height: 600px;
-				background: radial-gradient(circle, rgba(59, 177, 67, 0.3) 0%, transparent 70%);
+				background: radial-gradient(circle, rgba(59, 177, 67, 0.2) 0%, transparent 50%);
 				top: -200px;
 				right: -100px;
-				animation: contactFloat1 20s ease-in-out infinite;
 			}
 
 			.contact-shape-2 {
 				width: 400px;
 				height: 400px;
-				background: radial-gradient(circle, rgba(45, 143, 53, 0.25) 0%, transparent 70%);
+				background: radial-gradient(circle, rgba(45, 143, 53, 0.15) 0%, transparent 50%);
 				bottom: -100px;
 				left: -50px;
-				animation: contactFloat2 25s ease-in-out infinite;
 			}
 
 			.contact-shape-3 {
 				width: 300px;
 				height: 300px;
-				background: radial-gradient(circle, rgba(59, 177, 67, 0.2) 0%, transparent 70%);
+				background: radial-gradient(circle, rgba(59, 177, 67, 0.12) 0%, transparent 50%);
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
-				animation: contactFloat3 15s ease-in-out infinite;
 			}
 
 			.contact-grid-overlay {
@@ -4568,43 +4422,7 @@
 				mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
 			}
 
-			@keyframes contactFloat1 {
-
-				0%,
-				100% {
-					transform: translate(0, 0) scale(1);
-				}
-
-				50% {
-					transform: translate(-30px, 40px) scale(1.1);
-				}
-			}
-
-			@keyframes contactFloat2 {
-
-				0%,
-				100% {
-					transform: translate(0, 0) scale(1);
-				}
-
-				50% {
-					transform: translate(40px, -30px) scale(1.15);
-				}
-			}
-
-			@keyframes contactFloat3 {
-
-				0%,
-				100% {
-					transform: translate(-50%, -50%) scale(1);
-					opacity: 0.3;
-				}
-
-				50% {
-					transform: translate(-50%, -50%) scale(1.2);
-					opacity: 0.5;
-				}
-			}
+			/* Contact float animations removed for performance - using static pre-blurred gradients */
 
 			.contact-container {
 				max-width: 1100px;
@@ -4644,21 +4462,7 @@
 				height: 8px;
 				background: #3bb143;
 				border-radius: 50%;
-				animation: badgePulse 2s ease-in-out infinite;
-			}
-
-			@keyframes badgePulse {
-
-				0%,
-				100% {
-					opacity: 1;
-					transform: scale(1);
-				}
-
-				50% {
-					opacity: 0.5;
-					transform: scale(1.2);
-				}
+				box-shadow: 0 0 6px rgba(59, 177, 67, 0.6);
 			}
 
 			.contact-title {
@@ -4677,23 +4481,9 @@
 
 			.title-accent {
 				background: linear-gradient(135deg, #3bb143 0%, #5dd465 50%, #3bb143 100%);
-				background-size: 200% auto;
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 				background-clip: text;
-				animation: gradientShift 4s ease-in-out infinite;
-			}
-
-			@keyframes gradientShift {
-
-				0%,
-				100% {
-					background-position: 0% center;
-				}
-
-				50% {
-					background-position: 100% center;
-				}
 			}
 
 			.contact-subtitle {
@@ -4797,9 +4587,7 @@
 			}
 
 			.contact-form {
-				background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
-				backdrop-filter: blur(10px);
-				-webkit-backdrop-filter: blur(10px);
+				background: linear-gradient(145deg, rgba(20, 30, 20, 0.95), rgba(15, 25, 15, 0.98));
 				border: 1px solid rgba(255, 255, 255, 0.08);
 				border-radius: 20px;
 				padding: 0;
@@ -5182,7 +4970,7 @@
 			</div>
 
 			<div class="footer-bottom">
-				<p class="footer-copyright">&copy; 2026 TERA. All rights reserved.</p>
+				<p class="footer-copyright">&copy; <script>document.write(new Date().getFullYear())</script> TERA. All rights reserved.</p>
 			</div>
 		</div>
 	</footer>
@@ -5658,6 +5446,25 @@
 			const vantaInstances = {};
 			const vantaTimers = {};
 
+			// Pause Vanta renderers while scrolling to eliminate jank
+			let scrollTimeout;
+			let vantaPaused = false;
+			window.addEventListener('scroll', () => {
+				if (!vantaPaused) {
+					vantaPaused = true;
+					Object.values(vantaInstances).forEach(v => {
+						if (v && v.renderer) v.renderer.setAnimationLoop(null);
+					});
+				}
+				clearTimeout(scrollTimeout);
+				scrollTimeout = setTimeout(() => {
+					vantaPaused = false;
+					Object.values(vantaInstances).forEach(v => {
+						if (v && v.renderer && v.onUpdate) v.renderer.setAnimationLoop(v.onUpdate);
+					});
+				}, 150);
+			}, { passive: true });
+
 			function initVanta(id, factory, delay) {
 				delay = delay || 300;
 				const el = document.querySelector(id);
@@ -5700,11 +5507,11 @@
 					colorMode: "lerp",
 					birdSize: 1.20,
 					wingSpan: 25.00,
-					speedLimit: 5.00,
+					speedLimit: 4.00,
 					separation: 40.00,
 					alignment: 40.00,
 					cohesion: 40.00,
-					quantity: 3.00
+					quantity: 2.00
 				}));
 			} catch (e) {
 				console.warn("Vanta Birds init failed:", e);

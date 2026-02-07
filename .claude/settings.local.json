@@ -10,7 +10,12 @@
       "WebFetch(domain:gsap.com)",
       "Bash(git checkout:*)",
       "Bash(grep:*)",
-      "Bash(copy \"D:\\\\yash\\\\Tera\\\\index.html\" \"D:\\\\yash\\\\Tera\\\\dist\\\\index.html\")"
+      "Bash(copy \"D:\\\\yash\\\\Tera\\\\index.html\" \"D:\\\\yash\\\\Tera\\\\dist\\\\index.html\")",
+      "Bash(while read f)",
+      "Bash(do ls -lh \"$f\")",
+      "Bash(done)",
+      "Bash(xargs:*)",
+      "Bash(git -C \"D:/yash/Tera\" log --oneline)"
     ]
   }
 }
