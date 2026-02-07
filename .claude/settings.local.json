@@ -15,7 +15,9 @@
       "Bash(do ls -lh \"$f\")",
       "Bash(done)",
       "Bash(xargs:*)",
-      "Bash(git -C \"D:/yash/Tera\" log --oneline)"
+      "Bash(git -C \"D:/yash/Tera\" log --oneline)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)"
     ]
   }
 }
