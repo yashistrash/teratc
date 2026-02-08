@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport">
-	<title>Tera</title>
+<title>Tera</title>
 	<meta content="" name="description">
 	<meta content="" name="keywords"><!-- Favicons -->
 	<link href="assets/img/favicon.jpg" rel="icon" />
@@ -1879,7 +1879,7 @@
 
 		<!-- ======= About/Why Choose Us Section ======= -->
 		<section id="about-section">
-			<div id="vanta-about" class="vanta-bg"></div>
+			<div id="vanta-about" class="vanta-bg" style="top: 15%"></div>
 			<div class="about-progress-bar">
 				<div class="progress-fill"></div>
 			</div>
@@ -2008,7 +2008,7 @@
 			}
 
 			.tech-title {
-				font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+				font-size: clamp(2.2rem, 4.5vw, 3.2rem);
 				font-weight: 800;
 				color: #1a1a1a;
 				margin-bottom: 4px;
@@ -2016,7 +2016,7 @@
 			}
 
 			.tech-subtitle {
-				font-size: clamp(0.8rem, 1.2vw, 1rem);
+				font-size: clamp(1rem, 1.5vw, 1.3rem);
 				color: #666666;
 				letter-spacing: 0.05em;
 			}
@@ -3167,7 +3167,7 @@
 			#about-section {
 				height: 100vh;
 				max-height: 100vh;
-				background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+				background: #ffffff;
 				position: relative;
 				overflow: hidden;
 				padding: 40px 0;
@@ -5478,7 +5478,16 @@
 		resetAnimations();
 		*/
 
-		if (typeof VANTA !== 'undefined' && window.innerWidth >= 768) {
+		(function waitForVanta() {
+			if (window.innerWidth < 768) return;
+
+			// Wait for VANTA to load (CDN scripts are async)
+			if (typeof VANTA === 'undefined' || typeof VANTA.DOTS === 'undefined' || typeof VANTA.BIRDS === 'undefined') {
+				if (!waitForVanta._tries) waitForVanta._tries = 0;
+				if (++waitForVanta._tries > 50) return; // give up after ~5s
+				return setTimeout(waitForVanta, 100);
+			}
+
 			const vantaInstances = {};
 			const vantaTimers = {};
 
@@ -5573,7 +5582,7 @@
 				console.warn("Vanta Dots init failed:", e);
 			}
 
-		}
+		})();
 
 
 

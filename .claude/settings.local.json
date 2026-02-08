@@ -17,7 +17,10 @@
       "Bash(xargs:*)",
       "Bash(git -C \"D:/yash/Tera\" log --oneline)",
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:raw.githubusercontent.com)"
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(copy /Y \"D:\\\\yash\\\\Tera\\\\index.html\" \"D:\\\\yash\\\\Tera\\\\dist\\\\index.html\")",
+      "Bash(copy:*)",
+      "Bash(cmd /c:*)"
     ]
   }
 }
