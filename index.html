@@ -4,13 +4,31 @@
 <head>
 	<meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport">
-	<title>Tera</title>
-	<meta content="" name="description">
-	<meta content="" name="keywords"><!-- Favicons -->
+	<title>Tera | AI, Cloud & Digital Transformation Consulting</title>
+	<meta content="Tera empowers businesses with AI-powered solutions, cloud computing, cybersecurity, and digital transformation services. Fast-track your enterprise upgrade with industry-leading expertise." name="description">
+	<meta content="AI solutions, digital transformation, cloud computing, cybersecurity consulting, enterprise software, big data analytics, managed IT services, UI UX development, web app development" name="keywords">
+	<meta name="robots" content="index, follow">
+	<link rel="canonical" href="https://teratc.com/" />
+	<!-- Open Graph -->
+	<meta property="og:title" content="Tera | AI, Cloud & Digital Transformation Consulting">
+	<meta property="og:description" content="Tera empowers businesses with AI-powered solutions, cloud computing, cybersecurity, and digital transformation services.">
+	<meta property="og:image" content="https://teratc.com/assets/img/teralogo.png">
+	<meta property="og:url" content="https://teratc.com/">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Tera">
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Tera | AI, Cloud & Digital Transformation Consulting">
+	<meta name="twitter:description" content="AI-powered solutions, cloud computing, cybersecurity, and digital transformation for enterprises.">
+	<meta name="twitter:image" content="https://teratc.com/assets/img/teralogo.png">
+	<!-- Favicons -->
 	<link href="assets/img/favicon.jpg" rel="icon" />
 	<link href="assets/img/apple-touch-icon.jpg" rel="apple-touch-icon" /><!-- Preconnect for faster font loading -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="dns-prefetch" href="https://cdn.simpleicons.org" />
+	<link rel="dns-prefetch" href="https://cdn.svgrepo.com" />
+	<link rel="dns-prefetch" href="https://upload.wikimedia.org" />
 	<!-- Google Fonts - only load what's actually used -->
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap"
 		rel="stylesheet" /><!-- Vendor CSS Files -->
@@ -191,7 +209,7 @@
 				min-height: 100vh !important;
 			}
 
-			#hero .videoClass h2 {
+			#hero .videoClass .hero-tagline {
 				font-size: clamp(14px, 4vw, 18px) !important;
 				line-height: 1.6 !important;
 				margin: 12px 0 !important;
@@ -217,7 +235,7 @@
 				padding: 15px 12px !important;
 			}
 
-			#hero .videoClass h2 {
+			#hero .videoClass .hero-tagline {
 				font-size: clamp(13px, 3.5vw, 16px) !important;
 				line-height: 1.5 !important;
 				margin: 10px 0 !important;
@@ -388,7 +406,7 @@
 
 			/* Process Section Fixes */
 			#process-section {
-				padding: 40px 0;
+				padding: 40px 0 15px;
 			}
 
 			.process-container {
@@ -448,7 +466,7 @@
 				height: auto !important;
 				min-height: auto !important;
 				max-height: none !important;
-				padding: 40px 0 !important;
+				padding: 10px 0 40px !important;
 			}
 
 			.tech-container {
@@ -855,13 +873,68 @@
 		}
 	</style>
 
+	<!-- Structured Data -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "Organization",
+				"@id": "https://teratc.com/#organization",
+				"name": "Tera",
+				"url": "https://teratc.com",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "https://teratc.com/assets/img/teralogo.png"
+				},
+				"description": "Tera empowers businesses with AI-powered solutions, cloud computing, cybersecurity, and digital transformation services.",
+				"knowsAbout": [
+					"Artificial Intelligence",
+					"Digital Transformation",
+					"Cloud Computing",
+					"Cybersecurity",
+					"Enterprise Solutions",
+					"Big Data & Analytics",
+					"Managed IT Services",
+					"UI/UX Development",
+					"Web & App Development"
+				],
+				"areaServed": "Worldwide",
+				"sameAs": []
+			},
+			{
+				"@type": "WebSite",
+				"@id": "https://teratc.com/#website",
+				"url": "https://teratc.com",
+				"name": "Tera",
+				"publisher": {
+					"@id": "https://teratc.com/#organization"
+				}
+			},
+			{
+				"@type": "WebPage",
+				"@id": "https://teratc.com/#webpage",
+				"url": "https://teratc.com",
+				"name": "Tera | AI, Cloud & Digital Transformation Consulting",
+				"description": "Tera empowers businesses with AI-powered solutions, cloud computing, cybersecurity, and digital transformation services.",
+				"isPartOf": {
+					"@id": "https://teratc.com/#website"
+				},
+				"about": {
+					"@id": "https://teratc.com/#organization"
+				}
+			}
+		]
+	}
+	</script>
+
 </head>
 
 <body class="scroll-container">
 	<header class="d-flex align-items-center" id="header">
 		<div class="container d-flex align-items-center justify-content-between">
-			<h1 class="logo"><a href="index.html"><img src="./assets/img/teralogo.png" alt="Tera" class="logo-img"></a>
-			</h1>
+			<div class="logo"><a href="index.html"><img src="./assets/img/teralogo.png" alt="Tera" class="logo-img"></a>
+			</div>
 
 			<nav class="navbar" id="navbar">
 				<ul>
@@ -892,13 +965,13 @@
 		</video>
 		<div class="container" data-aos="zoom-out" data-aos-delay="100">
 			<div class="videoClass">
-				<h1><img src="./assets/img/teralogo.png" alt="TERA" class="hero-logo"></h1>
+				<h1><img src="./assets/img/teralogo.png" alt="TERA - AI, Cloud & Digital Transformation Consulting" class="hero-logo"></h1>
 
-				<h2 style="color:white;">In a Digital Transformation ERA - we help increase the strength of
+				<p class="hero-tagline" style="color:white;">In a Digital Transformation ERA - we help increase the strength of
 					organizations by helping them to adapt to the contemporary reality of an ever faster changing world.
-					Make change happen at speed.</h2>
+					Make change happen at speed.</p>
 
-				<h2 style="color:white; text-align: center;">Fast-track to upgrade...we&rsquo;re here to help.</h2>
+				<p class="hero-tagline" style="color:white; text-align: center;">Fast-track to upgrade...we&rsquo;re here to help.</p>
 			</div>
 		</div>
 	</section>
@@ -1720,14 +1793,14 @@
 							<div class="tech-item carousel-card" data-category="ai">
 								<div class="tech-logos-row">
 									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/tensorflow/FF6F00"
-											alt="TensorFlow" class="tech-logo" /></div>
+											alt="TensorFlow" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/pytorch/EE4C2C"
-											alt="PyTorch" class="tech-logo" /></div>
+											alt="PyTorch" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><img
 											src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/openai.svg"
-											alt="OpenAI" class="tech-logo" /></div>
+											alt="OpenAI" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/databricks/FF3621"
-											alt="Databricks" class="tech-logo" /></div>
+											alt="Databricks" class="tech-logo" loading="lazy" /></div>
 								</div>
 								<div class="tech-name">AI/ML</div>
 								<div class="tech-description">We build intelligent solutions with <strong>machine
@@ -1743,17 +1816,17 @@
 								<div class="tech-logos-row">
 									<div class="tech-logo-wrap"><img
 											src="https://cdn.svgrepo.com/show/354427/tableau.svg" alt="Tableau"
-											class="tech-logo" /></div>
+											class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><img
 											src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
-											alt="Power BI" class="tech-logo" /></div>
+											alt="Power BI" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/looker/4285F4"
-											alt="Looker" class="tech-logo" /></div>
+											alt="Looker" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/snowflake/29B5E8"
-											alt="Snowflake" class="tech-logo" /></div>
+											alt="Snowflake" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><img
 											src="https://cdn.simpleicons.org/googleanalytics/E37400"
-											alt="Google Analytics" class="tech-logo" /></div>
+											alt="Google Analytics" class="tech-logo" loading="lazy" /></div>
 								</div>
 								<div class="tech-name">Data Analytics</div>
 								<div class="tech-description">We turn data into decisions with <strong>BI</strong>,
@@ -1769,13 +1842,13 @@
 								<div class="tech-logos-row">
 									<div class="tech-logo-wrap"><img
 											src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg"
-											alt="AWS" class="tech-logo" /></div>
+											alt="AWS" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><img
 											src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftazure.svg"
-											alt="Azure" class="tech-logo" /></div>
+											alt="Azure" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><img
 											src="https://cdn.simpleicons.org/googlecloud/4285F4" alt="Google Cloud"
-											class="tech-logo" /></div>
+											class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><svg class="tech-logo" viewBox="0 0 24 24"
 											xmlns="http://www.w3.org/2000/svg" aria-label="Microsoft 365">
 											<path fill="#F25022" d="M1 1h10v10H1z" />
@@ -1796,15 +1869,15 @@
 							<div class="tech-item carousel-card" data-category="webapp">
 								<div class="tech-logos-row">
 									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/react/61DAFB"
-											alt="React" class="tech-logo" /></div>
+											alt="React" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/nodedotjs/339933"
-											alt="Node.js" class="tech-logo" /></div>
+											alt="Node.js" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/vuedotjs/4FC08D"
-											alt="Vue.js" class="tech-logo" /></div>
+											alt="Vue.js" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/nextdotjs/000000"
-											alt="Next.js" class="tech-logo" /></div>
+											alt="Next.js" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/typescript/3178C6"
-											alt="TypeScript" class="tech-logo" /></div>
+											alt="TypeScript" class="tech-logo" loading="lazy" /></div>
 								</div>
 								<div class="tech-name">Web/App Development</div>
 								<div class="tech-description">We build responsive <strong>web</strong> and
@@ -1818,15 +1891,15 @@
 							<div class="tech-item carousel-card" data-category="uiux">
 								<div class="tech-logos-row">
 									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/figma/F24E1E"
-											alt="Figma" class="tech-logo" /></div>
+											alt="Figma" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><img
 											src="https://cdn.svgrepo.com/show/303109/adobe-xd-logo.svg" alt="Adobe XD"
-											class="tech-logo" /></div>
+											class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/sketch/F7B500"
-											alt="Sketch" class="tech-logo" /></div>
+											alt="Sketch" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><img
 											src="https://cdn.svgrepo.com/show/330714/invision.svg" alt="InVision"
-											class="tech-logo" /></div>
+											class="tech-logo" loading="lazy" /></div>
 								</div>
 								<div class="tech-name">UI/UX Development</div>
 								<div class="tech-description">We design intuitive <strong>user experiences</strong> and
@@ -1840,15 +1913,15 @@
 							<div class="tech-item carousel-card" data-category="devops">
 								<div class="tech-logos-row">
 									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/docker/2496ED"
-											alt="Docker" class="tech-logo" /></div>
+											alt="Docker" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/kubernetes/326CE5"
-											alt="Kubernetes" class="tech-logo" /></div>
+											alt="Kubernetes" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/jenkins/D24939"
-											alt="Jenkins" class="tech-logo" /></div>
+											alt="Jenkins" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/hashicorp/000000"
-											alt="Terraform" class="tech-logo" /></div>
+											alt="Terraform" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/github/181717"
-											alt="GitHub" class="tech-logo" /></div>
+											alt="GitHub" class="tech-logo" loading="lazy" /></div>
 								</div>
 								<div class="tech-name">DevOps</div>
 								<div class="tech-description">We enable <strong>CI/CD</strong>,
@@ -1863,7 +1936,7 @@
 							<div class="tech-item carousel-card" data-category="security">
 								<div class="tech-logos-row">
 									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/cloudflare/F38020"
-											alt="Cloudflare" class="tech-logo" /></div>
+											alt="Cloudflare" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><svg class="tech-logo" viewBox="0 0 24 24"
 											xmlns="http://www.w3.org/2000/svg" aria-label="Microsoft Sentinel">
 											<path fill="#0078D4"
@@ -1978,15 +2051,27 @@
 				min-height: 100vh;
 				height: 100vh;
 				max-height: 100vh;
-				background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+				background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
 				position: relative;
 				overflow: hidden;
-				padding: 60px 0 60px;
+				padding: 20px 0 60px;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				justify-content: flex-start;
 				box-sizing: border-box;
+			}
+
+			#tech-stack-section::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 80px;
+				background: linear-gradient(180deg, #f8f9fa 0%, transparent 100%);
+				z-index: 2;
+				pointer-events: none;
 			}
 
 			#tech-canvas {
@@ -2716,7 +2801,7 @@
 				background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
 				position: relative;
 				overflow: hidden;
-				padding: 100px 0;
+				padding: 100px 0 40px;
 			}
 
 			.process-container {
@@ -3067,7 +3152,7 @@
 
 			@media (max-width: 768px) {
 				#process-section {
-					padding: 60px 0;
+					padding: 60px 0 20px;
 				}
 
 				.process-container {
@@ -4975,7 +5060,7 @@
 		<div class="footer-content">
 			<div class="footer-grid">
 				<div class="footer-column">
-					<div class="footer-logo"><img src="./assets/img/teralogo.png" alt="TERA" class="footer-logo-img">
+					<div class="footer-logo"><img src="./assets/img/teralogo.png" alt="TERA" class="footer-logo-img" loading="lazy">
 					</div>
 					<p class="footer-description">Empowering businesses through innovative technology solutions and
 						digital transformation.</p>
