@@ -733,19 +733,16 @@
 	</style>
 
 	<script>
-		// Only load Three.js and Vanta on desktop to prevent mobile GPU crashes
-		if (window.innerWidth >= 768) {
-			['https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js',
-				'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js',
-				'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js',
-				'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js'
-			].forEach(src => {
-				const s = document.createElement('script');
-				s.src = src;
-				s.async = false;
-				document.head.appendChild(s);
-			});
-		}
+		['https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js',
+			'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js',
+			'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js',
+			'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js'
+		].forEach(src => {
+			const s = document.createElement('script');
+			s.src = src;
+			s.async = false;
+			document.head.appendChild(s);
+		});
 	</script>
 
 	<!-- 
@@ -5490,8 +5487,6 @@
 		*/
 
 		(function waitForVanta() {
-			if (window.innerWidth < 768) return;
-
 			// Wait for VANTA to load (CDN scripts are async)
 			if (typeof VANTA === 'undefined' || typeof VANTA.DOTS === 'undefined' || typeof VANTA.BIRDS === 'undefined') {
 				if (!waitForVanta._tries) waitForVanta._tries = 0;
@@ -5499,6 +5494,7 @@
 				return setTimeout(waitForVanta, 100);
 			}
 
+			const isMobile = window.innerWidth < 768;
 			const vantaInstances = {};
 			const vantaTimers = {};
 
@@ -5550,24 +5546,24 @@
 			try {
 				initVanta("#vanta-services", () => VANTA.BIRDS({
 					el: "#vanta-services",
-					mouseControls: true,
-					touchControls: false,
+					mouseControls: !isMobile,
+					touchControls: isMobile,
 					gyroControls: false,
 					minHeight: 200.00,
 					minWidth: 200.00,
-					scale: 2.00,
+					scale: isMobile ? 1.00 : 2.00,
 					scaleMobile: 1.00,
 					backgroundColor: 0xffffff,
 					color1: 0x3bb143,
 					color2: 0x2d8f35,
 					colorMode: "lerp",
-					birdSize: 1.20,
-					wingSpan: 25.00,
-					speedLimit: 4.00,
+					birdSize: isMobile ? 0.90 : 1.20,
+					wingSpan: isMobile ? 20.00 : 25.00,
+					speedLimit: isMobile ? 3.00 : 4.00,
 					separation: 40.00,
 					alignment: 40.00,
 					cohesion: 40.00,
-					quantity: 2.00
+					quantity: isMobile ? 1.00 : 2.00
 				}));
 			} catch (e) {
 				console.warn("Vanta Birds init failed:", e);
@@ -5576,17 +5572,17 @@
 			try {
 				initVanta("#vanta-about", () => VANTA.DOTS({
 					el: "#vanta-about",
-					mouseControls: true,
-					touchControls: false,
+					mouseControls: !isMobile,
+					touchControls: isMobile,
 					gyroControls: false,
 					minHeight: 200.00,
 					minWidth: 200.00,
-					scale: 2.00,
+					scale: isMobile ? 1.00 : 2.00,
 					scaleMobile: 1.00,
 					color: 0xde00,
 					backgroundColor: 0xffffff,
-					size: 4.90,
-					spacing: 38.00,
+					size: isMobile ? 3.50 : 4.90,
+					spacing: isMobile ? 44.00 : 38.00,
 					showLines: false
 				}));
 			} catch (e) {
