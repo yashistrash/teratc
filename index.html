@@ -4,14 +4,16 @@
 <head>
 	<meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport">
-<title>Tera</title>
+	<title>Tera</title>
 	<meta content="" name="description">
 	<meta content="" name="keywords"><!-- Favicons -->
 	<link href="assets/img/favicon.jpg" rel="icon" />
 	<link href="assets/img/apple-touch-icon.jpg" rel="apple-touch-icon" /><!-- Preconnect for faster font loading -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><!-- Google Fonts - only load what's actually used -->
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet" /><!-- Vendor CSS Files -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<!-- Google Fonts - only load what's actually used -->
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap"
+		rel="stylesheet" /><!-- Vendor CSS Files -->
 	<link rel="preload" as="video" href="assets/img/new_images/tera-ny-home2_nocaption.mp4" type="video/mp4" />
 	<link href="assets/vendor/aos/aos.css" rel="stylesheet" />
 	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -19,7 +21,9 @@
 	<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
 	<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" /><!-- Template Main CSS File -->
 	<link href="assets/css/style.css" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap"
+		rel="stylesheet" />
 	<style>
 		/* Logo Styles */
 		.logo-img {
@@ -1126,8 +1130,8 @@
 						<div class="card-glow"></div>
 						<div class="card-content">
 							<svg class="service-icon" viewBox="0 0 100 100">
-								<ellipse class="icon-circle" cx="50" cy="30" rx="30" ry="10" fill="none" stroke="currentColor"
-									stroke-width="2" />
+								<ellipse class="icon-circle" cx="50" cy="30" rx="30" ry="10" fill="none"
+									stroke="currentColor" stroke-width="2" />
 								<path class="icon-path" d="M20,30 L20,50 Q20,60 50,60 Q80,60 80,50 L80,30" fill="none"
 									stroke="currentColor" stroke-width="2" />
 								<path class="icon-path" d="M20,50 L20,70 Q20,80 50,80 Q80,80 80,70 L80,50" fill="none"
@@ -1137,7 +1141,8 @@
 								<circle class="icon-dot" cx="65" cy="55" r="3" fill="currentColor" />
 							</svg>
 							<h3 class="service-title">Big Data & Analytics</h3>
-							<p class="service-description">Turn raw data into actionable insights with advanced analytics,
+							<p class="service-description">Turn raw data into actionable insights with advanced
+								analytics,
 								data engineering, and business intelligence solutions.</p>
 						</div>
 					</div>
@@ -1518,7 +1523,8 @@
 					<div class="process-steps">
 						<div class="process-step" data-step="1">
 							<div class="step-image">
-								<img src="assets/img/Discovery%20Analysis.png" alt="Discovery & Analysis" loading="lazy" />
+								<img src="assets/img/Discovery%20Analysis.png" alt="Discovery & Analysis"
+									loading="lazy" />
 							</div>
 							<div class="step-connector"></div>
 							<div class="step-icon">
@@ -1634,7 +1640,8 @@
 								</ul>
 							</div>
 							<div class="step-image step-image-right">
-								<img src="assets/img/TESTING%20%26%20QUA.png" alt="Testing & Quality Assurance" loading="lazy" />
+								<img src="assets/img/TESTING%20%26%20QUA.png" alt="Testing & Quality Assurance"
+									loading="lazy" />
 							</div>
 						</div>
 
@@ -3176,25 +3183,6 @@
 				box-sizing: border-box;
 			}
 
-			.about-progress-bar {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 4px;
-				background: #e0e0e0;
-				z-index: 10;
-			}
-
-			.progress-fill {
-				height: 100%;
-				width: 100%;
-				background: linear-gradient(90deg, #3bb143, #2d8f35);
-				box-shadow: 0 0 20px rgba(59, 177, 67, 0.6);
-				transform: scaleX(0);
-				transform-origin: left;
-			}
-
 			.about-container {
 				max-width: 1400px;
 				margin: 0 auto;
@@ -3299,15 +3287,36 @@
 				animation: bubble-bounce 2.5s ease-in-out infinite;
 			}
 
-			.stat-bubble:nth-child(1) { animation-delay: 0s; }
-			.stat-bubble:nth-child(2) { animation-delay: 0.2s; }
-			.stat-bubble:nth-child(3) { animation-delay: 0.4s; }
-			.stat-bubble:nth-child(4) { animation-delay: 0.6s; }
-			.stat-bubble:nth-child(5) { animation-delay: 0.8s; }
+			.stat-bubble:nth-child(1) {
+				animation-delay: 0s;
+			}
+
+			.stat-bubble:nth-child(2) {
+				animation-delay: 0.2s;
+			}
+
+			.stat-bubble:nth-child(3) {
+				animation-delay: 0.4s;
+			}
+
+			.stat-bubble:nth-child(4) {
+				animation-delay: 0.6s;
+			}
+
+			.stat-bubble:nth-child(5) {
+				animation-delay: 0.8s;
+			}
 
 			@keyframes bubble-bounce {
-				0%, 100% { transform: translateY(0); }
-				50% { transform: translateY(-14px); }
+
+				0%,
+				100% {
+					transform: translateY(0);
+				}
+
+				50% {
+					transform: translateY(-14px);
+				}
 			}
 
 			.stat-bubble[data-stat] {
@@ -5006,7 +5015,9 @@
 			</div>
 
 			<div class="footer-bottom">
-				<p class="footer-copyright">&copy; <script>document.write(new Date().getFullYear())</script> TERA. All rights reserved.</p>
+				<p class="footer-copyright">&copy;
+					<script>document.write(new Date().getFullYear())</script> TERA. All rights reserved.
+				</p>
 			</div>
 		</div>
 	</footer>
@@ -5246,16 +5257,16 @@
 
 	<!-- Early scroll fix - runs before external scripts -->
 	<script>
-		(function() {
-			// Ensure scroll works immediately
-			document.documentElement.style.overflow = 'auto';
-			document.body.style.overflow = 'auto';
-			// Remove preloader after 2s max
-			setTimeout(function() {
-				var p = document.getElementById('preloader');
-				if (p) p.remove();
-			}, 2000);
-		})();
+			(function () {
+				// Ensure scroll works immediately
+				document.documentElement.style.overflow = 'auto';
+				document.body.style.overflow = 'auto';
+				// Remove preloader after 2s max
+				setTimeout(function () {
+					var p = document.getElementById('preloader');
+					if (p) p.remove();
+				}, 2000);
+			})();
 	</script>
 
 	<script src="assets/vendor/aos/aos.js"></script>
@@ -5634,7 +5645,8 @@
 	</script>
 
 	<!-- Floating contact button -->
-	<a href="#hero1" class="floating-contact-btn scrollto" aria-label="Go to contact form" title="Contact us – info@tera.com">
+	<a href="#hero1" class="floating-contact-btn scrollto" aria-label="Go to contact form"
+		title="Contact us – info@tera.com">
 		<i class="bi bi-envelope-fill"></i>
 	</a>
 	<style>
@@ -5655,17 +5667,21 @@
 			text-decoration: none;
 			transition: transform 0.25s ease, box-shadow 0.25s ease;
 		}
+
 		.floating-contact-btn i {
 			font-size: 1.5rem;
 		}
+
 		.floating-contact-btn:hover {
 			transform: scale(1.08);
 			box-shadow: 0 6px 28px rgba(59, 177, 67, 0.6), 0 4px 14px rgba(0, 0, 0, 0.25);
 			color: #fff;
 		}
+
 		.floating-contact-btn:active {
 			transform: scale(0.98);
 		}
+
 		@media (max-width: 768px) {
 			.floating-contact-btn {
 				width: 54px;
@@ -5673,6 +5689,7 @@
 				bottom: 22px;
 				right: 22px;
 			}
+
 			.floating-contact-btn i {
 				font-size: 1.35rem;
 			}
