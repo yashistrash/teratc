@@ -733,16 +733,27 @@
 	</style>
 
 	<script>
-		['https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js',
-			'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js',
-			'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js',
-			'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js'
-		].forEach(src => {
-			const s = document.createElement('script');
-			s.src = src;
-			s.async = false;
-			document.head.appendChild(s);
-		});
+		if (window.innerWidth >= 768) {
+			['https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js',
+				'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js',
+				'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js',
+				'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js'
+			].forEach(src => {
+				const s = document.createElement('script');
+				s.src = src;
+				s.async = false;
+				document.head.appendChild(s);
+			});
+		} else {
+			['https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js',
+				'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js'
+			].forEach(src => {
+				const s = document.createElement('script');
+				s.src = src;
+				s.async = false;
+				document.head.appendChild(s);
+			});
+		}
 	</script>
 
 	<!-- 
@@ -5487,14 +5498,16 @@
 		*/
 
 		(function waitForVanta() {
+			var isMobile = window.innerWidth < 768;
+
 			// Wait for VANTA to load (CDN scripts are async)
-			if (typeof VANTA === 'undefined' || typeof VANTA.DOTS === 'undefined' || typeof VANTA.BIRDS === 'undefined') {
+			var needed = typeof VANTA === 'undefined' || typeof VANTA.DOTS === 'undefined' || (!isMobile && typeof VANTA.BIRDS === 'undefined');
+			if (needed) {
 				if (!waitForVanta._tries) waitForVanta._tries = 0;
 				if (++waitForVanta._tries > 50) return; // give up after ~5s
 				return setTimeout(waitForVanta, 100);
 			}
 
-			const isMobile = window.innerWidth < 768;
 			const vantaInstances = {};
 			const vantaTimers = {};
 
@@ -5543,30 +5556,32 @@
 				observer.observe(el);
 			}
 
-			try {
-				initVanta("#vanta-services", () => VANTA.BIRDS({
-					el: "#vanta-services",
-					mouseControls: !isMobile,
-					touchControls: isMobile,
-					gyroControls: false,
-					minHeight: 200.00,
-					minWidth: 200.00,
-					scale: isMobile ? 0.50 : 2.00,
-					scaleMobile: 0.50,
-					backgroundColor: 0xffffff,
-					color1: 0x3bb143,
-					color2: 0x2d8f35,
-					colorMode: "lerp",
-					birdSize: isMobile ? 0.90 : 1.20,
-					wingSpan: isMobile ? 20.00 : 25.00,
-					speedLimit: isMobile ? 3.00 : 4.00,
-					separation: 40.00,
-					alignment: 40.00,
-					cohesion: 40.00,
-					quantity: isMobile ? 1.00 : 2.00
-				}));
-			} catch (e) {
-				console.warn("Vanta Birds init failed:", e);
+			if (!isMobile) {
+				try {
+					initVanta("#vanta-services", () => VANTA.BIRDS({
+						el: "#vanta-services",
+						mouseControls: true,
+						touchControls: false,
+						gyroControls: false,
+						minHeight: 200.00,
+						minWidth: 200.00,
+						scale: 2.00,
+						scaleMobile: 1.00,
+						backgroundColor: 0xffffff,
+						color1: 0x3bb143,
+						color2: 0x2d8f35,
+						colorMode: "lerp",
+						birdSize: 1.20,
+						wingSpan: 25.00,
+						speedLimit: 4.00,
+						separation: 40.00,
+						alignment: 40.00,
+						cohesion: 40.00,
+						quantity: 2.00
+					}));
+				} catch (e) {
+					console.warn("Vanta Birds init failed:", e);
+				}
 			}
 
 			try {
