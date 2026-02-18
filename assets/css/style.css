@@ -539,6 +539,12 @@ section {
 #hero .container {
   position: relative;
   z-index: 10;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100%;
+  width: 100%;
 }
 
 #hero h1 {
@@ -2129,9 +2135,18 @@ video#bgvideo1 {
   background: #0a0a0a;
 }
 
+#hero .videoClass {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  width: 100%;
+}
+
 .videoClass {
-  top: 50px;
-  position: fixed;
+  position: relative;
+  text-align: center;
 }
 
 @media screen and (min-width: 1600px) {
@@ -2183,8 +2198,7 @@ video#bgvideo1 {
   }
 
   .videoClass {
-    top: 80px;
-    position: fixed;
+    position: relative;
   }
 
   .heroClass {

@@ -20,7 +20,18 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(copy /Y \"D:\\\\yash\\\\Tera\\\\index.html\" \"D:\\\\yash\\\\Tera\\\\dist\\\\index.html\")",
       "Bash(copy:*)",
-      "Bash(cmd /c:*)"
+      "Bash(cmd /c:*)",
+      "Bash(curl:*)",
+      "Bash(for f in *.svg)",
+      "Bash(do head -c 50 \"$f\")",
+      "Bash(echo:*)",
+      "Bash(node -e:*)",
+      "Bash(node:*)",
+      "Bash(del \"D:\\\\yash\\\\Tera\\\\_lh_extract.js\" \"D:\\\\yash\\\\Tera\\\\_lh_extract2.js\")",
+      "Bash(ls:*)",
+      "Bash(npx:*)",
+      "Bash(python -c:*)",
+      "WebFetch(domain:cdn.jsdelivr.net)"
     ]
   }
 }

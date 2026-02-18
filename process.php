@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-$to = "contact@teratc.com";
+$to = "sk@teratc.com";
 
 $name    = isset($_POST['name'])    ? strip_tags(trim($_POST['name']))    : '';
 $email   = isset($_POST['email'])   ? strip_tags(trim($_POST['email']))   : '';

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://teratc.com/sitemap.xml

@@ -3,6 +3,23 @@
 
 <head>
 	<meta charset="utf-8">
+	<!-- Termly Consent Banner -->
+	<script src="https://app.termly.io/resource-blocker/e216d486-cd77-4489-a7cc-e01ed8bc61ce?autoBlock=on"></script>
+	<!-- Google Analytics - loads only after Termly consent -->
+	<script>
+		document.addEventListener("termlyConsent", function (e) {
+			if (e.detail && e.detail.analytics === true) {
+				var gaScript = document.createElement("script");
+				gaScript.async = true;
+				gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-YZRBNCX55N";
+				document.head.appendChild(gaScript);
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', 'G-YZRBNCX55N', { anonymize_ip: true });
+			}
+		});
+	</script>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport">
 	<title>Tera | AI, Cloud & Digital Transformation Consulting</title>
 	<meta content="Tera empowers businesses with AI-powered solutions, cloud computing, cybersecurity, and digital transformation services. Fast-track your enterprise upgrade with industry-leading expertise." name="description">
@@ -26,22 +43,20 @@
 	<link href="assets/img/apple-touch-icon.jpg" rel="apple-touch-icon" /><!-- Preconnect for faster font loading -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link rel="dns-prefetch" href="https://cdn.simpleicons.org" />
-	<link rel="dns-prefetch" href="https://cdn.svgrepo.com" />
-	<link rel="dns-prefetch" href="https://upload.wikimedia.org" />
 	<!-- Google Fonts - only load what's actually used -->
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap"
 		rel="stylesheet" /><!-- Vendor CSS Files -->
-	<link rel="preload" as="video" href="assets/img/new_images/tera-ny-home2_nocaption.mp4" type="video/mp4" />
-	<link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+	<link rel="preload" as="video" href="assets/img/new_images/tera-ny-home2_nocaption.mp4" type="video/mp4" fetchpriority="high" />
 	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-	<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-	<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" /><!-- Template Main CSS File -->
 	<link href="assets/css/style.css" rel="stylesheet" />
+	<!-- Non-critical CSS deferred: AOS, GLightbox, Swiper -->
+	<link href="assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'" />
+	<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" media="print" onload="this.media='all'" />
+	<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" media="print" onload="this.media='all'" />
 	<link
 		href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap"
-		rel="stylesheet" />
+		rel="stylesheet" media="print" onload="this.media='all'" />
 	<style>
 		/* Logo Styles */
 		.logo-img {
@@ -170,9 +185,9 @@
 				padding: 20px 15px !important;
 				margin: 0 auto !important;
 				display: flex !important;
-				align-items: center !important;
+				align-items: flex-start !important;
 				justify-content: center !important;
-				min-height: 0 !important;
+				min-height: 100% !important;
 			}
 
 			#bgvideo {
@@ -193,7 +208,7 @@
 				left: 0 !important;
 				transform: none !important;
 				padding: 0 !important;
-				text-align: center !important;
+				text-align: left !important;
 				z-index: 10 !important;
 				width: 100% !important;
 				max-width: 100% !important;
@@ -774,46 +789,7 @@
 		}
 	</script>
 
-	<!-- 
-	<script language="javascript">
-		document.onmousedown = disableclick;
-		status = "Right Click Disabled";
-		function disableclick(event) {
-			if (event.button == 2) {
-				alert(status);
-				return false;
-			}
-			document.onkeydown = function (event) {
-
-				// disable F12 key
-				if (event.keyCode == 123) {
-					return false;
-				}
-
-				// disable I key
-				if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
-					return false;
-				}
-
-				// disable J key
-				if (event.ctrlKey && event.shiftKey && event.keyCode == 74) {
-					return false;
-				}
-
-				// disable U key
-				if (event.ctrlKey && event.keyCode == 85) {
-					return false;
-				}
-			}
-
-		}
-	</script>
-	-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<!-- GSAP and ScrollTrigger -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+	<!-- jQuery and GSAP moved to bottom of body to avoid render-blocking -->
 
 	<!-- Desktop-Like View on Mobile - Scales down instead of rearranging -->
 	<style>
@@ -933,7 +909,7 @@
 <body class="scroll-container">
 	<header class="d-flex align-items-center" id="header">
 		<div class="container d-flex align-items-center justify-content-between">
-			<div class="logo"><a href="index.html"><img src="./assets/img/teralogo.png" alt="Tera" class="logo-img"></a>
+			<div class="logo"><a href="index.html"><picture><source srcset="./assets/img/teralogo.webp" type="image/webp"><img src="./assets/img/teralogo.png" alt="Tera" class="logo-img" width="180" height="72"></picture></a>
 			</div>
 
 			<nav class="navbar" id="navbar">
@@ -960,18 +936,18 @@
 	<!-- End Header -->
 
 	<section class="d-flex align-items-center heroClass" id="hero">
-		<video autoplay loop muted playsinline id="bgvideo">
+		<video autoplay loop muted playsinline id="bgvideo" fetchpriority="high">
 			<source src="./assets/img/new_images/tera-ny-home2_nocaption.mp4" type="video/mp4" />
 		</video>
 		<div class="container" data-aos="zoom-out" data-aos-delay="100">
 			<div class="videoClass">
-				<h1><img src="./assets/img/teralogo.png" alt="TERA - AI, Cloud & Digital Transformation Consulting" class="hero-logo"></h1>
+				<h1><picture><source srcset="./assets/img/teralogo.webp" type="image/webp"><img src="./assets/img/teralogo.png" alt="TERA - AI, Cloud & Digital Transformation Consulting" class="hero-logo" width="200" height="80"></picture></h1>
 
 				<p class="hero-tagline" style="color:white;">In a Digital Transformation ERA - we help increase the strength of
 					organizations by helping them to adapt to the contemporary reality of an ever faster changing world.
 					Make change happen at speed.</p>
 
-				<p class="hero-tagline" style="color:white; text-align: center;">Fast-track to upgrade...we&rsquo;re here to help.</p>
+				<p class="hero-tagline" style="color:white; text-align:center; width:100%;"><span style="color:#3bb143;">T</span>ransformation <span style="color:#3bb143;">ERA</span> - Powering Vision To Value</p>
 			</div>
 		</div>
 	</section>
@@ -1604,8 +1580,8 @@
 					<div class="process-steps">
 						<div class="process-step" data-step="1">
 							<div class="step-image">
-								<img src="assets/img/Discovery%20Analysis.png" alt="Discovery & Analysis"
-									loading="lazy" />
+								<picture><source srcset="assets/img/Discovery Analysis.webp" type="image/webp"><img src="assets/img/Discovery%20Analysis.png" alt="Discovery & Analysis"
+									loading="lazy" /></picture>
 							</div>
 							<div class="step-connector"></div>
 							<div class="step-icon">
@@ -1660,13 +1636,13 @@
 								</ul>
 							</div>
 							<div class="step-image step-image-right">
-								<img src="assets/img/STRATERGY.png" alt="Strategy Development" loading="lazy" />
+								<picture><source srcset="assets/img/STRATERGY.webp" type="image/webp"><img src="assets/img/STRATERGY.png" alt="Strategy Development" loading="lazy" /></picture>
 							</div>
 						</div>
 
 						<div class="process-step" data-step="3">
 							<div class="step-image">
-								<img src="assets/img/implementation.png" alt="Implementation" loading="lazy" />
+								<picture><source srcset="assets/img/implementation.webp" type="image/webp"><img src="assets/img/implementation.png" alt="Implementation" loading="lazy" /></picture>
 							</div>
 							<div class="step-connector"></div>
 							<div class="step-icon">
@@ -1721,14 +1697,14 @@
 								</ul>
 							</div>
 							<div class="step-image step-image-right">
-								<img src="assets/img/TESTING%20%26%20QUA.png" alt="Testing & Quality Assurance"
-									loading="lazy" />
+								<picture><source srcset="assets/img/TESTING %26 QUA.webp" type="image/webp"><img src="assets/img/TESTING%20%26%20QUA.png" alt="Testing & Quality Assurance"
+									loading="lazy" /></picture>
 							</div>
 						</div>
 
 						<div class="process-step" data-step="5">
 							<div class="step-image">
-								<img src="assets/img/SUPPORT%20final.png" alt="Launch & Support" loading="lazy" />
+								<picture><source srcset="assets/img/SUPPORT final.webp" type="image/webp"><img src="assets/img/SUPPORT%20final.png" alt="Launch & Support" loading="lazy" /></picture>
 							</div>
 							<div class="step-connector"></div>
 							<div class="step-icon">
@@ -1792,14 +1768,13 @@
 							<!-- AI/ML -->
 							<div class="tech-item carousel-card" data-category="ai">
 								<div class="tech-logos-row">
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/tensorflow/FF6F00"
+									<div class="tech-logo-wrap"><img src="./assets/logos/tensorflow.svg"
 											alt="TensorFlow" class="tech-logo" loading="lazy" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/pytorch/EE4C2C"
+									<div class="tech-logo-wrap"><img src="./assets/logos/pytorch.svg"
 											alt="PyTorch" class="tech-logo" loading="lazy" /></div>
-									<div class="tech-logo-wrap"><img
-											src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/openai.svg"
+									<div class="tech-logo-wrap"><img src="./assets/logos/openai.svg"
 											alt="OpenAI" class="tech-logo" loading="lazy" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/databricks/FF3621"
+									<div class="tech-logo-wrap"><img src="./assets/logos/databricks.svg"
 											alt="Databricks" class="tech-logo" loading="lazy" /></div>
 								</div>
 								<div class="tech-name">AI/ML</div>
@@ -1814,18 +1789,15 @@
 							<!-- Data Analytics -->
 							<div class="tech-item carousel-card" data-category="data">
 								<div class="tech-logos-row">
-									<div class="tech-logo-wrap"><img
-											src="https://cdn.svgrepo.com/show/354427/tableau.svg" alt="Tableau"
-											class="tech-logo" loading="lazy" /></div>
-									<div class="tech-logo-wrap"><img
-											src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+									<div class="tech-logo-wrap"><img src="./assets/logos/tableau.svg"
+											alt="Tableau" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/powerbi.svg"
 											alt="Power BI" class="tech-logo" loading="lazy" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/looker/4285F4"
+									<div class="tech-logo-wrap"><img src="./assets/logos/looker.svg"
 											alt="Looker" class="tech-logo" loading="lazy" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/snowflake/29B5E8"
+									<div class="tech-logo-wrap"><img src="./assets/logos/snowflake.svg"
 											alt="Snowflake" class="tech-logo" loading="lazy" /></div>
-									<div class="tech-logo-wrap"><img
-											src="https://cdn.simpleicons.org/googleanalytics/E37400"
+									<div class="tech-logo-wrap"><img src="./assets/logos/googleanalytics.svg"
 											alt="Google Analytics" class="tech-logo" loading="lazy" /></div>
 								</div>
 								<div class="tech-name">Data Analytics</div>
@@ -1840,15 +1812,12 @@
 							<!-- Cloud -->
 							<div class="tech-item carousel-card" data-category="cloud">
 								<div class="tech-logos-row">
-									<div class="tech-logo-wrap"><img
-											src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg"
+									<div class="tech-logo-wrap"><img src="./assets/logos/aws.svg"
 											alt="AWS" class="tech-logo" loading="lazy" /></div>
-									<div class="tech-logo-wrap"><img
-											src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftazure.svg"
+									<div class="tech-logo-wrap"><img src="./assets/logos/azure.svg"
 											alt="Azure" class="tech-logo" loading="lazy" /></div>
-									<div class="tech-logo-wrap"><img
-											src="https://cdn.simpleicons.org/googlecloud/4285F4" alt="Google Cloud"
-											class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/googlecloud.svg"
+											alt="Google Cloud" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><svg class="tech-logo" viewBox="0 0 24 24"
 											xmlns="http://www.w3.org/2000/svg" aria-label="Microsoft 365">
 											<path fill="#F25022" d="M1 1h10v10H1z" />
@@ -1868,15 +1837,15 @@
 							<!-- Web/App Development -->
 							<div class="tech-item carousel-card" data-category="webapp">
 								<div class="tech-logos-row">
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/react/61DAFB"
+									<div class="tech-logo-wrap"><img src="./assets/logos/react.svg"
 											alt="React" class="tech-logo" loading="lazy" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/nodedotjs/339933"
+									<div class="tech-logo-wrap"><img src="./assets/logos/nodejs.svg"
 											alt="Node.js" class="tech-logo" loading="lazy" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/vuedotjs/4FC08D"
+									<div class="tech-logo-wrap"><img src="./assets/logos/vuejs.svg"
 											alt="Vue.js" class="tech-logo" loading="lazy" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/nextdotjs/000000"
+									<div class="tech-logo-wrap"><img src="./assets/logos/nextjs.svg"
 											alt="Next.js" class="tech-logo" loading="lazy" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/typescript/3178C6"
+									<div class="tech-logo-wrap"><img src="./assets/logos/typescript.svg"
 											alt="TypeScript" class="tech-logo" loading="lazy" /></div>
 								</div>
 								<div class="tech-name">Web/App Development</div>
@@ -1890,16 +1859,14 @@
 							<!-- UI/UX Development -->
 							<div class="tech-item carousel-card" data-category="uiux">
 								<div class="tech-logos-row">
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/figma/F24E1E"
+									<div class="tech-logo-wrap"><img src="./assets/logos/figma.svg"
 											alt="Figma" class="tech-logo" loading="lazy" /></div>
-									<div class="tech-logo-wrap"><img
-											src="https://cdn.svgrepo.com/show/303109/adobe-xd-logo.svg" alt="Adobe XD"
-											class="tech-logo" loading="lazy" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/sketch/F7B500"
+									<div class="tech-logo-wrap"><img src="./assets/logos/adobexd.svg"
+											alt="Adobe XD" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/sketch.svg"
 											alt="Sketch" class="tech-logo" loading="lazy" /></div>
-									<div class="tech-logo-wrap"><img
-											src="https://cdn.svgrepo.com/show/330714/invision.svg" alt="InVision"
-											class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/invision.svg"
+											alt="InVision" class="tech-logo" loading="lazy" /></div>
 								</div>
 								<div class="tech-name">UI/UX Development</div>
 								<div class="tech-description">We design intuitive <strong>user experiences</strong> and
@@ -1912,15 +1879,15 @@
 							<!-- DevOps -->
 							<div class="tech-item carousel-card" data-category="devops">
 								<div class="tech-logos-row">
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/docker/2496ED"
+									<div class="tech-logo-wrap"><img src="./assets/logos/docker.svg"
 											alt="Docker" class="tech-logo" loading="lazy" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/kubernetes/326CE5"
+									<div class="tech-logo-wrap"><img src="./assets/logos/kubernetes.svg"
 											alt="Kubernetes" class="tech-logo" loading="lazy" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/jenkins/D24939"
+									<div class="tech-logo-wrap"><img src="./assets/logos/jenkins.svg"
 											alt="Jenkins" class="tech-logo" loading="lazy" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/hashicorp/000000"
+									<div class="tech-logo-wrap"><img src="./assets/logos/terraform.svg"
 											alt="Terraform" class="tech-logo" loading="lazy" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/github/181717"
+									<div class="tech-logo-wrap"><img src="./assets/logos/github.svg"
 											alt="GitHub" class="tech-logo" loading="lazy" /></div>
 								</div>
 								<div class="tech-name">DevOps</div>
@@ -1935,7 +1902,7 @@
 							<!-- Cybersecurity -->
 							<div class="tech-item carousel-card" data-category="security">
 								<div class="tech-logos-row">
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/cloudflare/F38020"
+									<div class="tech-logo-wrap"><img src="./assets/logos/cloudflare.svg"
 											alt="Cloudflare" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><svg class="tech-logo" viewBox="0 0 24 24"
 											xmlns="http://www.w3.org/2000/svg" aria-label="Microsoft Sentinel">
@@ -3681,7 +3648,7 @@
 			#middle-section {
 				height: 100vh;
 				position: relative;
-				background: url('assets/img/background.png') center center / cover no-repeat;
+				background: url('assets/img/background.webp') center center / cover no-repeat;
 				overflow: hidden;
 			}
 
@@ -5060,16 +5027,16 @@
 		<div class="footer-content">
 			<div class="footer-grid">
 				<div class="footer-column">
-					<div class="footer-logo"><img src="./assets/img/teralogo.png" alt="TERA" class="footer-logo-img" loading="lazy">
+					<div class="footer-logo"><picture><source srcset="./assets/img/teralogo.webp" type="image/webp"><img src="./assets/img/teralogo.png" alt="TERA" class="footer-logo-img" width="113" height="45" loading="lazy"></picture>
 					</div>
 					<p class="footer-description">Empowering businesses through innovative technology solutions and
 						digital transformation.</p>
-					<div class="footer-social">
+<!-- 					<div class="footer-social">
 						<a href="#" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
 						<a href="#" class="social-link" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
 						<a href="#" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
 						<a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-					</div>
+					</div> -->
 				</div>
 
 				<div class="footer-column">
@@ -5090,10 +5057,11 @@
 				<div class="footer-column">
 					<h4 class="footer-heading">Company</h4>
 					<ul class="footer-links">
-						<li><a href="#about-section">About Us</a></li>
-						<li><a href="#process-section">Our Process</a></li>
-						<li><a href="#tech-stack-section">Technology</a></li>
-						<li><a href="#hero1">Contact</a></li>
+						<li><a class="scrollto" href="#about-section">About Us</a></li>
+						<li><a class="scrollto" href="#process-section">Our Process</a></li>
+						<li><a class="scrollto" href="#tech-stack-section">Technology</a></li>
+						<li><a class="scrollto" href="#hero1">Contact</a></li>
+						<li><a href="privacy-policy.html">Privacy Policy</a></li>
 					</ul>
 				</div>
 
@@ -5111,6 +5079,7 @@
 				<p class="footer-copyright">&copy;
 					<script>document.write(new Date().getFullYear())</script> TERA. All rights reserved.
 				</p>
+				<a href="#" class="termly-display-preferences">Consent Preferences</a>
 			</div>
 		</div>
 	</footer>
@@ -5362,6 +5331,10 @@
 			})();
 	</script>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 	<script src="assets/vendor/aos/aos.js"></script>
 	<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -5409,8 +5382,7 @@
 						message: $('#message').val()
 					},
 					success: function (data) {
-						var objJSON = JSON.parse(data);
-						if (objJSON == "Success") {
+						if (data.trim() === "Success") {
 							$('#errorId').html("");
 							$("#errorId").css({ display: "none" });
 							$("#successId").css({ display: "block" });
@@ -5610,7 +5582,9 @@
 				scrollTimeout = setTimeout(() => {
 					vantaPaused = false;
 					Object.values(vantaInstances).forEach(v => {
-						if (v && v.renderer && v.onUpdate) v.renderer.setAnimationLoop(v.onUpdate);
+						if (v && v.renderer) {
+							v.req = requestAnimationFrame(v.animationLoop);
+						}
 					});
 				}, 150);
 			}, { passive: true });

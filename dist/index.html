@@ -3,23 +3,60 @@
 
 <head>
 	<meta charset="utf-8">
+	<!-- Termly Consent Banner -->
+	<script src="https://app.termly.io/resource-blocker/e216d486-cd77-4489-a7cc-e01ed8bc61ce?autoBlock=on"></script>
+	<!-- Google Analytics - loads only after Termly consent -->
+	<script>
+		document.addEventListener("termlyConsent", function (e) {
+			if (e.detail && e.detail.analytics === true) {
+				var gaScript = document.createElement("script");
+				gaScript.async = true;
+				gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-YZRBNCX55N";
+				document.head.appendChild(gaScript);
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', 'G-YZRBNCX55N', { anonymize_ip: true });
+			}
+		});
+	</script>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport">
-<title>Tera</title>
-	<meta content="" name="description">
-	<meta content="" name="keywords"><!-- Favicons -->
+	<title>Tera | AI, Cloud & Digital Transformation Consulting</title>
+	<meta content="Tera empowers businesses with AI-powered solutions, cloud computing, cybersecurity, and digital transformation services. Fast-track your enterprise upgrade with industry-leading expertise." name="description">
+	<meta content="AI solutions, digital transformation, cloud computing, cybersecurity consulting, enterprise software, big data analytics, managed IT services, UI UX development, web app development" name="keywords">
+	<meta name="robots" content="index, follow">
+	<link rel="canonical" href="https://teratc.com/" />
+	<!-- Open Graph -->
+	<meta property="og:title" content="Tera | AI, Cloud & Digital Transformation Consulting">
+	<meta property="og:description" content="Tera empowers businesses with AI-powered solutions, cloud computing, cybersecurity, and digital transformation services.">
+	<meta property="og:image" content="https://teratc.com/assets/img/teralogo.png">
+	<meta property="og:url" content="https://teratc.com/">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Tera">
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Tera | AI, Cloud & Digital Transformation Consulting">
+	<meta name="twitter:description" content="AI-powered solutions, cloud computing, cybersecurity, and digital transformation for enterprises.">
+	<meta name="twitter:image" content="https://teratc.com/assets/img/teralogo.png">
+	<!-- Favicons -->
 	<link href="assets/img/favicon.jpg" rel="icon" />
 	<link href="assets/img/apple-touch-icon.jpg" rel="apple-touch-icon" /><!-- Preconnect for faster font loading -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><!-- Google Fonts - only load what's actually used -->
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet" /><!-- Vendor CSS Files -->
-	<link rel="preload" as="video" href="assets/img/new_images/tera-ny-home2_nocaption.mp4" type="video/mp4" />
-	<link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<!-- Google Fonts - only load what's actually used -->
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap"
+		rel="stylesheet" /><!-- Vendor CSS Files -->
+	<link rel="preload" as="video" href="assets/img/new_images/tera-ny-home2_nocaption.mp4" type="video/mp4" fetchpriority="high" />
 	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-	<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-	<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" /><!-- Template Main CSS File -->
 	<link href="assets/css/style.css" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+	<!-- Non-critical CSS deferred: AOS, GLightbox, Swiper -->
+	<link href="assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'" />
+	<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" media="print" onload="this.media='all'" />
+	<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" media="print" onload="this.media='all'" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap"
+		rel="stylesheet" media="print" onload="this.media='all'" />
 	<style>
 		/* Logo Styles */
 		.logo-img {
@@ -148,9 +185,9 @@
 				padding: 20px 15px !important;
 				margin: 0 auto !important;
 				display: flex !important;
-				align-items: center !important;
+				align-items: flex-start !important;
 				justify-content: center !important;
-				min-height: 0 !important;
+				min-height: 100% !important;
 			}
 
 			#bgvideo {
@@ -171,7 +208,7 @@
 				left: 0 !important;
 				transform: none !important;
 				padding: 0 !important;
-				text-align: center !important;
+				text-align: left !important;
 				z-index: 10 !important;
 				width: 100% !important;
 				max-width: 100% !important;
@@ -187,7 +224,7 @@
 				min-height: 100vh !important;
 			}
 
-			#hero .videoClass h2 {
+			#hero .videoClass .hero-tagline {
 				font-size: clamp(14px, 4vw, 18px) !important;
 				line-height: 1.6 !important;
 				margin: 12px 0 !important;
@@ -213,7 +250,7 @@
 				padding: 15px 12px !important;
 			}
 
-			#hero .videoClass h2 {
+			#hero .videoClass .hero-tagline {
 				font-size: clamp(13px, 3.5vw, 16px) !important;
 				line-height: 1.5 !important;
 				margin: 10px 0 !important;
@@ -384,7 +421,7 @@
 
 			/* Process Section Fixes */
 			#process-section {
-				padding: 40px 0;
+				padding: 40px 0 15px;
 			}
 
 			.process-container {
@@ -444,7 +481,7 @@
 				height: auto !important;
 				min-height: auto !important;
 				max-height: none !important;
-				padding: 40px 0 !important;
+				padding: 10px 0 40px !important;
 			}
 
 			.tech-container {
@@ -729,7 +766,6 @@
 	</style>
 
 	<script>
-		// Only load Three.js and Vanta on desktop to prevent mobile GPU crashes
 		if (window.innerWidth >= 768) {
 			['https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js',
 				'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js',
@@ -741,49 +777,19 @@
 				s.async = false;
 				document.head.appendChild(s);
 			});
+		} else {
+			['https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js',
+				'https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js'
+			].forEach(src => {
+				const s = document.createElement('script');
+				s.src = src;
+				s.async = false;
+				document.head.appendChild(s);
+			});
 		}
 	</script>
 
-	<!-- 
-	<script language="javascript">
-		document.onmousedown = disableclick;
-		status = "Right Click Disabled";
-		function disableclick(event) {
-			if (event.button == 2) {
-				alert(status);
-				return false;
-			}
-			document.onkeydown = function (event) {
-
-				// disable F12 key
-				if (event.keyCode == 123) {
-					return false;
-				}
-
-				// disable I key
-				if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
-					return false;
-				}
-
-				// disable J key
-				if (event.ctrlKey && event.shiftKey && event.keyCode == 74) {
-					return false;
-				}
-
-				// disable U key
-				if (event.ctrlKey && event.keyCode == 85) {
-					return false;
-				}
-			}
-
-		}
-	</script>
-	-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<!-- GSAP and ScrollTrigger -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+	<!-- jQuery and GSAP moved to bottom of body to avoid render-blocking -->
 
 	<!-- Desktop-Like View on Mobile - Scales down instead of rearranging -->
 	<style>
@@ -843,13 +849,68 @@
 		}
 	</style>
 
+	<!-- Structured Data -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "Organization",
+				"@id": "https://teratc.com/#organization",
+				"name": "Tera",
+				"url": "https://teratc.com",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "https://teratc.com/assets/img/teralogo.png"
+				},
+				"description": "Tera empowers businesses with AI-powered solutions, cloud computing, cybersecurity, and digital transformation services.",
+				"knowsAbout": [
+					"Artificial Intelligence",
+					"Digital Transformation",
+					"Cloud Computing",
+					"Cybersecurity",
+					"Enterprise Solutions",
+					"Big Data & Analytics",
+					"Managed IT Services",
+					"UI/UX Development",
+					"Web & App Development"
+				],
+				"areaServed": "Worldwide",
+				"sameAs": []
+			},
+			{
+				"@type": "WebSite",
+				"@id": "https://teratc.com/#website",
+				"url": "https://teratc.com",
+				"name": "Tera",
+				"publisher": {
+					"@id": "https://teratc.com/#organization"
+				}
+			},
+			{
+				"@type": "WebPage",
+				"@id": "https://teratc.com/#webpage",
+				"url": "https://teratc.com",
+				"name": "Tera | AI, Cloud & Digital Transformation Consulting",
+				"description": "Tera empowers businesses with AI-powered solutions, cloud computing, cybersecurity, and digital transformation services.",
+				"isPartOf": {
+					"@id": "https://teratc.com/#website"
+				},
+				"about": {
+					"@id": "https://teratc.com/#organization"
+				}
+			}
+		]
+	}
+	</script>
+
 </head>
 
 <body class="scroll-container">
 	<header class="d-flex align-items-center" id="header">
 		<div class="container d-flex align-items-center justify-content-between">
-			<h1 class="logo"><a href="index.html"><img src="./assets/img/teralogo.png" alt="Tera" class="logo-img"></a>
-			</h1>
+			<div class="logo"><a href="index.html"><picture><source srcset="./assets/img/teralogo.webp" type="image/webp"><img src="./assets/img/teralogo.png" alt="Tera" class="logo-img" width="180" height="72"></picture></a>
+			</div>
 
 			<nav class="navbar" id="navbar">
 				<ul>
@@ -875,18 +936,18 @@
 	<!-- End Header -->
 
 	<section class="d-flex align-items-center heroClass" id="hero">
-		<video autoplay loop muted playsinline id="bgvideo">
+		<video autoplay loop muted playsinline id="bgvideo" fetchpriority="high">
 			<source src="./assets/img/new_images/tera-ny-home2_nocaption.mp4" type="video/mp4" />
 		</video>
 		<div class="container" data-aos="zoom-out" data-aos-delay="100">
 			<div class="videoClass">
-				<h1><img src="./assets/img/teralogo.png" alt="TERA" class="hero-logo"></h1>
+				<h1><picture><source srcset="./assets/img/teralogo.webp" type="image/webp"><img src="./assets/img/teralogo.png" alt="TERA - AI, Cloud & Digital Transformation Consulting" class="hero-logo" width="200" height="80"></picture></h1>
 
-				<h2 style="color:white;">In a Digital Transformation ERA - we help increase the strength of
+				<p class="hero-tagline" style="color:white;">In a Digital Transformation ERA - we help increase the strength of
 					organizations by helping them to adapt to the contemporary reality of an ever faster changing world.
-					Make change happen at speed.</h2>
+					Make change happen at speed.</p>
 
-				<h2 style="color:white; text-align: center;">Fast-track to upgrade...we&rsquo;re here to help.</h2>
+				<p class="hero-tagline" style="color:white; text-align:center; width:100%;"><span style="color:#3bb143;">T</span>ransformation <span style="color:#3bb143;">ERA</span> - Powering Vision To Value</p>
 			</div>
 		</div>
 	</section>
@@ -1126,8 +1187,8 @@
 						<div class="card-glow"></div>
 						<div class="card-content">
 							<svg class="service-icon" viewBox="0 0 100 100">
-								<ellipse class="icon-circle" cx="50" cy="30" rx="30" ry="10" fill="none" stroke="currentColor"
-									stroke-width="2" />
+								<ellipse class="icon-circle" cx="50" cy="30" rx="30" ry="10" fill="none"
+									stroke="currentColor" stroke-width="2" />
 								<path class="icon-path" d="M20,30 L20,50 Q20,60 50,60 Q80,60 80,50 L80,30" fill="none"
 									stroke="currentColor" stroke-width="2" />
 								<path class="icon-path" d="M20,50 L20,70 Q20,80 50,80 Q80,80 80,70 L80,50" fill="none"
@@ -1137,7 +1198,8 @@
 								<circle class="icon-dot" cx="65" cy="55" r="3" fill="currentColor" />
 							</svg>
 							<h3 class="service-title">Big Data & Analytics</h3>
-							<p class="service-description">Turn raw data into actionable insights with advanced analytics,
+							<p class="service-description">Turn raw data into actionable insights with advanced
+								analytics,
 								data engineering, and business intelligence solutions.</p>
 						</div>
 					</div>
@@ -1518,7 +1580,8 @@
 					<div class="process-steps">
 						<div class="process-step" data-step="1">
 							<div class="step-image">
-								<img src="assets/img/Discovery%20Analysis.png" alt="Discovery & Analysis" loading="lazy" />
+								<picture><source srcset="assets/img/Discovery Analysis.webp" type="image/webp"><img src="assets/img/Discovery%20Analysis.png" alt="Discovery & Analysis"
+									loading="lazy" /></picture>
 							</div>
 							<div class="step-connector"></div>
 							<div class="step-icon">
@@ -1573,13 +1636,13 @@
 								</ul>
 							</div>
 							<div class="step-image step-image-right">
-								<img src="assets/img/STRATERGY.png" alt="Strategy Development" loading="lazy" />
+								<picture><source srcset="assets/img/STRATERGY.webp" type="image/webp"><img src="assets/img/STRATERGY.png" alt="Strategy Development" loading="lazy" /></picture>
 							</div>
 						</div>
 
 						<div class="process-step" data-step="3">
 							<div class="step-image">
-								<img src="assets/img/implementation.png" alt="Implementation" loading="lazy" />
+								<picture><source srcset="assets/img/implementation.webp" type="image/webp"><img src="assets/img/implementation.png" alt="Implementation" loading="lazy" /></picture>
 							</div>
 							<div class="step-connector"></div>
 							<div class="step-icon">
@@ -1634,13 +1697,14 @@
 								</ul>
 							</div>
 							<div class="step-image step-image-right">
-								<img src="assets/img/TESTING%20%26%20QUA.png" alt="Testing & Quality Assurance" loading="lazy" />
+								<picture><source srcset="assets/img/TESTING %26 QUA.webp" type="image/webp"><img src="assets/img/TESTING%20%26%20QUA.png" alt="Testing & Quality Assurance"
+									loading="lazy" /></picture>
 							</div>
 						</div>
 
 						<div class="process-step" data-step="5">
 							<div class="step-image">
-								<img src="assets/img/SUPPORT%20final.png" alt="Launch & Support" loading="lazy" />
+								<picture><source srcset="assets/img/SUPPORT final.webp" type="image/webp"><img src="assets/img/SUPPORT%20final.png" alt="Launch & Support" loading="lazy" /></picture>
 							</div>
 							<div class="step-connector"></div>
 							<div class="step-icon">
@@ -1704,15 +1768,14 @@
 							<!-- AI/ML -->
 							<div class="tech-item carousel-card" data-category="ai">
 								<div class="tech-logos-row">
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/tensorflow/FF6F00"
-											alt="TensorFlow" class="tech-logo" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/pytorch/EE4C2C"
-											alt="PyTorch" class="tech-logo" /></div>
-									<div class="tech-logo-wrap"><img
-											src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/openai.svg"
-											alt="OpenAI" class="tech-logo" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/databricks/FF3621"
-											alt="Databricks" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/tensorflow.svg"
+											alt="TensorFlow" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/pytorch.svg"
+											alt="PyTorch" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/openai.svg"
+											alt="OpenAI" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/databricks.svg"
+											alt="Databricks" class="tech-logo" loading="lazy" /></div>
 								</div>
 								<div class="tech-name">AI/ML</div>
 								<div class="tech-description">We build intelligent solutions with <strong>machine
@@ -1726,19 +1789,16 @@
 							<!-- Data Analytics -->
 							<div class="tech-item carousel-card" data-category="data">
 								<div class="tech-logos-row">
-									<div class="tech-logo-wrap"><img
-											src="https://cdn.svgrepo.com/show/354427/tableau.svg" alt="Tableau"
-											class="tech-logo" /></div>
-									<div class="tech-logo-wrap"><img
-											src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
-											alt="Power BI" class="tech-logo" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/looker/4285F4"
-											alt="Looker" class="tech-logo" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/snowflake/29B5E8"
-											alt="Snowflake" class="tech-logo" /></div>
-									<div class="tech-logo-wrap"><img
-											src="https://cdn.simpleicons.org/googleanalytics/E37400"
-											alt="Google Analytics" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/tableau.svg"
+											alt="Tableau" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/powerbi.svg"
+											alt="Power BI" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/looker.svg"
+											alt="Looker" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/snowflake.svg"
+											alt="Snowflake" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/googleanalytics.svg"
+											alt="Google Analytics" class="tech-logo" loading="lazy" /></div>
 								</div>
 								<div class="tech-name">Data Analytics</div>
 								<div class="tech-description">We turn data into decisions with <strong>BI</strong>,
@@ -1752,15 +1812,12 @@
 							<!-- Cloud -->
 							<div class="tech-item carousel-card" data-category="cloud">
 								<div class="tech-logos-row">
-									<div class="tech-logo-wrap"><img
-											src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg"
-											alt="AWS" class="tech-logo" /></div>
-									<div class="tech-logo-wrap"><img
-											src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/microsoftazure.svg"
-											alt="Azure" class="tech-logo" /></div>
-									<div class="tech-logo-wrap"><img
-											src="https://cdn.simpleicons.org/googlecloud/4285F4" alt="Google Cloud"
-											class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/aws.svg"
+											alt="AWS" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/azure.svg"
+											alt="Azure" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/googlecloud.svg"
+											alt="Google Cloud" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><svg class="tech-logo" viewBox="0 0 24 24"
 											xmlns="http://www.w3.org/2000/svg" aria-label="Microsoft 365">
 											<path fill="#F25022" d="M1 1h10v10H1z" />
@@ -1780,16 +1837,16 @@
 							<!-- Web/App Development -->
 							<div class="tech-item carousel-card" data-category="webapp">
 								<div class="tech-logos-row">
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/react/61DAFB"
-											alt="React" class="tech-logo" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/nodedotjs/339933"
-											alt="Node.js" class="tech-logo" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/vuedotjs/4FC08D"
-											alt="Vue.js" class="tech-logo" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/nextdotjs/000000"
-											alt="Next.js" class="tech-logo" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/typescript/3178C6"
-											alt="TypeScript" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/react.svg"
+											alt="React" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/nodejs.svg"
+											alt="Node.js" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/vuejs.svg"
+											alt="Vue.js" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/nextjs.svg"
+											alt="Next.js" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/typescript.svg"
+											alt="TypeScript" class="tech-logo" loading="lazy" /></div>
 								</div>
 								<div class="tech-name">Web/App Development</div>
 								<div class="tech-description">We build responsive <strong>web</strong> and
@@ -1802,16 +1859,14 @@
 							<!-- UI/UX Development -->
 							<div class="tech-item carousel-card" data-category="uiux">
 								<div class="tech-logos-row">
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/figma/F24E1E"
-											alt="Figma" class="tech-logo" /></div>
-									<div class="tech-logo-wrap"><img
-											src="https://cdn.svgrepo.com/show/303109/adobe-xd-logo.svg" alt="Adobe XD"
-											class="tech-logo" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/sketch/F7B500"
-											alt="Sketch" class="tech-logo" /></div>
-									<div class="tech-logo-wrap"><img
-											src="https://cdn.svgrepo.com/show/330714/invision.svg" alt="InVision"
-											class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/figma.svg"
+											alt="Figma" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/adobexd.svg"
+											alt="Adobe XD" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/sketch.svg"
+											alt="Sketch" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/invision.svg"
+											alt="InVision" class="tech-logo" loading="lazy" /></div>
 								</div>
 								<div class="tech-name">UI/UX Development</div>
 								<div class="tech-description">We design intuitive <strong>user experiences</strong> and
@@ -1824,16 +1879,16 @@
 							<!-- DevOps -->
 							<div class="tech-item carousel-card" data-category="devops">
 								<div class="tech-logos-row">
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/docker/2496ED"
-											alt="Docker" class="tech-logo" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/kubernetes/326CE5"
-											alt="Kubernetes" class="tech-logo" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/jenkins/D24939"
-											alt="Jenkins" class="tech-logo" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/hashicorp/000000"
-											alt="Terraform" class="tech-logo" /></div>
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/github/181717"
-											alt="GitHub" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/docker.svg"
+											alt="Docker" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/kubernetes.svg"
+											alt="Kubernetes" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/jenkins.svg"
+											alt="Jenkins" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/terraform.svg"
+											alt="Terraform" class="tech-logo" loading="lazy" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/github.svg"
+											alt="GitHub" class="tech-logo" loading="lazy" /></div>
 								</div>
 								<div class="tech-name">DevOps</div>
 								<div class="tech-description">We enable <strong>CI/CD</strong>,
@@ -1847,8 +1902,8 @@
 							<!-- Cybersecurity -->
 							<div class="tech-item carousel-card" data-category="security">
 								<div class="tech-logos-row">
-									<div class="tech-logo-wrap"><img src="https://cdn.simpleicons.org/cloudflare/F38020"
-											alt="Cloudflare" class="tech-logo" /></div>
+									<div class="tech-logo-wrap"><img src="./assets/logos/cloudflare.svg"
+											alt="Cloudflare" class="tech-logo" loading="lazy" /></div>
 									<div class="tech-logo-wrap"><svg class="tech-logo" viewBox="0 0 24 24"
 											xmlns="http://www.w3.org/2000/svg" aria-label="Microsoft Sentinel">
 											<path fill="#0078D4"
@@ -1963,15 +2018,27 @@
 				min-height: 100vh;
 				height: 100vh;
 				max-height: 100vh;
-				background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+				background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
 				position: relative;
 				overflow: hidden;
-				padding: 60px 0 60px;
+				padding: 20px 0 60px;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				justify-content: flex-start;
 				box-sizing: border-box;
+			}
+
+			#tech-stack-section::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 80px;
+				background: linear-gradient(180deg, #f8f9fa 0%, transparent 100%);
+				z-index: 2;
+				pointer-events: none;
 			}
 
 			#tech-canvas {
@@ -2701,7 +2768,7 @@
 				background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
 				position: relative;
 				overflow: hidden;
-				padding: 100px 0;
+				padding: 100px 0 40px;
 			}
 
 			.process-container {
@@ -3052,7 +3119,7 @@
 
 			@media (max-width: 768px) {
 				#process-section {
-					padding: 60px 0;
+					padding: 60px 0 20px;
 				}
 
 				.process-container {
@@ -3176,25 +3243,6 @@
 				box-sizing: border-box;
 			}
 
-			.about-progress-bar {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 4px;
-				background: #e0e0e0;
-				z-index: 10;
-			}
-
-			.progress-fill {
-				height: 100%;
-				width: 100%;
-				background: linear-gradient(90deg, #3bb143, #2d8f35);
-				box-shadow: 0 0 20px rgba(59, 177, 67, 0.6);
-				transform: scaleX(0);
-				transform-origin: left;
-			}
-
 			.about-container {
 				max-width: 1400px;
 				margin: 0 auto;
@@ -3299,15 +3347,36 @@
 				animation: bubble-bounce 2.5s ease-in-out infinite;
 			}
 
-			.stat-bubble:nth-child(1) { animation-delay: 0s; }
-			.stat-bubble:nth-child(2) { animation-delay: 0.2s; }
-			.stat-bubble:nth-child(3) { animation-delay: 0.4s; }
-			.stat-bubble:nth-child(4) { animation-delay: 0.6s; }
-			.stat-bubble:nth-child(5) { animation-delay: 0.8s; }
+			.stat-bubble:nth-child(1) {
+				animation-delay: 0s;
+			}
+
+			.stat-bubble:nth-child(2) {
+				animation-delay: 0.2s;
+			}
+
+			.stat-bubble:nth-child(3) {
+				animation-delay: 0.4s;
+			}
+
+			.stat-bubble:nth-child(4) {
+				animation-delay: 0.6s;
+			}
+
+			.stat-bubble:nth-child(5) {
+				animation-delay: 0.8s;
+			}
 
 			@keyframes bubble-bounce {
-				0%, 100% { transform: translateY(0); }
-				50% { transform: translateY(-14px); }
+
+				0%,
+				100% {
+					transform: translateY(0);
+				}
+
+				50% {
+					transform: translateY(-14px);
+				}
 			}
 
 			.stat-bubble[data-stat] {
@@ -3579,7 +3648,7 @@
 			#middle-section {
 				height: 100vh;
 				position: relative;
-				background: url('assets/img/background.png') center center / cover no-repeat;
+				background: url('assets/img/background.webp') center center / cover no-repeat;
 				overflow: hidden;
 			}
 
@@ -4958,16 +5027,16 @@
 		<div class="footer-content">
 			<div class="footer-grid">
 				<div class="footer-column">
-					<div class="footer-logo"><img src="./assets/img/teralogo.png" alt="TERA" class="footer-logo-img">
+					<div class="footer-logo"><picture><source srcset="./assets/img/teralogo.webp" type="image/webp"><img src="./assets/img/teralogo.png" alt="TERA" class="footer-logo-img" width="113" height="45" loading="lazy"></picture>
 					</div>
 					<p class="footer-description">Empowering businesses through innovative technology solutions and
 						digital transformation.</p>
-					<div class="footer-social">
+<!-- 					<div class="footer-social">
 						<a href="#" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
 						<a href="#" class="social-link" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
 						<a href="#" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
 						<a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-					</div>
+					</div> -->
 				</div>
 
 				<div class="footer-column">
@@ -4988,10 +5057,11 @@
 				<div class="footer-column">
 					<h4 class="footer-heading">Company</h4>
 					<ul class="footer-links">
-						<li><a href="#about-section">About Us</a></li>
-						<li><a href="#process-section">Our Process</a></li>
-						<li><a href="#tech-stack-section">Technology</a></li>
-						<li><a href="#hero1">Contact</a></li>
+						<li><a class="scrollto" href="#about-section">About Us</a></li>
+						<li><a class="scrollto" href="#process-section">Our Process</a></li>
+						<li><a class="scrollto" href="#tech-stack-section">Technology</a></li>
+						<li><a class="scrollto" href="#hero1">Contact</a></li>
+						<li><a href="privacy-policy.html">Privacy Policy</a></li>
 					</ul>
 				</div>
 
@@ -5006,7 +5076,10 @@
 			</div>
 
 			<div class="footer-bottom">
-				<p class="footer-copyright">&copy; <script>document.write(new Date().getFullYear())</script> TERA. All rights reserved.</p>
+				<p class="footer-copyright">&copy;
+					<script>document.write(new Date().getFullYear())</script> TERA. All rights reserved.
+				</p>
+				<a href="#" class="termly-display-preferences">Consent Preferences</a>
 			</div>
 		</div>
 	</footer>
@@ -5246,18 +5319,22 @@
 
 	<!-- Early scroll fix - runs before external scripts -->
 	<script>
-		(function() {
-			// Ensure scroll works immediately
-			document.documentElement.style.overflow = 'auto';
-			document.body.style.overflow = 'auto';
-			// Remove preloader after 2s max
-			setTimeout(function() {
-				var p = document.getElementById('preloader');
-				if (p) p.remove();
-			}, 2000);
-		})();
+			(function () {
+				// Ensure scroll works immediately
+				document.documentElement.style.overflow = 'auto';
+				document.body.style.overflow = 'auto';
+				// Remove preloader after 2s max
+				setTimeout(function () {
+					var p = document.getElementById('preloader');
+					if (p) p.remove();
+				}, 2000);
+			})();
 	</script>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 	<script src="assets/vendor/aos/aos.js"></script>
 	<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -5305,8 +5382,7 @@
 						message: $('#message').val()
 					},
 					success: function (data) {
-						var objJSON = JSON.parse(data);
-						if (objJSON == "Success") {
+						if (data.trim() === "Success") {
 							$('#errorId').html("");
 							$("#errorId").css({ display: "none" });
 							$("#successId").css({ display: "block" });
@@ -5479,10 +5555,11 @@
 		*/
 
 		(function waitForVanta() {
-			if (window.innerWidth < 768) return;
+			var isMobile = window.innerWidth < 768;
 
 			// Wait for VANTA to load (CDN scripts are async)
-			if (typeof VANTA === 'undefined' || typeof VANTA.DOTS === 'undefined' || typeof VANTA.BIRDS === 'undefined') {
+			var needed = typeof VANTA === 'undefined' || typeof VANTA.DOTS === 'undefined' || (!isMobile && typeof VANTA.BIRDS === 'undefined');
+			if (needed) {
 				if (!waitForVanta._tries) waitForVanta._tries = 0;
 				if (++waitForVanta._tries > 50) return; // give up after ~5s
 				return setTimeout(waitForVanta, 100);
@@ -5505,7 +5582,9 @@
 				scrollTimeout = setTimeout(() => {
 					vantaPaused = false;
 					Object.values(vantaInstances).forEach(v => {
-						if (v && v.renderer && v.onUpdate) v.renderer.setAnimationLoop(v.onUpdate);
+						if (v && v.renderer) {
+							v.req = requestAnimationFrame(v.animationLoop);
+						}
 					});
 				}, 150);
 			}, { passive: true });
@@ -5536,46 +5615,48 @@
 				observer.observe(el);
 			}
 
-			try {
-				initVanta("#vanta-services", () => VANTA.BIRDS({
-					el: "#vanta-services",
-					mouseControls: true,
-					touchControls: false,
-					gyroControls: false,
-					minHeight: 200.00,
-					minWidth: 200.00,
-					scale: 2.00,
-					scaleMobile: 1.00,
-					backgroundColor: 0xffffff,
-					color1: 0x3bb143,
-					color2: 0x2d8f35,
-					colorMode: "lerp",
-					birdSize: 1.20,
-					wingSpan: 25.00,
-					speedLimit: 4.00,
-					separation: 40.00,
-					alignment: 40.00,
-					cohesion: 40.00,
-					quantity: 2.00
-				}));
-			} catch (e) {
-				console.warn("Vanta Birds init failed:", e);
+			if (!isMobile) {
+				try {
+					initVanta("#vanta-services", () => VANTA.BIRDS({
+						el: "#vanta-services",
+						mouseControls: true,
+						touchControls: false,
+						gyroControls: false,
+						minHeight: 200.00,
+						minWidth: 200.00,
+						scale: 2.00,
+						scaleMobile: 1.00,
+						backgroundColor: 0xffffff,
+						color1: 0x3bb143,
+						color2: 0x2d8f35,
+						colorMode: "lerp",
+						birdSize: 1.20,
+						wingSpan: 25.00,
+						speedLimit: 4.00,
+						separation: 40.00,
+						alignment: 40.00,
+						cohesion: 40.00,
+						quantity: 2.00
+					}));
+				} catch (e) {
+					console.warn("Vanta Birds init failed:", e);
+				}
 			}
 
 			try {
 				initVanta("#vanta-about", () => VANTA.DOTS({
 					el: "#vanta-about",
-					mouseControls: true,
-					touchControls: false,
+					mouseControls: !isMobile,
+					touchControls: isMobile,
 					gyroControls: false,
 					minHeight: 200.00,
 					minWidth: 200.00,
-					scale: 2.00,
-					scaleMobile: 1.00,
+					scale: isMobile ? 0.50 : 2.00,
+					scaleMobile: 0.50,
 					color: 0xde00,
 					backgroundColor: 0xffffff,
-					size: 4.90,
-					spacing: 38.00,
+					size: isMobile ? 3.50 : 4.90,
+					spacing: isMobile ? 44.00 : 38.00,
 					showLines: false
 				}));
 			} catch (e) {
@@ -5634,7 +5715,8 @@
 	</script>
 
 	<!-- Floating contact button -->
-	<a href="#hero1" class="floating-contact-btn scrollto" aria-label="Go to contact form" title="Contact us – info@tera.com">
+	<a href="#hero1" class="floating-contact-btn scrollto" aria-label="Go to contact form"
+		title="Contact us – info@tera.com">
 		<i class="bi bi-envelope-fill"></i>
 	</a>
 	<style>
@@ -5655,17 +5737,21 @@
 			text-decoration: none;
 			transition: transform 0.25s ease, box-shadow 0.25s ease;
 		}
+
 		.floating-contact-btn i {
 			font-size: 1.5rem;
 		}
+
 		.floating-contact-btn:hover {
 			transform: scale(1.08);
 			box-shadow: 0 6px 28px rgba(59, 177, 67, 0.6), 0 4px 14px rgba(0, 0, 0, 0.25);
 			color: #fff;
 		}
+
 		.floating-contact-btn:active {
 			transform: scale(0.98);
 		}
+
 		@media (max-width: 768px) {
 			.floating-contact-btn {
 				width: 54px;
@@ -5673,6 +5759,7 @@
 				bottom: 22px;
 				right: 22px;
 			}
+
 			.floating-contact-btn i {
 				font-size: 1.35rem;
 			}

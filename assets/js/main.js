@@ -154,6 +154,7 @@
         navbarToggle.classList.toggle('bi-x')
       }
       scrollto(this.hash)
+      history.replaceState(null, '', window.location.pathname + window.location.search)
     }
   }, true)
 
@@ -164,6 +165,7 @@
     if (window.location.hash) {
       if (select(window.location.hash)) {
         scrollto(window.location.hash)
+        history.replaceState(null, '', window.location.pathname + window.location.search)
       }
     }
   });
