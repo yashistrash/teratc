@@ -31,7 +31,11 @@
       "Bash(ls:*)",
       "Bash(npx:*)",
       "Bash(python -c:*)",
-      "WebFetch(domain:cdn.jsdelivr.net)"
+      "WebFetch(domain:cdn.jsdelivr.net)",
+      "Bash(dir:*)",
+      "Bash(python3:*)",
+      "Bash(identify:*)",
+      "Bash(sed:*)"
     ]
   }
 }
