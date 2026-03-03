@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport">
+	<title>Page Not Found | Tera</title>
+	<meta name="description" content="The page you're looking for doesn't exist. Return to Tera's homepage.">
+	<meta name="robots" content="noindex, follow">
+	<!-- Favicons -->
+	<link href="assets/img/favicon.jpg" rel="icon" />
+	<link href="assets/img/apple-touch-icon.jpg" rel="apple-touch-icon" />
+	<!-- Preconnect -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet" />
+	<!-- Vendor CSS -->
+	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+	<link href="assets/css/style.css" rel="stylesheet" />
+
+	<style>
+		* { box-sizing: border-box; margin: 0; padding: 0; }
+
+		body {
+			font-family: 'Montserrat', sans-serif;
+			background: #0a0a0a;
+			color: #fff;
+			display: flex;
+			flex-direction: column;
+			min-height: 100vh;
+		}
+
+		/* Header */
+		#header {
+			background: rgba(10, 10, 10, 0.95);
+			box-shadow: 0 2px 15px rgba(0,0,0,0.4);
+			height: 80px;
+			position: fixed;
+			top: 0; left: 0; right: 0;
+			z-index: 997;
+			display: flex;
+			align-items: center;
+		}
+
+		.logo-img {
+			height: 60px;
+			width: auto;
+			object-fit: contain;
+		}
+
+		.navbar ul {
+			list-style: none;
+			display: flex;
+			gap: 30px;
+			margin: 0;
+			padding: 0;
+		}
+
+		.navbar ul li a {
+			color: rgba(255,255,255,0.8);
+			text-decoration: none;
+			font-size: 14px;
+			font-weight: 500;
+			letter-spacing: 0.5px;
+			transition: color 0.3s;
+		}
+
+		.navbar ul li a:hover { color: #3bb143; }
+
+		/* 404 Main */
+		.error-page {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 120px 20px 60px;
+			text-align: center;
+		}
+
+		.error-inner {
+			max-width: 600px;
+		}
+
+		.error-code {
+			font-size: clamp(100px, 20vw, 180px);
+			font-weight: 800;
+			line-height: 1;
+			background: linear-gradient(135deg, #3bb143, #2d8a35);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			margin-bottom: 10px;
+			letter-spacing: -4px;
+		}
+
+		.error-divider {
+			width: 60px;
+			height: 3px;
+			background: #3bb143;
+			margin: 20px auto;
+			border-radius: 2px;
+		}
+
+		.error-title {
+			font-size: clamp(22px, 4vw, 32px);
+			font-weight: 700;
+			color: #fff;
+			margin-bottom: 16px;
+		}
+
+		.error-desc {
+			font-size: 16px;
+			color: rgba(255,255,255,0.6);
+			line-height: 1.7;
+			margin-bottom: 40px;
+		}
+
+		.error-actions {
+			display: flex;
+			gap: 16px;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		.btn-home {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			background: #3bb143;
+			color: #fff;
+			padding: 14px 32px;
+			border-radius: 6px;
+			font-size: 15px;
+			font-weight: 600;
+			text-decoration: none;
+			transition: all 0.3s ease;
+		}
+
+		.btn-home:hover {
+			background: #2d8a35;
+			color: #fff;
+			transform: translateY(-2px);
+			box-shadow: 0 8px 24px rgba(59,177,67,0.35);
+		}
+
+		.btn-contact {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			background: transparent;
+			color: rgba(255,255,255,0.8);
+			padding: 14px 32px;
+			border-radius: 6px;
+			border: 1px solid rgba(255,255,255,0.2);
+			font-size: 15px;
+			font-weight: 600;
+			text-decoration: none;
+			transition: all 0.3s ease;
+		}
+
+		.btn-contact:hover {
+			border-color: #3bb143;
+			color: #3bb143;
+			transform: translateY(-2px);
+		}
+
+		/* Footer */
+		#footer {
+			background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+			border-top: 1px solid rgba(255,255,255,0.07);
+			padding: 24px 0;
+		}
+
+		.footer-bottom {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: 12px;
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 40px;
+		}
+
+		.footer-copyright {
+			color: rgba(255,255,255,0.4);
+			font-size: 13px;
+			margin: 0;
+		}
+
+		.footer-bottom a {
+			color: rgba(255,255,255,0.4);
+			font-size: 13px;
+			text-decoration: none;
+			transition: color 0.3s;
+		}
+
+		.footer-bottom a:hover { color: #3bb143; }
+
+		@media (max-width: 768px) {
+			#header { padding: 0 20px; }
+			.navbar { display: none; }
+			.footer-bottom { justify-content: center; text-align: center; padding: 0 20px; }
+		}
+	</style>
+</head>
+
+<body>
+
+	<header id="header">
+		<div class="container d-flex align-items-center justify-content-between">
+			<div class="logo">
+				<a href="index.html"><img src="assets/img/teralogo.png" alt="Tera" class="logo-img"></a>
+			</div>
+			<nav class="navbar d-none d-lg-flex">
+				<ul>
+					<li><a href="index.html#hero">Home</a></li>
+					<li><a href="index.html#services-section">Services</a></li>
+					<li><a href="index.html#process-section">Process</a></li>
+					<li><a href="index.html#tech-stack-section">Technology</a></li>
+					<li><a href="index.html#about-section">About</a></li>
+				</ul>
+			</nav>
+			<div><a class="btn1 btn-border1" href="index.html#hero1" style="padding:5px 30px;">Contact Us</a></div>
+		</div>
+	</header>
+
+	<main class="error-page">
+		<div class="error-inner">
+			<div class="error-code">404</div>
+			<div class="error-divider"></div>
+			<h1 class="error-title">Page Not Found</h1>
+			<p class="error-desc">The page you're looking for doesn't exist or has been moved.<br>Let's get you back on track.</p>
+			<div class="error-actions">
+				<a href="index.html" class="btn-home">
+					<i class="bi bi-house-fill"></i> Back to Home
+				</a>
+				<a href="index.html#hero1" class="btn-contact">
+					<i class="bi bi-envelope"></i> Contact Us
+				</a>
+			</div>
+		</div>
+	</main>
+
+	<footer id="footer">
+		<div class="footer-bottom">
+			<p class="footer-copyright">&copy; <script>document.write(new Date().getFullYear())</script> TERA. All rights reserved.</p>
+			<a href="privacy-policy.html">Privacy Policy</a>
+		</div>
+	</footer>
+
+</body>
+</html>

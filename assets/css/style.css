@@ -536,6 +536,18 @@ section {
   z-index: 0;
 }
 
+#hero .hero-corner-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-height: 55%;
+  width: auto;
+  z-index: 5;
+  pointer-events: none;
+  object-fit: contain;
+  object-position: top right;
+}
+
 #hero .container {
   position: relative;
   z-index: 10;

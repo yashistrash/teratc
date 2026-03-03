@@ -35,7 +35,8 @@
       "Bash(dir:*)",
       "Bash(python3:*)",
       "Bash(identify:*)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(cwebp:*)"
     ]
   }
 }
